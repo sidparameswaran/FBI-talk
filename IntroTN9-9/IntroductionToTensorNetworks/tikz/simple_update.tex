@@ -1,0 +1,215 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[scale=1.2]
+
+\node[peps] (G0) at (0,0) {};
+\node[peps] (G1) at (2,0) {};
+
+\node[lambda] (L00) at ($ (G0) + (0,1) $) {};
+\node[lambda] (L01) at ($ (G0) + (0,-1) $) {};
+\node[lambda] (L02) at ($ (G0) + (-1,0) $) {};
+
+\node[lambda] (L10) at ($ (G1) + (0,1) $) {};
+\node[lambda] (L11) at ($ (G1) + (0,-1) $) {};
+\node[lambda] (L12) at ($ (G1) + (1,0) $) {};
+
+\node (Ll00) at ($ (G0) + (0,2) $) {};
+\node (Ll01) at ($ (G0) + (0,-2) $) {};
+\node (Ll02) at ($ (G0) + (-2,0) $) {};
+
+\node (Ll10) at ($ (G1) + (0,2) $) {};
+\node (Ll11) at ($ (G1) + (0,-2) $) {};
+\node (Ll12) at ($ (G1) + (2,0) $) {};
+
+\node[lambda] (Lc) at ($ (G0) + (1,0) $) {};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1,2}
+{ {
+	\draw[thick] (L\i\j) -- (G\i);
+	\draw[thick,dashed] (L\i\j) -- (Ll\i\j);
+} }
+
+\draw[thick] (G0) -- (Lc);
+\draw[thick] (Lc) -- (G1);
+
+\node[above left] at (G0) {$\Gamma_0$};
+\node[above left] at (G1) {$\Gamma_1$};
+
+\node[above] at (Lc) {$\lambda_c$};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1}
+{ {
+	\node[left] at (L\i\j) {$\lambda_{\i\j}$};
+} }
+\node[above] at (L02) {$\lambda_{02}$};
+\node[above] at (L12) {$\lambda_{12}$};
+
+\node[operator] (op) at ($ (G0) + (1,-0.5) $) {};
+\draw[thick] (G0) -- (op);
+\draw[thick] (G1) -- (op);
+\draw[thick] (op) -- +(-0.4,-0.4);
+\draw[thick] (op) -- +(0.4,-0.4);
+
+% next panel
+
+\node[peps] (G0) at (5,-3) {};
+\node[peps] (G1) at (7,-3) {};
+
+\node[lambda] (L00) at ($ (G0) + (0,1) $) {};
+\node[lambda] (L01) at ($ (G0) + (0,-1) $) {};
+\node[lambda] (L02) at ($ (G0) + (-1,0) $) {};
+
+\node[lambda] (L10) at ($ (G1) + (0,1) $) {};
+\node[lambda] (L11) at ($ (G1) + (0,-1) $) {};
+\node[lambda] (L12) at ($ (G1) + (1,0) $) {};
+
+\node (Ll00) at ($ (G0) + (0,2) $) {};
+\node (Ll01) at ($ (G0) + (0,-2) $) {};
+\node (Ll02) at ($ (G0) + (-2,0) $) {};
+
+\node (Ll10) at ($ (G1) + (0,2) $) {};
+\node (Ll11) at ($ (G1) + (0,-2) $) {};
+\node (Ll12) at ($ (G1) + (2,0) $) {};
+
+\node[lambda] (Lc) at ($ (G0) + (1,0) $) {};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1,2}
+{ {
+	\draw[thick] (L\i\j) -- (G\i);
+	\draw[thick,dashed] (L\i\j) -- (Ll\i\j);
+} }
+
+\draw[thick] (G0) -- (Lc);
+\draw[thick] (Lc) -- (G1);
+
+\node[operator] (op) at ($ (G0) + (1,-0.5) $) {};
+\draw[thick] (G0) -- (op);
+\draw[thick] (G1) -- (op);
+\draw[thick] (op) -- +(-0.4,-1.1);
+\draw[thick] (op) -- +(0.4,-1.1);
+
+\begin{pgfonlayer}{background}
+\draw[fill=blue!20,rounded corners,opacity=0.8] ($ (G0) + (-1.2,1.2) $) rectangle ($ (G1) + (1.2,-1.2) $);
+\node[above right] at ($ (G1) + (1.2,0.7) $) {$\theta$};
+\end{pgfonlayer};
+
+% next panel
+
+\node[peps] (G0) at (0,-6) {};
+\node[peps] (G1) at (2,-6) {};
+
+\node (L00) at ($ (G0) + (0,1) $) {};
+\node (L01) at ($ (G0) + (0,-1) $) {};
+\node (L02) at ($ (G0) + (-1,0) $) {};
+
+\node (L10) at ($ (G1) + (0,1) $) {};
+\node (L11) at ($ (G1) + (0,-1) $) {};
+\node (L12) at ($ (G1) + (1,0) $) {};
+
+\node (Ll00) at ($ (G0) + (0,2) $) {};
+\node (Ll01) at ($ (G0) + (0,-2) $) {};
+\node (Ll02) at ($ (G0) + (-2,0) $) {};
+
+\node (Ll10) at ($ (G1) + (0,2) $) {};
+\node (Ll11) at ($ (G1) + (0,-2) $) {};
+\node (Ll12) at ($ (G1) + (2,0) $) {};
+
+\node[lambda] (Lc) at ($ (G0) + (1,0) $) {};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1,2}
+{ {
+	\draw[thick] (L\i\j) -- (G\i);
+} }
+
+\draw[thick] (G0) -- (Lc);
+\draw[thick] (Lc) -- (G1);
+
+\draw[thick] (G0) -- +(0.5,-0.5);
+\draw[thick] (G1) -- +(-0.5,-0.5);
+
+\node[above left] at (G0) {$U$};
+\node[above left] at (G1) {$V$};
+
+\node[above] at (Lc) {$\tilde{\lambda_c}$};
+
+% next panel
+
+\node[peps] (G0) at (5,-9) {};
+\node[peps] (G1) at (7,-9) {};
+
+\node[lambda] (L00) at ($ (G0) + (0,0.75) $) {};
+\node[lambda] (L01) at ($ (G0) + (0,-0.75) $) {};
+\node[lambda] (L02) at ($ (G0) + (-0.75,0) $) {};
+
+\node[lambda] (L10) at ($ (G1) + (0,0.75) $) {};
+\node[lambda] (L11) at ($ (G1) + (0,-0.75) $) {};
+\node[lambda] (L12) at ($ (G1) + (0.75,0) $) {};
+
+\node[lambda] (Lc00) at ($ (G0) + (0,1.5) $) {};
+\node[lambda] (Lc01) at ($ (G0) + (0,-1.5) $) {};
+\node[lambda] (Lc02) at ($ (G0) + (-1.5,0) $) {};
+
+\node[lambda] (Lc10) at ($ (G1) + (0,1.5) $) {};
+\node[lambda] (Lc11) at ($ (G1) + (0,-1.5) $) {};
+\node[lambda] (Lc12) at ($ (G1) + (1.5,0) $) {};
+
+\node (Ll00) at ($ (G0) + (0,2) $) {};
+\node (Ll01) at ($ (G0) + (0,-2) $) {};
+\node (Ll02) at ($ (G0) + (-2,0) $) {};
+
+\node (Ll10) at ($ (G1) + (0,2) $) {};
+\node (Ll11) at ($ (G1) + (0,-2) $) {};
+\node (Ll12) at ($ (G1) + (2,0) $) {};
+
+\node[lambda] (Lc) at ($ (G0) + (1,0) $) {};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1,2}
+{ {
+	\draw[thick] (L\i\j) -- (G\i);
+	\draw[thick,dashed] (L\i\j) -- (Lc\i\j) -- (Ll\i\j);
+} }
+
+\draw[thick] (G0) -- (Lc);
+\draw[thick] (Lc) -- (G1);
+
+\draw[thick] (G0) -- +(0.5,-0.5);
+\draw[thick] (G1) -- +(-0.5,-0.5);
+
+\node[above right] at (G0) {$U$};
+\node[above left] at (G1) {$V$};
+
+\node[above] at (Lc) {$\tilde{\lambda}_c$};
+
+\foreach \i in {0,1}
+{
+	\node[above right] at (L\i0) {$\lambda_{\i0}^{-1}$};
+}
+\foreach \i in {0,1}
+{
+	\node[right] at (L\i1) {$\lambda_{\i1}^{-1}$};
+}
+\node[above] at (L02) {$\lambda_{02}^{-1}$};
+\node[above] at (L12) {$\lambda_{12}^{-1}$};
+
+\foreach \i in {0,1}
+\foreach \j in {0,1}
+{ {
+	\node[above left] at (Lc\i\j) {$\lambda_{\i\j}$};
+} }
+\node[above] at (Lc02) {$\lambda_{02}$};
+\node[above] at (Lc12) {$\lambda_{12}$};
+
+%\draw[fill=blue!50,opacity=0.4,rounded corners] (-1.35,1.4-4) rectangle (0.6,-1-4);
+%\draw[fill=blue!50,opacity=0.4,rounded corners] (1.4,1.4-4) rectangle (3.2,-1-4);
+
+\draw[very thick,double,->] (2.5,-0.5) -- +(1,-1);
+\draw[very thick,double,->] (2.5,-6.5) -- +(1,-1);
+
+\draw[very thick,double,->] (3.5,-3.5) -- +(-1,-1);
+
+\end{tikzpicture}

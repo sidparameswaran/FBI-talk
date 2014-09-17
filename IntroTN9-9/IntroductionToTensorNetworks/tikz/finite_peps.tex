@@ -1,0 +1,90 @@
+\begin{tikzpicture}[auto,scale=1]
+\foreach \i in {4,...,10}
+\foreach \j in {4,...,10}
+{ {
+%	\node (G\i_\j) at (\i,\j)  {$\i\_\j$};
+	\node (G\i_\j) at (\i,\j) [inv] {};
+} }
+
+\foreach \i in {4,6,8}
+\foreach \j in {4,6,8}
+{ {
+	\node at (G\i_\j) [bpeps] {};
+} }
+
+\foreach \i in {5,7,9}
+\foreach \j in {5,7,9}
+{ {
+	\node at (G\i_\j) [bpeps] {};
+} }
+
+\foreach \i in {4,6,8}
+\foreach \j in {5,7,9}
+{ {
+	\node at (G\i_\j) [bpeps,fill=red!60] {};
+	\node at (G\j_\i) [bpeps,fill=red!60] {};
+} }
+
+
+\foreach \i in {4,...,9}
+\foreach \j / \l in {4/5,5/6,6/7,7/8,8/9}
+{ {
+	\draw[thick] (G\i_\j) -- (G\i_\l);
+	\draw[thick] (G\j_\i) -- (G\l_\i);
+} }
+
+\begin{pgfonlayer}{background}
+% \filldraw[bg,fill=black!10] ($ (G4_1) + (-0.5,0) $) -- ($ (G5_1) + (+0.5,0) $) -- ($ (G5_12) + (+0.5,0) $) -- ($(G4_12) + (-0.5,0) $) -- cycle;
+\filldraw[bg] ($ (G5_4) + (-0.3,-0.5) $) -- ($ (G5_4) + (+0.3,-0.5) $) 
+	-- ($ (G5_10) + (+0.3,-0.5) $) -- ($(G5_10) + (-0.3,-0.5) $) -- cycle;
+\filldraw[bg,fill=green!40] ($ (G4_4) + (-0.3,-0.5) $) -- ($ (G4_4) + (+0.3,-0.5) $) 
+	-- ($ (G4_10) + (+0.3,-0.5) $) -- ($(G4_10) + (-0.3,-0.5) $) -- cycle;
+\end{pgfonlayer}
+
+\foreach \i in {4,...,10}
+\foreach \j in {4,...,10}
+{ {
+	\node (G\i_\j) at (\i+6,\j) [inv] {};
+} }
+
+\foreach \i in {6,8}
+\foreach \j in {4,6,8}
+{ {
+	\node at (G\i_\j) [bpeps] {};
+} }
+
+\foreach \i in {5,7,9}
+\foreach \j in {5,7,9}
+{ {
+	\node at (G\i_\j) [bpeps] {};
+} }
+
+\foreach \i in {6,8}
+\foreach \j in {5,7,9}
+{ {
+	\node at (G\i_\j) [bpeps,fill=red!60] {};
+} }
+\foreach \i in {4,6,8}
+\foreach \j in {5,7,9}
+{ {
+	\node at (G\j_\i) [bpeps,fill=red!60] {};
+} }
+
+
+\foreach \i in {4,...,9}
+\foreach \j / \l in {5/6,6/7,7/8,8/9}
+{ {
+	\draw[thick] (G\j_\i) -- (G\l_\i);
+} }
+\foreach \i in {5,...,9}
+\foreach \j / \l in {4/5,5/6,6/7,7/8,8/9}
+{ {
+	\draw[thick] (G\i_\j) -- (G\i_\l);
+} }
+
+\begin{pgfonlayer}{background}
+\filldraw[bg,fill=green!40] ($ (G5_4) + (-0.3,-0.5) $) -- ($ (G5_4) + (+0.3,-0.5) $)
+	-- ($ (G5_10) + (+0.3,-0.5) $) -- ($(G5_10) + (-0.3,-0.5) $) -- cycle;
+\end{pgfonlayer}
+
+\end{tikzpicture}

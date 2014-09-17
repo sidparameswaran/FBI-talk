@@ -1,0 +1,120 @@
+\documentclass[12pt]{beamer}
+
+\usetheme{Air}
+\usepackage{graphics}
+\usepackage{graphicx}
+%\usepackage{amsthm}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit,chains}
+
+%\usepackage{pstricks}
+%\newpsobject{psid}{psline}{linestyle=dotted,dotsep=1pt}
+%\newpsobject{pspsi}{psline}{doubleline=true}
+%\newpsobject{pssigma}{psline}{linewidth=1.5pt}
+
+%\usepackage{pgfpages}
+%\setbeamertemplate{note page}[plain]
+%\setbeameroption{show notes on second screen=right}
+%http://tex.stackexchange.com/questions/21777/is-there-a-nice-solution-to-get-a-presenter-mode-for-latex-presentations
+
+\input{commands/shortcuts}
+\input{commands/pgfstyles}
+
+\pdfinfo
+{
+  /Title       (Introduction to Tensor Networks)
+  /Creator     (TeX)
+  /Author      (Brayden Ware)
+}
+
+
+\title{Introduction to Tensor Networks}
+\subtitle{with applications to topological phases}
+\author{Brayden Ware}
+\date{September 6th 2014}
+
+%\includeonly{slides/aklt2}
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Pre-outline section %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+\include{slides/slide1}
+
+\include{slides/slide2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Outline code %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[section=1,hidesubsections]
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{What is a tensor network?}
+
+\include{slides/slide3}
+\include{slides/slide4}
+\include{slides/slide4B}
+\include{slides/slide5}
+\include{slides/slide6}
+
+\section{AKLT: the canonical MPS}
+\include{slides/aklt1}
+\include{slides/aklt2}
+\include{slides/aklt3}
+
+\section{Constructing the toric code state}
+\include{slides/tc1}
+\include{slides/tc2}
+\include{slides/tc3}
+\include{slides/tc4}
+\include{slides/tc5}
+
+\section*{}
+
+\include{slides/slides99}
+
+\end{document}

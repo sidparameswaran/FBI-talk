@@ -1,0 +1,81 @@
+%\beginpgfgraphicnamed{2d_area_law}
+
+\begin{tikzpicture}
+
+\foreach \i in {1,...,6}
+\foreach \j in {1,...,6}
+{ {
+	%\node (G\i_\j) at (\j,\i) [spin] {\i..\j};
+	\node (G\i_\j) at (\j,\i) [spin,inner sep=2pt,outer sep=3pt] {};
+} }
+
+\begin{pgfonlayer}{background}
+\filldraw[fill=blue!20,rounded corners] (G1_1.south west) + (0,0) -- (G6_1.north west) -- (G6_3.north east) -- (G1_3.south east) -- cycle;
+\filldraw[fill=blue!20,rounded corners] (G1_4.south west) + (0,0) -- (G6_4.north west) -- (G6_6.north east) -- (G1_6.south east) -- cycle;
+\end{pgfonlayer}
+
+\draw[thick,<->] (1,0.5) -- (6,0.5);
+\node at (3.5,0.1) {$W$};
+\draw[thick,<->] (0.5,1) -- (0.5,6);
+\node at (0.1,3.5) {$L$};
+
+\foreach \i in {1,...,6}
+{
+	\draw[very thick] (G\i_4) -- (G\i_3);
+}
+
+\end{tikzpicture}
+%\endpgfgraphicnamed
+%\begin{tikzpicture}
+
+%\foreach \i in {1,...,6}
+%\foreach \j in {1,...,6}
+%{ {
+%	%\node (G\i_\j) at (\j,\i) [spin] {\i..\j};
+%	\node (G\i_\j) at (\j,\i) [spin,inner sep=2pt,outer sep=3pt] {};
+%} }
+
+%\begin{pgfonlayer}{background}
+%\filldraw[fill=blue!20,rounded corners] (G1_1.south west) + (0,0) -- (G6_1.north west) -- (G6_3.north east) -- (G1_3.south east) -- cycle;
+%\filldraw[fill=blue!20,rounded corners] (G1_4.south west) + (0,0) -- (G6_4.north west) -- (G6_6.north east) -- (G1_6.south east) -- cycle;
+
+%\foreach \i in {1,...,6}
+%\foreach \j / \k in {1/2,2/3,3/4,4/5,5/6}
+%{ {
+%	\draw[thick] (G\j_\i.center) -- (G\k_\i.center);
+%} }
+
+%\draw[thick] (G1_6.center) -- (G1_5.center);
+%\draw[thick] (G1_4.center) -- (G1_3.center);
+%\draw[thick] (G1_2.center) -- (G1_1.center);
+%\draw[thick] (G6_5.center) -- (G6_4.center);
+%\draw[thick] (G6_3.center) -- (G6_2.center);
+
+%\end{pgfonlayer}
+
+%\end{tikzpicture}
+
+%\vspace{0.2in}
+
+%\begin{tikzpicture}
+
+%\foreach \i in {1,...,6}
+%\foreach \j in {1,...,6}
+%{ {
+%	%\node (G\i_\j) at (\j,\i) [spin] {\i..\j};
+%	\node (G\i_\j) at (\j,\i) [spin,inner sep=2pt,outer sep=3pt] {};
+%} }
+
+%\begin{pgfonlayer}{background}
+%\filldraw[fill=blue!20,rounded corners] (G1_1.south west) + (0,0) -- (G6_1.north west) -- (G6_3.north east) -- (G1_3.south east) -- cycle;
+%\filldraw[fill=blue!20,rounded corners] (G1_4.south west) + (0,0) -- (G6_4.north west) -- (G6_6.north east) -- (G1_6.south east) -- cycle;
+
+%\foreach \i in {1,...,6}
+%\foreach \j / \k in {1/2,2/3,3/4,4/5,5/6}
+%{ {
+%	\draw[thick] (G\j_\i.center) -- (G\k_\i.center);
+%	\draw[thick] (G\i_\j.center) -- (G\i_\k.center);
+%} }
+
+%\end{pgfonlayer}
+%\end{tikzpicture}

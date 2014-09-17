@@ -1,0 +1,40 @@
+\begin{frame}{Why tensor networks?}
+
+ \begin{columns}
+        \begin{column}{.5\textwidth}
+        \bi
+        \only<1>{
+        \item Hilbert space is {\Large big}}
+        \only<2->{
+        \item Hilbert space is {\Large too big}}
+        \bi
+        \item<2-> $\text{Dim} \left( \bigotimes\limits_{i=1}^{N} \mathcal{H}_i \right)= 2^N$
+        \item <3-> Generic states are maximally entangled
+        \ei
+        \item <4-> Ground states of many-body systems are special
+        \bi
+        \item <5-> Tensor networks target area law states 
+        \ei
+        \ei
+        \end{column}
+        \begin{column}{.5\textwidth}%\raggedleft
+            \only<2-3>{
+            \begin{figure}[t]
+                %\input{tikz/example_tn.tex}
+                \input{diagrams/psi.tex}
+            \end{figure}}
+            \only<4-5>{
+            \begin{figure}[htbp]
+               \scalebox{0.6}{ \input{tikz/2d_area_law.tex}}
+            \end{figure}
+            \vspace{-1cm}
+            \begin{figure}[hbtp]
+            \centering
+                %\input{tikz/example_tn.tex}
+            \includegraphics[width=0.9\textwidth]{orus-images/fig4.pdf}
+            \end{figure}}
+        \end{column}
+\end{columns}   
+
+
+\end{frame}

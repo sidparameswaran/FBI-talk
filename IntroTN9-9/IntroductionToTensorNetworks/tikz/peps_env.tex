@@ -1,0 +1,98 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[node distance=0.5cm]
+
+\node[corner] (c1) at (0,0) {};
+\node[corner] (c2) at (6,0) {};
+\node[corner] (c3) at (0,-6) {};
+\node[corner] (c4) at (6,-6) {};
+
+\node[side] (slt) at (0,-2) {};
+\node[side] (slb) at (0,-4) {};
+
+\node[side] (stl) at (2,0) {};
+\node[side] (str) at (4,0) {};
+
+\node[side] (srt) at (6,-2) {};
+\node[side] (srb) at (6,-4) {};
+
+\node[side] (sbl) at (2,-6) {};
+\node[side] (sbr) at (4,-6) {};
+
+\node[peps] (G1) at (1.8,-1.8) {};
+\node[peps] (Gp1) at (2.2,-2.2) {};
+
+\node[peps] (G2) at (3.8,-1.8) {};
+\node[peps] (Gp2) at (4.2,-2.2) {};
+
+\node[peps] (G3) at (1.8,-3.8) {};
+\node[peps] (Gp3) at (2.2,-4.2) {};
+
+\node[peps] (G4) at (3.8,-3.8) {};
+\node[peps] (Gp4) at (4.2,-4.2) {};
+
+\draw[thick] (c1) -- (stl) -- (str) -- (c2) -- (srt) -- (srb) -- (c4) -- (sbr) -- (sbl) -- (c3) -- (slb) -- (slt) -- (c1);
+
+\foreach \i in {1,2,3,4} {
+	\draw[thick] (G\i) -- (Gp\i);
+}
+
+\foreach \i / \j in {1/2,1/3,2/4,3/4} {
+	\draw[thick] (G\i) -- (G\j);
+	\draw[thick] (Gp\i) -- (Gp\j);
+}
+
+\draw[thick] (slt) -- (G1);
+\draw[thick] (stl) -- (G1);
+
+\draw[thick] (str) -- (G2);
+\draw[thick] (srt) -- (G2);
+
+\draw[thick] (slb) -- (G3);
+\draw[thick] (sbl) -- (G3);
+
+\draw[thick] (srb) -- (G4);
+\draw[thick] (sbr) -- (G4);
+
+\draw[thick] (slt) -- (Gp1);
+\draw[thick] (stl) -- (Gp1);
+
+\draw[thick] (str) -- (Gp2);
+\draw[thick] (srt) -- (Gp2);
+
+\draw[thick] (slb) -- (Gp3);
+\draw[thick] (sbl) -- (Gp3);
+
+\draw[thick] (srb) -- (Gp4);
+\draw[thick] (sbr) -- (Gp4);
+
+\node[above left of=G1] {$A$};
+\node[below right of=Gp1] {$A^*$};
+
+\node[above left of=G2] {$B$};
+\node[below right of=Gp2] {$B^*$};
+
+\node[above left of=G3] {$C$};
+\node[below right of=Gp3] {$C^*$};
+
+\node[above left of=G4] {$D$};
+\node[below right of=Gp4] {$D^*$};
+
+\node[above left of=c1] {$C_1$};
+\node[above right of=c2] {$C_2$};
+\node[below left of=c3] {$C_3$};
+\node[below right of=c4] {$C_4$};
+
+\node[left of=slt] {$s_1$};
+\node[left of=slb] {$s_2$};
+
+\node[below of=sbl] {$s_3$};
+\node[below of=sbr] {$s_4$};
+
+\node[right of=srb] {$s_5$};
+\node[right of=srt] {$s_6$};
+
+\node[above of=str] {$s_7$};
+\node[above of=stl] {$s_8$};
+
+\end{tikzpicture}

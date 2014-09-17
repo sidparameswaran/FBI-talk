@@ -1,0 +1,47 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[scale=0.7,transform shape]
+
+\foreach \i in {0,...,17} {
+	\node[spin] (t0\i) at (\i,0) {};
+}
+
+\foreach \i in {0,...,5} {
+	\node[det] (d0\i) at (1.5+3*\i,0.75) {};
+	\node[iso] (t1\i) at (3*\i,1.5) {};
+	
+	\draw[thick] (d0\i) -- (t1\i);
+}
+
+\foreach \i / \j in {0/2,1/5,2/8,3/11,4/14,5/17,0/1,1/4,2/7,3/10,4/13,5/16} {
+	\draw[thick] (t0\j) -- (d0\i);
+}
+\foreach \i / \j in {0/0,1/3,2/6,3/9,4/12,5/15} {
+	\draw[thick] (t0\j) -- (t1\i);
+}
+\foreach \i / \j in {0/1,1/2,2/3,3/4,4/5} {
+	\draw[thick] (d0\i) -- (t1\j);
+}
+
+\foreach \i in {0,...,1} {
+	\node[det] (d1\i) at (1.5+9*\i,2.25) {};
+	\node[iso] (t2\i) at (6+9*\i,3) {};
+}
+
+\foreach \i / \j in {0/0,0/1,1/3,1/4} {
+	\draw[thick] (d1\i) -- (t1\j);
+}
+\foreach \i / \j in {0/0,0/1,1/1} {
+	\draw[thick] (t2\i) -- (d1\j);
+}
+\draw[thick] (t20) -- (t12);
+\draw[thick] (t21) -- (t15);
+
+\node[iso] (top) at (10.5,3.75) {};
+\draw[thick] (top) -- (t20);
+\draw[thick] (top) -- (t21);
+
+\draw[thick,dashed] (d10) to [bend left=30] (t21);
+\draw[thick,dashed] (d05) to [bend right=80] (t10);
+
+\end{tikzpicture}

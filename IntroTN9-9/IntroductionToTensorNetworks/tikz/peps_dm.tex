@@ -1,0 +1,31 @@
+%!TEX root = ../thesis.tex
+
+\beginpgfgraphicnamed{fig_peps_dm}
+\begin{tikzpicture}[scale=1.5]
+
+\foreach \i in {1,...,4}
+\foreach \j in {1,...,4}
+{ {
+	\node (G\i\j) at (2.5+1.2*\i+0.8*\j,1*\j) [inv] {};
+	\node (Gp\i\j) at ($ (G\i\j) + (0,-0.6) $) {};
+} }
+
+\foreach \i in {2,3}
+\foreach \j in {2,3}
+{
+	\node at (G\i\j) [peps] {};
+	\node at (Gp\i\j) [peps] {};
+	\draw[thick] (G\i\j) -- (Gp\i\j);
+}
+\foreach \i in {2,3}
+\foreach \j / \l in {1/2,2/3,3/4}
+{ {
+	\draw[thick] (G\i\j) -- (G\i\l);
+	\draw[thick] (G\j\i) -- (G\l\i);
+	
+	\draw[thick] (Gp\i\j) -- (Gp\i\l);
+	\draw[thick] (Gp\j\i) -- (Gp\l\i);
+} }
+
+\end{tikzpicture}
+\endpgfgraphicnamed

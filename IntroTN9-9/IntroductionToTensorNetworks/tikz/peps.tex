@@ -1,0 +1,41 @@
+\beginpgfgraphicnamed{fig_peps}
+\begin{tikzpicture}[scale=1.5]
+\foreach \i in {1,...,3}
+\foreach \j in {1,...,3}
+{ {
+	\node (G\i\j) at (1.5*\i+1*\j,1.5*\j) [inv] {};
+} }
+
+\foreach \k / \i in {1/2}
+\foreach \l / \j in {1/2}
+{ {
+	\node at (G\i\j) [peps] {};
+	\draw[thick] (G\i\j) -- node[below right ] {$d$} +(0,-1);
+	\node at ($ (G\i\j)+(0,-1.3) $) {$\phi_i$};
+} }
+\foreach \i in {2}
+\foreach \j / \l in {1/2,2/3}
+{ {
+	\draw[thick] (G\i\j) -- node[left] {$M$} (G\i\l);
+	\draw[thick] (G\j\i) -- node[above] {$M$} (G\l\i);
+} }
+
+\foreach \i in {1,...,4}
+\foreach \j in {1,...,4}
+{ {
+	\node (G\i\j) at (2.5+1.2*\i+0.8*\j,1*\j) [inv] {};
+} }
+
+\foreach \i / \j / \k in {2/2/1,2/3/2,2/4/3,3/2/4,3/3/5,3/4/6,4/2/7,4/3/8,4/4/9}
+{
+	\node at (G\i\j) [peps] {};
+	\draw[thick] (G\i\j) -- node[below right ] {$\phi_{\k}$} +(0,-0.6);
+}
+\foreach \i in {2,3,4}
+\foreach \j / \l in {2/3,3/4}
+{ {
+	\draw[thick] (G\i\j) -- (G\i\l);
+	\draw[thick] (G\j\i) -- (G\l\i);
+} }
+\end{tikzpicture}
+\endpgfgraphicnamed

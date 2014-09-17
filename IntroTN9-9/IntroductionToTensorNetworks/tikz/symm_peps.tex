@@ -1,0 +1,57 @@
+\beginpgfgraphicnamed{fig_symm_peps}
+
+\tikzset{corner/.style={rectangle=2pt,draw=black!100,fill=red!30,inner sep=3pt}}
+\tikzset{gamma/.style={circle=2pt,draw=black!100,fill=blue!20,inner sep=3pt}}
+\tikzset{spin/.style={circle=1pt,draw=black!100,fill=orange!80,inner sep=2pt}}
+\tikzset{Mbond/.style={thick,blue,dashed}}
+
+\begin{tikzpicture}[auto]
+
+\foreach \i / \j in {0/0,1/0,2/0,0/-1}
+{
+	\node(C\i\j) at (2*\i,2*\j) [corner] {};
+}
+
+\foreach \i / \j in {1/-1,2/-1}
+{
+	\node(G\i\j) at (2*\i-0.4,2*\j+0.4) [gamma] {};
+	\node(Gp\i\j) at (2*\i+0.4,2*\j-0.4) [gamma] {};
+	\node(S\i\j) at (2*\i,2*\j) [spin] {};
+        \node[above left,blue] at (G\i\j) {$T_\i^*$};
+        \node[below right,blue] at (Gp\i\j) {$T_\i$};
+}
+
+\draw[thick] (G1-1) -- (S1-1);
+\draw[thick] (S1-1) -- (Gp1-1);
+\draw[thick] (G2-1) -- (S2-1);
+\draw[thick] (S2-1) -- (Gp2-1);
+
+\draw[Mbond] (G1-1) -- (G2-1);
+\draw[Mbond] (Gp1-1) -- (Gp2-1);
+
+\draw[thick,red] (C00) -- node[above] {$C_c$} (C10);
+\draw[thick,red] (C10) -- (C20);
+\draw[thick,red] (C00) -- (C0-1);
+
+\draw[Mbond] (C10) -- (G1-1);
+\draw[Mbond] (C10) -- node[right] {$C_a$} (Gp1-1);
+\draw[Mbond] (C20) -- (G2-1);
+\draw[Mbond] (C20) -- (Gp2-1);
+\draw[Mbond] (C0-1) -- (G1-1);
+\draw[Mbond] (C0-1) -- (Gp1-1);
+
+\draw[thick,red] (C0-1) -- ($ (C0-1) + (0,-2) $);
+\draw[thick,red] (C20) -- ($ (C20) + (2,0) $);
+
+\foreach \i in {G1-1,Gp1-1,G2-1,Gp2-1}
+{
+	\draw[Mbond] (\i) -- ($ (\i) + (0,-2) $);
+}
+
+\foreach \i in {G2-1,Gp2-1}
+{
+	\draw[Mbond] (\i) -- ($ (\i) + (2,0) $);
+}
+
+\end{tikzpicture}
+\endpgfgraphicnamed

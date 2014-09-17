@@ -1,0 +1,85 @@
+%!TEX root = ../thesis.tex
+\begin{tikzpicture}[node distance=0.4cm]
+
+\foreach \i / \j in {1/A,2/B,3/A,4/B,5/A}
+{
+	\node[gamma] (G\i) at (2*\i-2,2.5) {};
+	\node[below of=G\i] {$\Gamma^\j$};
+	\draw[thick] (G\i) -- ($ (G\i) + (0, 0.75) $);
+}
+\foreach \i / \j in {1/A,2/B,3/A,4/B,5/A,6/B}
+{
+	\node[lambda] (l\i) at (2*\i-1-2,2.5) {};
+	\node[below of=l\i] {$\lambda^\j$};
+}
+
+\foreach \i / \j in {1/2,2/3,3/4,4/5,5/6}
+{
+	\draw[thick] (l\i) -- (G\i);
+	\draw[thick] (G\i) -- (l\j);
+}
+
+\draw[thick,dashed] (l1) -- ($ (l1) + (-0.5,0) $);
+\draw[thick,dashed] (l6) -- ($ (l6) + (0.5,0) $);
+
+% next panel
+
+\foreach \i / \j in {1/A,2/B}
+{
+	\node[gamma] (G\i) at (2*\i-2,0) {};
+	\node[above of=G\i] {$\Gamma^\j$};
+	
+	\node[gamma] (Gp\i) at (2*\i-2,-1) {};
+	\node[below of=Gp\i] {$(\Gamma^\j)^*$};
+	
+	\draw[thick] (G\i) -- (Gp\i);
+}
+\foreach \i / \j in {1/A,2/B}
+{
+	\node[lambda] (l\i) at (2*\i-1-2,0) {};
+	\node[above of=l\i] {$\lambda^\j$};
+	
+	\node[lambda] (lp\i) at (2*\i-1-2,-1) {};
+	\node[above of=lp\i] {$\lambda^\j$};
+}
+
+\draw[thick] (l1) -- (G1) -- (l2) -- (G2);
+\draw[thick] (lp1) -- (Gp1) -- (lp2) -- (Gp2);
+
+\draw[thick,dashed] (l1) -- ($ (l1) + (-1,0) $);
+\draw[thick,dashed] (G2) -- ($ (G2) + (1,0) $);
+
+\draw[thick,dashed] (lp1) -- ($ (lp1) + (-1,0) $);
+\draw[thick,dashed] (Gp2) -- ($ (Gp2) + (1,0) $);
+
+% right side, lower panel
+
+\foreach \i / \j in {1/A,2/B}
+{
+	\node[gamma] (G\i) at (6+2*\i-2,0) {};
+	\node[above of=G\i] {$\Gamma^\j$};
+	
+	\node[gamma] (Gp\i) at (6+2*\i-2,-1) {};
+	\node[below of=Gp\i] {$(\Gamma^\j)^*$};
+	
+	\draw[thick] (G\i) -- (Gp\i);
+}
+\foreach \i / \j in {1/B,2/A}
+{
+	\node[lambda] (l\i) at (8+2*\i-1-2,0) {};
+	\node[above of=l\i] {$\lambda^\j$};
+	
+	\node[lambda] (lp\i) at (8+2*\i-1-2,-1) {};
+	\node[above of=lp\i] {$\lambda^\j$};
+}
+
+\draw[thick] (G1) -- (l1) -- (G2) -- (l2);
+\draw[thick] (Gp1) -- (lp1) -- (Gp2) -- (lp2);
+
+\draw[thick,dashed] (G1) -- ($ (G1) + (-1,0) $);
+\draw[thick,dashed] (l2) -- ($ (l2) + (1,0) $);
+
+\draw[thick,dashed] (Gp1) -- ($ (Gp1) + (-1,0) $);
+\draw[thick,dashed] (lp2) -- ($ (lp2) + (1,0) $);
+
+\end{tikzpicture}

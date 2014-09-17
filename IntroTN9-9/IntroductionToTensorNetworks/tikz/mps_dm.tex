@@ -1,0 +1,66 @@
+\begin{tikzpicture}[node distance=0.5cm]
+
+\foreach \i in {1,...,5} {
+	\node (Gp\i) at (1.5*\i,0) [gamma] {};
+	\node (Gpp\i) at ($ (Gp\i) + (0,-1) $) [gamma] {};
+	\node[above of=Gp\i] {$A^\i$};
+	\node[below of=Gpp\i] {$(A^\i)^*$};
+}
+\foreach \i / \j in {1/2,2/3,3/4,4/5} {
+	\draw[thick] (Gp\i) -- (Gp\j);
+	\draw[thick] (Gpp\i) -- (Gpp\j);
+}
+\foreach \i in {1,2,3} {
+	\draw[thick] (Gp\i) -- (Gpp\i);
+}
+\foreach \i in {4,5} {
+	\draw[thick] (Gp\i) -- +(0,-0.4);
+	\draw[thick] (Gpp\i) -- +(0,0.4);
+}
+
+\foreach \i in {1,...,2} {
+	\node (Gp\i) at (-1+1.5*\i,-3) [gamma] {};
+	\node (Gpp\i) at ($ (Gp\i) + (0,-1) $) [gamma] {};
+	\node[above of=Gp\i] {$A^\i$};
+	\node[below of=Gpp\i] {$(A^\i)^*$};
+}
+\draw[thick] (Gp1) -- (Gp2);
+\draw[thick] (Gpp1) -- (Gpp2);
+\foreach \i in {1,2} {
+	\draw[thick] (Gp\i) -- (Gpp\i);
+}
+\draw[thick] (Gp2) -- +(0.75,0);
+\draw[thick] (Gpp2) -- +(0.75,0);
+\node (t1) at ($ (Gp2) + (1.75,0) $) {};
+\node (t2) at ($ (Gpp2) + (1.75,0) $) {};
+\draw[thick] (t1) to [bend right=90] (t2);
+\node at ($ (Gp2) + (0.8,-0.5) $) {$=$};
+
+\foreach \i in {4,5} {
+	\node (Gp\i) at (1+1.5*\i,-3) [gamma] {};
+	\node (Gpp\i) at ($ (Gp\i) + (0,-1) $) [gamma] {};
+	\node[above of=Gp\i] {$A^\i$};
+	\node[below of=Gpp\i] {$(A^\i)^*$};
+}
+\draw[thick] (Gp4) -- (Gp5);
+\draw[thick] (Gpp4) -- (Gpp5);
+\foreach \i in {4,5} {
+	\draw[thick] (Gp\i) -- (Gpp\i);
+}
+\draw[thick] (Gp4) -- +(-0.75,0);
+\draw[thick] (Gpp4) -- +(-0.75,0);
+\node (t1) at ($ (Gp4) + (-1.75,0) $) {};
+\node (t2) at ($ (Gpp4) + (-1.75,0) $) {};
+\draw[thick] (t1) to [bend left=90] (t2);
+\node at ($ (Gp4) + (-0.8,-0.5) $) {$=$};
+
+\node (G) at (1.5*3,-5.5) [gamma] {};
+\node (Gp) at ($ (G) + (0,-1) $) [gamma] {};
+\node[above of=G] {$A^3$};
+\node[below of=Gp] {$(A^3)^*$};
+\draw[thick] (G) -- (Gp);
+\draw[thick] (G) to [bend right=90] (Gp);
+\draw[thick] (G) -- +(0.75,0);
+\draw[thick] (Gp) -- +(0.75,0);
+
+\end{tikzpicture}

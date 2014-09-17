@@ -1,0 +1,50 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[node distance=0.4cm]
+
+\node[gamma] (G1) at (0,0) {};
+\node[gamma] (G2) at (2.2,0) {};
+
+\draw[thick] ($ (G1) + (-0.75,0) $) -- (G1) -- (G2) -- ($ (G2) + (0.75,0) $);
+%\draw[thick] (G1) -- ($ (G1) + (0,-0.5) $);
+%\draw[thick] (G2) -- ($ (G2) + (0,-0.5) $);
+
+\node[above of=G1] {$A^1$};
+\node[above of=G2] {$A^2$};
+
+\node[operator] (op) at (1.1,-0.75) {};
+\node[above of=op,node distance=0.4cm] {$U$};
+
+\draw[thick] (G1) to [bend right=20] (op);
+\draw[thick] (G2) to [bend left=20] (op);
+
+\draw[thick] (op) to [bend right=20] ($ (G1) + (0,-1.5) $);
+\draw[thick] (op) to [bend left=20] ($ (G2) + (-0,-1.5) $);
+
+% next panel
+
+\node[circle=6pt,draw=black!100,fill=blue!50,inner sep=6pt] (Gp) at (7,-1.5) {};
+\draw[thick] (Gp.south east) -- ($ (Gp.south east) + (0,-0.5) $);
+\draw[thick] (Gp.south west) -- ($ (Gp.south west) + (0,-0.5) $);
+\draw[thick] (Gp) -- ($ (Gp) + (-1,0) $);
+\draw[thick] (Gp) -- ($ (Gp) + (1,0) $);
+\node[above of=Gp,node distance=0.6cm] {$\theta = USV$};
+
+% next panel
+
+\node[gamma] (G1) at (0,-3) {};
+\node[gamma] (G2) at (2.2,-3) {};
+
+\draw[thick] ($ (G1) + (-0.75,0) $) -- (G1) -- (G2) -- ($ (G2) + (0.75,0) $);
+\draw[thick] (G1) -- ($ (G1) + (0,-0.5) $);
+\draw[thick] (G2) -- ($ (G2) + (0,-0.5) $);
+
+\node[above of=G1] {$\tilde{A}^1=U \sqrt{S}$};
+\node[above of=G2] {$\tilde{A}^2 = \sqrt{S} V$};
+
+% arrows
+
+\draw[thick,->,double] (3.5,0) -- node[above right] {Contraction} ($ (Gp.north west) + (-1,0.5) $);
+\draw[thick,->,double] ($ (Gp.south west) + (-1,-0.75) $) -- node[below right] {Singular value decomposition} (3.5,-3);
+
+\end{tikzpicture}

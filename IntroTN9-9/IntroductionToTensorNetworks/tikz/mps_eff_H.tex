@@ -1,0 +1,55 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[node distance=0.5cm]
+
+\foreach \i/\j in {1/1,2/2,3/3,4/2,5/1} {
+	\node (Gp\i) at (1.5*\i,0.5+\j/2) {};
+	\node (Gpp\i) at (1.5*\i,-0.5-\j/2) {};
+	\node (O\i) at (1.5*\i,0) [operator] {};
+	
+	\draw[thick] (Gp\i) -- (O\i);
+	\draw[thick] (Gpp\i) -- (O\i);
+	
+	\node[above of=Gp\i] {$A^\i$};
+	\node[below of=Gpp\i] {$(A^\i)^*$};
+	\node[above left of=O\i] {$H^\i$};
+}
+
+\foreach \i in {1,2,4,5}
+{
+	\node at (Gp\i) [gamma] {};
+	\node at (Gpp\i) [gamma] {};
+}
+
+\foreach \i / \j in {1/2,2/3,3/4,4/5} {
+	\draw[thick] (Gp\i) -- (Gp\j);
+	\draw[thick] (Gpp\i) -- (Gpp\j);
+	\draw[thick] (O\i) -- (O\j);
+}
+
+\node[gamma] (t1) at (10,1) {};
+\node[gamma] (t2) at (10,-1) {};
+\node[above of=t1] {$A^i$};
+\node[below of=t2] (label1) {$(A^i)^*$};
+\draw[thick] (t1) -- +(-0.75,0.5);
+\draw[thick] (t2) -- +(-0.75,-0.5);
+\draw[thick] (t1) -- (t2);
+\draw[thick] (t1) to [bend left=80] (t2);
+\node[below of=label1,node distance=0.75cm] {$i=4,5$};
+
+\node[gamma] (t1) at (12,1) {};
+\node[gamma] (t2) at (12,-1) {};
+\node[above of=t1] {$A^i$};
+\node[below of=t2] (label2) {$(A^i)^*$};
+\draw[thick] (t1) -- +(0.75,0.5);
+\draw[thick] (t2) -- +(0.75,-0.5);
+\draw[thick] (t1) -- (t2);
+\draw[thick] (t1) to [bend right=80] (t2);
+\node[below of=label2,node distance=0.75cm] {$i=1,2$};
+
+\node at (11,0) {$=$};
+\node at (12.5,0) {$=$};
+
+\draw[thick] (13,1) -- (13,-1);
+
+\end{tikzpicture}

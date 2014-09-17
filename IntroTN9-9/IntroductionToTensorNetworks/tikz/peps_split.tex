@@ -1,0 +1,50 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[node distance=0.5cm]
+
+\node[peps] (G1) at (0,0) {};
+\node[peps] (G2) at (0,-1.5) {};
+
+\draw[thick] (G1) -- +(-1,0);
+\draw[thick] (G1) -- +(1,0);
+\draw[thick] (G1) -- +(0,1);
+\draw[thick] (G1) -- +(0.5,-0.3);
+
+\draw[thick] (G2) -- +(-1,0);
+\draw[thick] (G2) -- +(1,0);
+\draw[thick] (G2) -- +(0,-1);
+\draw[thick] (G2) -- +(0.5,0.3);
+
+\draw[thick] (G1) -- (G2);
+
+\node[peps] (A1) at (3,0.25) {};
+\node[peps] (A2) at (3.5,-0.25) {};
+
+\node[peps] (B1) at (3,-1.75) {};
+\node[peps] (B2) at (3.5,-1.25) {};
+
+\draw[thick,double] (A1) -- (A2);
+\draw[thick,double] (B1) -- (B2);
+
+\draw[thick] (A1) -- +(-1,0);
+\draw[thick] (A1) -- +(1,0);
+\draw[thick] (A1) -- +(0,1);
+\draw[thick] (A2) -- +(0.5,-0.3);
+
+\draw[thick] (B1) -- +(-1,0);
+\draw[thick] (B1) -- +(1,0);
+\draw[thick] (B1) -- +(0,-1);
+\draw[thick] (B2) -- +(0.5,0.3);
+
+\draw[thick] (A2) -- (B2);
+
+\node[above left of=G1] {$A$};
+\node[below left of=G2] {$B$};
+
+\node[above left of=A1] {$A'$};
+\node[below left of=B1] {$B'$};
+
+\node[left of=A2] {$A''$};
+\node[left of=B2] {$B''$};
+
+\end{tikzpicture}

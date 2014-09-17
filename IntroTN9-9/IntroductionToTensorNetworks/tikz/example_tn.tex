@@ -1,0 +1,36 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}
+
+\node[det] (A) at (0,0) {$A$};
+\draw[thick] (A.north east) -- node[above] {$c$} +(1,0);
+\draw[thick] (A.south east) -- node[below] {$d$} +(1,0);
+\draw[thick] (A.north west) -- node[above] {$a$} +(-1,0);
+\draw[thick] (A.south west) -- node[below] {$b$} +(-1,0);
+\draw[thick] (A.south) -- node[right] {$e$} +(0,-1);
+
+\node[det] (B) at (3.5,0) {$B$};
+\draw[thick] (B.north west) -- node[above] {$b1$} +(-1,0);
+\draw[thick] (B.south west) -- node[below] {$b2$} +(-1,0);
+\draw[thick] (B.south) -- node[right] {$b3$} +(0,-1);
+
+\node[det] (C) at (1.75,-2.5) {$C$};
+\draw[thick] (C.north west) -- node[left] {$in1$} +(0,1);
+\draw[thick] (C.north east) -- node[right] {$in2$} +(0,1);
+\draw[thick] (C.south) -- node[right] {$out$} +(0,-1);
+
+
+\node[det] (Ap) at (7,-0.5) {$A$};
+\node[det] (Bp) at (9,-0.5) {$B$};
+\node[det] (Cp) at (8,-2) {$C$};
+
+\draw[thick] (Ap.north east) -- (Bp.north west);
+\draw[thick] (Ap.south east) -- (Bp.south west);
+\draw[thick] (Ap.south) -- (Cp.north west);
+\draw[thick] (Bp.south) -- (Cp.north east);
+
+\draw[thick] (Ap.north west) -- node[above] {$a$} +(-1,0);
+\draw[thick] (Ap.south west) -- node[below] {$b$} +(-1,0);
+\draw[thick] (Cp.south) -- node[right] {$out$} +(0,-1);
+
+\end{tikzpicture}

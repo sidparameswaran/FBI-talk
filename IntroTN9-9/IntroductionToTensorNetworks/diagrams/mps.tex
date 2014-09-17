@@ -1,0 +1,17 @@
+\begin{tikzpicture}[node distance=0.4cm]
+
+\foreach \i in {1,...,5} {
+	\node[gamma] (G\i) at (1.5*\i,0) {};
+	\node (l\i) at ($ (G\i) + (0, 1) $) {$p_\i$};
+	\draw[thick] (G\i) -- (l\i);
+	\node[below of=G\i] {$A^\i$};
+}
+\foreach \i / \j in {1/2,2/3,3/4,4/5} {
+	\draw[thick] (G\i) -- (G\j);
+}
+\node (b0) at (0, 0) {$b_0$};
+\node (b1) at (9, 0) {$b_1$};
+\draw[thick] (b0) -- (G1);
+\draw[thick] (G5) -- (b1);
+
+\end{tikzpicture}

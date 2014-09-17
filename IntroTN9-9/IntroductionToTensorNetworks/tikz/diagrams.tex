@@ -1,0 +1,43 @@
+%!TEX root = ../thesis.tex
+
+%\beginpgfgraphicnamed{diagrams}
+\begin{tikzpicture}[node distance=0.4cm]
+
+\node[det] (v) at (0,0) {};
+\node (vi) at (1,0) {$i$};
+\draw[thick] (v) -- (vi);
+\node[above of=v] {$v$};
+\node at (5,0) {$v_i$};
+
+\node[det] (m) at (0,-1.2) {};
+\node (mi) at (-1,-1.2) {$i$};
+\node (mj) at (1,-1.2) {$j$};
+\draw[thick] (mi) -- (m) -- (mj);
+\node[above of=m] {$m$};
+\node at (5,-1.2) {$m_{ij}$};
+
+\node[det] (t) at (0,-2.4) {};
+\node (ti) at (-1,-2) {$i$};
+\node (tj) at (-1,-2.8) {$j$};
+\node (tk) at (1,-2) {$k$};
+\node (tl) at (1,-2.8) {$l$};
+\draw[thick] (ti) -- (t) -- (tk);
+\draw[thick] (tj) -- (t) -- (tl);
+\node[above of=t] {$t$};
+\node at (5,-2.4) {$t_{ijkl}$};
+
+\node[det] (t) at (-1,-3.8) {};
+\node[det] (q) at (1,-3.8) {};
+\node (ti) at (-2,-3.8) {$i$};
+\node (qn) at (2,-3.4) {$n$};
+\node (qr) at (2,-4.2) {$r$};
+\draw[thick] (ti) -- (t);
+\draw[thick] (q) -- (qn);
+\draw[thick] (q) -- (qr);
+\draw[thick] (t) to [bend right=30] node[below] {$k$} (q);
+\draw[thick] (t) to [bend left=30] node[above] {$j$} (q);
+\node[below of=q] {$q$};
+\node[below of=t] {$t$};
+\node at (5,-3.8) {$\sum_{jk} t_{ijk} q_{jknr}$};
+
+\end{tikzpicture}

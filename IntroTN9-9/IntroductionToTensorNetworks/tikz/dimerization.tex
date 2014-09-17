@@ -1,0 +1,102 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[auto]
+\foreach \i in {3,...,6}
+\foreach \j in {3,...,6}
+{ {
+	\node (G\i_\j) at (1.5*\i,1.5*\j) [inv] {};
+} }
+
+\foreach \i in {4,...,5}
+\foreach \j / \l in {3/4,4/5,5/6}
+{ {
+	\draw[thick,dashed] (G\i_\j) -- node {$J$} (G\i_\l);
+} }
+
+\foreach \i in {4}
+\foreach \j / \l in {3/4,5/6}
+{ {
+	\draw[ultra thick] (G\j_\i) -- node {$J'$} (G\l_\i);
+} }
+\foreach \i in {5}
+\foreach \j / \l in {4/5}
+{ {
+	\draw[ultra thick] (G\j_\i) -- node {$J'$} (G\l_\i);
+} }
+
+\foreach \i in {5}
+\foreach \j / \l in {3/4,5/6}
+{ {
+	\draw[thick,dashed] (G\j_\i) -- node {$J$} (G\l_\i);
+} }
+\foreach \i in {4}
+\foreach \j / \l in {4/5}
+{ {
+	\draw[thick,dashed] (G\j_\i) -- node {$J$} (G\l_\i);
+} }
+
+\foreach \i in {4}
+\foreach \j in {4}
+{ {
+	\node at (G\i_\j) [bpeps] {$B$};
+} }
+
+\foreach \i in {5}
+\foreach \j in {5}
+{ {
+	\node at (G\i_\j) [bpeps] {$B$};
+} }
+
+\foreach \i in {4}
+\foreach \j in {5}
+{ {
+	\node at (G\i_\j) [bpeps,fill=red!60] {$A$};
+	\node at (G\j_\i) [bpeps,fill=red!60] {$A$};
+} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\foreach \i in {3,...,6}
+\foreach \j in {3,...,6}
+{ {
+	\node (G\i_\j) at (1.5*\i+4.5,1.5*\j) [inv] {};
+} }
+
+\foreach \i in {4}
+\foreach \j / \l in {3/4,4/5,5/6}
+{ {
+	\draw[ultra thick] (G\i_\j) -- node {$J'$} (G\i_\l);
+} }
+
+\foreach \i in {5}
+\foreach \j / \l in {3/4,4/5,5/6}
+{ {
+	\draw[thick,dashed] (G\i_\j) -- node {$J$} (G\i_\l);
+} }
+
+\foreach \i in {4,...,5}
+\foreach \j / \l in {3/4,4/5,5/6}
+{ {
+	\draw[thick,dashed] (G\j_\i) -- node {$J$} (G\l_\i);
+} }
+
+\foreach \i in {4,5}
+\foreach \j in {4,5}
+{ {
+	\node at (G\i_\j) [bpeps,fill=blue!50] {$C$};
+} }
+
+\foreach \i in {5}
+\foreach \j in {5}
+{ {
+	\node at (G\i_\j) [bpeps] {$B$};
+} }
+
+\foreach \i in {4}
+\foreach \j in {5}
+{ {
+	\node at (G\i_\j) [bpeps,fill=red!60] {$A$};
+	\node at (G\j_\i) [bpeps,fill=pink!60] {$D$};
+} }
+	
+\end{tikzpicture}

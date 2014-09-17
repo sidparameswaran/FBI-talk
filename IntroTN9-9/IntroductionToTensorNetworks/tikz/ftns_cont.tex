@@ -1,0 +1,77 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}[node distance=0.5cm]
+
+\node[gamma] (A) at (1.5,0) {};
+\node (Ai) at ($ (A) + (-0.75,0) $) {$i$};
+\node (Aj) at ($ (A) + (0.75,0.3) $) {$j$};
+\node (Ak) at ($ (A) + (0.75,-0.3) $) {$k$};
+
+
+\node[gamma] (B) at (4.5,0) {};
+\node (Bm) at ($ (B) + (-0.75,-0.3) $) {$m$};
+\node (Bn) at ($ (B) + (-0.75,0.3) $) {$n$};
+\node (Bo) at ($ (B) + (0.75,0) $) {$o$};
+
+\node[gamma] (M) at (6,-2) {};
+\node (Mi) at ($ (M) + (-0.75,0) $) {$i$};
+\node (Mo) at ($ (M) + (0.75,0) $) {$o$};
+
+\node[gamma] (Ap) at (0,-2) {};
+\node[gamma] (Bp) at (3,-2) {};
+\node (Api) at ($ (Ap) + (-0.75,0) $) {$i$};
+\node (Bpo) at ($ (Bp) + (0.75,0) $) {$o$};
+\node[swapg] (c) at (1.5,-2) {};
+
+\node[gamma] (M2) at (6,-4) {};
+\node (Mi2) at ($ (M2) + (-0.75,0) $) {$i$};
+\node (Mo2) at ($ (M2) + (0.75,0) $) {$o$};
+
+\node[gamma] (Ap2) at (0,-4) {};
+\node[gamma] (Bp2) at (3,-4) {};
+\node (Api2) at ($ (Ap2) + (-0.75,0) $) {$i$};
+\node (Bpo2) at ($ (Bp2) + (0.75,0) $) {$o$};
+
+\node[above of=A] {$A$};
+\node[above of=B] {$B$};
+\node[above of=M] {$M$};
+\node[above of=Ap] {$A$};
+\node[above of=Bp] {$B$};
+\node[above of=Ap2] {$A$};
+\node[above of=Bp2] {$B$};
+\node[above of=M2] {$M'$};
+
+\node at (4.5,-2) {$=$};
+\node at (4.5,-4) {$=$};
+
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+
+\draw[thick,postaction={decorate}] (Ai) -- (A);
+\draw[thick,postaction={decorate}] (A) -- (Aj);
+\draw[thick,postaction={decorate}] (A) -- (Ak);
+\draw[thick,postaction={decorate}] (Bm) -- (B);
+\draw[thick,postaction={decorate}] (Bn) -- (B);
+\draw[thick,postaction={decorate}] (B) -- (Bo);
+\draw[thick,postaction={decorate}] (Mi) -- (M);
+\draw[thick,postaction={decorate}] (M) -- (Mo);
+\draw[thick,postaction={decorate}] (Api) -- (Ap);
+\draw[thick,postaction={decorate}] (Bp) -- (Bpo);
+\draw[thick,postaction={decorate}] (Api2) -- (Ap2);
+\draw[thick,postaction={decorate}] (Bp2) -- (Bpo2);
+\draw[thick,postaction={decorate}] (Mi2) -- (M2);
+\draw[thick,postaction={decorate}] (M2) -- (Mo2);
+
+\draw[thick,postaction={decorate}] (Ap) to [bend right=33] (c);
+\draw[thick,postaction={decorate}] (c) to [bend left=33] (Bp);
+\draw[thick,postaction={decorate}] (Ap) to [bend left=33] (c);
+\draw[thick,postaction={decorate}] (c) to [bend right=33] (Bp);
+
+\draw[thick,postaction={decorate}] (Ap2) to [bend right=33] (Bp2);
+\draw[thick,postaction={decorate}] (Ap2) to [bend left=33] (Bp2);
+
+\end{scope}
+
+\end{tikzpicture}

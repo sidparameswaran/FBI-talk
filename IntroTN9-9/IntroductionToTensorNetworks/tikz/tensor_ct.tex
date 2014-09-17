@@ -1,0 +1,110 @@
+%!TEX root = ../thesis.tex
+
+(a)
+\beginpgfgraphicnamed{fig_tensor_ct_1}
+\begin{tikzpicture}[auto,scale=1]
+
+\node[peps] (G0) at (-3,0) {};
+
+\node (leg01) at ($ (G0) + (-1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg02) at ($ (G0) + (2,0.5) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg03) at ($ (G0) + (2,-0.5) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg04) at ($ (G0) + (-1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+\draw[very thick] (G0) -- (leg01);
+\draw[very thick] (G0) -- (leg02);
+\draw[very thick] (G0) -- (leg03);
+\draw[very thick] (G0) -- (leg04);
+
+\node[peps] (G) at (3,-2) {};
+
+\node (leg1) at ($ (G) + (-2,0.5) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg2) at ($ (G) + (1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg3) at ($ (G) + (1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg4) at ($ (G) + (-2,-0.5) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+\draw[very thick] (G) -- (leg1);
+\draw[very thick] (G) -- (leg2);
+\draw[very thick] (G) -- (leg3);
+\draw[very thick] (G) -- (leg4);
+
+\begin{pgfonlayer}{background}
+	\draw[rounded corners,fill=black!5] (-5.5,1.5) rectangle (5.5,-3.5);
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\endpgfgraphicnamed
+
+\vspace{0.2cm}
+
+(b)
+\beginpgfgraphicnamed{fig_tensor_ct_2}
+\begin{tikzpicture}[auto,scale=1]
+
+\node[peps] (G0) at (-3,0) {};
+
+\node (leg01) at ($ (G0) + (-1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg02) at ($ (G0) + (3/2,-1/2) $) {};
+\node (leg04) at ($ (G0) + (-1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+\node[above right] at (leg02)  {$c = \lbrace -2,-1,0,1,2 \rbrace$};
+
+\draw[->,very thick] (G0) -- (leg01);
+\draw[<-,thick,double distance=2pt] (G0) -- (leg02);
+\draw[->,very thick] (G0) -- (leg04);
+
+\node[peps] (G) at (3,-2) {};
+
+\node (leg1) at ($ (G) + (-3/2,1/2) $) {};
+\node (leg2) at ($ (G) + (1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg3) at ($ (G) + (1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+\node[below left] at (leg1) {$c = \lbrace -2,-1,0,1,2 \rbrace $};
+
+\draw[->,double distance=2pt] (G) -- (leg1);
+\draw[<-,very thick] (G) -- (leg2);
+\draw[<-,very thick] (G) -- (leg3);
+
+\begin{pgfonlayer}{background}
+	\draw[rounded corners,fill=black!5] (-5.5,1.5) rectangle (5.5,-3.5);
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\endpgfgraphicnamed
+
+\vspace{0.2cm}
+
+(c)
+\beginpgfgraphicnamed{fig_tensor_ct_3}
+\begin{tikzpicture}[auto,scale=1]
+
+\node[peps] (G0) at (-3,0) {};
+
+\node (leg01) at ($ (G0) + (-1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg02) at ($ (G0) + (5,0) $) {};
+\node (leg04) at ($ (G0) + (-1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+\node[above left] at (leg02)  {$c = \lbrace -2,-1,0,1,2 \rbrace$};
+
+\draw[->,very thick] (G0) -- (leg01);
+%\draw[<-,thick,double distance=4pt] (G0) -- (leg02);
+\draw[->,very thick] (G0) -- (leg04);
+
+\node[peps] (G) at (3,-2) {};
+
+\node (leg1) at ($ (G) + (-5,0) $) {};
+\node (leg2) at ($ (G) + (1,1) $) {$c = \lbrace -1,0,1 \rbrace$};
+\node (leg3) at ($ (G) + (1,-1) $) {$c = \lbrace -1,0,1 \rbrace$};
+
+% \node[below] at (leg1) {$c = \lbrace 2,1,0,-1,-2 \rbrace $};
+
+\draw[>->,double distance=2pt] (G) -- (G0);
+\draw[<-,very thick] (G) -- (leg2);
+\draw[<-,very thick] (G) -- (leg3);
+
+\begin{pgfonlayer}{background}
+	\draw[rounded corners,fill=black!5] (-5.5,1.5) rectangle (5.5,-3.5);
+\end{pgfonlayer}
+
+\end{tikzpicture}
+\endpgfgraphicnamed

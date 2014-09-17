@@ -1,0 +1,71 @@
+%!TEX root = ../thesis.tex
+
+\beginpgfgraphicnamed{fig_peps}
+\begin{tikzpicture}
+
+\foreach \i in {1,...,3}
+\foreach \j in {1,...,3}
+{ {
+	\node (G\i\j) at (\i+\j,1.25+\j) [inv] {};
+	\node (Gp\i\j) at (\i+\j,1.25+\j-1) [inv] {};
+} }
+
+\node at (G22) [peps] {};
+\draw[thick] (G22) -- +(0,-1);
+
+\draw[thick] (G22) -- (G12);
+\draw[thick] (G22) -- (G32);
+\draw[thick] (G22) -- (G23);
+\draw[thick] (G22) -- (G21);
+
+\node at (Gp22) [peps] {};
+
+\draw[thick] (Gp22) -- (Gp12);
+\draw[thick] (Gp22) -- (Gp32);
+\draw[thick] (Gp22) -- (Gp23);
+\draw[thick] (Gp22) -- (Gp21);
+
+\node (Gt) at (4,-1) [peps] {};
+\draw[thick,double] (Gt) -- +(0,1);
+\draw[thick,double] (Gt) -- +(0,-1);
+\draw[thick,double] (Gt) -- +(1,0);
+\draw[thick,double] (Gt) -- +(-1,0);
+
+\foreach \i in {1,...,4}
+\foreach \j in {1,...,4}
+{ {
+	\node (G\i\j) at (2.5+1.2*\i+0.8*\j,1*\j) [inv] {};
+	\node (Gp\i\j) at ($ (G\i\j) + (0,-0.6) $) {};
+} }
+
+\foreach \i / \j / \k in {2/2/1,2/3/2,2/4/3,3/2/4,3/3/5,3/4/6,4/2/7,4/3/8,4/4/9}
+{
+	\node at (G\i\j) [peps] {};
+	\node at (Gp\i\j) [peps] {};
+	\draw[thick] (G\i\j) -- (Gp\i\j);
+	
+}
+\foreach \i in {2,3,4}
+\foreach \j / \l in {2/3,3/4}
+{ {
+	\draw[thick] (G\i\j) -- (G\i\l);
+	\draw[thick] (G\j\i) -- (G\l\i);
+	\draw[thick] (Gp\i\j) -- (Gp\i\l);
+	\draw[thick] (Gp\j\i) -- (Gp\l\i);
+} }
+
+\foreach \i in {1,...,3}
+\foreach \j in {1,...,3}
+{ {
+	\node (Gt\i\j) at (\i+6,\j-3) [peps] {};
+} }
+
+\foreach \i in {1,2,3}
+\foreach \j / \l in {1/2,2/3}
+{ {
+	\draw[thick] (Gt\i\j) -- (Gt\i\l);
+	\draw[thick] (Gt\j\i) -- (Gt\l\i);
+} }
+
+\end{tikzpicture}
+\endpgfgraphicnamed

@@ -1,0 +1,17 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}
+
+\foreach \i in {1,...,4}
+\foreach \j in {1,...,4}
+{ {
+	\node (G\i\j) at (\j,\i) [spin,inner sep=2pt] {};
+} }
+
+\draw[thick]
+	(G11) -- (G21) -- (G31) -- (G41) --
+	(G12) -- (G22) -- (G32) -- (G42) --
+	(G13) -- (G23) -- (G33) -- (G43) --
+	(G14) -- (G24) -- (G34) -- (G44);
+
+\end{tikzpicture}

@@ -1,0 +1,48 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}
+\foreach \i in {1,...,10}
+{
+	\node (G\i) at (1*\i,0) [inv] {};
+	\node (Gp\i) at (1*\i,-1) [inv] {};
+}
+\foreach \i in {3,...,8}
+{
+	\node at (G\i) [gamma] {};
+	\node at (Gp\i) [gamma] {};
+	
+	\draw[thick] (G\i) -- (Gp\i);
+}
+\foreach \i / \j in {3/4,4/5,5/6,6/7,7/8}
+{
+	\draw[thick] (G\i) -- (G\j);
+	\draw[thick] (Gp\i) -- (Gp\j);
+}
+
+\node at (G1) [gamma] {};
+\node at (Gp1) [gamma] {};
+\draw[thick] (G1) -- (Gp1);
+
+\node at (G10) [gamma] {};
+\node at (Gp10) [gamma] {};
+\draw[thick] (G10) -- (Gp10);
+
+\draw[thin,dashed] (G1) -- (G3);
+\draw[thin,dashed] (G8) -- (G10);
+\draw[thin,dashed] (Gp1) -- (Gp3);
+\draw[thin,dashed] (Gp8) -- (Gp10);
+
+\begin{pgfonlayer}{background}
+\draw[bg] ($ (G1.north west) + (-0.1,0.1) $) rectangle ($ (Gp1.south east) + (0.1,-0.1) $) node[below] {$\langle v_L |$};
+\draw[bg] ($ (G10.north west) + (-0.1,0.1) $) rectangle ($ (Gp10.south east) + (0.1,-0.1) $) node[below] {$|v_R\rangle$};
+
+\draw[bg] ($ (G3.north west) + (-0.1,0.1) $) rectangle ($ (Gp4.south east) + (0.1,-0.1) $) node[below left] {$T$};
+\draw[bg] ($ (G5.north west) + (-0.1,0.1) $) rectangle ($ (Gp6.south east) + (0.1,-0.1) $) node[below left] {$T(O)$};
+\draw[bg] ($ (G7.north west) + (-0.1,0.1) $) rectangle ($ (Gp8.south east) + (0.1,-0.1) $) node[below left] {$T$};
+\end{pgfonlayer}
+
+\draw[very thick,red] (G6) -- (Gp6);
+\node (G6O) at ($ (G6) + (0,-0.5) $) [operator] {};
+\node[left] at (G6O.west) {$O$};
+
+\end{tikzpicture}

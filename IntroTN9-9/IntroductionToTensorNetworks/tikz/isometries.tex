@@ -1,0 +1,31 @@
+%!TEX root = ../thesis.tex
+
+\beginpgfgraphicnamed{isometries}
+\begin{tikzpicture}[node distance=0.7cm]
+
+%\node[det] (V) at (0,0) {};
+%\node[det] (Vd) at (0,-1) {};
+%\node[left of=V] {$V$};
+%\node[left of=Vd] {$V^\dagger$};
+
+%\draw (V) -- (Vd);
+%\draw (V) -- ($ (V) + (0,0.5) $);
+%\draw (Vd) -- ($ (Vd) + (0,-0.5) $);
+
+%\draw ($ (V) + (2,0.5) $) -- ($ (Vd) + (2,-0.5) $);
+%\node at (1,-0.5) {$=$};
+
+\node[det] (A) at (6,0) {};
+\node[det] (Ad) at (6,-1) {};
+\node[left of=A] {$A_n$};
+\node[left of=Ad] {$A_n^\dagger$};
+
+\draw (A.south east) -- (Ad.north east);
+\draw (A.south west) -- (Ad.north west);
+\draw (A) -- ($ (A) + (0,0.5) $);
+\draw (Ad) -- ($ (Ad) + (0,-0.5) $);
+
+\draw ($ (A) + (2,0.5) $) -- ($ (Ad) + (2,-0.5) $);
+\node at (7,-0.5) {$=$};
+
+\end{tikzpicture}

@@ -1,0 +1,26 @@
+\begin{tikzpicture}[node distance=0.4cm]]
+\tikzset{det/.style={circle=2pt,fill=blue!20,draw=black,inner sep=4pt}}
+\node[ellipse, rotate=0, draw, fill=blue!20] (t) at (0,0) {\, \, $\psi$ \, \,};
+\node (t1) at (-1.6, 0.6) {$i_1$};
+\node (t2) at (-1.2 ,0.85) {$i_2$};
+\node (t3) at (-0.8,1.1) {$i_3$};
+\node (o3) at (1.6, 0.6) {$o_3$};
+\node (o2) at (1.2 ,0.85) {$o_2$};
+\node (o1) at (0.8,1.1) {$o_1$};
+\node[rotate=0] (d) at (0, 0.7) {...};
+
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+\draw[thick, postaction={decorate}] (t1) -- (t);
+\draw[thick,postaction={decorate}] (t2) -- (t);
+\draw[thick, postaction={decorate}] (t3) -- (t);
+\draw[thick, postaction={decorate}] (t) -- (o1);
+\draw[thick,postaction={decorate}] (t) -- (o2);
+\draw[thick, postaction={decorate}] (t) -- (o3);
+\end{scope}
+
+\node (p) at (4.5,0) {$\ket{\psi} = \sum \psi_{i_1 i_2 .. o_1 o_2 ..} \vert o_1 o_2 .. \rangle \langle i_1 i_2 .. \vert$};
+
+\end{tikzpicture}

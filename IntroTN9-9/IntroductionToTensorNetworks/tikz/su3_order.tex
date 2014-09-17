@@ -1,0 +1,41 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}
+
+\foreach \i / \j in {0/0,1/1,2/2,3/3,4/4,5/5,3/0,4/1,5/2,6/3,7/4,0/3,1/4,2/5,6/0,7/1}
+{
+	\node[spin,fill=blue] (G\i\j) at (\i,\j) {};
+}
+\foreach \i / \j in {0/1,1/2,2/3,3/4,4/5,0/4,1/5,2/0,3/1,4/2,5/3,6/4,7/5,5/0,6/1,7/2}
+{
+	\node[spin,fill=red] (G\i\j) at (\i,\j) {};
+}
+\foreach \i / \j in {0/2,1/3,2/4,3/5,0/5,1/0,2/1,3/2,4/3,5/4,6/5,4/0,5/1,6/2,7/3,7/0}
+{
+	\node[spin,fill=green] (G\i\j) at (\i,\j) {};
+}
+
+\foreach \i / \j in {0/1,1/2,2/3,3/4,4/5,5/6,6/7}
+\foreach \k in {0,...,5}
+{ {
+	\draw (G\i\k) -- (G\j\k);
+} }
+\foreach \i / \j in {0/1,1/2,2/3,3/4,4/5}
+\foreach \k in {0,...,7}
+{ {
+	\draw (G\k\i) -- (G\k\j);
+} }
+
+\foreach \i / \j in {0/1,1/2,2/3,3/4,4/5,5/6,6/7}
+\foreach \k / \l in {0/1,1/2,2/3,3/4,4/5}
+{ {
+	\draw[dashed] (G\j\k) -- (G\i\l);
+} }
+
+\begin{pgfonlayer}{background}
+	\draw[rounded corners,fill=blue!10] (-0.3,-0.3) rectangle (0.3,5.3);
+	\draw[rounded corners,fill=blue!10] (6.7,-0.3) rectangle (7.3,5.3);
+\end{pgfonlayer}{background}
+
+
+\end{tikzpicture}
