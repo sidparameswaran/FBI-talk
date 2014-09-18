@@ -1,0 +1,36 @@
+%!TEX root = ../thesis.tex
+
+\begin{tikzpicture}
+
+\node[det] (Ap) at (0,-0.5) {$A$};
+% \node[det] (Bp) at (2,-0.5) {$B$};
+% \node[det] (Cp) at (1,-2) {$C$};
+
+% \draw[thick] (Ap.north east) -- (Bp.north west);
+% \draw[thick] (Ap.south east) -- (Bp.south west);
+% \draw[thick] (Ap.south) -- (Cp.north west);
+% \draw[thick] (Bp.south) -- (Cp.north east);
+
+\draw[thick] (Ap.north west) -- node[above] {$i$} +(-0.5,0.5);
+\draw[thick] (Ap.south west) -- node[below] {$j$} +(-0.5,-0.5);
+\draw[thick] (Ap.north east) -- node[above] {$k$} +(0.5,0.5);
+\draw[thick] (Ap.south east) -- node[below] {$l$} +(0.5,-0.5);
+
+% \draw[thick] (Cp.south) -- node[right] {$k$} +(0,-0.5);
+% \draw[thick] (Bp.east) -- node[below] {$l$} +(0.5,0);
+
+% next panel
+
+\node[det] (U) at (4,-0.5) {$U$};
+\node[det] (V) at (6,-0.5) {$V$};
+\node[lambda] (S) at (5,-0.5) {};
+\node[above of=S,node distance=0.3cm] {$S$};
+
+\draw[thick] (U) -- (S) -- (V);
+
+\draw[thick] (U.north west) -- node[above] {$i$} +(-0.5,0.5);
+\draw[thick] (U.south west) -- node[below] {$j$} +(-0.5,-0.5);
+\draw[thick] (V.south east) -- node[right] {$l$} +(0.5,-0.5);
+\draw[thick] (V.north east) -- node[right] {$k$} +(0.5,0.5);
+
+\end{tikzpicture}

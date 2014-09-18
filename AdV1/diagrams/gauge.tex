@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+
+\node[peps] (A1) at (-4.1, 0) {};
+\node (li) at ($(A1) + (-1, 0) $) {};
+\draw[thick, postaction={decorate}] (li.center) -- (A1.west);
+\draw[thick, postaction={decorate}] (A1.east) -- node[right] {} +(1,0);
+\draw[thick, postaction={decorate}] (A1.north) -- node[above] {} +(0,0.5);
+
+\node at (-2.3, 0.5){$= e^{i \theta}$};    
+
+\node[peps] (A) at (0, 0) {};
+\node[draw] (Ul) at ($(A) + (-1, 0) $) {$U$};
+\node[draw] (Ur) at ($(A) + (1, 0) $) {$U^{\dagger}$};
+\node (LI) at ($(Ul) + (-1, 0) $) {};
+\draw[thick, postaction={decorate}] (LI.center) -- (Ul.west);
+\draw[thick, postaction={decorate}] (Ur.east) -- node[right] {} +(0.5,0);
+\draw[thick, postaction={decorate}] (Ul) -- (A);
+\draw[thick, postaction={decorate}] (A) -- (Ur);
+\draw[thick, postaction={decorate}] (A.north) -- node[above] {} +(0,0.5);
+
+\end{scope}
+\end{tikzpicture}

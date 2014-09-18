@@ -1,0 +1,35 @@
+\tikzset{peps/.style={circle=2pt,draw=black!100,fill=green!50,inner sep=3pt}}
+\tikzset{bpeps/.style={circle=2pt,draw=black!100,thick,fill=green!50,inner sep=3pt}}
+\tikzset{gamma/.style={circle=2pt,draw=black!100,fill=blue!50,inner sep=3pt}}
+\tikzset{lambda/.style={rectangle,rotate=45,draw=black!100,fill=red!50,inner sep=2pt}}
+\tikzset{operator/.style={circle=2pt,draw=black!100,fill=red!80,inner sep=3pt}}
+\tikzset{bg/.style={rounded corners,thin,fill=blue!10}}
+\tikzset{inv/.style={opacity=0}}
+\tikzset{spin/.style={circle=2pt,draw=black!100,fill=orange!80,inner sep=3pt}}
+\tikzset{unitbox/.style={fill=black!3,rounded corners}}
+\tikzset{corner/.style={rectangle=10pt,fill=blue!50,draw=black}}
+\tikzset{side/.style={rectangle=6pt,fill=blue!20,draw=black}}
+\tikzset{swapg/.style={circle=1pt,draw=black,fill=black!80,inner sep=1pt}}
+
+\tikzset{base/.style={circle=2pt,fill=orange!80,draw=black}}
+\tikzset{det/.style={circle=2pt,fill=blue!20,draw=black,inner sep=4pt}}
+\tikzset{iso/.style={circle=2pt,fill=red!20,draw=black,inner sep=4pt}}
+\tikzset{top/.style={circle=2pt,fill=black!20,draw=black,inner sep=4pt}}
+\tikzset{siso/.style={circle=1pt,fill=red!20,draw=black,inner sep=1pt}}
+
+%Brayden's
+\tikzset{GHZ/.style={circle=2pt,fill=black!80,draw=black,inner sep=2pt}}
+\tikzset{X/.style={circle=2pt,fill=black!80,text=white,font=\footnotesize, draw=black,inner sep=1pt}}
+\tikzset{W/.style={circle=2pt,fill=black!20,draw=black,double,inner sep=2pt}}
+
+%http://tex.stackexchange.com/questions/199683/how-to-plot-quantum-logical-gates-with-tikz
+\tikzset{
+cross/.style={path picture={ 
+            \draw[thick,black](path picture bounding box.north) -- (path picture bounding                  box.south) (path picture bounding box.west) -- (path picture bounding                      box.east);
+            }},
+crossx/.style={path picture={ 
+            \draw[thick,black,inner sep=0pt]
+                (path picture bounding box.south east) -- (path picture bounding box.north west) (path picture bounding box.south west) -- (path picture bounding box.north east);
+            }},
+circlewc/.style={circle=2pt,draw, crossx}
+}

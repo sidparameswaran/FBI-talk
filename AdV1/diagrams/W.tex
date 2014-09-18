@@ -1,0 +1,22 @@
+
+\begin{tikzpicture}[node distance=0.2cm]
+
+\node[W] (G) at (0, 0) {};
+\foreach \i in {1, 2, 3}
+  {
+ \pgfmathsetmacro{\ang}{120*\i}
+ \pgfmathsetmacro{\x}{cos(\ang)}
+ \pgfmathsetmacro{\y}{sin(\ang)}
+ \node (g\i) at ($ (G)+(0.8*\x, 0.8*\y) $) {};
+ }
+ 
+\foreach \i in {1, 2, 3}
+  {
+ \draw[thick] (G) -- (g\i);
+ } 
+ 
+ 
+ \node at (4, 0) {$ \ket{W} = \ket{001}+\ket{010}+\ket{100}$};
+
+ 
+\end{tikzpicture}

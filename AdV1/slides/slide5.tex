@@ -1,0 +1,17 @@
+\begin{frame}{Working with tensor network states}
+%\framesubtitle{Entanglement}
+\bi 
+\item Rank of reduced density matrix (and entanglement entropy) bounded by total bond dimension
+\begin{figure}
+\raggedright
+\input{diagrams/dm.tex}
+\end{figure}
+\note{\psi_s can be thought of as a map from edge to physical space, but its not isometric (rectangle unitary)}
+\note{ image psi_S is still an interesting set though}
+\item Spectrum can be computed without using $U_S$
+\item $U_S$ columns are orthogonal Schmidt states
+$$
+\ket{\psi} = \sum\limits_k U_S^{k p_s} \ket{p_s} \Lambda_k \ket{p_E} U_E^{k p_e}
+$$
+\ei 
+\end{frame}

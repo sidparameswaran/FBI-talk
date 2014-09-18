@@ -1,0 +1,31 @@
+\begin{frame}
+  \frametitle{What is a tensor?}
+ % \vskip-2cm
+  \bi
+  \only<1,3->{
+  \item ... a state of many qubits $\ket{\psi} \in \bigotimes\limits_{i=1}^{N} \mathcal{H}_i$
+  \note{Always have a 'computational basis'}
+  \begin{figure}[t]
+                \input{diagrams/psi2.tex}
+    \end{figure}}
+  \only<2>{
+  \item ... a map between Hilbert spaces
+  \begin{figure}[t]
+                \input{diagrams/psi3.tex}
+    \end{figure}}
+  \only<3>{
+  \item with which we can form contractions
+  \note{using any subset of the legs}
+  \begin{figure}[t]
+        \input{diagrams/bigdm.tex}
+    \end{figure}
+  }
+  \only<4>{
+  \item or decompose using SVD.
+  \begin{figure}
+  \centering
+   \input{diagrams/svd.tex}
+  \end{figure}
+  }
+  \ei
+\end{frame}

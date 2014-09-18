@@ -1,0 +1,27 @@
+\begin{frame}
+  \only<1>{
+  \frametitle{What is a tensor network?}}
+  \only<2->{
+  \frametitle{What is a tensor network {\em state}?}}
+  \bi
+  \item ... a contraction scheme for building tensors
+  \begin{figure}[t]
+                \input{diagrams/contraction.tex}
+    \end{figure}
+  \pause
+  \item ... an ansatz for wavefunctions using a tensor network
+  \begin{figure}[t]
+                \input{diagrams/mps.tex}
+        \caption{Matrix Product State ansatz}
+    \end{figure}
+    \note{contraction scheme is one tensor per site}
+   \note{Reason for title matrix product state: each w.f. coefficient is computed
+         using a product of matrices}
+   \note{Goal is to find a local computational procedure for specifying coefficients of         the wavefunction}
+   \note{Similar but not quite equivalent to specifying a circuit of local quantum gates          to construct the state}
+  \note{number of parameters linear in system size, fixed bond dimension}
+  \note{bond dimension may need to go up to improve wavefunction accuracy}
+  \note{given such a procedure, we automatically satisfy entanglement bounds}
+   \note{In order for this to not be every wavefunction, have to fix bond dimension}
+  \ei
+\end{frame}

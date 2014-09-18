@@ -1,0 +1,53 @@
+\begin{frame}
+ \frametitle{Nuts and bolts}
+\begin{itemize}
+
+%\only<1,3->{\vskip-1cm}
+
+\only<1-4>{
+\item<1-> GHZ-state
+\begin{figure}[t]
+\raggedright
+\input{diagrams/GHZ.tex}
+\end{figure}
+
+\only<2>{
+\bi
+\item $\mathbf{Z}_2$ symmetric
+\ei
+\begin{figure}[t]
+\input{diagrams/GHZsym.tex}
+\end{figure}
+}
+
+\only<3>{
+\bi
+\item Contracting gives larger GHZ state
+\ei
+\begin{figure}[t]
+\input{diagrams/GHZcontract.tex}
+\end{figure}
+}
+}
+
+\only<4->{
+\item GHZ-state in basis of $X$
+\note{Same properties as GHZ}
+\begin{figure}[t]
+\raggedright
+\input{diagrams/XGHZ.tex}
+\end{figure}
+}
+
+\only<5->{
+\item<5-> C-NOT Gate
+\begin{figure}[t]
+\raggedright
+\input{diagrams/CNOT.tex}
+\end{figure}
+
+\item<6-> GHZ can be used to synchronize many operators: C-NOT-NOT-NOT-NOT
+\item<7-> Using GHZ as the MPS site tensor creates a CAT state
+}
+ \end{itemize}
+ \end{frame}
