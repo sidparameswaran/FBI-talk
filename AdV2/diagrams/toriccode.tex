@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\foreach \i in {1,...,4}
+\foreach \j in {1,...,4}
+{ {
+	\node (G\i\j) at (2.5+1.2*\i+0.8*\j,1*\j) [inv] {};
+} }
+
+\foreach \i / \j / \k in {2/2/1,2/3/2,2/4/3,3/2/4,3/3/5,3/4/6,4/2/7,4/3/8,4/4/9}
+{
+	\node at (G\i\j) [circlewc] {};
+	%\draw[thick] (G\i\j) -- node[below] {$p_{\k}$} +(0,-0.5);
+}
+\foreach \i / \j / \k in {2/2/1,2/3/2,2/4/3,3/2/4,3/3/5,3/4/6}
+{
+	\node (HR\i\j) at ($(G\i\j)+(0.6, 0)$) [GHZ] {};
+	\node (HU\j\i) at ($(G\j\i)+(0.4, 0.5)$) [GHZ] {};
+	\draw[thick] (HR\i\j) -- node[above] {} +(0,0.3);
+	\draw[thick] (HU\j\i) -- node[above] {} +(0,0.3);
+}
+\foreach \i in {2,3,4}
+\foreach \j / \l in {2/3,3/4}
+{ {
+	\draw[thick] (G\i\j) -- (G\i\l);
+	\draw[thick] (G\j\i) -- (G\l\i);
+} }
+\end{tikzpicture}

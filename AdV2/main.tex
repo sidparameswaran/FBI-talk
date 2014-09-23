@@ -1,0 +1,140 @@
+\documentclass[t]{beamer}
+
+\usetheme{Air}
+\usepackage{graphics}
+\usepackage{graphicx}
+\graphicspath{{C:/Users/Brayden/Projects/PEPS-Data/}{.}}
+\usepackage{caption}
+\usepackage{amsthm}
+%\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit,chains}
+
+%\usepackage{pstricks}
+%\newpsobject{psid}{psline}{linestyle=dotted,dotsep=1pt}
+%\newpsobject{pspsi}{psline}{doubleline=true}
+%\newpsobject{pssigma}{psline}{linewidth=1.5pt}
+
+%\usepackage{pgfpages}
+%\setbeamertemplate{note page}[plain]
+%\setbeameroption{show notes on second screen=right}
+%http://tex.stackexchange.com/questions/21777/is-there-a-nice-solution-to-get-a-presenter-mode-for-latex-presentations
+
+\input{commands/shortcuts}
+\input{commands/pgfstyles}
+\input{commands/thms}
+
+\pdfinfo
+{
+  /Title       (Entanglement in Featureless Mott Insulators)
+  /Creator     (TeX)
+  /Author      (Brayden Ware)
+}
+
+
+\title{Entanglement in Featureless Mott Insulators}
+%\subtitle{}
+\author{Brayden Ware}
+\date{September 18th 2014}
+
+%\includeonly{slides/LSM1}
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Pre-outline section %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section*{}
+
+% \include{slides/emptyslide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Outline code %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{frame}
+  \frametitle{Outline}
+  \vskip-1.5cm
+  \tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \vskip-1.5cm
+    \tableofcontents[currentsection]
+  }
+}
+
+%\AtBeginSubsection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+%  }
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivation}
+\subsection{Featureless Insulators}
+\include{slides/LSM_1}
+\subsection{Lieb-Schultz-Mattis Theorem}
+\include{slides/LSM_2}
+\subsection{Magnetization Plateaus}
+\include{slides/LSM_3}
+\include{slides/LSM_4}
+\include{slides/distingQ}
+\section{Distinguishing Featureless Insulators by Entanglement}
+\include{slides/MPS_1}
+\subsection{Matrix Product States}
+\include{slides/MPS_2}
+\include{slides/MPS_2B}
+\include{slides/MPS_3}
+\include{slides/MPS_3A}
+\include{slides/AKLT_1}
+\include{slides/MPS_3B}
+\include{slides/MPS_3C}
+%\subsection{Flux-Threading Arguments}
+\include{slides/MPS_4}
+%\include{slides/MPS_5}
+
+\section{Featureless Boson Mott Insulators}
+\subsection{Honeycomb Featureless Insulator Proposal}
+\include{slides/existQ}
+\include{slides/existY}
+\subsection{Tensor Network Construction}
+\include{slides/FBI_1}
+\subsection{Entanglement Spectra Results}
+\include{slides/FBI_2}
+\include{slides/FBI_3}
+\subsection{Identifying CFTs by Spectra}
+\include{slides/FBI_4}
+\include{slides/FBI_5}
+\subsection{Open Questions and Speculations}
+%\include{slides/future}
+\section*{}
+
+%\include{slides/slides99}
+
+\end{document}

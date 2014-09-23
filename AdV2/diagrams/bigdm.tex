@@ -1,0 +1,51 @@
+\begin{tikzpicture}[node distance=0.4cm]]
+
+
+\tikzset{det/.style={circle=2pt,fill=blue!20,draw=black,inner sep=4pt}}
+\node[ellipse, rotate=0, draw, fill=blue!20] (t) at (0,0) {\, \, $\psi$ \, \,};
+\node (t1) at (-1.6, 0.6) {$i_1$};
+\node (t2) at (-1.2 ,0.85) {$i_2$};
+\node (t3) at (-0.8,1.1) {$i_3$};
+\node (o3) at (1.6, 0.6) {};
+\node (o2) at (1.2 ,0.85) {};
+\node (o1) at (0.8,1.1) {};
+\node[rotate=0] (d) at (0, 0.7) {...};
+
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+\draw[thick, postaction={decorate}] (t1) -- (t);
+\draw[thick,postaction={decorate}] (t2) -- (t);
+\draw[thick, postaction={decorate}] (t3) -- (t);
+\draw[thick, postaction={decorate}] (t) -- (o1.center);
+\draw[thick,postaction={decorate}] (t) -- (o2.center);
+\draw[thick, postaction={decorate}] (t) -- (o3.center);
+\end{scope}
+
+
+\node[ellipse, rotate=0, draw, fill=blue!20] (rt) at (4,0) {\, \, $\varphi$ \, \,};
+\node (rt1) at (2.4, 0.6) {};
+\node (rt2) at (2.8 ,0.85) {};
+\node (rt3) at (3.2,1.1) {};
+\node (ro3) at (5.6, 0.6) {$o_3$};
+\node (ro2) at (5.2 ,0.85) {$o_2$};
+\node (ro1) at (4.8,1.1) {$o_1$};
+\node[rotate=0] (d) at (4, 0.7) {...};
+
+\begin{scope}[very thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+\draw[thick, postaction={decorate}] (rt1.center) -- (rt);
+\draw[thick,postaction={decorate}] (rt2.center) -- (rt);
+\draw[thick, postaction={decorate}] (rt3.center) -- (rt);
+\draw[thick, postaction={decorate}] (rt) -- (ro1);
+\draw[thick,postaction={decorate}] (rt) -- (ro2);
+\draw[thick, postaction={decorate}] (rt) -- (ro3);
+
+\draw[thick] (o3.center) to [bend left=5] node[below] {} (rt1.center);
+\draw[thick] (o2.center) to [bend left=15] node[below] {} (rt2.center);
+\draw[thick] (o1.center) to [bend left=30] node[below] {} (rt3.center);
+\end{scope}
+\end{tikzpicture}

@@ -1,0 +1,47 @@
+\begin{frame}{Properties of matrix product states}
+\vskip-1.5cm
+\bi 
+\item Representing every wavefunction with perfect accuracy requires exponentially big bond dimensions
+\item Ground states of gapped quantum Hamiltonians satisfy (rigorously in 1D) an area law: $S_A \approx d \cdot (\partial A)$.
+\item With a fixed truncation error $\epsilon$, bond dimension needed to represent the wavefunction levels off to a constant $d(\epsilon)$.
+\item MPS representation is efficient - only needs $d^2L$ parameters  
+\ei 
+
+\begin{columns}[T]
+    \begin{column}[T]{.33\textwidth}
+        \begin{figure}[h]
+            %\captionsetup{justification=right}
+            \centering
+            \scalebox{0.45}{
+            \input{diagrams/EE_gap.tex}
+            }
+            \caption{Gapped ground state}
+        \end{figure}
+    \end{column}
+    \begin{column}[T]{.33\textwidth}
+            \begin{figure}[h]
+            %\captionsetup{justification=right}
+            \centering
+            \scalebox{0.45}{
+            \input{diagrams/EE_cft.tex}
+            }
+            \caption{Gapless ground state}
+        \end{figure}
+    \end{column}
+    \begin{column}[T]{.33\textwidth}
+            \begin{figure}[h]
+            %\captionsetup{justification=right}
+            \centering
+            \scalebox{0.45}{
+            \input{diagrams/EE_gen.tex}
+            }
+            \caption{Generic State}
+        \end{figure}
+    \end{column}
+\end{columns}
+    
+    
+%Ground states of gapped quantum Hamiltonians satisfy %entanglement area law. In 1d, entanglement is bounded. For 1d %gapless Hamiltonians, entanglement grows like $\log(L)$.
+
+%\note{Topological corrections to }
+\end{frame}

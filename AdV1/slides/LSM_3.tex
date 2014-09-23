@@ -1,0 +1,71 @@
+\begin{frame}{Application of LSM}
+\vskip-1.5cm
+\begin{block}{Spin-$1/2$ XXZ chain}
+    \only<1>{
+    \begin{equation*}
+    H_{XY} = J \sum\limits_{i} (S^x_i S^x_{i+1} + S^y_i S^y_{i+1})
+    \end{equation*}
+    }
+    \only<2>{
+    \begin{equation*}
+    H_{XY} = J \sum\limits_{i} (S^x_i S^x_{i+1} + S^y_i S^y_{i+1}+\frac{h}{J}S^z_i)
+    \end{equation*}
+    }
+    \only<3>{
+    \begin{equation*}
+    H_{XXZ} = J \sum\limits_{i} (S^x_i S^x_{i+1} + S^y_i S^y_{i+1}+\Delta S^z_i S^z_{i+1} )
+    \end{equation*}
+    }
+    \only<4>{
+    \begin{equation*}
+    H_{XXZ} = J \sum\limits_{i} (S^x_i S^x_{i+1} + S^y_i S^y_{i+1}+S^z_i S^z_{i+1}+\frac{J_2}{J}\vec{S}_i \cdot \vec{S}_{i+1})
+    \end{equation*}
+    }
+Jordan-Wigner transformation maps to half-filled free-fermion band.
+Remains gapless under small $U(1)$ perserving pertubations:
+\end{block}
+\begin{columns}[T]
+    \begin{column}[T]{.53\textwidth}
+        \bi
+        \item<2-> $h S^z$ - gapless until $m=\pm 1/2$
+        \item<3-> $J_z S^z_i S^z_{i+1}$ - gapless until AFM/FM order
+        \item<4-> $J_2 \vec{S}_i \cdot \vec{S}_{i+2}$ - gapless until SSB of translation, unit cell doubles
+        \ei 
+    \end{column}
+    \begin{column}[T]{.47\textwidth}
+        \only<2>{
+        \begin{figure}
+            \centering
+            \scalebox{0.6}{
+            \input{diagrams/XXZ_H.tex}
+            }
+        \end{figure}
+        }
+        \only<3>{
+            \vskip1.5cm
+            \hspace{-0.8cm}
+        \begin{figure}
+            \centering
+            \scalebox{0.47}{
+            \input{diagrams/XXZ_D.tex}
+            }
+        \end{figure}
+        }
+        \only<4>{
+        \begin{figure}
+            \centering
+            \scalebox{0.6}{
+            \input{diagrams/XXZ_J2.tex}
+            }
+        \end{figure}
+        }
+    \end{column}
+    % \begin{column}[T]{.3\textwidth}
+    % \end{column}
+\end{columns}
+% \begin{block}{Spin-$1$ Haldane Phase}
+    % \begin{equation*}
+    % H_{AKLT} = J \sum\limits_{i} (\vec{S}_i \cdot \vec{S}_{i+1})
+    % \end{equation*}
+% \end{block}
+\end{frame}

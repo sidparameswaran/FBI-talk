@@ -1,0 +1,32 @@
+\usetikzlibrary{patterns}
+
+\def\hexagonsize{0.5cm}
+\pgfdeclarepatternformonly
+  {hexagons}% name
+  {\pgfpointorigin}% lower left
+  {\pgfpoint{3*\hexagonsize}{0.866025*2*\hexagonsize}}%  upper right
+  {\pgfpoint{3*\hexagonsize}{0.866025*2*\hexagonsize}}%  tile size
+  {% shape description
+   \pgfsetlinewidth{0.4pt}
+   \pgftransformshift{\pgfpoint{0mm}{0.866025*\hexagonsize}}
+   \pgfpathmoveto{\pgfpoint{0mm}{0mm}}
+   \pgfpathlineto{\pgfpoint{0.5*\hexagonsize}{0mm}}
+   \pgfpathlineto{\pgfpoint{\hexagonsize}{-0.866025*\hexagonsize}}
+   \pgfpathlineto{\pgfpoint{2*\hexagonsize}{-0.866025*\hexagonsize}}
+   \pgfpathlineto{\pgfpoint{2.5*\hexagonsize}{0mm}}
+   \pgfpathlineto{\pgfpoint{3*\hexagonsize+0.2mm}{0mm}}
+   \pgfpathmoveto{\pgfpoint{0.5*\hexagonsize}{0mm}}
+   \pgfpathlineto{\pgfpoint{\hexagonsize}{0.866025*\hexagonsize}}
+   \pgfpathlineto{\pgfpoint{2*\hexagonsize}{0.866025*\hexagonsize}}
+   \pgfpathlineto{\pgfpoint{2.5*\hexagonsize}{0mm}}
+   \pgfusepath{stroke}
+  }
+\begin{document}
+
+\begin{tikzpicture}
+\fill[pattern=hexagons] (0,0) rectangle (10,5);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+\fill[pattern=hexagons] (0,0) circle (3cm);
+\end{tikzpicture}

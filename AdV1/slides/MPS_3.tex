@@ -1,0 +1,61 @@
+\begin{frame}{Computing Correlation Functions in MPS}
+\vskip-1.5cm
+\only<1,3->{
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{diagrams/orus-corrfunc.pdf}
+%\input{diagrams/CorrelationFunction.tex}
+\caption{Diagram for $C_{O O'}(r) = \ev{O_i O'_{i+r}}- \ev{O_i}\ev{O'_{i+r}}$}
+\end{figure}
+}
+\only<2>{
+\begin{columns}[T]
+    \begin{column}[T]{.28\textwidth}
+        \begin{figure}[h]
+            \centering
+            \scalebox{1}{
+            \input{diagrams/transfer_matrix.tex}
+            }
+            \caption{Transfer Matrix $\mathbb{E}_{I}$}
+            \note{Reminder using arrows to represent in and out}
+        \end{figure}
+    \end{column}
+    \begin{column}[T]{.3\textwidth}
+        \begin{figure}[h]
+            \centering
+            \scalebox{1}{
+            \input{diagrams/insertion.tex}
+            }
+            \caption{Operator Insertion $\mathbb{E}_{O}$}
+        \end{figure}
+    \end{column}
+    \begin{column}[T]{.42\textwidth}
+        \vskip1.8cm
+        \begin{figure}[h]
+            \centering
+            \scalebox{0.8}{
+            \input{diagrams/gauge.tex}
+            }
+            \caption{MPS gauge redundancy}
+        \end{figure}
+    \end{column}
+\end{columns} 
+\begin{figure}[h]
+    \centering
+    \scalebox{1}{
+    \input{diagrams/eigenvector.tex}
+    }
+\caption{Eigenvector equation $\mathbb{E}_{I}(\sigma_R) = \sigma_R$}
+\end{figure}
+   
+}
+\only<3>{
+\vskip-0.5cm
+ $$\ev{O_i O'_{i+r}} = \vbraopket{v_L}{\mathbb{E}_O \mathbb{E}_I^r \mathbb{E}_{O'}}{v_R}$$
+ $$
+ \lim\limits_{r \rightarrow \infty} \ev{O_i O'_{i+r}} = \vbraopket{v_L}{\mathbb{E}_O}{v_R} \vbraopket{v_L}{\mathbb{E}_{O'}}{v_R}
+ $$
+ $$ C_{O O'}(r) \approx const. \times \lambda_2^r $$
+\note{Matrix product states also known as finitely correlated states}
+}
+\end{frame}

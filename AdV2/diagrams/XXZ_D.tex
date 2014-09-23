@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\tikzstyle{myedgestyle} = [triangle 90-triangle 90]
+\node[inv](A) at (-6, 0){};
+\node[inv](B) at (6, 0){};
+\draw[thick, myedgestyle] (A)--node[below] {\huge $\Delta$}(B);
+\node[] at (-5, 1.1){\LARGE  Gapped};
+\node[] at (-5, 0.5){\LARGE  FM};
+\node[] at (5, 1.1){\LARGE  Gapped};
+\node[] at (5, 0.5){\LARGE  AFM};
+\node[] at (0, 1.1){\LARGE  Gapless};
+\node[] at (0, 0.5){\LARGE  XY phase};
+\draw[] (-3,0) -- (-3,1.5);
+\node[] at (-3, -0.5) {\LARGE $-1$};
+\node[] at (3, -0.5) {\LARGE $+1$};
+\draw[] (3,0) -- (3,1.5);
+\end{tikzpicture}

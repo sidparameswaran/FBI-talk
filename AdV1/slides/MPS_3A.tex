@@ -1,0 +1,32 @@
+\begin{frame}{Computing Entanglement in MPS}
+\vskip-1.5cm
+To compute the spectrum of the reduced density matrix 
+\begin{figure}
+\scalebox{1}{
+            \input{diagrams/reduceddm.tex}
+            }
+\end{figure}
+
+\only<1>{
+Step 1. Show that the following matrix $\mathcal{U}$ is isometric.
+\begin{figure}
+\scalebox{1}{
+            \input{diagrams/uschmidt.tex}
+            }
+\end{figure}
+}
+
+\only<2>{
+Step 2. Insert identity... 
+
+}
+\only<3->{
+
+Result: 
+$$\rho_L = \mathcal{U} \sqrt{\sigma_L} \sigma_R \sqrt{\sigma_L} \mathcal{U^{\dagger}}$$ 
+
+To get the spectrum, we only need to compute the much smaller matrix 
+$$\tilde{\rho}_L =  \sqrt{\sigma_L} \sigma_R \sqrt{\sigma_L} $$
+
+}
+\end{frame}

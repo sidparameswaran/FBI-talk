@@ -1,0 +1,6 @@
+ \begin{tikzpicture}[domain=0:6.28]
+      \draw[very thick] (0, -1.5) -- (0,3) -- (6.28,3) -- (6.28, -1.5) -- (0, -1.5);
+      \draw[color=black, very thick] plot (\x,{cos(\x r)}) node[right] {};
+      \draw[color=yellow, fill, domain=3.14/2:3.14+3.14/2] plot (\x,{cos(\x r)}) {};
+  \end{tikzpicture}
+  

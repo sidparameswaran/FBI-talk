@@ -1,0 +1,18 @@
+
+\begin{tikzpicture}[node distance=0.2cm]
+
+\node[circlewc] (G) at (0, 0) {};
+\foreach \i in {0, 1, 2}
+  {
+ \pgfmathsetmacro{\ang}{90*\i}
+ \pgfmathsetmacro{\x}{cos(\ang)}
+ \pgfmathsetmacro{\y}{sin(\ang)}
+ \node (g\i) at ($ (G)+(0.8*\x, 0.8*\y) $) {};
+  \draw[thick] (G) -- (g\i);
+ }
+ 
+ 
+ \node at (4, 0) {$\ket{X} = \ket{000}+\ket{011}+ \ket{101} + \ket{110}$};
+
+ 
+\end{tikzpicture}
