@@ -1,0 +1,58 @@
+% y=\sqrt{3/4}*(minimum size)/2
+%
+
+%http://tex.stackexchange.com/questions/6019/drawing-hexagons
+\begin{tikzpicture}[x=7.5mm,y=4.33mm]
+  % some styles
+  \tikzset{
+    box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=10mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     %dotted,
+     thin,
+      black,
+      draw
+    }
+  }
+  \tikzset{
+    bbox/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=4mm,
+      %fill,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     % dotted,
+     very thick,
+     orange,
+      draw
+    }
+  }
+ \tikzset{boson/.style={circle=1pt,draw=black!100,fill=orange!100,inner sep=2pt}}
+  \tikzset{dimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=2pt}}
+    \tikzset{thindimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=1pt}}
+
+\foreach \i in {0,...,2} 
+    \foreach \j in {0,...,3} {
+            \node[box] at (2*\i,2*\j) {};
+        }
+\foreach \i in {0,...,1} 
+    \foreach \j in {0,...,2} {
+   	   \node[box] at (2*\i+1,2*\j+1) {};   
+        }
+        
+\foreach \i in {0,...,2} 
+    \foreach \j in {0,...,3} {
+            \node[bbox] at (2*\i,2*\j) {};
+        }
+\foreach \i in {0,...,1} 
+    \foreach \j in {0,...,2} {
+   	   \node[bbox] at (2*\i+1,2*\j+1) {};   
+        }
+
+\end{tikzpicture}

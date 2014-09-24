@@ -1,0 +1,54 @@
+\begin{tikzpicture}[x=30mm,y=25mm]
+\tikzstyle{yaxis} = [-triangle 90]
+\tikzstyle{xaxis} = [triangle 90-triangle 90]
+\node[inv](A) at (-.5, 0){};
+\node[inv](B) at (2.5, 0){};
+\draw[thick, xaxis] (A)-- (B);
+\node at ($ (A) !.6! (B) +(0, -0.3)$) {\Huge $P$ \Large (in units of $\frac{2\pi}{L}$)};
+\node[inv](A) at (0, 0){};
+\node[inv](B) at (0, 4){};
+\draw[thick, yaxis] (A)--(B);
+\node at ($ (A) !.9! (B) +(-0.3, 0)$) {\Huge $E$};
+
+\def\rs{{ 0, 1, 0, .9, 0, 1, 1}}
+\def\gs{{0, 0, 0, .5, 1, 1, 0}}
+\def\bs{{0, 0, 1, 0, 0, 0, 1}}
+\def\decxs{{1,1.95,2.05,0}}
+\def\decys{{1, 2,    2, 2}}
+
+\foreach \q in {6, ..., 0}{
+\pgfmathparse{\rs[\q]}
+\edef\r{\pgfmathresult}
+
+\pgfmathparse{\gs[\q]}
+\edef\g{\pgfmathresult}
+
+\pgfmathparse{\bs[\q]}
+\edef\b{\pgfmathresult}
+\definecolor{mycolor}{rgb}{\r,\g,\b}
+\tikzset{spec/.style={circle=2pt,draw=black!100,fill=mycolor!100,inner sep=2pt}}
+\node[spec](P\q) at (0, 1/6.2*\q*\q*1/4.0){};
+\foreach \k in {0,...,3}{
+
+\pgfmathparse{\decxs[\k]}
+\edef\x{\pgfmathresult}
+\pgfmathparse{\decys[\k]}
+\edef\y{\pgfmathresult}
+
+%\pgfmathtruncatemacro\intx{\x}
+%\pgfmathtruncatemacro\inty{\y}
+
+\node[spec](P\q\k) at ($(P\q)+(\x, \y)$){};
+%\node[spec](P\q\k) at ($(P\q)+(-\x, \y)$){};
+% \newdimen\xx
+% \newdimen\yy
+% \pgfextractx{\xx}{\pgfpointanchor{P\q\k}{center}}
+% \pgfextracty{\yy}{\pgfpointanchor{P\q\k}{center}}
+% \pgfmathtruncatemacro\intx{\xx}
+% \pgfmathtruncatemacro\inty{\yy}
+
+
+}
+}
+
+\end{tikzpicture}
