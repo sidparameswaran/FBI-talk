@@ -1,0 +1,25 @@
+\begin{tikzpicture}[node distance=0.6cm]
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+\node[side, minimum width=1cm] (psi) at (0,0) {$\psi$};
+\node[above=of psi.north west, anchor=south west] (p) {};
+\node[above=of psi.north east, anchor=south east] (q) {};
+ \draw[->] (psi.north -| p) -- node[left] {$p$} (p);
+ \draw[->] (psi.north -| q) -- node[right] {$q$} (q);
+ 
+ \node at (1, 0) {=};
+ 
+ \node[cside] (psiL) at (1.8,0) {$\psi_L$};
+\node[lambda] (S) at (3, 0) {};
+  \node[cside] (psiR) at (4.2,0) {$\psi_R$};
+\node[above=of psiL.north west, anchor=south west] (pL) {};
+\node[above=of psiR.north east, anchor=south east] (qR) {};
+ \draw[->] (psiL.north -| pL) -- node[left] {$p$} (pL);
+ \draw[->] (psiR.north -| qR) -- node[right] {$q$} (qR);
+ \draw[-, postaction={decorate}] (S) -- node[above]{$\alpha$}(psiL);
+ \draw[-, postaction={decorate}] (S) -- node[above]{$\alpha$}(psiR);
+ 
+\end{scope}
+\end{tikzpicture}

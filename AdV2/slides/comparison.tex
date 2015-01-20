@@ -1,0 +1,41 @@
+\begin{frame}[c]{Can we use `band bosons`?}
+\vskip-1.5cm
+\only<1>{
+Band fermions have atomic insulator picture using Wannier functions.
+
+$$W^{\alpha}_R(x) = \int_{B.Z.} d\kk e^{-iR\cdot \kk} \psi^{\alpha}_{\kk}(x)$$
+
+$$d_R^{\alpha \dagger} = \sum\limits_x W^{\alpha}_R(x)c_x^{\dagger}$$ 
+
+$$\ket{\psi} = \prod\limits_R d_R^{\alpha \dagger} \ket{\mathbf{0}} $$
+
+Wannier functions are not unique and often don't respect lattice symmetries depending on choice of phase for original basis functions. 
+\\\vspace{1em}
+But the resulting 'Slater determinant' wavefunction is symmetric regardless. 
+%due to antisymmetrization
+%individual wannier functions are not eigenstates unless the band is perfectly flat.
+%This picture breaks down when the chern number of a band is not zero, or if bands touch.
+}
+% A band boson is defined in analogy to this slater determinant wave
+\only<2>{
+\begin{block}{`Band bosons' a.k.a. Boson Permanent}
+{A boson permanent wavefunction created from filling an orbital $\phi_{R+x}$ for each unit cell $R$ with a boson}
+\end{block}
+Analogous to the Slater determinant for fermions except:
+%with a few key differences:
+\bi 
+\item $\ket{\psi}$ respects lattice symmetries only if $\phi$ does
+%Boson permanent wavefunction won't respect lattice symmetries unless orbitals filled do.
+\item $H$ needs repulsive interactions to stop Bose condensation
+\bi 
+\item e.g. $H_{BH}$ with $$d^{\dagger}_R = \sum\limits_i \phi_i b^{\dagger}_i$$
+\ei
+%use bose-hubbard repulsion
+\item Orbitals will need to be localized and orthogonal for $H_{BH}$ to be a parent Hamiltonian
+\ei 
+
+%If we could find symmetric, orthogonal, localized orbitals, we can try fill them with bosons to make a 'band' boson featureless insulator with a nice parent Hamiltonian.
+%Say by analyzing the fermion tightbinding model 
+%Can do this on Kagome but not on honeycomb: the symmetry protection of the band touching is an obstruction
+}
+\end{frame}

@@ -1,0 +1,129 @@
+\begin{frame}{What is entanglement?}
+\vskip-1.5cm
+ When a wavefunction in a product Hilbert space cannot be written as a product state, it is \textbf{entangled}.
+\only<1-2>{ 
+\begin{block}{}
+\begin{columns}[T]
+    \begin{column}{.5\textwidth}
+    $$
+    \ket{\psi} = \ket{\psi_L} \otimes \ket{\psi_R} ?
+    $$
+    \end{column}
+    \begin{column}[T]{.5\textwidth}
+        \only<1>{
+        \note{A state in a product Hilbert space is a tensor}
+        \vskip-1.5cm
+        \begin{figure}
+        \scalebox{0.8}
+        {
+        \input{diagrams/psi.tex}
+        }
+        \end{figure}
+        }
+        \only<2>{
+        \begin{figure}
+        \vskip-1cm
+        \scalebox{1}
+        {
+        \input{diagrams/productstate.tex}
+        }
+        \note{going from the RHS to LHS - performing that sum - is tensor contraction. going from LHS to RHS is finding a decomposition of the tensor, and is not a unique process.}
+        \end{figure}
+        }
+    \end{column}
+\end{columns}
+\end{block}
+}
+\only<3->{
+\begin{block}{}
+\begin{columns}[T]
+    \begin{column}[T]{.5\textwidth}
+    $$
+    \ket{\psi} = \sum\limits_i \ket{\psi^i_L} \otimes \ket{\psi^i_R}
+    $$
+    \end{column}
+    \begin{column}[T]{.5\textwidth}
+        \begin{figure}
+        \vskip-1cm
+        \scalebox{1}
+        {
+        \input{diagrams/contractedstate.tex}
+        }
+        \end{figure}
+    \end{column}
+\end{columns}
+\end{block}
+}
+\only<3>{
+\begin{block}{}
+\vskip-0.5cm
+Calculate reduced density matrices
+\begin{columns}[T]
+    \begin{column}[T]{.5\textwidth}
+    $$
+    \rho_L = Tr_R \ket{\psi} \bra{\psi} 
+    $$
+    
+    \hskip0.3cm Diagonalize 
+    
+    $$
+    \hskip0.1cm
+    \rho_L = \sum\limits_{\alpha} \rho_{\alpha} \ket{\psi_L^{\alpha}} \bra{\psi_L^{\alpha}} 
+    $$
+    \end{column}
+    \begin{column}[T]{.5\textwidth}
+        \begin{figure}
+        \vskip-0.5cm
+        \scalebox{1}
+        {
+        \input{diagrams/dm.tex}
+        }
+        \end{figure}
+    \end{column}
+\end{columns}
+\end{block}
+}
+\only<4->{
+\begin{block}{}
+\vskip-0.5cm
+Diagonalize and form the Schmidt decomposition
+\note{Equivalent to SVD}
+\note{Schmidt states are orthonormal}
+\begin{columns}[T]
+    \begin{column}[T]{.5\textwidth}
+    $$
+    \ket{\psi} = \sum\limits_{\alpha} \sqrt{\rho_{\alpha}} \ket{\psi^{\alpha}_L} \otimes \ket{\psi^{\alpha}_R}
+    $$
+    \end{column}
+    \begin{column}[T]{.5\textwidth}
+        \begin{figure}
+        \vskip-0.5cm
+        \scalebox{1}
+        {
+        \input{diagrams/schmidt.tex}
+        }
+        \end{figure}
+    \end{column}
+\end{columns}
+\end{block}
+\begin{block}{}
+\vskip-0.5cm
+\only<4>{
+Quantitative measures of entanglement - rank
+ $$
+ S^0_A = \sum\limits_{\alpha} \rho_{\alpha}^0 = \#\{\rho_{\alpha} \ne 0\}
+ $$
+ \note{bond dimension}
+ }
+\only<5>{
+Quantitative measures of entanglement - entropy
+ $$
+ S_A = -\sum\limits_{\alpha} \rho_{\alpha} \log{\rho_{\alpha} }
+ $$
+ \note{Capture MOST of the entanglement by using the largest eigenvalues, gives best possible approximation for a given bond dimension} 
+ }
+\end{block}
+}
+
+\end{frame}
+

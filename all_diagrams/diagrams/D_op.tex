@@ -1,0 +1,124 @@
+\begin{tikzpicture}[x=7.5mm,y=4.33mm]
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+    
+  \tikzset{
+    box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=15mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     dotted,
+     thin,
+      black,
+      draw
+    }
+    }
+      \tikzset{
+    abox/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=9mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     dotted,
+     thin,
+      black,
+      draw
+    }
+    }
+
+  \tikzset{
+    bbox/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=7mm,
+      %fill,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     % dotted,
+     very thick,
+     orange,
+      draw
+    }
+  }
+    \tikzset{
+    wb/.style={
+       regular polygon,
+      regular polygon sides=6,
+      minimum size=5mm,
+      %fill,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     % dotted,
+     very thick,
+     green,
+      draw
+    }
+  }
+ \tikzset{boson/.style={circle=1pt,draw=black!100,fill=orange!100,inner sep=2pt}}
+  \tikzset{dimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=2pt}}
+    \tikzset{thindimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=1pt}}
+\tikzset{peps/.style={circle=2pt,draw=black!100,fill=green!50,inner sep=3pt}}
+\tikzset{bpeps/.style={circle=2pt,draw=black!100,thick,fill=green!50,inner sep=3pt}}
+ \tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
+  \tikzset{smallwdot/.style={circle=1pt,draw=black!100,fill=orange!50,inner sep=1pt}}
+\tikzset{gamma/.style={circle=2pt,draw=black!100,fill=blue!50,inner sep=3pt}}
+\tikzset{lambda/.style={rectangle,rotate=45,draw=black!100,fill=red!50,inner sep=2pt}}
+\tikzset{operator/.style={circle=1pt,draw=black!100,fill=blue,inner sep=1.5pt}}
+
+ %\node[box] (H) at (0, 0) {};
+  %\node[box] (H2) at (1.5, 1.5) {};
+   %\node[box] (H3) at (1.5, -1.5) {};
+   
+   \node[operator] (A) at (1, 0){};
+    \draw[thick, postaction={decorate}] (0.5, 0) --node[below]{$i$} (A);
+    \draw[thick, postaction={decorate}] (1.25, .75) -- node[right]{$j$}(A);
+    \draw[thick, postaction={decorate}] (1.25, -.75) -- node[right]{$k$} (A);
+    \draw[red, very thick, postaction={decorate}]  (A)-- node[left]{$p$}(1, 2);
+
+
+% \foreach \k in {1, ..., 6}{
+%              \node[inv] (D\k) at (H.corner \k) {};
+%              \draw[ blue] (W) -- (D\k);
+%              }
+%              
+%  \node[] at (1.5, 0){$=$};
+%  
+%   \node[box] (H) at (0, 0) {};
+% \node[wb] (W) at (0,0) {\tiny W};
+% 
+%  \node[box] (H3) at (3, 0) {};
+%  \node[abox] (H2) at (3, 0) {};
+% %\node[wb] (W) at (3,0) {\tiny W};
+% \foreach \k in {1, ..., 6}{
+%              \node[smalldot] (A\k) at (H2.corner \k) {};
+%              }
+% 
+% \foreach \k in {1,2,3,5}{
+% 		\pgfmathtruncatemacro{\j}{\k+1}
+%             \draw[thick, postaction={decorate}] (A\k) -- (A\j);
+%              }
+%              \draw[thick, postaction={decorate}] (A6) -- (A1);
+%              
+%  \foreach \k in {1,2,3,4,5,6}{
+%             \draw[thick, postaction={decorate}] (A\k) -- (H3.corner \k);
+%              }
+%              
+%  \node[smallwdot](B) at (3.2, 0) {\tiny 1};
+%  \draw[thick, postaction={decorate}]  (B)--(A5);
+             
+%\foreach \q in {1, ... ,5}{
+	%	\pgfmathtruncatemacro{\j}{\k+1}
+    %        \draw[] (A.corner \j) -- (A.corner \k);
+   %       }
+
+\end{scope}
+\end{tikzpicture}

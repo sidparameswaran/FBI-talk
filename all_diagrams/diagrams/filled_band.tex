@@ -1,0 +1,7 @@
+ \begin{tikzpicture}[domain=0:6.28]
+      \draw[very thick] (0, -2.5) -- (0,1) node[left, midway] {\LARGE $E$} ;
+      \draw[very thick] (0, 1)-- (6.28,1) -- (6.28, -2.5) -- (0, -2.5);
+      \draw[color=black, very thick] plot (\x,{-1+cos(\x r)}) node[right] {};
+      \draw[color=orange, fill] plot (\x,{-0.95+cos(\x r)}) {};
+  \end{tikzpicture}
+  

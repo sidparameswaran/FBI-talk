@@ -1,0 +1,56 @@
+\begin{frame}{What is a Matrix Product State?}
+\vskip-1.5cm
+Matrix product states provide a parameterization of the space of wavefunctions of a 1D or quasi-1D system.
+\only<1->{
+\begin{figure}[h]
+    \centering
+    \scalebox{1}{
+    \input{diagrams/mps.tex}
+    }
+\end{figure}
+\only<1>{
+$$
+\ket{\psi^{b_0 b_1}} = \sum\limits_{p_1 ... p_5}   \vbra{b_0} A^{p_1}_1 ... A^{p_5}_5 \vket{b_1}\ket{p_1 ... p_5} 
+$$
+}
+Each coefficient of the w.f. computed via a product of matrices
+
+
+With a fixed bond dimension $d$, you have $d^2*p*L$ parameters
+
+}
+
+
+
+% \only<2->{
+% Every state has a matrix product state representation formed through the process of repeated SVD.
+
+% \only<2>{
+% \begin{figure}[h]
+    % \centering
+    % \scalebox{1.1}{
+    % \input{diagrams/mps3_1.tex}
+    % }
+    % \note{Maximum bond dimension d}
+% \end{figure}
+% }
+% \only<3>{
+% \begin{figure}[h]
+    % \centering
+    % \scalebox{1.1}{
+    % \input{diagrams/mps3_2.tex}
+    % }
+    % \note{Maximum bond dimension d^2}
+% \end{figure}
+% }
+% \only<4>{
+% \begin{figure}[h]
+    % \centering
+    % \scalebox{1.1}{
+    % \input{diagrams/mps3_3.tex}
+    % }
+% \end{figure}
+% }
+% }
+
+\end{frame}

@@ -1,0 +1,33 @@
+\begin{tikzpicture}[node distance=0.2cm]
+
+\node[GHZ] (G) at (0, -2) {};
+\foreach \i in {1, 2, 3}
+  {
+ \pgfmathsetmacro{\ang}{120*\i}
+ \pgfmathsetmacro{\x}{cos(\ang)}
+ \pgfmathsetmacro{\y}{sin(\ang)}
+ \node[draw, rotate=\ang] (gx\i) at ($ (G)+(0.6*\x, 0.6*\y) $) {$X$};
+ \node[inv] (g\i) at ($ (G)+(1.5*\x, 1.5*\y) $) {};
+ }
+ 
+\foreach \i in {1, 2, 3}
+  {
+ \draw[thick] (G) -- (gx\i) --(g\i);
+ } 
+ 
+\node at (1.8, -2) {$=$};
+
+\node[GHZ] (G3) at (2.4, -2) {};
+\foreach \i in {1, 2, 3}
+  {
+ \pgfmathsetmacro{\ang}{120*\i}
+ \pgfmathsetmacro{\x}{cos(\ang)}
+ \pgfmathsetmacro{\y}{sin(\ang)}
+ \node (g\i) at ($ (G3)+(0.8*\x, 0.8*\y) $) {};
+ }
+ \foreach \i in {1, 2, 3}
+  {
+ \draw[thick] (G3) -- (g\i);
+ }
+
+\end{tikzpicture}

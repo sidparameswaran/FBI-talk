@@ -22,6 +22,10 @@
 \usetikzlibrary{decorations.markings}
 \usetikzlibrary{positioning}
 \usetikzlibrary{fit,chains}
+\usepackage{natbib}
+\usepackage{wasysym}
+\usepackage{soul} 
+\bibliographystyle{apalike}  
 
 %\usepackage{pstricks}
 %\newpsobject{psid}{psline}{linestyle=dotted,dotsep=1pt}
@@ -48,7 +52,7 @@
 \title{Entanglement in Featureless Mott Insulators}
 %\subtitle{}
 \author{Brayden Ware}
-\date{September 23th 2014}
+\date{September 26th 2014}
 
 %\includeonly{slides/LSM1}
 \begin{document}
@@ -76,13 +80,20 @@
 
 \AtBeginSection[]
 {
-  \frame<handout:0>
-  {
-    \frametitle{Outline}
-    \vskip-1.5cm
-    \tableofcontents[currentsection]
+\frame{
+  \vspace{2cm}
+  {\huge \insertsection}
   }
 }
+%\AtBeginSection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \vskip-1.5cm
+%    \tableofcontents[currentsection]
+%  }
+%}
 
 %\AtBeginSubsection[]
 %{
@@ -97,33 +108,59 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Motivation}
-\subsection{Featureless Insulators}
 \include{slides/FI}
+%\subsection{Band Insulators}
 \include{slides/BandInsulators_intro}
-\include{slides/MotivatingQs_BI}
-%\include{slides/BandInsulators_2}
-%\include{slides/MagPlateau}
-\subsection{Topological Band Insulators}
-\include{slides/emptyslide}
-\subsection{Bosonic Band Insulators?}
-\include{slides/emptyslide}
-\section{Featureless Boson Mott Insulators}
-\include{slides/emptyslide}
-\subsection{Honeycomb Featureless Insulator Proposal}
+\include{slides/BandInsulators_2}
+\include{slides/BandInsulators_3}
+\include{slides/Entanglement2}
+\include{slides/Motivating_Qs}
+%\subsection{Bosonic Mott Insulators}
+\include{slides/BosonInsulators_intro}
+%\subsection{Honeycomb Bosonic Mott Insulators?}
+\include{slides/theProblem}
+\include{slides/comparison}
 \include{slides/proposal}
+\include{slides/goals}
+
+\section{Entanglement}
+\include{slides/MPS_1}
+\include{slides/MPS_1B}
+\include{slides/SPTs}
+\include{slides/AKLT_1}
+\include{slides/FreeFermionEE}
+
+\section{Tensor Networks}
+\include{slides/MPS_2}
+\include{slides/MPS_2B}
+\include{slides/MPS_3}
+
+\include{slides/MPS_3A}
 \include{slides/construction}
-\section{Entanglement Spectra}
-\subsection{CFT Identification}
+\include{slides/CorrFuncs}
+\section{Entanglement Edge of Honeycomb Insulators}
+
+\include{slides/cuts}
+
+%\subsection{CFT Identification}
 \include{slides/CFT_Raw}
 \include{slides/CFT_Gap}
 \include{slides/CFT_EE}
-\include{slides/CFT_Tower}
 \include{slides/CFT_levels}
+\include{slides/CFT_Tower}
+\include{slides/CFT_primaries_simple}
 \include{slides/CFT_levels2}
-\include{slides/CFT_levels_data}
+%\include{slides/CFT_levels_data}
+\include{slides/goals2}
 \include{slides/future}
 \section*{}
 
 \include{slides/slides99}
-
+\include{slides/Entanglement}
+\include{slides/aklt}
+\include{slides/AKLT_2}
+\include{slides/MPS_5}
+\include{slides/MPS_4}
+\include{slides/MPS_3C}
+\include{slides/MPS_3B}
 \end{document}

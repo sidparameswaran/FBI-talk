@@ -1,0 +1,301 @@
+\documentclass[t]{beamer}
+
+\usetheme{Air}
+\usepackage{graphics}
+\usepackage{graphicx}
+\graphicspath{{C:/Users/Brayden/Projects/PEPS-Data/}{.}}
+%\usepackage{caption}
+\usepackage{amsthm}
+%\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit,chains}
+\usepackage{natbib}
+\usepackage{wasysym}
+\usepackage{soul} 
+\bibliographystyle{apalike}  
+
+%\usepackage{pstricks}
+%\newpsobject{psid}{psline}{linestyle=dotted,dotsep=1pt}
+%\newpsobject{pspsi}{psline}{doubleline=true}
+%\newpsobject{pssigma}{psline}{linewidth=1.5pt}
+
+%\usepackage{pgfpages}
+%\setbeamertemplate{note page}[plain]
+%\setbeameroption{show notes on second screen=right}
+%http://tex.stackexchange.com/questions/21777/is-there-a-nice-solution-to-get-a-presenter-mode-for-latex-presentations
+
+\input{commands/shortcuts}
+\input{commands/pgfstyles}
+\input{commands/thms}
+
+\pdfinfo
+{
+  /Title       (bd)
+  /Creator     (TeX)
+  /Author      (Brayden Ware)
+}
+
+
+\title{Brayden's Diagrams}
+%\subtitle{}
+\author{Brayden Ware}
+\date{September 30th 2014}
+
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Pre-outline section %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section*{}
+
+% \include{slides/emptyslide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Outline code %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{frame}
+  \frametitle{Outline}
+  \vskip-1.5cm
+  \tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+\frame{
+  \vspace{2cm}
+  {\huge \insertsection}
+  }
+}
+%\AtBeginSection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \vskip-1.5cm
+%    \tableofcontents[currentsection]
+%  }
+%}
+
+%\AtBeginSubsection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+%  }
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Diagrams}
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/aklt.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/CFT_tower4.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{0.5}{
+\input{diagrams/CFT_schematic4.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/CNOT.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/contractedstate.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/CorrelationFunction.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/dm.tex}}
+\end{frame}
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.33\textwidth}
+\scalebox{0.4}{
+\input{diagrams/EE_gap.tex}}
+\end{column}
+\begin{column}{0.33\textwidth}
+\scalebox{0.4}{
+\input{diagrams/EE_cft.tex}}
+\end{column}
+\begin{column}{0.33\textwidth}
+\scalebox{0.4}{
+\input{diagrams/EE_gen.tex}}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/fbi1.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/fbi2.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/fbi9.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/FI_PEPS_cut.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/filled_band.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/gauge.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/GHZ.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/GHZsym.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/honeycomb3.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/honeycomb4.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/insertion.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/kekule_dimer.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/left-canonical.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/mps.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/mps3_3.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/mpsbc.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/peps.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/productstate.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/psi3.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/reduceddm3.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/schmidt.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/svd.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/toriccode.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/W.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/w_string.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/XGHZ.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/XXZ_J2.tex}}
+\end{frame}
+
+\begin{frame}
+\scalebox{1}{
+\input{diagrams/ydimer.tex}}
+\end{frame}
+\end{document}

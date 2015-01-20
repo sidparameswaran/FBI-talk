@@ -1,6 +1,6 @@
-\begin{frame}{Honeycomb Featureless Boson Insulator}
+\begin{frame}{PEPS Construction of Honeycomb F.B.I.}
 \vskip-1.5cm
-A wavefunction written as a product of local operators acting on a product state can simply be turned into a tensor network.
+A wavefunction written as a product of local operators acting on a product state can be turned into a tensor network.
 
 \only<1>{
 \begin{figure}[h]
@@ -8,6 +8,42 @@ A wavefunction written as a product of local operators acting on a product state
 \input{diagrams/FI_PEPS.tex}
 }
 \end{figure}
+
+Virtual W-state on each plaquette used to synchronize the creation operators in the sum $\sum\limits_{i \in \varhexagon} b^{\dagger}_i$
+$$\vket{W} = \vket{000001}+\vket{000010}+\vket{000100}+\vket{001000}+\vket{010000}+\vket{100000}$$
+
+}
+
+\only<2>{
+\begin{columns}[T]
+\begin{column}{0.5\textwidth}
+\begin{figure}[h]
+\scalebox{1.3}{
+\input{diagrams/w_string.tex}
+}
+\end{figure}
+$$\vket{W} = \vket{100...}+...$$
+\vskip-0.5cm
+\bi 
+\item W-State can be factored and put on hexagon sites
+\item Each black directed string has either charge $0$ or $1$
+\item Charge conserved
+\ei 
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{figure}[h]
+\scalebox{1.5}{
+\input{diagrams/D_op.tex}
+}
+\end{figure}
+\vskip-0.3cm
+\bi 
+\item `Projects' the three virtual qubits coming into each vertex on to a state in physical Hilbert space
+\item Physical state is either $\ket{0}, \ket{1}, \ket{2}, \ket{3}$
+\item Charge conserved
+\ei 
+\end{column}
+\end{columns}
 }
 
 \end{frame}

@@ -4,7 +4,7 @@
 \begin{columns}[T]
 \begin{column}[T]{0.65\textwidth}
 \bi 
-\item Crystaline, 0T insulators \\(including semiconductors)
+\item Crystalline, 0T insulators \\(including semiconductors)
 %A good source of examples - column IV of periodic table, such as C, or in combination with column VI 
 %(Columns I-III prefer to donate their valence electrons and form ionic bonds or metals)
 %Microscopics are described well by
@@ -13,7 +13,7 @@ $$
 \mathcal{H}_{FF} =  \sum\limits_{<ij>}\sum\limits_{\alpha, \beta}-t_{\alpha, \beta} c^{\alpha \dagger}_{i} c_{j}^{\beta} - \mu \sum\limits_{i, \alpha} N_{i}^{\alpha} 
 $$
 %Diagonalize in momentum space to produce band picture, completely fill some lowest number of bands
-\item Bloch Wavefunctions
+\item Bloch wavefunctions
 $
 \ket{u^{\alpha}_{\kk}}
 $
@@ -25,32 +25,39 @@ $$
 %Describing a single conduction and valence band with a gap to pair production of quasi-electron+quasi-hole
 \item Atomic-insulating like Wannier basis
 %From Fourier transforming the Block wavefunctions
+\item Density plateau
 \ei 
 \end{column}
 
 \begin{column}[T]{0.35\textwidth}
-\vskip3cm
-\only<1>{
+\only<1->{
     \begin{figure}
         \includegraphics[width=\linewidth]{diagrams/GaNcrystal.jpg}
         \caption{Semiconductor GaN}
     \end{figure}
-}    
+}
+\vskip-0.5cm    
+\only<1>{
+    \begin{figure}
+        \includegraphics[width=\linewidth]{diagrams/grapheneband2.jpg}
+        \caption{Band Theory}
+    \end{figure}
+}
+% \only<3>{
+    % \begin{figure}
+        % \includegraphics[width=\linewidth]{diagrams/grapheneband2.jpg}
+        % \caption{Dirac Band Theory}
+    % \end{figure}
+% } 
 \only<2>{
     \begin{figure}
-        \includegraphics[width=\linewidth]{diagrams/GaNcrystal.jpg}
-        \caption{Band Theory}
+        \includegraphics[width=\linewidth]{diagrams/bernevig1.png}
+        \caption{Atomic Insulator}
     \end{figure}
 }
 \only<3>{
     \begin{figure}
-        \includegraphics[width=\linewidth]{diagrams/GaNcrystal.jpg}
-        \caption{Dirac Band Theory}
-    \end{figure}
-}
-\only<4>{
-    \begin{figure}
-        \includegraphics[width=\linewidth]{diagrams/GaNcrystal.jpg}
+        \includegraphics[width=\linewidth]{diagrams/kagomewannier.png}
         \caption{Wannier Function}
     \end{figure}
 }

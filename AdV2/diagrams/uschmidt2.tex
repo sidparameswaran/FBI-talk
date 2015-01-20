@@ -1,0 +1,23 @@
+\begin{tikzpicture}[node distance=0.4cm]
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+\node[] (u) at (-0.5, 0) {\Large $\mathcal{U} =$}; 
+\foreach \i in {1,...,3} {
+	\node[gamma] (G\i) at (1.5*\i,0) {$A$};
+	\node (l\i) at ($ (G\i) + (0, 1) $) {$$};
+	\draw[thick, postaction={decorate}] (G\i) -- (l\i);
+	%\node[below of=G\i] {$A$};
+}
+\foreach \i / \j in {1/2,2/3} {
+	\draw[thick, postaction={decorate}] (G\j) -- (G\i);
+}
+\node (b0) at (0, 0) {$...$};
+\node[inv] (sigL) at (6, 0) {$\frac{1}{\sqrt{\sigma_L}}$};
+\draw[thick, postaction={decorate}] (G1) -- (b0);
+\draw[thick, postaction={decorate}] (sigL) -- (G3);
+%\node[inv](Q) at (7, 0){};
+%\draw[thick, postaction={decorate}] (Q) -- (sigL);
+\end{scope}
+\end{tikzpicture}
