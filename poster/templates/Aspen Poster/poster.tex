@@ -1,0 +1,266 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Multiplicative domain poster
+% Created by Nathaniel Johnston
+% August 2009
+% http://www.nathanieljohnston.com/2009/08/latex-poster-template/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[final]{beamer}
+\usepackage[scale=1.24]{beamerposter}
+\usepackage{graphicx}			% allows us to import images
+
+%-----------------------------------------------------------
+% Custom commands that I use frequently
+%-----------------------------------------------------------
+
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\cl}[1]{\mathcal{#1}}
+\newcommand{\fA}{\mathfrak{A}}
+\newcommand{\fB}{\mathfrak{B}}
+\newcommand{\Tr}{{\rm Tr}}
+\newtheorem{thm}{Theorem}
+\def\GL{\mathrm{GL}}
+
+%-----------------------------------------------------------
+% Define the column width and poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% The separation I chose is 0.024 and I want 4 columns
+% Then set onecolwid to be (1-(4+1)*0.024)/4 = 0.22
+% Set twocolwid to be 2*onecolwid + sepwid = 0.464
+%-----------------------------------------------------------
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\setlength{\paperwidth}{48in}
+\setlength{\paperheight}{36in}
+\setlength{\sepwid}{0.024\paperwidth}
+\setlength{\onecolwid}{0.22\paperwidth}
+\setlength{\twocolwid}{0.464\paperwidth}
+\setlength{\topmargin}{-0.5in}
+\usetheme{confposter}
+\usepackage{exscale}
+
+%-----------------------------------------------------------
+% The next part fixes a problem with figure numbering. Thanks Nishan!
+% When including a figure in your poster, be sure that the commands are typed in the following order:
+% \begin{figure}
+% \includegraphics[...]{...}
+% \caption{...}
+% \end{figure}
+% That is, put the \caption after the \includegraphics
+%-----------------------------------------------------------
+
+\usecaptiontemplate{
+\small
+\structure{\insertcaptionname~\insertcaptionnumber:}
+\insertcaption}
+
+%-----------------------------------------------------------
+% Define colours (see beamerthemeconfposter.sty to change these colour definitions)
+%-----------------------------------------------------------
+
+\setbeamercolor{block title}{fg=ngreen,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70}
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
+
+%-----------------------------------------------------------
+% Name and authors of poster/paper/research
+%-----------------------------------------------------------
+
+\title{Distinct edge phases with the same bulk Abelian Quantum-Hall state}
+\author{ Eugeniu Plamadeala \\ \vspace{9pt} {\it in collaboration with Jennifer Cano, Meng Cheng, Michael Mulligan, Chetan Nayak, and Jon Yard} } %in collaboration with Jennifer Cano, Meng Cheng, Michael Mulligan, Chetan Nayak, and Jon Yard
+\institute{Department of Physics, University of California Santa Barbara \hspace{1.5in} Microsoft Station Q}
+%-----------------------------------------------------------
+% Start the poster itself
+%-----------------------------------------------------------
+% The \rmfamily command is used frequently throughout the poster to force a serif font to be used for the body text
+% Serif font is better for small text, sans-serif font is better for headers (for readability reasons)
+%-----------------------------------------------------------
+
+\begin{document}
+\begin{frame}[t]
+  \begin{columns}[t]												% the [t] option aligns the column's content at the top
+    \begin{column}{\sepwid}\end{column}			% empty spacer column
+    \begin{column}{\onecolwid}
+      \begin{block}{Quantum Hall Basics}
+        A 2DEG in a strong magnetic field develops Landau levels. The low-energy sector is described a Chern-Simons theory
+        $$  S = \int d^3 x \left( \frac{1}{4\pi} \epsilon^{\mu \nu \rho} K_{IJ} a^I_\mu \partial_\nu a^J_\rho 
+        + \frac{1}{2\pi} \epsilon^{\mu \nu \rho} t_I A_\mu \partial_\nu a^I_\rho  \right)   $$
+            
+        \vskip1ex
+        Associated lattice $\Lambda = \lbrace m_I {\bf e}_I | m_I \in \mathbb{Z} \rbrace $ such that ${\bf e}_I \cdot {\bf e}_J = K_{IJ}$ 
+        \vskip1ex        
+        Edge action - Luttinger liquid
+        
+\begin{multline*}
+S = \int dx dt  \frac{1}{4\pi} \left(  K_{IJ} \partial_t \phi^I \partial_x \phi^J - V_{IJ}\partial_x \phi^I \partial_x \phi^J \right)  \\
+        + \frac{1}{2\pi} t_I \epsilon_{\mu \nu} \partial_\mu \phi^I A_\nu
+\end{multline*}        
+        
+      \end{block}
+      \vskip2ex
+      \begin{block}{Example of Bulk Topological Phase with Two Distinct Edge Phases}
+       A theory with $K = \sigma_x / \sigma_z$ (+ appropriate backscattering term) describes a pair of trivial gapped bosonic/fermionic modes.
+       \vskip2ex
+      Let \begin{equation}
+K_1 = \begin{pmatrix}
+	1 & 0 \\
+	0 & 7
+  \end{pmatrix} \textit{         } 
+  K_2 = \begin{pmatrix}
+	2 & 1 \\
+	1 & 4
+  \end{pmatrix} 
+\end{equation}       
+              \vskip2ex
+       Consider a theory with $K = K_1 \oplus \sigma_z$ and backscattering terms:
+        \vskip2ex
+       \begin{eqnarray*}
+           S' &=& \int dx \, dt \, u' \cos({\phi_3} + {\phi_4}) \\
+        S'' &=& \int dx \, dt \, u'' \cos({\phi_1}+7{\phi_2}+{\phi_3}+3{\phi_4})
+       \end{eqnarray*}
+         \vskip2ex  
+A basis change $W \in \GL(4,\mathbb{Z})$ shows that
+ \vskip2ex
+    \begin{eqnarray*}
+        K_2 \oplus \sigma_z &=& W^T \left( K_1 \oplus \sigma_z \right) W \\
+               \phi^I &=& W^I_J {\phi^J}'  \\
+          {\phi_4}' - {\phi_3}'  &=& {\phi_1}+7{\phi_2}+{\phi_3}+3{\phi_4} 
+    \end{eqnarray*}
+
+$K_1$ and $K_2$ describe physically distinct edge theories: their spectrum of operator scaling dimensions differs. Therefore, Quantum Point Contact tunnelling exponents will differ as well.
+
+      \end{block}
+     
+    \end{column}
+
+    \begin{column}{0.75\sepwid}\end{column}			% empty spacer column
+        \begin{column}{1.2\onecolwid}\vspace{-.69in}
+          \begin{block}{Stable-Equivalence and Bulk-Edge Correspondence}
+          % The previous section is an example of something called stable equivalence, but before I can say more,
+          % I need to introduce some definitions
+
+            % \sigma_x is a unimodular lattice, meaning its K matrix has unit determinant. It also has signature (1,1).
+            % All unimodular lattices of (n,n) signature describe counter-propagating edge modes that can be gapped out
+            % and that are connected to topologically trivial states in the bulk. All are just a direct some of some number of \sigma_x or \sigma_z
+
+        {\it A bulk Abelian quantum Hall state associated with $K_1$ has more than one distinct chiral edge phase if there exists GL($N,\mathbb{Z}$)-inequivalent $K_2$, an appropriate unimodular lattice $L$, and $W \in \mathrm{GL}(N+2, \mathbb{Z})$ such that }
+            $$ K_2 \oplus L = W^T (K_1 \oplus L) W $$
+            $K_1$ and $K_2$ are said to be {\it stably equivalent}.
+        \vskip2ex
+        \begin{alertblock}
+        \rmfamily{Even unimodular lattices $\equiv$ IQH states of bosons, exist only for $c=8k$.}
+
+    \begin{center}
+    \begin{tabular}{ l | c | c | c | c | c}
+    Central Charge & 8 & 16 & 24 & 32 ... \\ \hline
+    Number of lattices & 1 & 2 & 24 &  $>10^9$ & ...
+    \end{tabular}
+    \end{center}        
+        
+  \vskip2ex          
+        
+      \rmfamily{  Odd unimodular lattices $\equiv$ IQH states of fermions, exist for $\forall c \in \mathbb{N}^+$}
+   \begin{center}
+    \begin{tabular}{ l | c | c | c | c | c | c}
+    Central Charge & 1-8 & 9-11 & 12-13 & 14 & 15 &  ... \\ \hline
+    Number of lattices & 1 & 2 & 3 & 4 & 5 & ...
+    \end{tabular}
+    \end{center}  
+
+      \end{alertblock}
+      \vskip2ex       
+      
+            % Stable equivalence means that two K-matrices are equivalent after adding "trivial" degrees of freedom - i.e. purely 1D degrees of freedom that do not require any change to the bulk.
+            
+            The set of stably equivalent K-matrices (or lattices) are said to form a {\it genus}.
+           {\bf How do we tell if two K-matrices are in the same genus?}
+           
+         The topologically distinct quasiparticles of an Abelian CS theory and their fusion rules are captured by the {\it discriminant group}  $\mathcal{A} = \Lambda^*/\Lambda$. Given ${\bf v}, {\bf v}' \in \mathcal{A}$
+                    
+          \begin{eqnarray*}
+          S_{[{\bf v}], [{\bf v}']} = \frac{1}{\sqrt{\mathcal{A}}} e^{-2\pi i {\bf v} \cdot {\bf v}'}  \\
+          T_{[{\bf v}],[{\bf v}']} = e^{-\frac{2\pi i}{24} c_-} \textit{  } \delta_{[{\bf v}],[{\bf v}']} \textit{  } \theta_{[{\bf v}]}
+\end{eqnarray*}          
+           where $ \theta_{[{\bf v}]} $ are the topological twists. (In the case of fermions, only $T^2$ is well-defined).
+          
+           \vskip2ex
+           Thus if two even K-matrices have the same $\left( \mathcal{A}, T, S, c_+, c_- \right)$, they are in the same genus. (Extra complications for fermions.)       
+          \vskip2ex
+        \begin{alertblock}{}
+        \rmfamily{A bulk {\it bosonic} topological phase corresponds to a genus of even lattices, while its edge phases correspond to the lattices in this genus. \vskip2ex
+        A bulk {\it fermionic} topological phase corresponds to a genus of odd lattices, while its edges correspond to the lattices in the genus, and, in some cases, to the lattices in an associated genus of even lattices.
+        }
+      \end{alertblock}
+      \vskip2ex      
+               
+                
+          \end{block}
+        \end{column}
+
+
+  \begin{column}{0.5\sepwid}\end{column}			% empty spacer column
+  \begin{column}{\onecolwid}
+
+For the example provided, det $K_1 = 7$. 
+    \begin{equation*}
+        \Lambda = \mathbb{Z} \times \mathbb{Z},  \Lambda^* = \mathbb{Z} \times \mathbb{Z}/7 \implies \mathcal{A} = Z_7
+    \end{equation*}
+    generated by $(0,4)^T$, for example. Then, the quasiparticles in the theory are labelled
+    \begin{equation*}
+    \psi_j \equiv (0,4j), \textit{    } j=0,1,...,6
+    \end{equation*}
+    Giving the S matrix
+    
+    \begin{equation*}
+        S_{jj'} = \frac{1}{7} \exp\left(-\frac{32 \pi i}{7} j j' \right)
+    \end{equation*}
+   
+Similarly for $K_2$, a valid generator is $(0,1)^T$, giving quasiparticles $\psi'_j$ and S matrix
+    \begin{equation*}
+        S'_{jj'} = \frac{1}{7} \exp\left( -\frac{4 \pi i}{7} j j' \right)
+    \end{equation*}
+    Finally, identifying $\psi_j \leftrightarrow \psi'_j$ proves consistent with $S_{jj'} = S'_{jj'}$
+
+\vskip2ex  
+
+{\bf  How many distinct edge phases terminate the same bulk?}
+    Using the Smith-Siegel-Minkowski mass formula one can, indirectly, determine how many distinct lattices there are in a given genus.
+         \vskip2ex   
+    \begin{equation*} 
+  \sum_{\Lambda\in g} \frac{1}{|\text{Aut}(\Lambda)|} = m(K)
+  \label{eqn:massformula1}
+\end{equation*}
+     \vskip2ex   
+In particular, all chiral Abelian quantum Hall states with central charge $c > 10$ have multiple distinct edge phases.
+     
+     
+  \begin{block}{References}
+            
+		        \small{\begin{thebibliography}{99}
+		        \bibitem{Wen} X.G. Wen \& Phys. Rev. B \textbf{43}, 11025 (1991).
+		        \bibitem{Read} N. Read, Phys. Rev. Lett \textbf{65},  1502(1990).
+		        \bibitem{First} E. Plamadeala, M. Mulligan, C. Nayak, Phys. Rev. B \textbf{88}, 045151 (2013)
+		        \bibitem{Second} J. Cano, M. Cheng, M. Mulligan, C. Nayak, E.Plamadeala, J.Yard, arXiv:str-el/1310.5708
+		        \bibitem{Frohlich} J. Fr\"{o}hlich, E. Thiran, Journal of stat. phys. \textbf{76} (1994), 209-283
+		        \bibitem{Nikulin} V.V. Nikulin, Math. USSR Izv. \textbf{14}, 103 (1980)
+		        \bibitem{BelovMoore} D. Belov, G.W. Moore, arXiv:hep-th/0505235 
+		        \bibitem{Stirling} S.D. Stirling, Ph.D. thesis, UT Austin, arXiv:0807.2857
+		        \end{thebibliography}}
+			      \vspace{0.25in}
+	        \begin{center}
+        \begin{tabular}{ccc}
+          \includegraphics[width=2in]{ucsb.pdf} & \hspace{1.5in} & \includegraphics[width=3in]{Microsoft-Research.jpg}
+        \end{tabular}
+      \end{center}
+		      \end{block}     
+     
+
+    
+  \end{column}
+  \begin{column}{\sepwid}\end{column}			% empty spacer column
+ \end{columns}
+\end{frame}
+\end{document}
