@@ -1,0 +1,57 @@
+% http://tex.stackexchange.com/questions/21923/hexagonal-diagrams
+
+\begin{tikzpicture}
+%%%  define vertices with coordinates
+\coordinate (0;0) at (0,0); 
+\foreach \c in {1,...,3}{%  
+\foreach \i in {0,...,5}{% 
+\pgfmathtruncatemacro\j{\c*\i}
+\coordinate (\c;\j) at (60*\i:\c);  
+} }
+\foreach \i in {0,2,...,10}{% 
+\pgfmathtruncatemacro\j{mod(\i+2,12)} 
+\pgfmathtruncatemacro\k{\i+1}
+\coordinate (2;\k) at ($(2;\i)!.5!(2;\j)$) ;}
+
+\foreach \i in {0,3,...,15}{% 
+\pgfmathtruncatemacro\j{mod(\i+3,18)} 
+\pgfmathtruncatemacro\k{\i+1} 
+\pgfmathtruncatemacro\l{\i+2}
+\coordinate (3;\k) at ($(3;\i)!1/3!(3;\j)$)  ;
+\coordinate (3;\l) at ($(3;\i)!2/3!(3;\j)$)  ;
+ }
+
+ %%%%%%%%% draw lines %%%%%%%%
+ \foreach \i in {0,...,6}{% 
+ \pgfmathtruncatemacro\k{\i}
+ \pgfmathtruncatemacro\l{15-\i}
+ %\draw[thin,gray] (3;\k)--(3;\l);
+ \pgfmathtruncatemacro\k{9-\i} 
+ \pgfmathtruncatemacro\l{mod(12+\i,18)}   
+ %\draw[thin,gray] (3;\k)--(3;\l); 
+ \pgfmathtruncatemacro\k{12-\i} 
+ \pgfmathtruncatemacro\l{mod(15+\i,18)}   
+ %\draw[thin,gray] (3;\k)--(3;\l);
+ }    
+%%%%%%%%% some specific lines %%%%%%%%%% 
+ %\foreach \i in {0,2,...,10} {
+%   \pgfmathtruncatemacro\j{mod(\i+2,12)} 
+  % \draw[thick,dashed] (2;\i)--(2;\j);}     
+%%%%%%%%% draw points %%%%%%%% 
+\fill [gray] (0;0) circle (2pt);
+ \foreach \c in {1,...,3}{%
+ \pgfmathtruncatemacro\k{\c*6-1}    
+ \foreach \i in {0,...,\k}{% 
+   \fill [gray] (\c;\i) circle (2pt);}}  
+%%%%%%%%% some specific points %%%%%%%%%%  
+ \foreach \n in {0,3,...,15}{% 
+  \draw (3;\n) circle (4pt);
+   }
+ \foreach \n in {1,3,...,11}{% 
+   \draw (2;\n) circle (4pt);
+   }
+  \draw (0,0) circle(4pt);
+%%%%%%%%%% arrows %%%%%%%%%%%%
+%\draw[->,red,thick,shorten >=4pt,shorten <=2pt](0;0)--(2;3);
+%\draw[->,red,thick,shorten >=4pt,shorten <=2pt](0;0)--(2;1); 
+\end{tikzpicture}  

@@ -1,0 +1,60 @@
+% y=\sqrt{3/4}*(minimum size)/2
+%
+
+%http://tex.stackexchange.com/questions/6019/drawing-hexagons
+\begin{tikzpicture}[x=7.5mm,y=4.33mm]
+  % some styles
+  \tikzset{
+    box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=10mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     % dotted,
+      thick,
+      black,
+      draw
+    }
+  }
+ \tikzset{boson/.style={circle=1pt,draw=black!100,fill=orange!100,inner sep=2pt}}
+  \tikzset{dimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=2pt}}
+    \tikzset{thindimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=1pt}}
+
+\foreach \i in {0,...,2} 
+    \foreach \j in {0,...,3} {
+            \node[box] at (2*\i,2*\j) {};
+        }
+\foreach \i in {0,...,1} 
+    \foreach \j in {0,...,2} {
+   	   \node[box] at (2*\i+1,2*\j+1) {};   
+        }
+
+ \foreach \i in {-1,...,2} 
+     \foreach \j in {-1,...,2} 
+     {
+     \pgfmathtruncatemacro{\xa}{2*\i + 1*\j}
+     \pgfmathtruncatemacro{\ya}{3*\j}
+      \pgfmathtruncatemacro{\xb}{2*\i + 1*\j+1}
+     \pgfmathtruncatemacro{\yb}{3*\j+1}
+      \pgfmathtruncatemacro{\xc}{2*\i + 1*\j}
+     \pgfmathtruncatemacro{\yc}{3*\j+2}
+    
+    \ifnum -1<\xa \ifnum \xa<5
+     \ifnum\ya<7\ifnum-1<\ya 
+	% \node[dimer, rotate=120] at (\x-1/2,\y-1/2) {$\,\,\,\,$};     
+     %\node[dimer, rotate=120] at (\x+1/2,\y+1/2) {$\,\,\,\,$};
+     %\node[dimer, rotate=60] at (\x-1/2,\y+1/2) {$\,\,\,\,$};
+       %\node[thindimer, rotate=60] at (\x+1/2,\y-1/2) {$\,\,\,\,$};
+     \node[dimer, rotate=0] at (\xa,\ya-1) {$\,\,\,\,$};
+      \node[dimer, rotate=0] at (\xa,\ya+1) {$\,\,\,\,$};
+     \fi \fi\fi\fi
+     
+      \ifnum -1<\xc\ifnum \xc<5
+     \ifnum \yc<7 \ifnum -2<\yc
+       \node[dimer, rotate=0] at (\xc,\yc+1) {$\,\,\,\,$};
+       \fi\fi\fi \fi 
+     }
+
+\end{tikzpicture}

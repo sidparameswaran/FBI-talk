@@ -59,7 +59,8 @@
 %% change the basic colors
 \definecolor{myblue}{HTML}{008888} 
 \setfirstcolor{orange}% default 116699
-\setsecondcolor{gray!80!}% default CCCCCC
+\setsecondcolor{white}% default CCCCCC
+%\setsecondcolor{gray!80!}% default CCCCCC
 %\setthirdcolor{orange!100!yellow}% default 991111
 \setthirdcolor{orange}% default 991111
 
@@ -105,16 +106,29 @@
 
 
 %% add your packages here
-\usepackage{hyperref}
+%\usepackage{graphics}
+%\usepackage{graphicx}
+%%\usepackage{wasysym}
+%\usepackage{pgf}
+%\usepackage{verbatim}
+%\usepackage{tikz}
+%\usepackage{pgfmath}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{backgrounds}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{shapes.arrows}
+%\usetikzlibrary{shapes.geometric}
+%\usetikzlibrary{decorations.markings}
+%\usetikzlibrary{positioning}
+%\usetikzlibrary{fit,chains}
 
-
-
+\input{commands/shortcuts}
+\input{commands/pgfstyles}
 
 
 \title{Featureless Bosonic Insulators}
 \author{Brayden Ware\\
-  University of California Santa Barbara \And Itamar Kimichi\\ UCB  \And Siddarth Parameswaran \\ UCI  \And Bela Bauer \\ Station Q 
-}
+  UCSB \And Itamar Kimchi\\ UCB  \And Siddarth Parameswaran \\ UCI  \And Bela Bauer \\ Station Q }
 
 
 \begin{document}
@@ -147,35 +161,7 @@
   %% a block node, with the specified position (optional), title and the content
   %% #1 - where (optional), #2 - title, #3 - text
   %%%%%%%%%% ------------------------------------------ %%%%%%%%%%
-  \blocknode%
-  {Block with inner block}%
-  {
-
-    \innerblockplain[colorthree!80!]{
-    
-    text of inner block
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    asdf
-    
-    }
-  }
-  
+ \input{blocks/block1}  
   
 
 

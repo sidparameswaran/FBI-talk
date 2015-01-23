@@ -1,0 +1,24 @@
+\begin{tikzpicture}[node distance=0.4cm]
+
+\foreach \i / \j in {1/A,2/B,3/A,4/B,5/A}
+{
+	\node[gamma] (G\i) at (2*\i-2,2.5) {};
+	\node[below of=G\i] {$U^\i$};
+	\draw[thick] (G\i) -- ($ (G\i) + (0, 0.75) $);
+}
+\foreach \i / \j in {1/A, 2/B,3/A,4/B}
+{
+	\node[lambda] (l\i) at (2*\i-1,2.5) {};
+	\node[below of=l\i] {$\lambda^\i$};
+}
+
+\foreach \i / \j in {1/2,2/3,3/4,4/5}
+{
+	\draw[thick] (l\i) -- (G\i);
+	\draw[thick] (l\i) -- (G\j);
+}
+
+%\draw[thick,dashed] (l1) -- ($ (l1) + (-0.5,0) $);
+%\draw[thick,dashed] (l6) -- ($ (l6) + (0.5,0) $);
+
+\end{tikzpicture}

@@ -1,0 +1,161 @@
+\usetheme{Rochester}
+\usepackage{tikz}
+\RequirePackage{pgf}
+\usepackage{ragged2e}
+
+%\pgfdeclareimage[width=1.0\paperwidth]{banners/honey_banner_light}{banners/honey_banner_light}
+
+
+\setbeamertemplate{caption}{\insertcaption} %BW
+
+
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.13\paperwidth
+
+\definecolor{airorange}{rgb}{.953 ,.502 ,.04}
+\definecolor{airdarkblue}{HTML}{064F6F}
+\definecolor{airlightblue}{HTML}{0099d5}
+\definecolor{airgray}{HTML}{686868}
+\definecolor{airlightgray}{HTML}{eeeeee}
+\definecolor{airblue}{rgb}{.13 ,.43 ,.68}
+\setbeamercolor*{Title bar}{fg=airdarkblue}
+\setbeamercolor*{Location bar}{fg=airorange,bg=airlightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=white,fg=airdarkblue}
+\setbeamercolor*{block body}{bg=white,fg=airgray}
+\setbeamercolor*{normal text}{bg=white,fg=airgray}
+\setbeamercolor*{section in head/foot}{bg=airblue,fg=airdarkblue}
+% set colors for alerted blocks (blocks with frame)
+\setbeamercolor{block alerted title}{fg=white,bg=airorange}
+\setbeamercolor{block alerted body}{fg=black,bg=airorange}
+
+\usecolortheme[named=airorange]{structure}
+\usefonttheme{professionalfonts}
+
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\LARGE} 
+%BW: %https://engineering.purdue.edu/ECN/Support/KB/Docs/LaTeXChangingTheFont
+
+\newcommand{\topline}{%
+  \tikz[remember picture,overlay] {%
+    \draw[thick, orange] ([yshift=0cm, xshift=0cm]current page.north west)
+             -- ([yshift=0cm,xshift=0cm]current page.north east);}}
+
+\newcommand{\makeruleinbox}{{\usebeamercolor[bg]{block alerted title}\centering\hspace*{-0.7cm}\rule{\inboxrule}{0.5cm}}}
+             
+% Block definition
+%\setbeamertemplate{block begin}
+%{
+%  %\par\vskip\medskipamount
+%  \begin{beamercolorbox}[colsep*=0ex,dp={2ex},center]{block title}
+%    \vskip-0.25cm
+%    \usebeamerfont{block title}\large\insertblocktitle
+%    \begin{flushleft}
+%    \vskip-1cm
+%    \begin{tikzpicture}[remember picture,overlay]
+%      \shade [inner color=gray,outer color=white]
+%      (0,0) rectangle (\textwidth,0.3cm);
+%    \end{tikzpicture}
+%    \end{flushleft}
+%  \end{beamercolorbox}
+%  {\parskip0pt\par}
+%  \ifbeamercolorempty[bg]{block title}
+%  {}
+%  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
+%  \usebeamerfont{block body}
+%  \vskip-0.5cm
+%  \begin{beamercolorbox}[colsep*=0ex,vmode]{block body}
+%  \justifying
+%}
+%
+%\setbeamertemplate{block end}
+%{
+%  \end{beamercolorbox}
+%  \vskip\smallskipamount
+%}
+
+\setbeamertemplate{block begin}
+{
+\begin{beamercolorbox}[center]{block title}
+\vskip-0.5cm
+\usebeamerfont{block title}\large\insertblocktitle
+%\topline
+\end{beamercolorbox}
+\usebeamerfont{block body}
+\vskip-0.2cm
+\begin{beamercolorbox}[colsep*=0ex,vmode]{block body}
+\justifying
+}
+
+\setbeamertemplate{block end}
+{
+\end{beamercolorbox}
+}
+
+             
+%==============================================================================
+% build the poster title
+%==============================================================================
+\setbeamertemplate{headline}{
+ \leavevmode
+  \begin{columns}
+   \begin{column}{\linewidth}
+    \vskip1cm
+    \centering
+    \usebeamercolor{title in headline}{\color{airdarkblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
+    \usebeamercolor{author in headline}{\color{fg}\Large{\insertauthor}\\[1ex]}
+    \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}
+    \vskip1cm
+   \end{column}
+   \vspace{1cm}
+  \end{columns}
+ 
+ \vspace{0.4in}
+ \hspace{0.5in}\begin{beamercolorbox}[wd=47in,colsep=0.15cm]{cboxb}\end{beamercolorbox}
+
+ \vspace{0.1in}
+}
+
+
+
+\setbeamercolor{block title alerted}{fg=white,bg=airorange}
+%body
+\setbeamercolor{block body alerted}{fg=airgray,bg=white}
+% parent of all alerts default is red
+\setbeamercolor{alerted text}{fg=airorange}
+
+% \setbeamertemplate{headline}
+    % {
+    % \linethickness{2.0pt}
+    % }
+
+% \setbeamertemplate{headline}
+% {
+  % \pgfuseimage{banners/honey_banner_light}
+  % \vskip -1.95cm
+  % \linethickness{0.0pt}
+
+  % \framelatex{
+  % \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
+    % \usebeamerfont{section in head/foot}%
+    % \insertsectionnavigationhorizontal{0pt}{\hskip0.22cm}{}%
+  % \end{beamercolorbox}}
+
+  % \framelatex{
+  % \begin{beamercolorbox}[wd=\paperwidth,ht=0.7\beamer@headheight]{Title bar}
+  % \end{beamercolorbox}}
+% }
+
+\setbeamertemplate{footline}
+{
+  \linethickness{0.25pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+
