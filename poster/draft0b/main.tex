@@ -26,6 +26,9 @@
 \newlength{\onecolwid}
 \newlength{\twocolwid}
 \newlength{\threecolwid}
+\newlength{\leftcolwid}
+\newlength{\midcolwid}
+\newlength{\rightcolwid}
 \setlength{\paperwidth}{48in}
 \setlength{\paperheight}{36in}
 \setlength{\sepwid}{0.024\paperwidth}
@@ -33,6 +36,9 @@
 \setlength{\twocolwid}{0.627\paperwidth}
 \setlength{\threecolwid}{0.952\paperwidth}
 \setlength{\topmargin}{-0.5in}
+\setlength{\leftcolwid}{0.301\paperwidth}
+\setlength{\midcolwid}{0.301\paperwidth}
+\setlength{\rightcolwid}{0.301\paperwidth}
 %\usetheme{confposter}
 \usetheme{Air}
 \usepackage{exscale}
@@ -76,7 +82,7 @@
 
 %\begin{right}
 %  \includegraphics[width=5in]{Microsoft-Research.jpg}
-%\end{right}
+%\end{rih}
 %-----------------------------------------------------------
 % Start the poster itself
 %-----------------------------------------------------------
@@ -87,7 +93,7 @@
 
 \begin{column}{\sepwid}\end{column}			% empty spacer column
 
-\begin{column}{\onecolwid}
+\begin{column}{\leftcolwid}
       \input{blocks/block1A}
       \vskip2ex
       \input{blocks/block1B}
@@ -98,7 +104,7 @@
 
 \begin{column}{\sepwid}\end{column}			% empty spacer column
 
-\begin{column}{\onecolwid}	
+\begin{column}{\midcolwid}	
       \input{blocks/block2A}
       \vskip2ex
       \input{blocks/block2B}
@@ -109,7 +115,7 @@
 
 \begin{column}{\sepwid}\end{column}			% empty spacer column
 
-\begin{column}{\onecolwid}	
+\begin{column}{\rightcolwid}	
       \input{blocks/block3A}
       \vskip2ex
       \input{blocks/block3B}
