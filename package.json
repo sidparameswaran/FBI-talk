@@ -1,8 +1,4 @@
 {
   "name": "FBI-talk",
-  "main": "./Review/main.md",
-  "version": "0.0.1",
-  "description": "Just a presentation",
-  "repository": "https://github.com/braydenware/FBI-talk",
-  "license": "MIT"
+  "repository": "https://github.com/braydenware/FBI-talk"
 }

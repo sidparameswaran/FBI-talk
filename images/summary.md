@@ -26,3 +26,6 @@ The remaining results focus on one-dimensional physics by fixing the cylinder ci
 #### Perturbations of 1D Parent Hamiltonian
 
 $$\hat\rho = \ket{\psi}\bra{\psi}$$
+
+#### Other
+![Image inserted by Atom editor package auto-host-markdown-image](https://raw.githubusercontent.com/braydenware/FBI-talk/master/images/bosehubbard2.png)
