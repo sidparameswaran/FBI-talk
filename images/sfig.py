@@ -1,6 +1,4 @@
-figsize = (3.5,2.5)
-
-from matplotlib import rc, rcParams
+from matplotlib import rc, rcParams, ticker
 params = {'axes.labelsize': 8,
           'text.fontsize': 8,
           'title.fontsize': 8,
