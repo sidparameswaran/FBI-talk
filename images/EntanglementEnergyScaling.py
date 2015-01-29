@@ -81,7 +81,7 @@ def try_fit(xdata, ydata, func, color, weights, max_x, txt_coords, txt_func):
 fig = plt.plot()
 ax = plt.gca()
 plt.xscale('log')
-ax.set_xticks(range(2, 14, 2))
+ax.set_xticks(range(2, 12, 2))
 ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: str(int(IO.round_sig(x, 2)))))
 plt.yscale('log')
 ax.set_yticks([0.1, 0.2, 0.5, 1, 2, 3])
@@ -97,40 +97,38 @@ pl_txt = lambda params: 'B='+str(IO.round_sig(params[0]))+'\nC='+str(IO.round_si
 text_x = 11.5
 max_x_in_fit = 11.1
 
-#line 3 (j-1 |00>)
-plt.plot(LL(1, 0, 0), E(1, 0, 0), label=labels[3], marker='.', color='k', ls='')
-params, R, line, text = try_fit(LL(1, 0, 0)[1:], E(1, 0, 0)[1:], pl, 'k', [1/2**x for x in LL(1, 0, 0)[1:]], max_x_in_fit, [text_x, 1.6], pl3_txt)
-
 #line 2
 plt.plot(LL(0, 6, 0), E(0, 6, 0), label=labels[2], marker='.', color='r', ls='')
-params, R, line, text = try_fit(LL(0, 6, 0), E(0, 6, 0), pl, 'r', [1/2**x for x in LL(0, 6, 0)], max_x_in_fit, [text_x, 0.87], pl3_txt)
+params, R, line, text = try_fit(LL(0, 6, 0), E(0, 6, 0), pl, 'r', [1/2**x for x in LL(0, 6, 0)], max_x_in_fit, [text_x, 1.4], pl3_txt)
+
+#line 4
+plt.plot(LL(1, 2, 0), E(1, 2, 0), label=labels[4], marker='.',markersize=8, color='c', ls='')
+#params, R, line, text = try_fit(LL(1, 2, 0)[1:], E(1, 2, 0)[1:], pl, 'k', [1/2**x for x in LL(1, 0, 0)[1:]], max_x_in_fit, [11, 0.8], pl3_txt)
+
+#line 3 (j-1 |00>)
+plt.plot(LL(1, 0, 0), E(1, 0, 0), label=labels[3], marker='.', color='k', ls='')
+#params, R, line, text = try_fit(LL(1, 0, 0)[1:], E(1, 0, 0)[1:], pl, 'k', [1/2**x for x in LL(1, 0, 0)[1:]], max_x_in_fit, [text_x, 1.6], pl3_txt)
 
 #line 1
 plt.plot(LL(0, 4, 0), E(0, 4, 0), label=labels[1], marker='.', color='g', ls='')
-params, R, line, text = try_fit(LL(0, 4, 0), E(0, 4, 0), pl, 'g', [1/2**x for x in LL(0, 4, 0)], max_x_in_fit, [text_x, .4], pl3_txt)
+params, R, line, text = try_fit(LL(0, 4, 0), E(0, 4, 0), pl, 'g', [1/2**x for x in LL(0, 4, 0)], max_x_in_fit, [text_x, .5], pl3_txt)
 
 # line 0
 plt.plot(LL(0, 2, 0), E(0, 2, 0), label=labels[0], marker='.', color='b', ls='')
-params, R, line, text = try_fit(LL(0, 2, 0)[1:], E(0, 2, 0)[1:], pl, 'b', [1/(2**x) for x in LL(0, 2, 0)[1:]], max_x_in_fit, [text_x, .1], pl3_txt)
-
-#line 4
-#plt.plot(LL(1, 2, 0), E(1, 2, 0), label=labels[4], marker='.',markersize=8, color='c', ls='')
-#params, R, line, text = try_fit(LL(1, 2, 0)[1:], E(1, 2, 0)[1:], pl, 'k', [1/2**x for x in LL(1, 0, 0)[1:]], max_x_in_fit, [11, 0.8], pl3_txt)
-
-
+params, R, line, text = try_fit(LL(0, 2, 0)[1:], E(0, 2, 0)[1:], pl, 'b', [1/2**x for x in LL(0, 2, 0)[1:]], max_x_in_fit, [text_x, .13], pl3_txt)
 
 # final text
-text = plt.text(text_x-0.3, 2.8, 'Fit: $C/L^B$')
+text = plt.text(text_x-0.6, 2.8, 'Fit: $C/L^B$')
 #text.set_x(text_x-0.3)
 #text.set_y(2.6)
 
 # legend
-plt.legend(loc=3, numpoints=1, frameon=False)
+plt.legend(loc=6, numpoints=1, frameon=False)
 #handles, labels = ax.get_legend_handles_labels()
 plt.xlabel('L')
 plt.ylabel('Entanglement Energy $E=-Log(\\rho/\\rho_0)$')
 plt.title('Entanglement energy versus system size')
-plt.xlim(3, 16)
-plt.ylim(0.05, 4.1)
+plt.xlim(2.1, 16.5)
+plt.ylim(0.1, 4.1)
 plt.tight_layout()
 plt.show()
