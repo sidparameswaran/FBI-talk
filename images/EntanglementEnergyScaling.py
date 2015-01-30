@@ -9,6 +9,9 @@ from PEPS import IO_helper as IO
 from PEPS import spectra_analyzer as spec
 from PEPS.CylinderPEPS import run
 
+show_fit_details = True
+show_legend = True
+
 ############ Go to state data
 i=10
 stri = str(i)
@@ -22,7 +25,7 @@ shift_func = lambda L: 0.3*(L-L_max-1)/(L_max - L_min)
 # if needed create edge spectrum
 params = IO.Params.kw('LKN', L=Ls, K=[0], N=[0])
 for p in params:
-    run.create_edge_spectrum(state, p, overwrite=True)
+    run.create_edge_spectrum(state, p, overwrite=False)
 
 # load and prepare spectrum    
 spectrum = pp.load_edge_spectrum(state, Ls)
@@ -73,7 +76,10 @@ def try_fit(xdata, ydata, func, color, weights, max_x, txt_coords, txt_func):
     interp, params, R = a.curve_fit_xy(xdata, ydata, func, extrap, weights=weights)
     #plt.plot(xdata, ydata, ls='', marker='.', markersize=4)
     line = plt.plot(extrap, interp, ls='-', color=color)
-    text = plt.text(txt_coords[0], txt_coords[1], txt_func(params))
+    if show_fit_details:
+        text = plt.text(txt_coords[0], txt_coords[1], txt_func(params))
+    else:
+        text=0
     return params, R, line, text
     
 #set up the plot
@@ -118,17 +124,24 @@ plt.plot(LL(0, 2, 0), E(0, 2, 0), label=labels[0], marker='.', color='b', ls='')
 params, R, line, text = try_fit(LL(0, 2, 0)[1:], E(0, 2, 0)[1:], pl, 'b', [1/2**x for x in LL(0, 2, 0)[1:]], max_x_in_fit, [text_x, .13], pl3_txt)
 
 # final text
-text = plt.text(text_x-0.6, 2.8, 'Fit: $C/L^B$')
+if show_fit_details:
+    text = plt.text(text_x-0.6, 2.8, 'Fit: $C/L^B$')
 #text.set_x(text_x-0.3)
 #text.set_y(2.6)
 
 # legend
-plt.legend(loc=6, numpoints=1, frameon=False)
+if show_legend:
+    plt.legend(loc=6, numpoints=1, frameon=False)
 #handles, labels = ax.get_legend_handles_labels()
 plt.xlabel('L')
-plt.ylabel('Entanglement Energy $E=-Log(\\rho/\\rho_0)$')
-plt.title('Entanglement energy versus system size')
+plt.ylabel('Entanglement Energy')
+#plt.ylabel('Entanglement Energy $E=-Log(\\rho/\\rho_0)$')
+plt.title('Scaling of low entanglement-energy spectrum')
 plt.xlim(2.1, 16.5)
 plt.ylim(0.1, 4.1)
+if not show_legend:
+    plt.xlim(xmin=3.8)
+if not show_fit_details:
+    plt.xlim(xmax=11.5)
 plt.tight_layout()
 plt.show()

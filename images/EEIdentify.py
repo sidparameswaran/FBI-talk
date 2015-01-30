@@ -91,11 +91,18 @@ fig, spec_ax = spec_points.plot_toolbox.spec_plot(spec_points, data_name,
     # plt.title('Entanglement Spectrum for hard-core FBI')
 ax = plt.gca()
 Ks = range(0, 3)
+
+#x major ticks
 ax.set_xticks(Ks)
-ax.xaxis.set_tick_params(which='major', direction='out', pad=14)
-ax.set_xticks([K+shift_func(L) for K in Ks for L in Ls], minor=True)
-ax.set_xticklabels(['L:'+str(L) for K in Ks for L in Ls], minor=True)
+ax.xaxis.set_tick_params(which='major', direction='out', pad=12)
+ax.set_xticklabels([r'K($\frac{2\pi}{L}$):$\qquad$'+str(K) if K==0 else str(K) for K in Ks], ha='right')
+
+#x minor ticks
 ax.xaxis.set_tick_params(which='minor', direction='out')#, pad=-14)
+ax.set_xticks([K+shift_func(L) for K in Ks for L in Ls], minor=True)
+ax.set_xticklabels(['L:$\quad$'+str(L) if (K==0 and L==10) else str(L) for K in Ks for L in Ls], minor=True, ha='right')
+
+#y ticks
 ax.set_yticks([0, 1, 9/4, 4, 25/4, 9, 49/4, 16])
 ax.set_yticklabels(['0', '1', '9/4', '4', '25/4', '9', '49/4', '16'])
 ax.legend().set_visible(False)
@@ -235,7 +242,7 @@ texts.append(text)
 
 plt.title('')
 plt.ylabel('Rescaled Entanglement Energy')
-plt.xlabel('Momentum K (parallel to cut)')
+plt.xlabel('')
 
 #text = plt.text(1.7, 1, 'L')
 #text.set_y(0.25)
