@@ -22,7 +22,7 @@ shift_func = lambda L: 0.3*(L-L_max-1)/(L_max - L_min)
 # if needed create edge spectrum
 params = IO.Params.kw('LKN', L=Ls, K=[0], N=[0])
 for p in params:
-    run.create_edge_spectrum(state, p, overwrite=False)
+    run.create_edge_spectrum(state, p, overwrite=True)
 
 # load and prepare spectrum    
 spectrum = pp.load_edge_spectrum(state, Ls)
