@@ -4,7 +4,6 @@
 \usepackage[latin9]{inputenc}
 \usepackage{amssymb}
 \usepackage{graphicx}
-\graphicspath{{../images/}{../diagrams/}{.}} %what folders to look for images in
 \usepackage{amsmath,color}
 \usepackage{mathrsfs}
 \usepackage{float}
@@ -18,6 +17,16 @@
 \newcommand{\eqnref}[1]{Eq.~(\ref{#1})}
 
 %\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%These may need modification
+%\usepackage[section]{placeins}
+\graphicspath{{../images/}{../diagrams/}{.}} %what folders to look for images in, via the command \includegraphics
+\input{commands/shortcuts}
+%\usepackage{wasysym}
+\usepackage{amsfonts}
+\usepackage{booktabs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
