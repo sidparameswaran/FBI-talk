@@ -93,8 +93,11 @@ plt.yscale('log')
 ax.set_yticks([0.1, 0.2, 0.5, 1, 2, 3])
 ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: str(IO.round_sig(x, 2))))
 
-labels = ['$\\vert 1, 0 \\rangle$', u'$\\vert 2, 0 \\rangle$', u'$\\vert 3, 0 \\rangle$',
-  u'$j_{-1} \\vert 0, 0 \\rangle$', '$j_{-1}\\vert 1, 0 \\rangle$']
+#labels = ['$\\vert 1, 0 \\rangle$', u'$\\vert 2, 0 \\rangle$', u'$\\vert 3, 0 #\\rangle$',
+#  u'$j_{-1} \\vert 0, 0 \\rangle$', '$j_{-1}\\vert 1, 0 \\rangle$']
+
+labels = ['e=1, K=0', 'e=2, K=0', 'e=3, K=0',
+ 'e=0, K=1', 'e=1, K=1']
  
 pl = lambda x, a, b: b*x**(-a)
 pl3_txt = lambda params: 'B='+str(IO.round_sig(params[0],3))+'\nC='+str(IO.round_sig(params[1],3))

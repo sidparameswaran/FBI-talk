@@ -1,64 +1,23 @@
-\newcommand{\uL}{\mathbf{L_0}}
-\newcommand{\bL}{\mathbf{\bar{L}_0}}
+\begin{block}{Finite Size Analysis of Entanglement Spectra}
 \begin{columns}[T]
-\begin{column}{.6\textwidth}
-
-\begin{block}{Conformal Charge}
-	\begin{figure}[hbctp]
-	\centering
-	\includegraphics[width=\textwidth]{{interpolatedboson/a0/plots/edge_gs_EE.pdf}}
-	%\caption{Entanglement entropy within the entanglement ground state of the soft-core boson state on $10$ sites. For comparison, the Cardy-Calabrese formula $S(x) = c/3 \log \sin( \pi x/L) + const.$ is shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by matching the maximum of the entanglement entropy data. $c=1$ is a good fit.}
-	%\label{fig:hc-edge-gs-ee}
-	\end{figure}
-	\begin{empheq}[box={\mybluebox[4pt][4pt]}]{equation*}
-	c = 1
-	\end{empheq}
-\end{block}
+\begin{column}{.5\textwidth}
+        \begin{figure}[hbctp]
+        \centering
+        \includegraphics[width=\textwidth]{{EntanglementEnergyScaling.pdf}}
+        %\includegraphics{{interpolatedboson/a10/plots/EntanglementEnergyScaling2.pdf}}
+        %\caption{Power law fits for the lowest three states above the ground state at momentum zero and lowest two states at momentum 1 in Figure \ref{fig:sc-EEFinitesize}. The $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. The labeling of the states $\ket{e, m}$ or $j_{-1} \ket{e, m}$ is explained in the CFT section below.}
+        %\label{fig:sc-EEScaling}
+        \end{figure}
+%        \bi 
+%        \item<1-> Low energy modes show gapless $1/L$ behavior
+%        \ei
 \end{column}
-\begin{column}{.4\textwidth}
-\begin{block}{Conformal Weights}
-\vskip0.5cm
-We can match the rescaled entanglement energies to the conformal weights of a free bosonic CFT.
-
-%\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{2}{c}@{}}
-%\begin{tabularx}{\columnwidth}{|X|X|}
-%\toprule
-\small
-\begin{align*}
-	\mathbf{P} &=\frac{2\pi}{L}(\uL-\bL)  \\
-	& = \frac{2\pi}{L}(em + n - \bar{n}) \\
-	\widetilde{\mathbf{P}}&= em + n - \bar{n}\\ 
-	\mathbf{H} &= \frac{2\pi}{L}(\uL+\bL)  \\
-	&= \frac{2\pi}{L}(\frac{\kappa e^2}{2} + \frac{m^2}{2 \kappa} + \frac{n + \bar{n}}{2}) \\
-	\widetilde{\mathbf{H}} &= \frac{L}{2 \pi \kappa}\mathbf{H} \\
-&	= e^2 + \frac{m^2}{4 \kappa^2} + \frac{1}{\kappa}(n + \bar{n})
-%\bottomrule
-%\end{tabular*}
-%\end{tabularx}
-\end{align*}
-\normalsize
-\end{block}
-
-%\begin{tabular}{lr}
-%
-%	$\mathbf{P} =\frac{2\pi}{L}(\uL-\bL)$ & 
-%	$\frac{2\pi}{L}(em + n - \bar{n})$ \\
-%	&
-%	\\
-%	$\widetilde{\mathbf{P}}$  &
-%	$(em + n - \bar{n})$\\
-%	& 
-%	\\
-%	$\mathbf{H} = \frac{2\pi}{L}(\uL+\bL)$ &
-%	 $\frac{2\pi}{L}(\frac{\kappa e^2}{2} + \frac{m^2}{2 \kappa} + \frac{n + \bar{n}}{2})$ \\
-%	&
-%	 \\
-%	$\widetilde{\mathbf{H}} = \frac{L}{2 \pi \kappa}\mathbf{H}$ &
-%	 $e^2 + \frac{m^2}{4 \kappa^2} + \frac{1}{\kappa}(n + \bar{n})$       
-%	\end{tabular}
-	%\label{Table:EV}
-	%\caption{Eigenvalues of states $\ket{e, m}_{n, \bar{n}}$.} 
-	%\end{table}
-
+\begin{column}{.5\textwidth}
+\bi
+\item Fix this to show topological entanglement entropy is 0
+\ei
 \end{column}
 \end{columns}
+
+
+\end{block}
