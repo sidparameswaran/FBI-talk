@@ -40,15 +40,18 @@ print fit_pts[0], fit_pts[1]
 plt.plot(Ls, entropy, 'k.', label='Data')
 plt.plot(extrap_Ls, fit_pts, 'b-', label='Fit')
 
-text = text = plt.text(0.5, 5, 'S = \\alpha L-\gamma')
+text = text = plt.text(1, 5, 'S = \\alpha L-\gamma')
 pl2_txt = lambda params: '\\alpha='+str(IO.round_sig(params[0],2))+'\n\gamma='+str(IO.round_sig(params[1], 2))
-text2 = plt.text(0.5, 4, pl2_txt(params))
+text2 = plt.text(1, 3.5, pl2_txt(params))
 
-plt.xlim(xmin=0, xmax=11)
-plt.ylim(ymin=0)
+plt.xlim(xmin=-1, xmax=11)
+plt.ylim(ymin=-1)
+plt.axhline(0, color='k', ls=':')
+plt.axvline(0, color='k', ls=':')
 
+plt.title('Computing Topological Entanglement Entropy')
 plt.xlabel('L')
-plt.ylabel('Entanglement entropy')
+plt.ylabel('Entanglement Entropy')
 plt.legend(loc='best', numpoints=1, frameon=False)
 plt.tight_layout()
 plt.show()
