@@ -6,6 +6,8 @@ Briefly discuss how the entanglement spectrum is calculated.\cite{cirac2011}
 
 \section{Entanglement spectrum}
 	
+The entanglement spectrum shows a linear dispersion near momentum zero. Many points in the spectrum are doubly degenerate - those that are assigned a non-zero $U(1)$ charge.
+	
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum_L10.pdf}}
@@ -13,20 +15,26 @@ Briefly discuss how the entanglement spectrum is calculated.\cite{cirac2011}
 	\label{fig:ESL10}
 \end{figure}
 
+On odd circumference cylinders, the entire entanglement spectrum is doubly degenerate.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum_L9.pdf}}
 \end{figure}
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\columnwidth]{{EntanglementEnergyScaling.pdf}}
-  \caption{Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL10}. The 			           $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian.}
-\end{figure}
+The topological entanglement entropy is essentially zero.
 
 \begin{figure}[hbctp]
 	\centering
 	\includegraphics[width=\columnwidth]{{TopologicalEntanglementEntropy.pdf}}
+\end{figure}
+
+The entanglement gap closes roughly as $1/L$. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{{EntanglementEnergyScaling.pdf}}
+  \caption{Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL10}. The $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size, points at non-zero momentum still deviate significantly from $1/L$ scaling.}
 \end{figure}
 
 \newcommand{\uL}{\mathbf{L_0}}
@@ -34,19 +42,16 @@ Briefly discuss how the entanglement spectrum is calculated.\cite{cirac2011}
 
 \subsection{Identification of edge CFT}
 
-\begin{itemize}
-\item Brief overview, very very briefly describe the relevant features of the free boson spectrum.
-\item Discuss the results on the even cylinders.: The entanglement gap closes roughly as $1/L$.
-\item We can identify the CFT in the low-lying spectrum.
-\item We can also take the lowest-lying Schmidt state, interpret it as the ground state of a 1d Hamiltonian, and consider its entanglement.
-\end{itemize}
+Given the $U(1)$ symmetry of the state, the simplest possible conformal field theory we might expect to appear at the edge is that of a single free bosonic field. 
 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\columnwidth]{{EdgeGS_EntanglementEntropy.pdf}}
-	\caption{Entanglement entropy within the entanglement ground state of the soft-core boson state on $10$ sites. For 	    comparison, the Cardy-Calabrese formula $S(x) = c/3 \log \sin( \pi x/L) + const.$ is shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by matching the maximum of the entanglement entropy data. $c=1$ is a good fit.}
-	\label{fig:EdgeGS_EE}
-\end{figure}
+The free-boson CFT is created from the Lagrangian 
+$$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx ( \frac{1}{v^2}(\partial_t \phi)^2 - (\partial_x \phi)^2)$$
+and with the compatified field identification
+$$ \phi \equiv \phi + 2\pi R$$
+and placed on the circle of circumference $L$ with periodic boundary conditions
+$$ \phi(x) \equiv \phi(x+L).$$
+
+After canonical quantization, it is found that the set of energy eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with integers $e, m$ labeling the $U(1)$ charge and the winding number of the bosonic field respectively, and level $n, \bar{n}$ descendant fields $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$ with nonnegative integers $n, \bar{n}$. The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and momentum eigenvalues - for the state $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$, 
 
 \begin{align*}
 	\mathbf{P} =\frac{2\pi}{L}&(\uL-\bL) 
@@ -62,11 +67,24 @@ $$
 
 The degeneracy of level $n, \bar{n}$ states is $Z(n) Z(\bar{n})$.
 
+
+
+We can identify the CFT in the low-lying spectrum.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{EEIdentify.pdf}
 	\caption{The identification of the states $j_{-n}\ket{e, m=0}$ in the spectrum of the soft-core boson entanglement Hamiltonian. The label $e$ gives the U(1) charge. The labels $n$, $\bar{n}$ label the levels in the right or left-moving sectors of the Kac-Moody algebra.  The best estimate for the Luttinger parameter is $\kappa = 1/6.4$. The label $m$ is 0 for all states shown - however, the primary states $\ket{e, m=\pm 1}$ can be seen centered around momentum $\pi$.}
 	\label{fig:primaries}
+\end{figure}
+
+We can also take the lowest-lying Schmidt state, interpret it as the ground state of a 1d Hamiltonian, and consider its entanglement.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\columnwidth]{{EdgeGS_EntanglementEntropy.pdf}}
+	\caption{Entanglement entropy within the entanglement ground state of the soft-core boson state on $10$ sites. For 	    comparison, the Cardy-Calabrese formula $S(x) = c/3 \log \sin( \pi x/L) + const.$ is shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by matching the maximum of the entanglement entropy data. $c=1$ is a good fit.}
+	\label{fig:EdgeGS_EE}
 \end{figure}
 
 
