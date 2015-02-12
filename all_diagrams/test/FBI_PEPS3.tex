@@ -1,0 +1,132 @@
+% y=\sqrt{3/4}*(minimum size)/2
+%
+
+%http://tex.stackexchange.com/questions/6019/drawing-hexagons
+\begin{tikzpicture}[x=7.5mm,y=4.33mm]
+  % some styles
+  \tikzset{box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=10mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+      dotted,
+      thin,
+      black,
+      draw}}
+ \tikzset{wb/.style={
+ 	regular polygon,
+	regular polygon sides=6,
+	minimum size=3mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+      % dotted,
+      very thick,
+      blue,
+      fill=white,
+      draw}}
+      
+\tikzset{operator/.style={circle=1pt,draw=orange, very thick, fill=white, inner sep=2pt}}
+
+
+%\tikzset{boson/.style={circle=1pt,draw=black!100,fill=orange!100,inner sep=2pt}}
+%\tikzset{dimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=2pt}}
+%\tikzset{thindimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=1pt}}
+%\tikzset{peps/.style={circle=2pt,draw=black!100,fill=green!50,inner sep=3pt}}
+%\tikzset{bpeps/.style={circle=2pt,draw=black!100,thick,fill=green!50,inner sep=3pt}}
+%\tikzset{gamma/.style={circle=2pt,draw=black!100,fill=blue!50,inner sep=3pt}}
+%\tikzset{lambda/.style={rectangle,rotate=45,draw=black!100,fill=red!50,inner sep=2pt}}
+
+
+\foreach \i in {-1,...,3}{
+	\foreach \j in {-1, 0, 1, 2, 3} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+             \node[box] (H\x\y) at (\x,\y) {};
+             %\node[wb] (W\x\y) at (\x,\y) {};
+            % \node[black] at (\x, \y) {\tiny W};
+        }
+}
+
+\foreach \i in {-1,...,3}{
+	\foreach \j in {-1, 0, 1, 2, 3} {
+		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+             \node[box] (H\x\y) at (\x,\y) {};
+             %\node[wb] (W\x\y) at (\x,\y) {};
+            % \node[black] at (\x, \y) {\tiny W};
+        }
+}
+
+
+
+
+\foreach \i in {0,...,2}{
+	\foreach \j in {1,...,2} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+             %\node[box] (H\x\y) at (\x,\y) {};
+             \node[wb] (W\x\y) at (\x,\y) {};
+             %\node[black] at (\x, \y) {\tiny W};
+              \foreach \k in {1,...,6}{
+              	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+              	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
+              	%\node[black] at (H\x\y.corner \k){\tiny D};
+             	}
+        }
+}
+
+
+\foreach \i in {0,...,2}{
+	\foreach \j in {0} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+            % \node[box] (H\x\y) at (\x,\y) {};
+             \node[wb] (W\x\y) at (\x,\y) {};
+             %\node[black] at (\x, \y) {\tiny W};
+              \foreach \k in {1,2,3,6}{
+              	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+              	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
+              	%\node[black] at (H\x\y.corner \k){\tiny D};
+             	}
+        }
+}
+        
+\foreach \i in {0,1}{ 
+	\foreach \j in {0,..., 1} {
+    		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+	  	%\node[box] (H\x\y) at (\x,\y) {};   
+	   	\node[wb] (W\x\y) at (\x,\y) {};
+	    	%\node[black] at (\x, \y) {\tiny W};
+         	\foreach \k in {1, ..., 6}{
+         		\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+         		\draw[thick, black] (W\x\y) -- (D\x\y\k);
+         		%\node[black] at (H\x\y.corner \k){\tiny D};
+         	}
+ 	}
+}
+
+\foreach \i in {0,1}{ 
+	\foreach \j in {2} {
+    		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+	  	\node[box] (H\x\y) at (\x,\y) {};   
+	   	\node[wb] (W\x\y) at (\x,\y) {};
+	    	%\node[black] at (\x, \y) {\tiny .};
+         	\foreach \k in {3, ..., 6}{
+         		\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+         		\draw[thick, black] (W\x\y) -- (D\x\y\k);
+         		%\node[black] at (H\x\y.corner \k){\tiny D};
+         	}
+ 	}
+}
+
+
+%\foreach \k in {1,...,6}{
+%  \node[circle, label=above:\i, fill=red] at (H\i\j.corner \k) {};
+% }
+%\node[circle, draw] at (H00.corner 1) {};
+\end{tikzpicture}

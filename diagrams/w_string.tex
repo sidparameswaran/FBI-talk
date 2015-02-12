@@ -33,59 +33,34 @@
     }
     }
 
-  \tikzset{
-    bbox/.style={
-      regular polygon,
-      regular polygon sides=6,
-      minimum size=7mm,
-      %fill,
-      inner sep=0mm,
-      outer sep=0mm,
-      rotate=0,
-     % dotted,
-     very thick,
-     orange,
-      draw
-    }
-  }
+
     \tikzset{
     wb/.style={
        regular polygon,
       regular polygon sides=6,
-      minimum size=5mm,
+      minimum size=4.5mm,
       %fill,
       inner sep=0mm,
       outer sep=0mm,
       rotate=0,
      % dotted,
      very thick,
-     green,
+     blue,
       draw
     }
   }
- \tikzset{boson/.style={circle=1pt,draw=black!100,fill=orange!100,inner sep=2pt}}
-  \tikzset{dimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=2pt}}
-    \tikzset{thindimer/.style={ellipse=1pt,draw=black!100,fill=orange!90,inner sep=1pt}}
-\tikzset{peps/.style={circle=2pt,draw=black!100,fill=green!50,inner sep=3pt}}
-\tikzset{bpeps/.style={circle=2pt,draw=black!100,thick,fill=green!50,inner sep=3pt}}
- \tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
-  \tikzset{smallwdot/.style={circle=1pt,draw=black!100,fill=orange!50,inner sep=1pt}}
-\tikzset{gamma/.style={circle=2pt,draw=black!100,fill=blue!50,inner sep=3pt}}
-\tikzset{lambda/.style={rectangle,rotate=45,draw=black!100,fill=red!50,inner sep=2pt}}
-\tikzset{operator/.style={circle=1pt,draw=black!100,fill=blue,inner sep=1.5pt}}
+\tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
+\tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=white,inner sep=1pt}}
 
  \node[box] (H) at (0, 0) {};
-\node[wb] (W) at (0,0) {\tiny W};
+\node[wb] (W) at (0,0) {};
 
 \foreach \k in {1, ..., 6}{
              \node[inv] (D\k) at (H.corner \k) {};
-             \draw[ blue] (W) -- (D\k);
+             \draw[very thick, black] (W) -- (D\k);
              }
              
  \node[] at (1.5, 0){$=$};
- 
-  \node[box] (H) at (0, 0) {};
-\node[wb] (W) at (0,0) {\tiny W};
 
  \node[box] (H3) at (3, 0) {};
  \node[abox] (H2) at (3, 0) {};
@@ -104,13 +79,8 @@
             \draw[thick, postaction={decorate}] (A\k) -- (H3.corner \k);
              }
              
- \node[smallwdot](B) at (3.2, 0) {\tiny 1};
+ \node[smallwdot](B) at (3, 0) {\tiny 1};
  \draw[thick, postaction={decorate}]  (B)--(A5);
-             
-%\foreach \q in {1, ... ,5}{
-	%	\pgfmathtruncatemacro{\j}{\k+1}
-    %        \draw[] (A.corner \j) -- (A.corner \k);
-   %       }
 
 \end{scope}
 \end{tikzpicture}

@@ -1,0 +1,28 @@
+\begin{tikzpicture}[node distance=0.4cm]
+\tikzset{gamma/.style={circle=2pt,draw=black!100, very thick, fill=blue!40, inner sep=3pt}}
+
+
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+
+\foreach \i in {1,...,6} {
+	\node[gamma] (G\i) at (1.5*\i,0) {$A$};
+	\node (l\i) at ($ (G\i) + (0, 1) $) {$$};
+	\draw[very thick, red!100, postaction={decorate}] (G\i) -- (l\i);
+	%\node[below of=G\i] {$A$};
+}
+
+\foreach \i in {7} {
+	\node[] (G\i) at (1.5*\i,0) {$...$};
+    }  
+    
+\foreach \i / \j in {1/2,2/3,3/4,4/5,5/6, 6/7} {
+	\draw[very thick, postaction={decorate}] (G\j) -- (G\i);
+}
+\node (b0) at (0, 0) {$...$};
+\draw[very thick, postaction={decorate}] (G1) -- (b0);
+
+\end{scope}
+\end{tikzpicture}

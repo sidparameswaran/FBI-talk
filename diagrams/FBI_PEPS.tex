@@ -1,0 +1,74 @@
+% y=\sqrt{3/4}*(minimum size)/2
+%
+
+%http://tex.stackexchange.com/questions/6019/drawing-hexagons
+\begin{tikzpicture}[x=7.5mm,y=4.33mm]
+
+\clip (-2, -2.4) rectangle (4, 3.6);
+
+  \tikzset{box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=10mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+      dotted,
+      thin,
+      black,
+      fill=white,
+      draw}}
+ \tikzset{wb/.style={
+ 	regular polygon,
+	regular polygon sides=6,
+	minimum size=3mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+      % dotted,
+      very thick,
+      blue,
+      fill=gray!20,
+      draw}}
+      
+\tikzset{operator/.style={
+	circle=1pt,
+	draw=orange, 
+	very thick,
+	fill=gray!20,
+	inner sep=2pt}}
+
+
+\foreach \i in {-2,...,2}{
+	\foreach \j in {-2, ...,  2} {
+		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+             \node[box] (H\x\y) at (\x,\y) {};
+             \node[wb] (W\x\y) at (\x,\y) {};
+           \foreach \k in {1,...,6}{
+              	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+              	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
+              	 \node[black] at (H\x\y.corner \k){\tiny D};
+              	}
+             \node[black] at (\x, \y) {\tiny W};
+        }
+}
+
+\foreach \i in {-2,...,2}{
+	\foreach \j in {-2,...,2} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+             \node[box] (H\x\y) at (\x,\y) {};
+             \node[wb] (W\x\y) at (\x,\y) {};
+             \node[black] at (\x, \y) {\tiny W};
+              \foreach \k in {1,...,6}{
+              	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+              	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
+              	\node[black] at (H\x\y.corner \k){\tiny D};
+             	}
+        }
+}
+
+%\draw[thick, black] (-2, -2.4) rectangle (2, 3.6);
+
+\end{tikzpicture}
