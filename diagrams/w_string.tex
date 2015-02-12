@@ -39,21 +39,22 @@
        regular polygon,
       regular polygon sides=6,
       minimum size=4.5mm,
-      %fill,
       inner sep=0mm,
       outer sep=0mm,
       rotate=0,
-     % dotted,
      very thick,
      blue,
-      draw
+      draw,
+      fill=blue!30
     }
   }
 \tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
-\tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=white,inner sep=1pt}}
+\tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=blue!30,inner sep=1pt}}
 
  \node[box] (H) at (0, 0) {};
 \node[wb] (W) at (0,0) {};
+\node[] (Wtext) at (0,0) {\tiny W};
+
 
 \foreach \k in {1, ..., 6}{
              \node[inv] (D\k) at (H.corner \k) {};
@@ -64,7 +65,7 @@
 
  \node[box] (H3) at (3, 0) {};
  \node[abox] (H2) at (3, 0) {};
-%\node[wb] (W) at (3,0) {\tiny W};
+ %\node[wb] (W) at (3,0) {\tiny W};
 \foreach \k in {1, ..., 6}{
              \node[smalldot] (A\k) at (H2.corner \k) {};
              }
