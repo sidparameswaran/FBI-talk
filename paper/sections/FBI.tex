@@ -34,7 +34,7 @@ PEPS are the generalization of MPS to two and higher dimensions, where each site
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{Hex_PEPS.pdf}
-	\caption{Pictoral representation of a PEPS on a honeycomb lattice. The tensors A and B are rank 4, with the physical leg at each site not shown for visual clarity.}
+	\caption{Pictoral representation of a PEPS on a honeycomb lattice. The tensors A and B are rank 4, with the physical leg at each site not shown for visual clarity. By gluing together the top and bottom edge of this picture, we get the "zig-zag" cylinder configuration used for most of the calculations in this paper. This cylinder is 3 unit cells wide, so we will call it the L=3 cylinder. In section \ref{sec:ES}, we will study the entanglement cut specified by the red line for various cylinder widths.}
 	\label{fig:PEPS}
 \end{figure}
 
@@ -85,7 +85,22 @@ to reproduce the action of the plaquette operators adjacent to each vertex. The 
 
 This tensor network wavefunction in this form manifestly has all the translational and point group symmetries of the honeycomb lattice, since the tensors $W$ and $D$ are invariant under rotations of their virtual indices in the plane, as shown in the picture. One can also check that the wavefunction is $U(1)$ invariant; all terms in the wavefunction are configurations with boson number exactly $1$ per plaquette.
 
-In order to form a PEPS representation with all tensors located on the vertices, we can factor the W-state tensor and regroup the factors into PEPS tensors $A$ and $B$, as shown in Figure \ref{fig:FBI_PEPS_2}. There is a choice of MPS for the W-state that doesn't manifestly preserve the rotational symmetry the plaquettes, but has the small bond dimension $2$. (A different choice could be made that has bond dimension 6 but does preserve the symmetry.) 
+In order to form a PEPS representation with all tensors located on the vertices, we can factor the W-state tensor and regroup the factors into PEPS tensors $A$ and $B$, as shown in Figure \ref{fig:FBI_PEPS_2}. 
+There is a choice of MPS for the W-state that doesn't manifestly preserve the rotational symmetry the plaquettes, but has the small bond dimension $2$. (A different choice could be made that has bond dimension 6 but does preserve the symmetry.) This factorization of the W-state is given by
+
+$$
+W^{i_0 i_1 i_2 i_3 i_4 i_5} = \sum\limits_{abcde} W^{i_0 a}_{1} W^{i_1 b}_{a} W^{i_2 c}_{b} W^{i_3 d}_{c} W^{i_4 e}_{d} W^{i_5 0}_{e},
+$$
+where 
+$$ W^{i_0 i_1}_{j}  = \left\{ \begin{array}{lr}
+													1  : & i_0+i+1 = j \\
+													0  : & \text{else}
+													\end{array}
+											\right\},
+$$
+and where each index takes values in $\{0, 1\}$. We will discover that the virtual edges in this PEPS can be assigned consistent $U(1)$ charges, with the index $i_x$ representing the charge. The arrows on the tensors show the flow of charge.
+
+The rewriting of the tensor network does not change the physical wavefunction or physically invariant quantities, such as the Schmidt spectrum for the entanglement cut. However, it is computationally convenient - the total bond size crossed by the entanglement cut in Figure \ref{fig:PEPS} is $2^L$ for the cylinder of width $L$.
 
 \begin{figure}[H]
 	\centering

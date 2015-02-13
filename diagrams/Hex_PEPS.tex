@@ -4,7 +4,7 @@
 %http://tex.stackexchange.com/questions/6019/drawing-hexagons
 \begin{tikzpicture}[x=7.5mm,y=4.33mm]
 
-\clip (-2, -2.4) rectangle (4, 3.6);
+\clip (-3, -2.4) rectangle (3, 3.6);
 
   \tikzset{box/.style={
       regular polygon,
@@ -59,6 +59,8 @@
  }
 
 
-%\draw[thick, black] (-2, -2.4) rectangle (2, 3.6);
+\draw[very thick, red] (0, -3) -- (0, 4);
+\draw[thick, dotted, black] (-3, -2.4) -- (3, -2.4);
+\draw[thick, dotted, black] (-3, 3.6) -- (3, 3.6);
 
 \end{tikzpicture}
