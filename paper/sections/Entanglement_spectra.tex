@@ -3,11 +3,26 @@
 \section{Entanglement spectrum}
 \label{sec:ES}
 
+The quasi-1D cylinder geometry is also convenient for calculating the entanglement spectrum for 
+entanglement cuts transverse to the cylinder. The procedure for computing the Schmidt decomposition is the 
+same as for a MPS, and implies a canonical form for the quasi-1D MPS
+
+$$
+\ket{\psi} = \sum\limits_{\{p_i\}} \Gamma_{p_1} \Lambda \Gamma_{p_2} ... \Lambda \Gamma_{p_N} \ket{p_0 p_1 ... p_N}.
+$$
+
+The elements $\lambda_i$ of the diagonal matrix $\Lambda$ which appears in the canonical form,
+are related to the non-zero eigenvalues $\rho_i$ of the reduced density matrix for the left or right half
+of the system via $\rho_i = \lambda_i^2$.
+
+The entanglement spectrum $\epsilon_i$  is defined via the equation $e^{-\epsilon_i} = \rho_i$. One says that the entanglement spectrum
+
+
+
 Briefly discuss how the entanglement spectrum is calculated.\cite{cirac2011}
 
-\section{Entanglement spectrum}
-	
-The entanglement spectrum shows a linear dispersion near momentum zero. Many points in the spectrum are doubly degenerate - those that are assigned a non-zero $U(1)$ charge.
+The entanglement spectrum shows a linear dispersion near momentum zero. Many points in the spectrum are 
+doubly degenerate - those that are assigned a non-zero $U(1)$ charge.
 	
 \begin{figure}[H]
 	\centering
@@ -38,7 +53,9 @@ The entanglement gap closes roughly as $1/L$.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementEnergyScaling.pdf}}
-  \caption{Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL10}. The $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size, points at non-zero momentum still deviate significantly from $1/L$ scaling.}
+  \caption{Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL10}. The 
+  $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size, 
+  points at non-zero momentum still deviate significantly from $1/L$ scaling.}
 \end{figure}
 
 \newcommand{\uL}{\mathbf{L_0}}
@@ -46,7 +63,8 @@ The entanglement gap closes roughly as $1/L$.
 
 \subsection{Identification of edge CFT}
 
-Given the $U(1)$ symmetry of the state, the simplest possible conformal field theory we might expect to appear at the edge is that of a single free bosonic field. 
+Given the $U(1)$ symmetry of the state, the simplest possible conformal field theory we might expect to 
+appear at the edge is that of a single free bosonic field. 
 
 The free-boson CFT is created from the Lagrangian 
 $$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx ( \frac{1}{v^2}(\partial_t \phi)^2 - (\partial_x \phi)^2)$$
@@ -55,9 +73,15 @@ $$ \phi \equiv \phi + 2\pi R$$
 and placed on the circle of circumference $L$ with periodic boundary conditions
 $$ \phi(x) \equiv \phi(x+L).$$
 
-After canonical quantization, it is found that the set of energy eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with integers $e, m$ labeling the $U(1)$ charge and the winding number of the bosonic field respectively, and level $n, \bar{n}$ descendant fields for each primary (such as  $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$) for any nonnegative integers $n, \bar{n}$. The number of level $n, \bar{n}$ descendants of a given primary, all of which are degenerate, is $Z(n) Z(\bar{n})$, where $Z(n)$ is the number of partitions of the integer $n$.
+After canonical quantization, it is found that the set of energy eigenstates consists of $U(1)$ Kac-Moody 
+primaries $\ket{e, m}$, with integers $e, m$ labeling the $U(1)$ charge and the winding number of the 
+bosonic field respectively, and level $n, \bar{n}$ descendant fields for each primary - such as  
+$\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$ - for any nonnegative integers $n, \bar{n}$. The 
+number of level $n, \bar{n}$ descendants of a given primary, all of which are degenerate, is $Z(n) 
+Z(\bar{n})$, where $Z(n)$ is the number of partitions of the integer $n$.
 
-The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and momentum eigenvalues - for the state $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$, 
+The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and momentum eigenvalues - 
+for the state $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$, 
 
 \begin{align*}
 	\mathbf{P} =\frac{2\pi}{L}&(\uL-\bL) 
@@ -66,29 +90,47 @@ The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and
 	&=& \frac{2\pi}{L}(\frac{\kappa e^2}{2} + \frac{m^2}{2 \kappa} + \frac{n + \bar{n}}{2}) %\\
 \end{align*}
 
-By rescaling the energy and momentum, we find a system size independent pattern that can be matched to the low-energy, linearly dispersing part of the entanglement spectrum from Figures \ref{fig:ESL10} and \ref{fig:ESL9}. 
+By rescaling the energy and momentum, we find a system size independent pattern that can be matched to the 
+low-energy, linearly dispersing part of the entanglement spectrum from Figures \ref{fig:ESL10} and 
+\ref{fig:ESL9}. 
 
 \begin{align*}
 \mathbf{P} &\propto (em + n - \bar{n}) \\
 \mathbf{H} &\propto e^2 + \frac{m^2}{\kappa^2} + \frac{1}{\kappa}(n + \bar{n})
 \end{align*}
 
-The label $m$ is 0 for all states in the linearly dispersing cone around $K=0$ - however, the primary states $\ket{e, m=\pm 1}$ can be found centered around momentum $K=\pi$, as seen in critical spin chains [reference]. The states with nonzero $e$ and zero $m$ are degenerate in energy and momentum with the same state with charge $-e$, but the $Z(n)Z(\bar{n})$ degeneracies predicted for descendant states are split by finite size effects.
+The label $m$ is 0 for all states in the linearly dispersing cone around $K=0$ - however, the primary 
+states $\ket{e, m=\pm 1}$ can be found centered around momentum $K=\pi$, as seen in critical spin chains 
+[reference]. The states with nonzero $e$ and zero $m$ are degenerate in energy and momentum with the same 
+state with charge $-e$, but the $Z(n)Z(\bar{n})$ degeneracies predicted for descendant states are split by 
+finite size effects.
 
-The parameter $\kappa$ that appears - related to the coupling constant $g$ in the effective Lagrangian - is free. Quantum models that exhibit critical points that show the behavior of the free-boson CFT in fact have a whole line of critical points with varying values of $\kappa$, which can be tuned using a marginal operator in the theory.
+The parameter $\kappa$ that appears - related to the coupling constant $g$ in the effective Lagrangian - 
+is free. Quantum models that exhibit critical points that show the behavior of the free-boson CFT in fact 
+have a whole line of critical points with varying values of $\kappa$, which can be tuned using a marginal 
+operator in the theory.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{EEIdentify.pdf}
-	\caption{The identification of the primary states $\ket{\pm e, m=0}$ and the level $n, \bar{n}$ descendants in the spectrum of the soft-core boson entanglement Hamiltonian. The states are labeled $e_{n, \bar{n}}$. The zero and scale of the numerical spectrum are set by matching the lowest two states. The energies and charges of the primaries with charges $2, 5/2, ... 4$ appear at the predicted spots.  The best estimate for the Luttinger parameter from this spectrum is $\kappa \approx 1/6.4$, taken from the energy of the $0_{1, 0}$ state. }
+	\caption{The identification of the primary states $\ket{\pm e, m=0}$ and the level $n, \bar{n}$ 
+	descendants in the spectrum of the soft-core boson entanglement Hamiltonian. The states are labeled 
+	$e_{n, \bar{n}}$. The zero and scale of the numerical spectrum are set by matching the lowest two 
+	states. The energies and charges of the primaries with charges $2, 5/2, ... 4$ appear at the predicted 
+	spots.  The best estimate for the Luttinger parameter from this spectrum is $\kappa \approx 1/6.4$, 
+	taken from the energy of the $0_{1, 0}$ state. }
 \end{figure}
 
-We can also take the lowest-lying Schmidt state, interpret it as the ground state of a 1d Hamiltonian, and consider its entanglement.
+We can also take the lowest-lying Schmidt state, interpret it as the ground state of a 1d Hamiltonian, and 
+consider its entanglement.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EdgeGS_EntanglementEntropy.pdf}}
-	\caption{Entanglement entropy within the entanglement ground state of the soft-core boson state on $10$ sites. For 	    comparison, the Cardy-Calabrese formula $S(x) = c/3 \log \sin( \pi x/L) + const.$ is shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by matching the maximum of the entanglement entropy data. $c=1$ is a good fit.}
+	\caption{Entanglement entropy within the entanglement ground state of the soft-core boson state on $10$ 
+	sites. For 	    comparison, the Cardy-Calabrese formula $S(x) = c/3 \log \sin( \pi x/L) + const.$ is 
+	shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by matching the maximum of the 
+	entanglement entropy data. $c=1$ is a good fit.}
 	\label{fig:EdgeGS_EE}
 \end{figure}
 
