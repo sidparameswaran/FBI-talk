@@ -76,19 +76,16 @@ By applying the operator to all plaquettes, we get a tensor network not in the f
 It is straightforward to show that the tensor $D^p_{ijk}$ should be
 $$
 D_{p}^{i_0 i_1 i_2} = \sum\limits_{\alpha \beta} B^{i_0}_{p \alpha}B^{i_1}_{\alpha \beta} B^{i_2}_{\beta 0}  = \left\{ \begin{array}{lr}
-													\frac{1}{\sqrt{p!}}  : & p =i_0+i_1+i_2  \\
+													\sqrt{p!}  : & p =i_0+i_1+i_2  \\
 													0  : & \text{else}
 													\end{array}
-											\right\},
+											\right\}
 $$
 to reproduce the action of the plaquette operators adjacent to each vertex. The boson number at the vertex $p$ can be limited to be $0, 1, 2,$ or $3$ since at most one boson comes from each of the three adjacent hexagons.
 
-This tensor network wavefunction manifestly has all the translational and point group symmetries of the honeycomb lattice, since the tensors $W$ and $D$ are invariant under rotations of their virtual indices in the plane, as shown in the picture. One can also check the $U(1)$ symmetry, where the virtual qubits states $0$ and $1$ are assigned $U(1)$ charges $0$ and $1$. The total charge of the state is $1$ per plaquette, i.e. all terms in the wavefunction consists of configurations of $N/2$ bosons, where $N$ is the total number of sites.
+This tensor network wavefunction in this form manifestly has all the translational and point group symmetries of the honeycomb lattice, since the tensors $W$ and $D$ are invariant under rotations of their virtual indices in the plane, as shown in the picture. One can also check that the wavefunction is $U(1)$ invariant; all terms in the wavefunction are configurations with boson number exactly $1$ per plaquette.
 
-We note here that this construction is not particular to bosons, but can be adjusted - by changing the $W$ and $D$ tensors appropriately - to form a similar state with a spin-$\frac32$ at each vertex. For example, $W$ can be taken to be the projector onto the $\ket{S=3, Sz=2}$ state of $6$ spin-$\frac12$s, and $D$ to be the projector of $3$ spin-$\frac12$s onto the spin-$\frac32$ states at the vertex. 
-
-
-In order to form a PEPS representation with all tensors located on the vertices, we can factor the W-state tensor and regroup the factors into PEPS tensors $A$ and $B$, as shown in Figure \ref{fig:FBI_PEPS_full}.
+In order to form a PEPS representation with all tensors located on the vertices, we can factor the W-state tensor and regroup the factors into PEPS tensors $A$ and $B$, as shown in Figure \ref{fig:FBI_PEPS_2}. There is a choice of MPS for the W-state that doesn't manifestly preserve the rotational symmetry the plaquettes, but has the small bond dimension $2$. (A different choice could be made that has bond dimension 6 but does preserve the symmetry.) 
 
 \begin{figure}[H]
 	\centering
@@ -101,9 +98,14 @@ In order to form a PEPS representation with all tensors located on the vertices,
 		\includegraphics[width=0.3\columnwidth]{D_op.pdf}
 		\label{fig:D}
 	}
+	\subfigure[PEPS tensor network for F.B.I. state]{%
+		\includegraphics[width=0.8\columnwidth]{FBI_PEPS_2.pdf}
+		\label{fig:FBI_PEPS_2A}
+	}
+		
 %
-\caption{Tensors used in F.B.I. tensor network. The arrows represent the flow of charge.}
-\label{fig:FBI_PEPS_full}
+\caption{Tensors used to put the F.B.I. tensor network in PEPS form. }
+\label{fig:FBI_PEPS_2}
 \end{figure}
 
 %\begin{figure}[H]

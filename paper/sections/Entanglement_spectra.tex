@@ -11,7 +11,7 @@ The entanglement spectrum shows a linear dispersion near momentum zero. Many poi
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum_L10.pdf}}
-	\caption{Entanglement spectrum on a zig-zag edge cylinder 10 unit cells in circumference.}
+	\caption{Entanglement spectrum on a zig-zag edge L=10 cylinder}
 	\label{fig:ESL10}
 \end{figure}
 
@@ -20,6 +20,8 @@ On odd circumference cylinders, the entire entanglement spectrum is doubly degen
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum_L9.pdf}}
+	\caption{Entanglement spectrum on a zig-zag edge L=9 cylinder}
+	\label{fig:ESL9}
 \end{figure}
 
 The topological entanglement entropy is essentially zero.
@@ -27,6 +29,7 @@ The topological entanglement entropy is essentially zero.
 \begin{figure}[hbctp]
 	\centering
 	\includegraphics[width=\columnwidth]{{TopologicalEntanglementEntropy.pdf}}
+	\caption{The topological entanglement entropy $\gamma$ is consistent with 0.}
 \end{figure}
 
 The entanglement gap closes roughly as $1/L$. 
@@ -51,31 +54,32 @@ $$ \phi \equiv \phi + 2\pi R$$
 and placed on the circle of circumference $L$ with periodic boundary conditions
 $$ \phi(x) \equiv \phi(x+L).$$
 
-After canonical quantization, it is found that the set of energy eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with integers $e, m$ labeling the $U(1)$ charge and the winding number of the bosonic field respectively, and level $n, \bar{n}$ descendant fields $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$ with nonnegative integers $n, \bar{n}$. The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and momentum eigenvalues - for the state $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$, 
+After canonical quantization, it is found that the set of energy eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with integers $e, m$ labeling the $U(1)$ charge and the winding number of the bosonic field respectively, and level $n, \bar{n}$ descendant fields for each primary (such as  $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$) for any nonnegative integers $n, \bar{n}$. The number of level $n, \bar{n}$ descendants of a given primary, all of which are degenerate, is $Z(n) Z(\bar{n})$, where $Z(n)$ is the number of partitions of the integer $n$.
+
+The properties of the $U(1)$ Kac-Moody algebras constrain the form of energy and momentum eigenvalues - for the state $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$, 
 
 \begin{align*}
 	\mathbf{P} =\frac{2\pi}{L}&(\uL-\bL) 
 	&=& \frac{2\pi}{L}(em + n - \bar{n}) \\
-	%\widetilde{\mathbf{P}}&= em + n - \bar{n} &\\ 
 	\mathbf{H} = \frac{2\pi}{L}&(\uL+\bL) 
 	&=& \frac{2\pi}{L}(\frac{\kappa e^2}{2} + \frac{m^2}{2 \kappa} + \frac{n + \bar{n}}{2}) %\\
 \end{align*}
 
-$$
-\mathbf{H} \propto e^2 + \frac{m^2}{\kappa^2} + \frac{1}{\kappa}(n + \bar{n})
-$$
+By rescaling the energy and momentum, we find a system size independent pattern that can be matched to the low-energy, linearly dispersing part of the entanglement spectrum from Figures \ref{fig:ESL10} and \ref{fig:ESL9}. 
 
-The degeneracy of level $n, \bar{n}$ states is $Z(n) Z(\bar{n})$.
+\begin{align*}
+\mathbf{P} &\propto (em + n - \bar{n}) \\
+\mathbf{H} &\propto e^2 + \frac{m^2}{\kappa^2} + \frac{1}{\kappa}(n + \bar{n})
+\end{align*}
 
+The label $m$ is 0 for all states in the linearly dispersing cone around $K=0$ - however, the primary states $\ket{e, m=\pm 1}$ can be found centered around momentum $K=\pi$, as seen in critical spin chains [reference]. The states with nonzero $e$ and zero $m$ are degenerate in energy and momentum with the same state with charge $-e$, but the $Z(n)Z(\bar{n})$ degeneracies predicted for descendant states are split by finite size effects.
 
-
-We can identify the CFT in the low-lying spectrum.
+The parameter $\kappa$ that appears - related to the coupling constant $g$ in the effective Lagrangian - is free. Quantum models that exhibit critical points that show the behavior of the free-boson CFT in fact have a whole line of critical points with varying values of $\kappa$, which can be tuned using a marginal operator in the theory.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\columnwidth]{EEIdentify.pdf}
-	\caption{The identification of the states $j_{-n}\ket{e, m=0}$ in the spectrum of the soft-core boson entanglement Hamiltonian. The label $e$ gives the U(1) charge. The labels $n$, $\bar{n}$ label the levels in the right or left-moving sectors of the Kac-Moody algebra.  The best estimate for the Luttinger parameter is $\kappa = 1/6.4$. The label $m$ is 0 for all states shown - however, the primary states $\ket{e, m=\pm 1}$ can be seen centered around momentum $\pi$.}
-	\label{fig:primaries}
+	\caption{The identification of the primary states $\ket{\pm e, m=0}$ and the level $n, \bar{n}$ descendants in the spectrum of the soft-core boson entanglement Hamiltonian. The states are labeled $e_{n, \bar{n}}$. The zero and scale of the numerical spectrum are set by matching the lowest two states. The energies and charges of the primaries with charges $2, 5/2, ... 4$ appear at the predicted spots.  The best estimate for the Luttinger parameter from this spectrum is $\kappa \approx 1/6.4$, taken from the energy of the $0_{1, 0}$ state. }
 \end{figure}
 
 We can also take the lowest-lying Schmidt state, interpret it as the ground state of a 1d Hamiltonian, and consider its entanglement.
