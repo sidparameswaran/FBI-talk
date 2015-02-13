@@ -3,3 +3,7 @@
 \section{Introduction}
 
 ...\cite{parameswaran2013, parameswaran2013-2}
+
+The simplest example of a tensor network for a 1D system is a matrix product state; translationally-invariant matrix product states (MPS) are represented by a single rank 3 tensor $A_p^{ij}$ which specifies the wavefunction coefficients in a given basis local basis as a product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1} A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$
+with one matrix for each site in the one-dimensional system.
+PEPS are the generalization of MPS to two and higher dimensions, where each site in the system is represented by a rank $z+1$ tensor, where $z$ is the coordination number of the lattice, and wavefunction coefficients are similarly given by contracting over all virtual indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004}
