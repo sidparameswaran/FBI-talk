@@ -15,11 +15,18 @@ The elements $\lambda_i$ of the diagonal matrix $\Lambda$ which appears in the c
 are related to the non-zero eigenvalues $\rho_i$ of the reduced density matrix for the left or right half
 of the system via $\rho_i = \lambda_i^2$.
 
-The entanglement spectrum $\epsilon_i$  is defined via the equation $e^{-\epsilon_i} = \rho_i$. One says that the entanglement spectrum
+The entanglement spectrum $\epsilon_i$  is defined via the equation $e^{-\epsilon_i} = \rho_i$. One says 
+that the entanglement spectrum are eigenvalues for the entanglement Hamiltonian $H_e$, where $e^{-H_e} = 
+\rho$ is the reduced density matrix for the half-infinite cylinder on one side of the entanglement cut. 
 
+Despite the infinite size, information about the entanglement Hamiltonian eigenstates can be extracted 
+from the MPS procedure as well. The tensor network structure provides an effective reduced density matrix 
+$\tilde{\rho}$ and entanglement Hamiltionian $\tilde{H_e}$ that are unitarily related to $\rho$ and $H_e$, 
+but that acts on each virtual index crossed by the entanglement cut. The eigenstates of this Hamiltonian 
+carry quantum numbers for each symmetry respected by the cut - in our case charge and momentum parallel to 
+the cut - that match the corresponding Schmidt states. We will further discuss how the charge is assigned to edge states in section \ref{sec:symmetry}, and in section \ref{sec:perturbations}, we will see that the entanglement eigenstates can be related to edge states for the MPS parent Hamiltonian with open boundary conditions. 
 
-
-Briefly discuss how the entanglement spectrum is calculated.\cite{cirac2011}
+\brayden{Something about history of 2d SPTs having gapless entanglement edges. Possibly see brayden's advancement talk.}
 
 The entanglement spectrum shows a linear dispersion near momentum zero. Many points in the spectrum are 
 doubly degenerate - those that are assigned a non-zero $U(1)$ charge.
@@ -137,6 +144,7 @@ consider its entanglement.
 
 
 \subsection{Symmetry action on the edge}
+\label{sec:symmetry}
 
 \begin{figure}[H]
     \centering
