@@ -67,13 +67,17 @@ D^\mathrm{hc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
 													1  &: i_0+i_1+i_2 > 0  \\
 													0  &:  \text{else}
 													\end{array}
-											\right. .
+											\right.
 \end{equation}
-Further variants of the state are described in Appendix~\ref{somewhere}.
+Further variants of the state are described in 
+Appendix~\ref{somewhere}.
 
-This tensor network wavefunction manifestly respects all the translational and point group symmetries of the honeycomb lattice,
-since the tensors $W$ and $D$ are invariant under rotations of their virtual indices in the plane. One can also check that the
-wavefunction is $U(1)$ invariant; all terms in the wavefunction are configurations with boson number exactly $1$ per plaquette.
+This tensor network wavefunction manifestly respects all the 
+translational and point group symmetries of the honeycomb lattice, 
+since the tensors $W$ and $D$ are invariant under rotations of their 
+virtual indices in the plane. One can also check that the
+wavefunction is $U(1)$ invariant; all terms in the wavefunction are 
+configurations with boson number exactly $1$ per plaquette.
 
 \begin{figure}
 	\centering
@@ -94,11 +98,15 @@ wavefunction is $U(1)$ invariant; all terms in the wavefunction are configuratio
 \label{fig:FBI_PEPS_2}
 \end{figure}
 
-In order to form a PEPS representation with all tensors located on the vertices, we first factor the $W$-tensor into a matrix-product state
-of six tensors as shown in panel (b) of Fig.~\ref{fig:FBI_PEPS_2}. We choose a form of the MPS that breaks the rotational symmetry
-of the W-state (which appears as translational symmetry of the MPS). This allows us to obtain an MPS description with a small bond dimension
-of $M=2$; a fully symmetric choice would require bond dimension 6. Since these states are physically equivalent, we expect all gauge-invariant
-quantities to be unaffected by this choice.
+In order to form a PEPS representation with all tensors located on the 
+vertices, we first factor the $W$-tensor into a matrix-product state
+of six tensors as shown in panel (b) of Fig.~\ref{fig:FBI_PEPS_2}. We 
+choose a form of the MPS that breaks the rotational symmetry
+of the W-state (which appears as translational symmetry of the MPS). 
+This allows us to obtain an MPS description with a small bond dimension
+of $M=2$; a fully symmetric choice would require bond dimension 6. 
+Since these states are physically equivalent, we expect all 
+gauge-invariant quantities to be unaffected by this choice.
 The decomposition is given by
 \begin{equation}
 W^{i_1 i_2 i_3 i_4 i_5 i_6} = \sum\limits_{\alpha_1 \ldots \alpha_5} V^{i_1}_{\alpha_1} W^{i_2}_{\alpha_1 \alpha_2}
@@ -114,33 +122,45 @@ W_{i_0 i_1}^{j}  = \left\{ \begin{array}{ll}
 													\end{array}
 											\right.,
 \end{equation}
-and where each index takes values in $\{0, 1\}$. Applying this to each $W$-tensor yields the state as shown in panel (c) of Fig.~\ref{fig:FBI_PEPS_2}.
-By contracting the three tensors in each shaded region together, we obtain a PEPS in the regular form as shown in Fig.~\ref{fig:PEPS}. The resulting
-PEPS has a bond dimension of $M=2$ on the horizontal bonds, and a bond dimension of $M=4$ on all other bonds. While it superficially breaks
-the rotational symmetry of the lattice, it is an exact representation of the FBI state and does not break any symmetries after contracting the indices.
+and where each index takes values in $\{0, 1\}$. Applying this to each 
+$W$-tensor yields the state as shown in panel (c) of 
+Fig.~\ref{fig:FBI_PEPS_2}. By contracting the three tensors in each 
+shaded region together, we obtain a PEPS in the regular form as shown 
+in Fig.~\ref{fig:PEPS}. The resulting PEPS has a bond dimension of 
+$M=2$ on the horizontal bonds, and a bond dimension of $M=4$ on all 
+other bonds. While it superficially breaks
+the rotational symmetry of the lattice, it is an exact representation 
+of the FBI state and does not break any symmetries after contracting 
+the indices.
 
-This decomposition respects the physical U(1) charge conservation symmetry in that all tensors are separately U(1)-invariant~\cite{bauer2011}. To make this manifest,
-we have indicated in Fig.~\ref{fig:FBI_PEPS_2} arrows on each bond that show the flow of charge.
+This decomposition respects the physical U(1) charge conservation 
+symmetry in that all tensors are separately 
+U(1)-invariant~\cite{bauer2011}. To make this manifest, we have 
+indicated in Fig.~\ref{fig:FBI_PEPS_2} arrows on each bond that show 
+the flow of charge.
 
 \subsection{Representation on infinite cylinders}
-For the calculations presented in this manuscript, we consider the state $\ket{\psi}$ on a cylinder of infinite length, but finite circumference $L$.
-In Fig.~\ref{fig:PEPS}, we have indicated the choice of boundary conditions for the cylinder. For many practical purposes, the PEPS on an infinite
-cylinder can be represented as an infinite, translationally invariant matrix-product state of bond dimension $2^L$.
+For the calculations presented in this manuscript, we consider the 
+state $\ket{\psi}$ on a cylinder of infinite length, but finite 
+circumference $L$.
+In Fig.~\ref{fig:PEPS}, we have indicated the choice of boundary 
+conditions for the cylinder. For many practical purposes, the PEPS on 
+an infinite
+cylinder can be represented as an infinite, translationally invariant 
+matrix-product state of bond dimension $2^L$.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{Hex_PEPS.pdf}
-	\caption{\bela{In this picture, we need to indicate the physical legs (maybe in a different color).} Pictoral representation of a PEPS on a honeycomb lattice. The tensors A and B are rank 4, with the physical leg at each site not shown for visual clarity. By gluing together the top and bottom edge of this picture, we get the "zig-zag" cylinder configuration used for most of the calculations in this paper. This cylinder is 3 unit cells wide, so we will call it the L=3 cylinder. In section \ref{sec:ES}, we will study the entanglement cut specified by the red line for various cylinder widths.}
+	\caption{\bela{In this picture, we need to indicate the physical 
+	legs (maybe in a different color).} Pictoral representation of a 
+	PEPS on a honeycomb lattice. The tensors A and B are rank 4, with 
+	the physical leg at each site not shown for visual clarity. By 
+	gluing together the top and bottom edge of this picture, we get the 
+	"zig-zag" cylinder configuration used for most of the calculations 
+	in this paper. This cylinder is 3 unit cells wide, so we will call 
+	it the L=3 cylinder. In section \ref{sec:ES}, we will study the 
+	entanglement cut specified by the red line for various cylinder 
+	widths.}
 	\label{fig:PEPS}
 \end{figure}
-
-%\begin{figure}[H]
-%	\begin{columns}{t}
-%	\begin{column}{width=0.25\textwidth]
-%	\includegraphics[width=0.6\columnwidth]{w_string.pdf}
-%	\end{column}
-%	\begin{column}{width=0.25\textwidth]
-%	\includegraphics[width=0.6\columnwidth]{D_op.pdf}
-%	\end{column}
-%	\end{columns}
-%\end{figure}
