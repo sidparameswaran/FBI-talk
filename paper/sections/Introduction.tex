@@ -2,42 +2,58 @@
 
 \section{Introduction}
 
+\bela{This is pretty clich\'{e} right now. It's also missing all references.}
 
-Featureless insulator problem description from   \onlinecite{parameswaran2013}
-\bi 
-\item Classical Mott insulators have integer site filling
-\item LSM forbids featureless insulators at fractional unit cell 
-filling. Site-filling can still be multiples of $1/n$
-\item Extensions to LSM in \onlinecite{parameswaran2013-2} further 
+Recent years have seen the proliferation of phases that defy a description
+within the well-known framework of local order parameters. These phases are
+not characterized by a local order parameter, but rather by more subtle,
+non-local features. An important class of such phases are topological phases,
+with key characteristics such as exotic, anyonic excitations. Another
+important class are symmetry-protected topological phases, which have
+garnered a great deal of attention since their original discovery.
+
+Famously, the Lieb-Schults-Mattis (LSM) theorem and its extensions gives a set of
+conditions under which such an exotic phase not only can, but indeed \emph{must}
+exist. In particular, they forbid the existence of a featureless state
+-- a state that neither spontaneously breaks a symmetry, nor displays topological
+order, nor has power-law correlations and is thus ''gapless'' -- in systems
+with a fractional filling per unit cell. Extensions to LSM in \onlinecite{parameswaran2013-2} further
 forbid some site fractional site fillings for non-symmorphic lattices.
-\ei 
 
-In addition to finding featureless states, we also want to determine
- if different featureless states are in the same phase, i.e. whether 
- they can be connected without a phase transtion, but while preserving 
- the symmetry of the Hamiltonian H. Of particular interest are those 
- featureless states that cannot be connected adiabatically to a 
- product state without breaking the symmetry; these are called 
- symmetry protected topological (SPT) phases. Instead of local order 
- parameters, the distinguishing "features" of these phases appear at 
- phase boundaries, such as the edge of an open system, and in 
- entanglement properties of the bulk wavefunction. The gold standard 
- for distinguishing an SPT phase is a topological invariant, which 
- amounts to a single number that can be computed from the bulk 
- wavefunction that provably must be constant throughout the phase. 
- These invariants are most easily computed from a tensor network 
- representation of the wavefunction.
+In Ref.~\onlinecite{kimchi2013}, an interesting special case was considered,
+namely that of half-filled bosons on the honeycomb lattice. In this case, where
+there is one boson per unit cell of two sites, the LSM allows the existence
+of a featureless state. At the same time, however, symmetry guarantees that
+a free-fermion spectrum is gapless at certain high-symmetry points and there is
+thus no localized Wannier basis. This implies that
+a featureless state cannot be constructed by filling a permanent
+of localized Wannier orbitals, and any construction must thus involve interactions
+in a non-trivial way. The explicit construction of Ref.~\onlinecite{kimchi2013},
+henceforth dubbed honeycomb featureless boson insulator (HFBI),
+will be discussed in detail in Section~\ref{sec:fbi}.
+\bela{Possibly move the first few paragraphs of Sec II, or at least a short summary, here?}
 
-The simplest example of a tensor network for a 1D system is a matrix 
-product state; translationally-invariant matrix product states (MPS) 
-are represented by a single rank 3 tensor $A_p^{ij}$ which specifies 
-the wavefunction coefficients in a given basis local basis as a 
-product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1} 
-A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$ with one matrix for each 
+The main focus of this paper will be on the edge properties of the HFBI.
+In particular, we will find that while the state is featureless in the bulk, it
+features a gapless edge state which is protected by a combination of lattice inversion
+and spin symmetry. We will argue for this by calculating the entanglement spectrum
+and showing
+that the low-lying spectrum is to great accuracy described by that of a $c=1$
+conformal field theory; in addition, we will show that an exact degeneracy
+in the entanglement spectrum for certain geometries is due to the non-trivial
+action of the symmetry group on the edge.
+
+All these calculations are performed in a framework of tensor network states.
+The simplest example of a tensor network for a 1D system is a matrix
+product state; translationally-invariant matrix product states (MPS)
+are represented by a single rank 3 tensor $A_p^{ij}$ which specifies
+the wavefunction coefficients in a given basis local basis as a
+product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1}
+A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$ with one matrix for each
 site in the one-dimensional system.
 
-PEPS are the generalization of MPS to two and higher dimensions, where 
-each site in the system is represented by a rank $z+1$ tensor, where 
-$z$ is the coordination number of the lattice, and wavefunction 
-coefficients are similarly given by contracting over all virtual 
-indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004}
+PEPS are the generalization of MPS to two and higher dimensions, where
+each site in the system is represented by a rank $z+1$ tensor, where
+$z$ is the coordination number of the lattice, and wavefunction
+coefficients are similarly given by contracting over all virtual
+indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004} 
