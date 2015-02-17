@@ -18,7 +18,7 @@
 # *.ps
 # *.eps
 # *.pdf
-*main.pdf
+# *main.pdf
 *fbi.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
