@@ -8,7 +8,8 @@
 *.toc
 
 ## project file for TeXnicCenter
-*.tcp 
+*.tcp
+*.tps
 
 
 ## Intermediate documents:
