@@ -6,8 +6,10 @@
 *.fls
 *.out
 *.toc
+
+## project file for TeXnicCenter
 *.tcp 
-#project file for TeXnicCenter
+
 
 ## Intermediate documents:
 *.dvi
