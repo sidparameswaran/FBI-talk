@@ -170,6 +170,31 @@ fit.}
 \subsection{Symmetry action on the edge}
 \label{sec:symmetry}
 
+Gapless entanglement spectra have been shown to be robust features of
+ two-dimensional topological and symmetry protected topological (SPT) 
+ phases. \brayden{Ref needed}. Combined with the vanishing of 
+ topological entanglement entropy, these spectra suggest that the 
+ featureless bosonic insulator state \ref{eq:def} is in a SPT phase 
+ for some protecting symmetry group $G$. By studying the action of the 
+ symmetries of the wavefunction on the  entanglement edge, we can  
+ figure out which group $G$, if any, protects it, and find a  
+ topological invariant that detects wavefunctions in that phase.
+ 
+%If this is the case, the entanglement edge, and any physical edge respecting the symmetries in $G$, will be degenerate throughout the phase, either via gapless or spontaneous symmetry breaking behavior. If we had a parent Hamiltonian for a state in this phase, the entanglement behavior would be robust to pertubations of that Hamiltonian that respect $G$.
+
+We expect to need lattice symmetries in the protecting group $G$. 
+Without lattice symmetries, the state could be adiabatically connected 
+to a product state with one boson on each site in the A sublattice. 
+Since the topological invariants for interacting states with lattice 
+symmetries in more than one dimension aren't well understood, we'll 
+first study the symmetry properties using tools designed for 1D 
+states, in the same quasi-1D cylindrical geometry we have used above.
+
+For an injective MPS, the action of the symmetries of the wavefunction 
+can be determined uniquely on the virtual legs of the MPS. 
+\cite{pollmann2010}.
+
+
 \begin{figure}[htbc]
     \centering
     \includegraphics[width=0.6\columnwidth]{group_sym.png}
@@ -184,10 +209,10 @@ fit.}
 \toprule
 $\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
 \midrule
- $U(1)$ & & & & \\
- $\mathcal{\pi}$ & & & & \\
- $\mathcal{I}$ & & & & \\
- $\mathcal{\pi} \mathcal{I}$ & & & & \\
+ $U(1) $ & & & & \\
+ $\mathcal{\pi} \mathcal{I}_x$ & & & & \\
+ $\mathcal{I}_x \mathcal{I}_y$ & & & & \\
+ $\mathcal{\pi} \mathcal{I}_x \mathcal{I}_y$ & & & & \\
 \bottomrule
 \end{tabular*}
 
