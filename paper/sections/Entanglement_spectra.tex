@@ -11,7 +11,7 @@ $$
 \ket{\psi} = \sum\limits_{\{p_i\}} \ldots \Lambda \Gamma_{p_0} \Lambda \Gamma_{p_1} \Lambda \Gamma_{p_2} \Lambda \ldots \ket{... p_0 p_1 p_2 ...}.
 $$
 
-Each physical leg represents all $2*L$ physical indices of a cylinder slice, 
+Each physical leg represents all $2L$ physical indices of a cylinder slice, 
 and each virtual leg represents all $L$ virtual indices that connect cylinder 
 slices. The change of basis generally mixes the Hilbert spaces from these 
 virtual legs, so that any notion of locality around the circumference of the 
@@ -32,26 +32,30 @@ system has eigenvalues $\rho_i = \lambda_i^2$, and eigenvectors
 $\ket{\psi_{R(L)}^i}$. For the HFBI and the cut shown in Figure 
 \ref{fig:FBI_PEPS}, the number of terms is $2^L$. 
 
-The entanglement Hamiltonian $H_e$ is defined via  $e^{-H_e} = \rho$ is the
-reduced density matrix for the half-infinite cylinder
-on one side of the entanglement cut. Its eigenvectors are the Schmidt states $\ket{\psi_R^i}$,
-and its eigenvalues are $\epsilon_i = -\log \rho_i$. One can easily show that 
-$H_e$ commutes with any on-site symmetry of the wavefunction, so 
-
-Despite the infinite size, information about the entanglement 
-Hamiltonian eigenstates can be extracted from the MPS procedure as 
-well. The definition of canonical form implies that One can show that the 
-eigenstates of this Hamiltonian carry quantum numbers for each 
-symmetry respected by the cut - in our case charge and momentum 
-parallel to the cut - that match the corresponding Schmidt states. We 
-will further discuss how the charge is assigned to edge states in 
-section \ref{sec:symmetry}, and in section \ref{sec:perturbations}, we 
-will see that the entanglement eigenstates can be related to edge 
-states for the MPS parent Hamiltonian with open boundary conditions. 
-
-\brayden{Something about history of 2d SPTs having gapless 
-entanglement edges. Possibly see brayden's advancement talk.}
-Gapless entanglement spectra have been shown to be robust features of two-dimensional topological and symmetry protected topological (SPT) phases.
+The entanglement Hamiltonian $H_e$ is defined via  $e^{-H_e} = \rho$,
+where $\rho$ is the reduced density matrix for the half-infinite cylinder
+on one side of the entanglement cut. Its eigenvectors are thus also the Schmidt
+states, and its eigenvalues are $\epsilon_i =-\log \rho_i$. 
+Due to the finite correlation length of the state, the
+differences between the Schmidt states are exponentially localized to the 
+boundary. For this reason, we refer to these states as the `entanglement 
+edge'. 
+ 
+As shown in \cite{perezgarcia2008}, a translationally invariant MPS can be
+assigned a projective representation of the on-site symmetry group, acting on 
+the virtual legs, that maps Schmidt states to degenerate Schmidt states. 
+For the MPS formed by the HFBI, we find that the U(1) boson number symmetry 
+and the$\mathbb{Z}_L$ translational symmetry around the cylinder circumference 
+are represented linearly. Each Schmidt state can thus be assigned a 
+well-defined quantum number of charge and transverse momentum. We'll discuss 
+this assignment of charge further in \ref{sec:symmetry}.
+ 
+The entanglement spectra for the HFBI on cylinders with even and odd width 
+circumferences are shown in \ref{fig:ESL10} and \ref{fig:ESL9}, plotted 
+against the transverse momentum eigenvalue and colored by the U(1) charge 
+eigenvalue of the corresponding Schmidt states. 
+We find that the entanglement spectrum looks like it has a gapless
+edge mode with linear dispersion near momentum zero.
 
 \begin{figure}[htbc]
 	\centering
@@ -68,14 +72,16 @@ Gapless entanglement spectra have been shown to be robust features of two-dimens
 	\label{fig:ESL9}
 \end{figure}
 
-
-The entanglement spectra on cylinders with even and odd width circumferences 
-are shown in \ref{fig:ESL10} and \ref{fig:ESL9}. We find that the entanglement 
-spectrum looks like it has a gapless edge mode with linear dispersion near 
-momentum zero. In figure \ref{fig:EEScaling}, we compare the lowest points in 
+In figure \ref{fig:EEScaling}, we compare the lowest points in 
 the spectra for several cylinder widths. The finite size scaling confirms that 
 the entanglement gap closes as $1/L$, as you would expect for a gapless mode 
 with linear dispersion.
+
+\brayden{Something about history of 2d SPTs having gapless 
+entanglement edges. Possibly see brayden's advancement talk.}
+
+Gapless entanglement spectra have been shown to be robust features of 
+two-dimensional topological and symmetry protected topological (SPT) phases.
 
 \begin{figure}[htbc]
 	\centering
@@ -91,12 +97,7 @@ topological or SPT order. By computing the topological entanglement entropy,
 as shown in \ref{fig:TopologicalEE}, we can rule out 
 topological order for this state. Combined with the vanishing of topological 
 entanglement entropy, these spectra suggest that the 
-HFBI state are in a featureless SPT phase. However, we are still lacking 
-several pieces of evidence for this claims. In order to prove that the state 
-is truly featureless, we need to find a local parent Hamiltonian that has the 
-HFBI as its unique, gapped ground state. We need to decide which subgroup 
-(or subgroups) $G$ of the wavefunction's symmetries can be used to protect the 
-SPT phase, and then test this by perturbing the parent Hamiltonian.
+HFBI state are in a featureless SPT phase. 
 
 \begin{figure}[htbc]
 	\centering
@@ -106,7 +107,12 @@ SPT phase, and then test this by perturbing the parent Hamiltonian.
 	\label{fig:TopologicalEE}
 \end{figure}
 
-Of course, diagonalizing interacting 2D Hamiltonians is hard. We'll work up to 
+However, we are still lacking 
+several pieces of evidence for this claims. In order to prove that the state 
+is truly featureless, we need to find a local parent Hamiltonian that has the 
+HFBI as its unique, gapped ground state. We need to decide which subgroup 
+(or subgroups) $G$ of the wavefunction's symmetries can be used to protect the 
+SPT phase, and then test this by perturbing the parent Hamiltonian. Of course, diagonalizing interacting 2D Hamiltonians is hard. We'll work up to 
 these claims not by searching all possible Hamiltonians for a parent, but by 
 looking more closely at the entanglement spectra.
 
