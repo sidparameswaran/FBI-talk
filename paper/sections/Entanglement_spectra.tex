@@ -5,18 +5,32 @@
 
 The quasi-1D cylinder geometry is also convenient for calculating the 
 entanglement spectrum for entanglement cuts transverse to the 
-cylinder. The procedure for computing the Schmidt decomposition is the 
-same as for a MPS, and implies a canonical form for the quasi-1D MPS
+cylinder. With each cylinder slice blocked together and considered as an MPS, the procedure for computing the entanglement spectrum is identical to those used for MPS. The process also results in a change of basis on the virtual legs that allows one to change the tensor network in Figure \ref{fig:FBI_PEPS} into a canonical form MPS,
 
 $$
-\ket{\psi} = \sum\limits_{\{p_i\}} \Gamma_{p_1} \Lambda \Gamma_{p_2} ... \Lambda \Gamma_{p_N} \ket{p_0 p_1 ... p_N}.
+\ket{\psi} = \sum\limits_{\{p_i\}} \ldots \Lambda \Gamma_{p_0} \Lambda \Gamma_{p_1} \Lambda \Gamma_{p_2} \Lambda \ldots \ket{... p_0 p_1 p_2 ...}.
 $$
 
-The elements $\lambda_i$ of the diagonal matrix $\Lambda$ which 
-appears in the canonical form,
-are related to the non-zero eigenvalues $\rho_i$ of the reduced 
-density matrix for the left or right half of the system via $\rho_i = 
-\lambda_i^2$.
+Each physical leg represents all $2*L$ physical indices of a cylinder slice, 
+and each virtual leg represents all $L$ virtual indices that connect cylinder 
+slices. The change of basis generally mixes the Hilbert spaces from these 
+virtual legs, so that any notion of locality around the circumference of the 
+cylinder is lost. For many of the calculations that follow, we'll use this 1D 
+form, and the methods will be entirely MPS methods. 
+
+As is well known, the key property of the canonical form is that it provides a Schmidt decomposition at each site. 
+
+\begin{figure}[htbc]
+	\centering
+		\includegraphics[width=0.8\columnwidth]{{mps_canonical.pdf}}
+\end{figure}
+
+This Schmidt decomposition only has a finite number $\chi$ of contributing 
+terms, which is bounded by the total bond dimension crossed by the 
+entanglement cut. The reduced density matrix for the right (left) half of the 
+system has eigenvalues $\rho_i = \lambda_i^2$, and eigenvectors 
+$\ket{\psi_{R(L)}^i}$. For the HFBI and the cut shown in Figure 
+\ref{fig:FBI_PEPS}, the number of terms is $2^L$. 
 
 The entanglement spectrum $\epsilon_i$  is defined via the equation 
 $e^{-\epsilon_i} = \rho_i$. One says that the entanglement spectrum 
@@ -26,10 +40,7 @@ cylinder on one side of the entanglement cut.
 
 Despite the infinite size, information about the entanglement 
 Hamiltonian eigenstates can be extracted from the MPS procedure as 
-well. The tensor network structure provides an effective reduced 
-density matrix $\tilde{\rho}$ and entanglement Hamiltionian 
-$\tilde{H_e}$ that are unitarily related to $\rho$ and $H_e$, but that 
-acts on each virtual index crossed by the entanglement cut. The 
+well. The definition of canonical form implies that One can show that the 
 eigenstates of this Hamiltonian carry quantum numbers for each 
 symmetry respected by the cut - in our case charge and momentum 
 parallel to the cut - that match the corresponding Schmidt states. We 
@@ -130,10 +141,11 @@ Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g
 acts on the virtual leg of the MPS, that satisfies the equation pictured in 
 Figure \ref{fig:mps_group_sym}. For an MPS with a nondegenerate largest 
 transfer matrix eigenvalue, this equation is guaranteed have a unique solution 
-for $V_g$. By combining $N$ such blocks together and connecting them with 
-periodic boundary conditions, we recover the fact that $U_g 
+for $V_g$, and the operators $V_g$ are guaranteed to commute with the diagonal matrix $\Lambda$. By combining $N$ such blocks together and connecting them with periodic boundary conditions, we recover the fact that $U_g 
 \ket{\psi} = e^{i \Theta_g} \ket{\psi}$, with $\Theta_g = N \theta_g$, since 
-all of the $V_g$ and $V_g^{\dagger}$s cancel pairwise.      
+all of the $V_g$ and $V_g^{\dagger}$s cancel pairwise.
+
+The Schmidt decompostion at a site $\ket{\psi} = \sum\limits_i \ket{\psi_L^i} \lambda_i \ket{\psi_R^i}$      
 
 \begin{figure}[htbc]
     \centering
@@ -168,6 +180,8 @@ An extension of this to treat inversion symmetry is explained in
 product state is transposed in the basis \brayden{Add pictures for inversion 
 symmetry in MPS}.
 
+
+
 \begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{5}{r}@{}}
 \toprule
 $\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
@@ -181,7 +195,7 @@ $\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V
 
 Since 
 $$  
-V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}} = - V_{\mathcal{I}} V_{\mathcal{\pi}},
+V_{\mathcal{\pi} \mathcal{I}_y} V_{\mathcal{\pi} \mathcal{I}_y}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}_y} = - V_{\mathcal{I}_y} V_{\mathcal{\pi}},
 $$ 
 
 the representation is in the nontrivial class of 
