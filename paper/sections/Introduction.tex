@@ -33,15 +33,21 @@ henceforth dubbed honeycomb featureless boson insulator (HFBI),
 will be discussed in detail in Section~\ref{sec:fbi}.
 \bela{Possibly move the first few paragraphs of Sec II, or at least a short summary, here?}
 
+Beyond showing that the construction gives a featureless state, we also want 
+to argue that it lies in a distinct SPT phase, and show how to separate this 
+phase from classical insulators and other featureless states. Instead of local 
+order parameters, SPT phases are distinguished by features that appear at 
+phase boundaries, such as a gapless edge spectrum, and by entanglement 
+properties of the groundstate wavefunction, such as a gapless \em{entanglement 
+edge spectrum} or a topological invariant. These properties have been previously used to identify SPTs with on-site symmetries, such as free fermion or interacting topological insulators, as well as free fermion crystalline topological insulators. \brayden{citation needed}
+
 The main focus of this paper will be on the edge properties of the HFBI.
 In particular, we will find that while the state is featureless in the bulk, it
 features a gapless edge state which is protected by a combination of lattice inversion
-and spin symmetry. We will argue for this by calculating the entanglement spectrum
-and showing
+and spin symmetry. We will argue for this by calculating the entanglement spectrum and showing
 that the low-lying spectrum is to great accuracy described by that of a $c=1$
-conformal field theory; in addition, we will show that an exact degeneracy
-in the entanglement spectrum for certain geometries is due to the non-trivial
-action of the symmetry group on the edge.
+conformal field theory; in addition, we will show that there is exact double 
+degeneracy throughout the entanglement spectrum for certain geometries.
 
 All these calculations are performed in a framework of tensor network states.
 The simplest example of a tensor network for a 1D system is a matrix
@@ -56,4 +62,16 @@ PEPS are the generalization of MPS to two and higher dimensions, where
 each site in the system is represented by a rank $z+1$ tensor, where
 $z$ is the coordination number of the lattice, and wavefunction
 coefficients are similarly given by contracting over all virtual
-indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004} 
+indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004}.
+
+A simpler way to classify an SPT phase beyond edge spectra is using 
+topological invariants, which are numbers that can be computed from the bulk 
+wavefunction that provably must be constant throughout the phase. These 
+invariants measure how the action of the symmetry is implemented on the 
+physical edge states of open systems or on the virtual edge states of a tensor 
+network representation. These invariants feature heavily in the classification 
+of SPT phases with on-site symmetry, and similar invariants that apply to 
+free-fermion states have been used for topological crystaline insulators.
+We will also discuss the action of the symmetry on the edge of the HFBI state 
+and progress towards the goal of finding a topological invariant to identify 
+the corresponding phase.
