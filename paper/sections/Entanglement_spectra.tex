@@ -18,18 +18,19 @@ virtual legs, so that any notion of locality around the circumference of the
 cylinder is lost. For many of the calculations that follow, we'll use this 1D 
 form, and the methods will be entirely MPS methods. 
 
-As is well known, the key property of the canonical form is that it provides a Schmidt decomposition at each site. 
+As is well known, the key property of the canonical form is that it provides a Schmidt decomposition $\ket{\psi} = \sum\limits_i \ket{\psi_L^i} \lambda_i \ket{\psi_R^i}$, as shown in Figure \ref{fig:mps_canonical}. The Schmidt vectors $\ket{\psi_{L/R}^i}$ make an orthonormal set of eigenvectors for the reduced density matrices $\rho_{L/R}$ of the left/right half of the system. 
 
 \begin{figure}[htbc]
 	\centering
 		\includegraphics[width=0.8\columnwidth]{{mps_canonical.pdf}}
+		\caption{}
+		\label{fig:mps_canonical}
 \end{figure}
 
 This Schmidt decomposition only has a finite number $\chi$ of contributing 
-terms, which is bounded by the total bond dimension crossed by the 
-entanglement cut. The reduced density matrix for the right (left) half of the 
-system has eigenvalues $\rho_i = \lambda_i^2$, and eigenvectors 
-$\ket{\psi_{R(L)}^i}$. For the HFBI and the cut shown in Figure 
+terms - one for each non-zero eigenvalue $\rho_i = \lambda_i^2$ of the reduced density matrices on either side of the cut -
+which is bounded by the total bond dimension crossed by the 
+entanglement cut.  For the HFBI and the cut shown in Figure 
 \ref{fig:FBI_PEPS}, the number of terms is $2^L$. 
 
 The entanglement Hamiltonian $H_e$ is defined via  $e^{-H_e} = \rho$,
@@ -124,7 +125,8 @@ fixed odd cylinder circumference $L$ is a 1D SPT. We will discuss in
 Section \ref{sec:symmetry} how to explain the degeneracies in these spectra 
 using the action of the symmetry on the edge, and how to prove that the odd 
 circumference cylinder states are indeed 1D SPTs while the even circumference 
-cylinder states are not. This will shed light on what the appropriate symmetry group to use.
+cylinder states are not. This will shed light on what the appropriate symmetry 
+group to use.
 
 Given that only odd circumference cylinders are SPTs, one might wonder whether 
 odd and even $L$ cylinders approach two differt phases in the thermodynamic 
@@ -137,49 +139,56 @@ same set of points.
 \subsection{Symmetry action on the edge}
 \label{sec:symmetry}
 
-Similarly to the above calculations, we treat the HFBI wavefunction on a 
-cylinder of a fixed circumference $L$ as a matrix product state, and use the 
-method of \onlinecite{pollmann2010} to determine the action of the symmetry on 
-the virtual legs of the tensor network.
+When we treat the HFBI wavefunction on a 
+cylinder of a fixed circumference $L$ as a matrix product state, we can use 
+MPS methods to determine the action of an on-site symmetry on 
+the virtual legs of this MPS. This is done using the MPS canonical form, as originally detailed in \cite{perezgarcia2008}. We can then undo the change of basis to describe this symmetry action on the virtual legs of the PEPS in Figure \ref{fig:FBI_PEPS_2}.
 
 Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g 
 \ket{\psi} = e^{i \Theta_g} \ket{\psi}$ is assigned an operator $V_g$ that 
-acts on the virtual leg of the MPS, that satisfies the equation pictured in 
-Figure \ref{fig:mps_group_sym}. For an MPS with a nondegenerate largest 
+acts on the virtual leg of the MPS, that satisfies the equation
+\begin{center}
+\includegraphics[width=0.6\columnwidth]{group_sym.pdf}
+\end{center}
+
+For an MPS with a nondegenerate largest 
 transfer matrix eigenvalue, this equation is guaranteed have a unique solution 
-for $V_g$, and the operators $V_g$ are guaranteed to commute with the diagonal matrix $\Lambda$. By combining $N$ such blocks together and connecting them with periodic boundary conditions, we recover the fact that $U_g 
-\ket{\psi} = e^{i \Theta_g} \ket{\psi}$, with $\Theta_g = N \theta_g$, since 
-all of the $V_g$ and $V_g^{\dagger}$s cancel pairwise.
+for $V_g$, and the operators $V_g$ are guaranteed to commute with the diagonal 
+matrix $\Lambda$. However, these operators are not guaranteed to form a linear 
+representation of the group of on-site symmetries, but in general could make 
+up a projective representation, satisfying 
+$$V_g V_h = e^{i \omega(g, h)} V_{gh}.$$
 
-The Schmidt decompostion at a site $\ket{\psi} = \sum\limits_i \ket{\psi_L^i} \lambda_i \ket{\psi_R^i}$      
 
-\begin{figure}[htbc]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{group_sym.png}
-    \caption{Matrix Product State symmetry \brayden{fix to use canonical form}}
-    \label{fig:mps_group_sym}
-\end{figure}
 
-In general, the $V_g$ do not have to form a linear representation of the 
-group, but could instead be a projective representation. This can be explained 
-in the MPS language as follows: if instead the blocks are connected together 
-with different boundary conditions, as in Figure \ref{fig:mps_boundary}, we 
-discover that $U_g$ transforms $\ket{\psi}$ to a similar state with 
-transformed boundary conditions, $B \rightarrow V_g^{\dagger} B V_g$. This 
-action on $B$, one can show, is a group representation.
+%By combining $N$ such blocks together and connecting them with periodic 
+%boundary conditions, we recover the fact that 
+%$U_g \ket{\psi} = e^{i \Theta_g} \ket{\psi}$,
+%with $\Theta_g = N \theta_g$, since all of the $V_g$ and $V_g^{\dagger}$s 
+%cancel pairwise.
+%$\theta_g$ measures the charge per unit cell
+    
 
-For open ends - if $B$ factors into left and right parts, $B = 
-\vket{b}\vbra{b}$ - the action of the symmetry on the boundary can also be 
-factored, $\vket{b} \rightarrow V_g \vket{b}$. This action does not have to be 
-a group representation, but can fail up phases $V_g V_h = e^{i \omega(g, h)} 
-V_{gh}$.  
+%In general, the $V_g$ do not have to form a linear representation of the 
+%group, but could instead be a projective representation. This can be explained 
+%in the MPS language as follows: if instead the blocks are connected together 
+%with different boundary conditions, as in Figure \ref{fig:mps_boundary}, we 
+%discover that $U_g$ transforms $\ket{\psi}$ to a similar state with 
+%transformed boundary conditions, $B \rightarrow V_g^{\dagger} B V_g$. This 
+%action on $B$, one can show, is a group representation.
 
-\begin{figure}[htbc]
-    \centering
-    \includegraphics[width=\columnwidth]{mpsbc.png}
-    \caption{Matrix Product State with arbitrary boundary conditions}
-    \label{fig:mps_boundary}
-\end{figure}
+%For open ends - if $B$ factors into left and right parts, $B = 
+%\vket{b}\vbra{b}$ - the action of the symmetry on the boundary can also be 
+%factored, $\vket{b} \rightarrow V_g \vket{b}$. This action does not have to be 
+%a group representation, but can fail up phases $V_g V_h = e^{i \omega(g, h)} 
+%V_{gh}$.  
+
+%\begin{figure}[htbc]
+%    \centering
+%    \includegraphics[width=\columnwidth]{mpsbc.png}
+%    \caption{Matrix Product State with arbitrary boundary conditions}
+%    \label{fig:mps_boundary}
+%\end{figure}
 
 An extension of this to treat inversion symmetry is explained in 
 \onlinecite{pollmann2010}. It works identically, but instead each matrix 

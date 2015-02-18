@@ -1,19 +1,21 @@
 \begin{tikzpicture}
+\tikzset{gamma/.style={circle=2pt,draw=black!100, very thick, fill=blue!40, inner sep=2pt}}
+
 \begin{scope}[very thick,decoration={
     markings,
     mark=at position 0.5 with {\arrow{<}}}
     ] 
 \node[draw] (Ug) at (-4.1, 1) {$U_g$};
-\node[gamma] (A1) at (-4.1, 0) {};
+\node[gamma] (A1) at (-4.1, 0) {$\Gamma$};
 \node (li) at ($(A1) + (-0.6, 0) $) {};
 
 \draw[thick, postaction={decorate}] (li.center) -- (A1.west);
 \draw[thick, postaction={decorate}] (A1.east) -- node[right] {} +(0.5,0);
 
 
-\node at (-3, 0.2){$\equiv e^{i \theta_g}$};    
+\node at (-2.8, 0.1){$ = e^{i \theta_g}$};    
 
-\node[gamma] (A) at (-1, 0) {};
+\node[gamma] (A) at (-1, 0) {$\Gamma$};
 \node[draw] (Ul) at ($(A) + (-0.8, 0) $) {$V_g$};
 \node[draw] (Ur) at ($(A) + (0.8, 0) $) {$V_g^{\dagger}$};
 \node (LI) at ($(Ul) + (-0.6, 0) $) {};
