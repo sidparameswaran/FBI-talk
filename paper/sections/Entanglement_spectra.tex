@@ -40,11 +40,8 @@ states for the MPS parent Hamiltonian with open boundary conditions.
 
 \brayden{Something about history of 2d SPTs having gapless 
 entanglement edges. Possibly see brayden's advancement talk.}
+Gapless entanglement spectra have been shown to be robust features of two-dimensional topological and symmetry protected topological (SPT) phases.
 
-The entanglement spectrum shows a linear dispersion near momentum 
-zero. Many points in the spectrum are doubly degenerate - those that 
-are assigned a non-zero $U(1)$ charge.
-	
 \begin{figure}[htbc]
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum_L10.pdf}}
@@ -52,8 +49,6 @@ are assigned a non-zero $U(1)$ charge.
 	\label{fig:ESL10}
 \end{figure}
 
-On odd circumference cylinders, the entire entanglement spectrum is 
-doubly degenerate.
 
 \begin{figure}[htbc]
 	\centering
@@ -62,17 +57,14 @@ doubly degenerate.
 	\label{fig:ESL9}
 \end{figure}
 
-The topological entanglement entropy is essentially zero.
 
-\begin{figure}[htbc]
-	\centering
-  \includegraphics[width=\columnwidth]{{TopologicalEntanglementEntropy.pdf}}
-	\caption{The topological entanglement entropy $\gamma$ is consistent 
-	with 0.}
-	\label{fig:TopologicalEE}
-\end{figure}
-
-The entanglement gap closes roughly as $1/L$. 
+The entanglement spectra on cylinders with even and odd width circumferences 
+are shown in \ref{fig:ESL10} and \ref{fig:ESL9}. We find that the entanglement 
+spectrum looks like it has a gapless edge mode with linear dispersion near 
+momentum zero. In figure \ref{fig:EEScaling}, we compare the lowest points in 
+the spectra for several cylinder widths. The finite size scaling confirms that 
+the entanglement gap closes as $1/L$, as you would expect for a gapless mode 
+with linear dispersion.
 
 \begin{figure}[htbc]
 	\centering
@@ -83,10 +75,127 @@ The entanglement gap closes roughly as $1/L$.
   \label{fig:EEScaling}
 \end{figure}
 
+The most likely explanation for this gapless edge mode is that the state has 
+topological or SPT order. By computing the topological entanglement entropy, 
+as shown in \ref{fig:TopologicalEE}, we can rule out 
+topological order for this state. Combined with the vanishing of topological 
+entanglement entropy, these spectra suggest that the 
+HFBI state are in a featureless SPT phase. However, we are still lacking 
+several pieces of evidence for this claims. In order to prove that the state 
+is truly featureless, we need to find a local parent Hamiltonian that has the 
+HFBI as its unique, gapped ground state. We need to decide which subgroup 
+(or subgroups) $G$ of the wavefunction's symmetries can be used to protect the 
+SPT phase, and then test this by perturbing the parent Hamiltonian.
+
+\begin{figure}[htbc]
+	\centering
+  \includegraphics[width=\columnwidth]{{TopologicalEntanglementEntropy.pdf}}
+	\caption{The topological entanglement entropy $\gamma$ is consistent 
+	with 0.}
+	\label{fig:TopologicalEE}
+\end{figure}
+
+Of course, diagonalizing interacting 2D Hamiltonians is hard. We'll work up to 
+these claims not by searching all possible Hamiltonians for a parent, but by 
+looking more closely at the entanglement spectra.
+
+Notice that many points in the spectrum are doubly degenerate - those that are 
+assigned a non-zero $U(1)$ charge - and on odd circumference cylinders, the 
+entire entanglement spectrum is doubly degenerate, a property shared with 1D 
+SPTs. This suggests that the the HFBI state as a 1D state with any  
+fixed odd cylinder circumference $L$ is a 1D SPT. We will discuss in
+Section \ref{sec:symmetry} how to explain the degeneracies in these spectra 
+using the action of the symmetry on the edge, and how to prove that the odd 
+circumference cylinder states are indeed 1D SPTs while the even circumference 
+cylinder states are not. This will shed light on what the appropriate symmetry group to use.
+
+Given that only odd circumference cylinders are SPTs, one might wonder whether 
+odd and even $L$ cylinders approach two differt phases in the thermodynamic 
+limit. In Section \ref{sec:CFT}, we will provide evidence against that 
+possibility, by showing that in both cases, the low-energy, linear dispersing 
+part of the entanglement spectra can be described by the same conformal field 
+theory. Thus, in the thermodynamic limit, the two edge spectra approach the 
+same set of points.
+	
+\subsection{Symmetry action on the edge}
+\label{sec:symmetry}
+
+Similarly to the above calculations, we treat the HFBI wavefunction on a 
+cylinder of a fixed circumference $L$ as a matrix product state, and use the 
+method of \onlinecite{pollmann2010} to determine the action of the symmetry on 
+the virtual legs of the tensor network.
+
+Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g 
+\ket{\psi} = e^{i \Theta_g} \ket{\psi}$ is assigned an operator $V_g$ that 
+acts on the virtual leg of the MPS, that satisfies the equation pictured in 
+Figure \ref{fig:mps_group_sym}. For an MPS with a nondegenerate largest 
+transfer matrix eigenvalue, this equation is guaranteed have a unique solution 
+for $V_g$. By combining $N$ such blocks together and connecting them with 
+periodic boundary conditions, we recover the fact that $U_g 
+\ket{\psi} = e^{i \Theta_g} \ket{\psi}$, with $\Theta_g = N \theta_g$, since 
+all of the $V_g$ and $V_g^{\dagger}$s cancel pairwise.      
+
+\begin{figure}[htbc]
+    \centering
+    \includegraphics[width=0.6\columnwidth]{group_sym.png}
+    \caption{Matrix Product State symmetry \brayden{fix to use canonical form}}
+    \label{fig:mps_group_sym}
+\end{figure}
+
+In general, the $V_g$ do not have to form a linear representation of the 
+group, but could instead be a projective representation. This can be explained 
+in the MPS language as follows: if instead the blocks are connected together 
+with different boundary conditions, as in Figure \ref{fig:mps_boundary}, we 
+discover that $U_g$ transforms $\ket{\psi}$ to a similar state with 
+transformed boundary conditions, $B \rightarrow V_g^{\dagger} B V_g$. This 
+action on $B$, one can show, is a group representation.
+
+For open ends - if $B$ factors into left and right parts, $B = 
+\vket{b}\vbra{b}$ - the action of the symmetry on the boundary can also be 
+factored, $\vket{b} \rightarrow V_g \vket{b}$. This action does not have to be 
+a group representation, but can fail up phases $V_g V_h = e^{i \omega(g, h)} 
+V_{gh}$.  
+
+\begin{figure}[htbc]
+    \centering
+    \includegraphics[width=\columnwidth]{mpsbc.png}
+    \caption{Matrix Product State with arbitrary boundary conditions}
+    \label{fig:mps_boundary}
+\end{figure}
+
+An extension of this to treat inversion symmetry is explained in 
+\onlinecite{pollmann2010}. It works identically, but instead each matrix 
+product state is transposed in the basis \brayden{Add pictures for inversion 
+symmetry in MPS}.
+
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{5}{r}@{}}
+\toprule
+$\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
+\midrule
+ $U(1) $ & & & & \\
+ $\mathcal{\pi} \mathcal{I}_x$ & & & & \\
+ $\mathcal{I}_x \mathcal{I}_y$ & & & & \\
+ $\mathcal{\pi} \mathcal{I}_x \mathcal{I}_y$ & & & & \\
+\bottomrule
+\end{tabular*}
+
+Since 
+$$  
+V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}} = - V_{\mathcal{I}} V_{\mathcal{\pi}},
+$$ 
+
+the representation is in the nontrivial class of 
+
+$$
+H^2(\mathbb{Z}_2 \times \mathbb{Z}_2^{\mathcal{I}}; U(1)) = \mathbb{Z}_2.
+$$
+
+
 \newcommand{\uL}{\mathbf{L_0}}
 \newcommand{\bL}{\mathbf{\bar{L}_0}}
 
 \subsection{Identification of edge CFT}
+\label{sec:CFT}
 
 Given the $U(1)$ symmetry of the state, the simplest possible 
 conformal field theory we might expect to appear at the edge is that 
@@ -170,60 +279,3 @@ matching the maximum of the entanglement entropy data. $c=1$ is a good
 fit.}
 	\label{fig:EdgeGS_EE}
 \end{figure}
-
-\subsection{Symmetry action on the edge}
-\label{sec:symmetry}
-
-Gapless entanglement spectra have been shown to be robust features of 
-two-dimensional topological and symmetry protected topological (SPT) 
-phases. \brayden{Ref needed}. Combined with the vanishing of 
-topological entanglement entropy, these spectra suggest that the 
-featureless bosonic insulator state \ref{eq:def} could be in a SPT phase. 
-However, it's still not clear which subgroup (or subgroups) $G$ of the 
-wavefunction's symmetries can be used to protect the SPT phase. We will study 
-the action of the symmetries of the wavefunction on the entanglement cut, using the same cylinder geometry as above, to try to determine $G$.
-
-%With a parent Hamiltonian, we could in principal determine $G$ by 
-%diagonalizing Hamiltonians with a variety of perturbations that break each 
-%combination of symmetries, and seeing which perturbations destroy the 
-%entanglement edge. 
-
-
-For an injective MPS, the action of the symmetries of the wavefunction 
-can be determined uniquely on the virtual legs of the MPS. 
-\cite{pollmann2010}. Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g \ket{\psi} = e^{i \Theta_g} \ket{\psi}$  
-
-
-\begin{figure}[htbc]
-    \centering
-    \includegraphics[width=0.6\columnwidth]{group_sym.png}
-    \label{fig:mps_group_sym}
-\end{figure}
-
-\begin{figure}[htbc]
-    \centering
-    \includegraphics[width=\columnwidth]{mpsbc.png}
-    \label{fig:mps_boundary}
-\end{figure}
-
-\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{5}{r}@{}}
-\toprule
-$\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
-\midrule
- $U(1) $ & & & & \\
- $\mathcal{\pi} \mathcal{I}_x$ & & & & \\
- $\mathcal{I}_x \mathcal{I}_y$ & & & & \\
- $\mathcal{\pi} \mathcal{I}_x \mathcal{I}_y$ & & & & \\
-\bottomrule
-\end{tabular*}
-
-Since 
-$$  
-V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}} = - V_{\mathcal{I}} V_{\mathcal{\pi}},
-$$ 
-
-the representation is in the nontrivial class of 
-
-$$
-H^2(\mathbb{Z}_2 \times \mathbb{Z}_2^{\mathcal{I}}; U(1)) = \mathbb{Z}_2.
-$$
