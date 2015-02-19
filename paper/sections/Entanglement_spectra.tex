@@ -14,9 +14,10 @@ $$
 Each physical leg represents all $2L$ physical indices of a cylinder slice, 
 and each virtual leg represents all $L$ virtual indices that connect cylinder 
 slices. The change of basis generally mixes the Hilbert spaces from these 
-virtual legs, so that any notion of locality around the circumference of the 
-cylinder is lost. For many of the calculations that follow, we'll use this 1D 
-form, and the methods will be entirely MPS methods. 
+virtual legs, so the resulting basis won't be local around the circumference 
+of the cylinder.
+For many of the calculations that follow, we'll use this 1D form, and the 
+methods will be entirely MPS methods. 
 
 As is well known, the key property of the canonical form is that it provides a Schmidt decomposition $\ket{\psi} = \sum\limits_i \ket{\psi_L^i} \lambda_i \ket{\psi_R^i}$, as shown in Figure \ref{fig:mps_canonical}. The Schmidt vectors $\ket{\psi_{L/R}^i}$ make an orthonormal set of eigenvectors for the reduced density matrices $\rho_{L/R}$ of the left/right half of the system. 
 
@@ -28,7 +29,8 @@ As is well known, the key property of the canonical form is that it provides a S
 \end{figure}
 
 This Schmidt decomposition only has a finite number $\chi$ of contributing 
-terms - one for each non-zero eigenvalue $\rho_i = \lambda_i^2$ of the reduced density matrices on either side of the cut -
+terms - one for each non-zero eigenvalue $\rho_i = \lambda_i^2$ of the reduced 
+density matrices on either side of the cut -
 which is bounded by the total bond dimension crossed by the 
 entanglement cut.  For the HFBI and the cut shown in Figure 
 \ref{fig:FBI_PEPS}, the number of terms is $2^L$. 
@@ -142,7 +144,16 @@ same set of points.
 When we treat the HFBI wavefunction on a 
 cylinder of a fixed circumference $L$ as a matrix product state, we can use 
 MPS methods to determine the action of an on-site symmetry on 
-the virtual legs of this MPS. This is done using the MPS canonical form, as originally detailed in \cite{perezgarcia2008}. We can then undo the change of basis to describe this symmetry action on the virtual legs of the PEPS in Figure \ref{fig:FBI_PEPS_2}.
+the virtual legs of this MPS. This is done using the MPS canonical form, as 
+originally detailed in \cite{perezgarcia2008}. This will allow us to determine 
+the boson charge and transverse momentum associated with each Schmidt state, 
+used in the spectra plots Figures \ref{fig:ESL10} and \ref{fig:ESL9}.
+
+This symmetry action is determined on the Schmidt basis, but we can also 
+change back to the basis determined by the virtual legs of the PEPS in Figure 
+\ref{fig:FBI_PEPS_2}, i.e. a basis that is local around the circumference of 
+the cylinder. We'll use this basis to describe the edge action of the on-site 
+symmetries of the MPS: U(1) charge, translation, and reflection $I_y$. 
 
 Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g 
 \ket{\psi} = e^{i \Theta_g} \ket{\psi}$ is assigned an operator $V_g$ that 
