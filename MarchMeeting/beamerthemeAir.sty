@@ -1,0 +1,87 @@
+\usetheme{Rochester}
+\usepackage{tikz}
+\RequirePackage{pgf}
+
+\pgfdeclareimage[width=1.0\paperwidth]{banners/honey_banner_light}{banners/honey_banner_light}
+
+%\setbeamertemplate{blocks}[rounded][shadow=true]
+
+\setbeamertemplate{caption}{\insertcaption} %BW
+
+
+\setbeamercovered{transparent}
+
+\beamer@headheight=0.13\paperwidth
+
+\definecolor{airorange}{rgb}{.953 ,.502 ,.04}
+\definecolor{airdarkblue}{HTML}{064F6F}
+\definecolor{airlightblue}{HTML}{0099d5}
+\definecolor{airgray}{HTML}{686868}
+\definecolor{airlightgray}{HTML}{eeeeee}
+\definecolor{airblue}{rgb}{.13 ,.43 ,.68}
+\setbeamercolor*{Title bar}{fg=airdarkblue}
+\setbeamercolor*{Location bar}{fg=airorange,bg=airlightgray}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{block title}{bg=white,fg=airlightblue}
+\setbeamercolor*{block body}{bg=white,fg=airgray}
+\setbeamercolor*{normal text}{bg=white,fg=airgray}
+\setbeamercolor*{section in head/foot}{bg=airblue,fg=airdarkblue}
+
+\usecolortheme[named=airorange]{structure}
+\usefonttheme{professionalfonts}
+
+\setbeamerfont{section in head/foot}{size=\tiny,series=\normalfont}
+\setbeamerfont{frametitle}{size=\LARGE} 
+%BW: %https://engineering.purdue.edu/ECN/Support/KB/Docs/LaTeXChangingTheFont
+
+\newcommand{\topline}{%
+  \tikz[remember picture,overlay] {%
+    \draw[thick, orange] ([yshift=-1cm, xshift=1cm]current page.north west)
+             -- ([yshift=-1cm,xshift=\paperwidth-1cm]current page.north west);}}
+
+\setbeamertemplate{frametitle}
+{
+  \centering
+  \vskip-0.25\beamer@headheight
+  \vskip-\baselineskip
+  \vskip-0.3cm %BW: vertical adjustment
+  \hskip0.7cm\usebeamerfont*{frametitle}\insertframetitle
+  \vskip-0.10em
+  \hskip0.7cm\usebeamerfont*{framesubtitle}\insertframesubtitle
+  \vskip0.5cm
+  \topline
+}
+% \setbeamertemplate{headline}
+    % {
+    % \linethickness{2.0pt}
+    % }
+
+% \setbeamertemplate{headline}
+% {
+  % \pgfuseimage{banners/honey_banner_light}
+  % \vskip -1.95cm
+  % \linethickness{0.0pt}
+
+  % \framelatex{
+  % \begin{beamercolorbox}[wd=\paperwidth,ht=0.3\beamer@headheight]{Title bar}
+    % \usebeamerfont{section in head/foot}%
+    % \insertsectionnavigationhorizontal{0pt}{\hskip0.22cm}{}%
+  % \end{beamercolorbox}}
+
+  % \framelatex{
+  % \begin{beamercolorbox}[wd=\paperwidth,ht=0.7\beamer@headheight]{Title bar}
+  % \end{beamercolorbox}}
+% }
+
+\setbeamertemplate{footline}
+{
+  \linethickness{0.25pt}
+  \framelatex{
+  \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{Location bar}
+    \usebeamerfont{section in head/foot}%
+    \insertshortauthor~|~\insertshorttitle
+    \hfill
+    \insertframenumber/\inserttotalframenumber
+  \end{beamercolorbox}}
+}
+

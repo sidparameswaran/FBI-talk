@@ -1,0 +1,127 @@
+\documentclass[t]{beamer}
+
+\usetheme{Air}
+\usepackage{graphics}
+\usepackage{graphicx}
+\graphicspath{{../images/}{../diagrams/}{.}}
+%\usepackage{caption}
+\usepackage{amsthm}
+%\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{pgfmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes.arrows}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{positioning}
+\usetikzlibrary{fit,chains}
+\usepackage{natbib}
+\usepackage{wasysym}
+\usepackage{soul} 
+\bibliographystyle{apalike}  
+
+%\usepackage{pstricks}
+%\newpsobject{psid}{psline}{linestyle=dotted,dotsep=1pt}
+%\newpsobject{pspsi}{psline}{doubleline=true}
+%\newpsobject{pssigma}{psline}{linewidth=1.5pt}
+
+%\usepackage{pgfpages}
+%\setbeamertemplate{note page}[plain]
+%\setbeameroption{show notes on second screen=right}
+%http://tex.stackexchange.com/questions/21777/is-there-a-nice-solution-to-get-a-presenter-mode-for-latex-presentations
+
+\input{commands/shortcuts}
+\input{commands/pgfstyles}
+\input{commands/thms}
+
+\pdfinfo
+{
+  /Title       (Entanglement in Featureless Mott Insulators)
+  /Creator     (TeX)
+  /Author      (Brayden Ware)
+}
+
+
+\title{Entanglement in Featureless Mott Insulators}
+%\subtitle{}
+\author{Brayden Ware}
+\date{March 6th 2014}
+
+%\includeonly{slides/LSM1}
+\begin{document}
+
+\frame{\titlepage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Pre-outline section %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \section*{}
+
+% \include{slides/emptyslide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Outline code %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}
+
+\begin{frame}
+  \frametitle{Outline}
+  \vskip-1.5cm
+  \tableofcontents
+\end{frame}
+
+\AtBeginSection[]
+{
+\frame{
+  \vspace{2cm}
+  {\huge \insertsection}
+  }
+}
+%\AtBeginSection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \vskip-1.5cm
+%    \tableofcontents[currentsection]
+%  }
+%}
+
+%\AtBeginSubsection[]
+%{
+%  \frame<handout:0>
+%  {
+%    \frametitle{Outline}
+%    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+%  }
+%}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Motivation}
+%\subsection{Band Insulators}
+\include{slides/emptyslide}
+\include{slides/emptyslide}
+%\subsection{Bosonic Mott Insulators}
+\include{slides/emptyslide}
+%\subsection{Honeycomb Bosonic Mott Insulators?}
+\include{slides/emptyslide}
+\section{Entanglement}
+\include{slides/emptyslide}
+\section{Tensor Networks}
+\include{slides/emptyslide}
+\section{Entanglement Edge of Honeycomb Insulators}
+\include{slides/emptyslide}
+\section*{}
+
+\include{slides/slides99}
+\end{document}
