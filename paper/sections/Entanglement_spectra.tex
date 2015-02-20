@@ -95,13 +95,6 @@ two-dimensional topological and symmetry protected topological (SPT) phases.
   \label{fig:EEScaling}
 \end{figure}
 
-The most likely explanation for this gapless edge mode is that the state has 
-topological or SPT order. By computing the topological entanglement entropy, 
-as shown in \ref{fig:TopologicalEE}, we can rule out 
-topological order for this state. Combined with the vanishing of topological 
-entanglement entropy, these spectra suggest that the 
-HFBI state are in a featureless SPT phase. 
-
 \begin{figure}[htbc]
 	\centering
   \includegraphics[width=\columnwidth]{{TopologicalEntanglementEntropy.pdf}}
@@ -110,19 +103,42 @@ HFBI state are in a featureless SPT phase.
 	\label{fig:TopologicalEE}
 \end{figure}
 
-However, we are still lacking 
-several pieces of evidence for this claims. In order to prove that the state 
-is truly featureless, we need to find a local parent Hamiltonian that has the 
-HFBI as its unique, gapped ground state. We need to decide which subgroup 
-(or subgroups) $G$ of the wavefunction's symmetries can be used to protect the 
-SPT phase, and then test this by perturbing the parent Hamiltonian. Of course, diagonalizing interacting 2D Hamiltonians is hard. We'll work up to 
-these claims not by searching all possible Hamiltonians for a parent, but by 
-looking more closely at the entanglement spectra.
+The most likely explanation for this gapless edge mode is that the state has 
+topological or SPT order. By computing the topological entanglement entropy, 
+as shown in \ref{fig:TopologicalEE}, we can rule out 
+topological order for this state. Combined with the vanishing of topological 
+entanglement entropy, these spectra suggest that the 
+HFBI state are in a featureless SPT phase. 
+
+
+However, the entanglement spectrum of this one wavefunction is not enough to 
+determine the SPT nature of the phase. First, it isn't clear what group or 
+groups of symmetries can be used to protect the gapless edge. It could be that 
+the entire symmetry group - $U(1)$ boson number conservation, \brayden{time 
+reversal symmetry?}, as well as the entire rotational and translational group 
+of the lattice - must be preserved to protect the edge. Or, as we will argue 
+is the case, a much smaller subgroup could be used to protect the edge. This 
+leads to a wider class of perturbations that leave the edge intact - and since 
+we will argue that translation is not needed for protection, the gapless edge 
+will additonally be robust to some types of weak disorder and can be seen in 
+small systems with symmetry preserving boundary conditions. Second, the 
+entanglement spectrum alone fails to distinguish between other SPT phases with 
+the same protecting group - for that, we need a topological invariant. Third, 
+we would like to confirm the SPT nature of the phase by perturbing a parent 
+Hamiltonian with terms that break various combinations of symmetries and 
+seeing if they destroy the gapless edge.
+
+%To determine the protecting group, we can proceed in 
+%two ways: we could perturb a parent Hamiltonian with terms that break various 
+%combinations of symmetries and see which perturbations destroy the gapless 
+%edge, or we can look for a topological invariant by analyzing the action of 
+%the symmetry of the entanglement edge. We will take up the later question 
+%first, then return to the prospect of perturbing a parent Hamiltonian in 
+%Section \ref{sec:perturbations}.
 
 Notice that many points in the spectrum are doubly degenerate - those that are 
 assigned a non-zero $U(1)$ charge - and on odd circumference cylinders, the 
-entire entanglement spectrum is doubly degenerate, a property shared with 1D 
-SPTs. This suggests that the the HFBI state as a 1D state with any  
+entire entanglement spectrum is doubly degenerate, a property shared with 1D SPTs. This suggests that the the HFBI state as a 1D state with any  
 fixed odd cylinder circumference $L$ is a 1D SPT. We will discuss in
 Section \ref{sec:symmetry} how to explain the degeneracies in these spectra 
 using the action of the symmetry on the edge, and how to prove that the odd 
