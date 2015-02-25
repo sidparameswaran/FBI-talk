@@ -1,0 +1,40 @@
+\definecolor{airorange}{rgb}{.953 ,.502 ,.04}
+\definecolor{airdarkblue}{HTML}{064F6F}
+\definecolor{airlightblue}{HTML}{0099d5}
+\tikzset{operator/.style={circle=3pt,draw=black!100,fill=airorange!50,inner sep=1.4pt}}
+\tikzset{empty/.style={circle=3pt,draw=black!100,fill=airorange!00,inner sep=1.4pt}}
+\tikzset{filled/.style={circle=3pt,draw=black!100,fill=airorange!100,inner sep=1.4pt}}
+\tikzset{eli/.style={ellipse, rotate=0, draw=black, fill=gray!20}}
+
+\usetikzlibrary{backgrounds}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\begin{tikzpicture}
+
+\node[operator] (x) at (0.3, -0.4){};
+\node[operator] (y) at (0.5, -0.4){};
+\draw[color=airlightblue, thick] (x.east) -- (y.west);
+\node[] at (1.3-0.35, -0.42){=};
+\node[empty] (x) at (1.6-0.35, -0.4){};
+\node[filled] (y) at (1.9-0.35, -0.4){};
+\node[] at (2.1-0.35, -0.4) {\tiny -};
+\node[empty] (x) at (2.6-0.35, -0.4){};
+\node[filled] (y) at (2.3-0.35, -0.4){};
+
+\node[eli] at (0.5-0.1, -0.8){$\,\,\,$};
+\node[empty] (x) at (0.5-0.1-0.1, -0.8){};
+\node[empty] (y) at (0.5-0.1+0.1, -0.8){};
+\node[] at (1.3-0.35, -0.82){=};
+\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -0.8){\small $-$};
+\node[eli] at (0.5-0.1, -1.3){$\,\,\,$};
+\node[empty] (x) at (0.5-0.1-0.1, -1.3){};
+\node[filled] (y) at (0.5-0.1+0.1, -1.3){};
+\node[] at (1.3-0.35, -1.32){=};
+\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -1.3){\small $0$};
+\node[eli] at (0.5-0.1, -1.8){$\,\,\,$};
+\node[filled] (x) at (0.5-0.1-0.1, -1.8){};
+\node[filled] (y) at (0.5-0.1+0.1, -1.8){};
+\node[] at (1.3-0.35, -1.82){=};
+\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -1.8){\small $+$};
+
+\end{tikzpicture}

@@ -1,0 +1,69 @@
+\definecolor{airorange}{rgb}{.953 ,.502 ,.04}
+\definecolor{airdarkblue}{HTML}{064F6F}
+\definecolor{airlightblue}{HTML}{0099d5}
+\tikzset{operator/.style={circle=3pt,draw=black!100,fill=airorange!50,inner sep=1.4pt}}
+\tikzset{empty/.style={circle=3pt,draw=black!100,fill=airorange!00,inner sep=1.4pt}}
+\tikzset{filled/.style={circle=3pt,draw=black!100,fill=airorange!100,inner sep=1.4pt}}
+\tikzset{eli/.style={ellipse, rotate=0, draw=black, fill=gray!20}}
+
+\usetikzlibrary{backgrounds}
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+\begin{tikzpicture}
+\begin{scope}[on background layer]
+\node[eli] at (0,0) {$\,\,\,$};
+\node[eli] at (0.7,0) {$\,\,\,$};
+\node[eli] at (1.4,0) {$\,\, \,$};
+\node[eli] at (2.1,0) {$\,\, \,$};
+\end{scope}
+
+%\node[inv] (s0) at (-0.1, -0.1){};
+%\node[inv] (t0) at (-0.1,  0.1){};
+%\path[->, very thick, airorange] (s0.center) edge (t0.center);
+
+%\node[inv] (s1) at (0.1, -0.1){};
+%\node[inv] (t1) at (0.1,  0.1){};
+%\path[->,very thick, airorange] (s1.center) edge (t1.center);
+
+% \node[inv] (s2) at (0.6, -0.1){};
+% \node[inv] (t2) at (0.6,  0.1){};
+% \path[<-,very thick, airorange] (s2.center) edge (t2.center);
+% 
+% \node[inv] (s3) at (0.8, -0.1){};
+% \node[inv] (t3) at (0.8,  0.1){};
+% \path[->, very thick, airorange] (s3.center) edge (t3.center);
+% 
+% \node[inv] (s4) at (1.3, -0.1){};
+% \node[inv] (t4) at (1.3,  0.1){};
+% \path[<-, very thick, airorange] (s4.center) edge (t4.center);
+% 
+% \node[inv] (s5) at (1.5, -0.1){};
+% \node[inv] (t5) at (1.5,  0.1){};
+% \path[->, very thick, airorange] (s5.center) edge (t5.center);
+% 
+%  \node[inv] (s6) at (2.0, -0.1){};
+%  \node[inv] (t6) at (2.0,  0.1){};
+% \path[<-, very thick, airorange] (s6.center) edge (t6.center);
+% 
+% \node[inv] (s7) at (2.2, -0.1){};
+% \node[inv] (t7) at (2.2,  0.1){};
+% \path[<-, very thick, airorange] (s7.center) edge (t7.center);
+
+\foreach \i in {0, 1, 2, 3}{
+\node[operator] (u\i) at (0.7*\i-0.1, 0){};
+\node[operator] (v\i) at (0.7*\i+0.1, 0){};
+}
+\node[inv] (u4) at (0.7*4-0.2, 0){};
+\node[inv] (vm1) at (-0.5, 0){};
+
+\draw[color=airlightblue, thick] (vm1.center)  -- (u0.west);
+\draw[ color=airlightblue, thick] (v0.east)  -- (u1.west);
+\draw[ color=airlightblue, thick] (v1.east)  -- (u2.west);
+\draw[ color=airlightblue, thick] (v2.east)  -- (u3.west);
+\draw[color=airlightblue, thick] (v3.east)  -- (u4.center);
+
+\node[] at (-0.7, 0){...};
+\node[] at (2.8, 0){...};
+
+
+\end{tikzpicture}
