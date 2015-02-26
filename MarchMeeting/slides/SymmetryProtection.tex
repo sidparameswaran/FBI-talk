@@ -1,21 +1,35 @@
 \begin{frame}{Symmetry Protection of Degenerate Edge}
 \vskip-1.5cm
 \begin{columns}[T]
-    \begin{column}[T]{.8\textwidth}
-    \end{column}
+    \begin{column}[T]{.6\textwidth}
     \begin{block}{1D Symmetry Protection}
       \bi
+      \only<1>{
       \item[] On-site symmetries $g$ come with projective representation $V_g$
       \item $V_g$ acts on sets of degenerate Schmidt states
       \item Charge and translation represented linearly on edge
-      \item[] Time reversal symmetry $\tau = V_{\tau} K$ represented antiunitarily on the edge
+      }
+      \only<2>{
+      \item[] Time reversal symmetry $\tau$ represented by antiunitary    $V_{\tau} K$ on the edge
       \item $\tau^2 = +1$ on this edge
-      \item[] Inversion $\mathcal{I}$ swaps the two edges
-      \item  $\mathcal{I} = V_{\mathcal{I}} K$ in combination with swapping Schmidt states acts antiunitarily on the edge
+      }
+      \only<3>{
+      \item[] Inversion $\mathcal{I}$
+      \item  $\mathcal{I}$ in combination with swapping Schmidt states represented by antiunitary operation $V_{\mathcal{I}} K$ on the edge
       \item $\mathcal{I}^2 = V_{\mathcal{I}} V_{\mathcal{I}}^{*} = 1$
+      
+      \item[] Inversion $\mathcal{I}$ combined with $\mathcal{\pi} = e^{i\pi N}$
+      \item  $\mathcal{\pi I}$ represented antiunitarily on the edge
+       by $V_{\mathcal{\pi I}} K$
+      \item $(\mathcal{\pi I})^2 = 1$ but $V_{\mathcal{\pi I}} 
+      V_{\mathcal{\pi I}}^{*} = -1$
+
+      }
       \ei
     \end{block}
-    \begin{column}[T]{.2\textwidth}
+    \end{column}
+    \begin{column}[T]{.4\textwidth}
+    	\vskip2cm
     	\begin{figure}
     		\includegraphics[width=\textwidth]{group_sym.pdf}
     	\end{figure}
