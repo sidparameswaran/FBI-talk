@@ -1,4 +1,53 @@
 \begin{frame}{Known Results for Honeycomb FBI}
 \vskip-1.5cm
-
+\begin{columns}[T]
+    \begin{column}[T]{.44\textwidth}
+    	\begin{block}{Correlations}
+    		\bi
+    		\item[] $<b^{\dagger}_i b_j>$
+    		\item Looks rotationally symmetric
+    		\item Decays exponentially
+    		\item Correlation length $\xi/a \sim 3.6$
+    		\item[] $<n_i n_j>$
+    		\item Looks rotationally symmetric
+    		\item Decays exponentially
+    		\item Correlation length $\xi/a \sim 1.6$
+				\ei
+    	\end{block}
+    \end{column}
+    \begin{column}[T]{.56\textwidth}
+    	\begin{block}{Hamiltonian Construction}
+    	\only<1>{
+    	 Try filling plaquette orbitals
+ 				$$b_{\varhexagon} = \sum\limits_{i \in \varhexagon}
+    	 \frac{1}{\sqrt{6}}b^{\dagger}_i$$
+				\beqa H = \sum\limits_{\varhexagon} 
+    	  -\frac{t}{6} b^{\dagger}_{\varhexagon}b_{\varhexagon}
+    	   + V n_{\varhexagon}n_{\varhexagon}\\
+    	  = \left(\sum\limits_{\varhexagon} \sum\limits_{i, j \in \varhexagon}
+    	   -t b^{\dagger}_i b_j \right) - \frac{3t}{6} N +V \ldots\eeqa
+					%\begin{empheq}[box={\mybluebox[4pt][4pt]}]{equation*}
+          %                    \text{\parbox{0.6\textwidth}{
+         \vskip-0.3cm
+         \bi \item Fails, gapless modes
+          \item Parent Hamiltonian not known \ei %}}
+	       %                       \end{empheq}	
+	       }
+	       \only<2>{
+	       \bi
+	       \item[] To get a parent Hamiltonian:% this way: 
+	       \item Need symmetric, exponentially localized, orthogonal orbitals
+	       \item Such as the Wannier orbitals of a classical band insulator
+	       %\item But not those of a topological band insulator
+	       \item \cite{parameswaran2013}
+	       \item[] Other lattices:
+	       \item Need a fixed point of all lattice symmetries
+	       \item Fails on nonsymmorphic lattices
+	       \item Extension of LSM theorem
+	       \item \cite{parameswaran2013-2} 
+	       \ei
+	       }
+    	\end{block}
+    \end{column}
+\end{columns}
 \end{frame}

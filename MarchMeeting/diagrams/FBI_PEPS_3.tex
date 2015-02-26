@@ -1,0 +1,146 @@
+\definecolor{airorange}{rgb}{.953 ,.502 ,.04}
+\definecolor{airdarkblue}{HTML}{064F6F}
+\definecolor{airlightblue}{HTML}{0099d5}
+\tikzset{half/.style={circle=3pt,draw=black!100, semithick, fill=airorange!50, inner sep=1.3pt}}
+\tikzset{empty/.style={circle=3pt,draw=black!100,fill=airorange!00,inner sep=1.4pt}}
+\tikzset{filled/.style={circle=3pt,draw=black!100,fill=airorange!100,inner sep=1.4pt}}
+\tikzset{eli/.style={ellipse, rotate=0, draw=black, fill=gray!30, inner sep=6pt}}
+
+%http://tex.stackexchange.com/questions/6019/drawing-hexagons
+\begin{tikzpicture}[x=11.25mm,y=6.5mm]
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+\clip (-2, -2.52) rectangle (4, 3.56);
+
+  \tikzset{box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=15mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     dotted,
+      thin,
+      black,
+      fill=white,
+      draw}}
+ 
+      \tikzset{
+    abox/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=12mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     dotted,
+     thin,
+      white,
+      draw
+    }
+    } 
+      
+ \tikzset{wb/.style={
+ 	regular polygon,
+	regular polygon sides=6,
+	minimum size=3mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+      % dotted,
+      very thick,
+      blue,
+      fill=blue!30,
+      draw}}
+      
+\tikzset{operator/.style={
+	circle=1pt,
+	draw=orange!100, 
+	very thick,
+	fill=orange!80,
+	inner sep=2pt}}
+
+\tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
+\tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=blue!30,inner sep=1pt}}
+
+\foreach \i in {-2,...,2} 
+    \foreach \j in {-2,...,2} {
+    \pgfmathtruncatemacro{\x}{2*\i}
+    \pgfmathtruncatemacro{\y}{2*\j}
+     \node[box] (H\x\y) at (\x,\y) {};
+     \foreach \k in {1, ..., 6}{
+     \node[eli] at (H\x\y.corner \k){};
+     }
+    }
+    
+    \foreach \i in {-2,...,2} 
+    \foreach \j in {-2,..., 2} {
+   \pgfmathtruncatemacro{\x}{2*\i+1}
+    \pgfmathtruncatemacro{\y}{2*\j+1}
+    \node[box] (H\x\y) at (\x,\y) {};
+    \foreach \k in {1, ..., 6}{
+   \node[eli] at (H\x\y.corner \k){};
+    }    
+    }
+
+
+\foreach \i in {-2,...,2}{
+	\foreach \j in {-2, ...,  2} {
+		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+            % \node[box] (H\x\y) at (\x,\y) {};
+             \node[abox](Q\x\y) at (\x,\y){};
+           \foreach \k in {1,...,6}{
+              \ifthenelse{\k=5}{
+              	\node[filled] (A\x\y\k) at (Q\x\y.corner \k) {};}	
+              	{\node[half] (A\x\y\k) at (Q\x\y.corner \k) {};}
+           		 \draw[thin] (A\x\y\k) -- (H\x\y.corner \k);
+             % 	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+             % 	 \node[black] at (H\x\y.corner \k){\tiny D};
+              	}
+            \foreach \k in {1,2,3,5}{
+		\pgfmathtruncatemacro{\z}{\k+1}
+            \draw[thick, airlightblue, postaction={decorate}] (A\x\y\k) -- (A\x\y\z);
+             }
+             \draw[thick, airlightblue, postaction={decorate}] (A\x\y6) -- (A\x\y1);
+           %  \node[filled] (B\x\y) at (\x,\y-0.1) {};
+ 	    %\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
+        }
+}
+
+\foreach \i in {-2,...,2}{
+	\foreach \j in {-2,...,2} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+       %      \node[box] (H\x\y) at (\x,\y) {};
+             \node[abox](Q\x\y) at (\x,\y){};
+
+              \foreach \k in {1,...,6}{
+              \ifthenelse{\k=5}{
+              	\node[filled] (A\x\y\k) at (Q\x\y.corner \k) {};}	
+              	{\node[half] (A\x\y\k) at (Q\x\y.corner \k) {};}
+              	 \draw[thin] (A\x\y\k) -- (H\x\y.corner \k);
+       %       	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
+      %        	\node[black] at (H\x\y.corner \k){\tiny D};
+             	}
+             	\foreach \k in {1,2,3,5}{
+		\pgfmathtruncatemacro{\z}{\k+1}
+            \draw[thick, airlightblue, postaction={decorate}] (A\x\y\k) -- (A\x\y\z);
+             }
+             
+             \draw[thick, airlightblue, postaction={decorate}] (A\x\y6) -- (A\x\y1);
+             % \draw[thick, airblue, postaction={decorate}] (A\x\y6) -- (A\x\y1);
+            %  \node[filled] (B\x\y) at (\x,\y-0.1) {};
+ 		%\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
+        }
+}
+
+
+ 
+ \end{scope}
+\draw[very thick, red] (1, 3.6) -- (1, -2.4);
+%\draw[thick, black] (-2, -2.4) rectangle (4, 3.6);
+
+\end{tikzpicture}
