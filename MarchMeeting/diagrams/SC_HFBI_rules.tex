@@ -1,11 +1,25 @@
 \definecolor{airorange}{rgb}{.953 ,.502 ,.04}
 \definecolor{airdarkblue}{HTML}{064F6F}
 \definecolor{airlightblue}{HTML}{0099d5}
-\tikzset{half/.style={circle=3pt,draw=black!100,fill=airorange!50,inner sep=1.4pt}}
+\tikzset{half/.style={circle=3pt,draw=black!100,semithick, fill=airorange!50,inner sep=1.4pt}}
 \tikzset{empty/.style={circle=3pt,draw=black!100,fill=airorange!00,inner sep=1.4pt}}
 \tikzset{filled/.style={circle=3pt,draw=black!100,fill=airorange!100,inner sep=1.4pt}}
-\tikzset{eli/.style={ellipse, rotate=0, draw=black, fill=gray!20}}
-
+\tikzset{proj/.style={ellipse, rotate=0, draw=black, fill=gray!20, inner sep=5pt}}
+\tikzset{phys/.style={circle, draw=black, fill=gray!20, ,inner sep=1pt}}
+  \tikzset{
+    box/.style={
+      regular polygon,
+      regular polygon sides=6,
+      minimum size=10mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=0,
+     dotted,
+     thin,
+      black,
+      draw
+    }
+  }
  \tikzset{
     wb/.style={
        regular polygon,
@@ -25,32 +39,79 @@
 \usetikzlibrary{backgrounds}
 \pgfdeclarelayer{background}
 \pgfsetlayers{background,main}
+%\usepackage{ifthen}
 \begin{tikzpicture}
 
-\node[half] (x) at (0.3, -0.4){};
-\node[half] (y) at (0.5, -0.4){};
-\draw[color=airlightblue, thick] (x.east) -- (y.west);
-\node[] at (1.3-0.35, -0.42){=};
-\node[empty] (x) at (1.6-0.35, -0.4){};
-\node[filled] (y) at (1.9-0.35, -0.4){};
-\node[] at (2.1-0.35, -0.4) {\tiny +};
-\node[empty] (x) at (2.6-0.35, -0.4){};
-\node[filled] (y) at (2.3-0.35, -0.4){};
+%\node[half] (x) at (0.3, -0.4){};
+%\node[half] (y) at (0.5, -0.4){};
+%\draw[color=airlightblue, thick] (x.east) -- (y.west);
+%\node[] at (1.3-0.35, -0.42){=};
+%\node[empty] (x) at (1.6-0.35, -0.4){};
+%\node[filled] (y) at (1.9-0.35, -0.4){};
+%\node[] at (2.1-0.35, -0.4) {\tiny +};
+%\node[empty] (x) at (2.6-0.35, -0.4){};
+%\node[filled] (y) at (2.3-0.35, -0.4){};
 
-\node[eli] at (0.5-0.1, -0.8){$\,\,\,$};
-\node[empty] (x) at (0.5-0.1-0.1, -0.8){};
-\node[empty] (y) at (0.5-0.1+0.1, -0.8){};
-\node[] at (1.3-0.35, -0.82){=};
-\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -0.8){\small $0$};
-\node[eli] at (0.5-0.1, -1.3){$\,\,\,$};
-\node[empty] (x) at (0.5-0.1-0.1, -1.3){};
-\node[filled] (y) at (0.5-0.1+0.1, -1.3){};
-\node[] at (1.3-0.35, -1.32){=};
-\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -1.3){\small $1$};
-\node[eli] at (0.5-0.1, -1.8){$\,\,\,$};
-\node[filled] (x) at (0.5-0.1-0.1, -1.8){};
-\node[filled] (y) at (0.5-0.1+0.1, -1.8){};
-\node[] at (1.3-0.35, -1.82){=};
-\node[circle, draw=black, fill=gray!20, ,inner sep=1pt] at (2.1-0.35, -1.8){\small $2$};
+\pgfmathsetmacro{\xi}{0}
+\pgfmathsetmacro{\yi}{0}
+\pgfmathsetmacro{\dy}{0.7}
+\pgfmathsetmacro{\xj}{-2}
+\pgfmathsetmacro{\yj}{\yi-1.5*\dy}
+\pgfmathsetmacro{\dx}{1.3}
+
+\node[wb](W) at (\xj, \yj){};
+\node[box](H) at (\xj, \yj){};
+\foreach \k in {1, ..., 6}{
+             \node[inv] (D\k) at (H.corner \k) {};
+             \draw[very thick, airlightblue] (W) -- node [pos=0.98, half] {} (D\k);
+}
+\node[] at (\xj+0.7, \yj){=};
+
+\foreach \x in {1, ...,3}{
+\node[inv](W) at (\xj+1.5+\dx*\x-\dx, \yj){};
+\ifthenelse{\x<6}{
+\node[] at (\xj+\dx*\x+0.65*\dx, \yj){$+$};}{}
+\node[box](H) at (\xj+1.5+\dx*\x-\dx, \yj){};
+\foreach \k in {1, ..., 6}{
+             \node[inv] (D\k) at (H.corner \k) {};
+             \ifthenelse{\k=\x}
+             {
+             	\draw[white] (W) -- node [pos=0.98, filled] {} (D\k);
+             	}
+             	{
+              \draw[white] (W) -- node [pos=0.98, empty] {} (D\k);
+             	}
+}
+}
+\pgfmathsetmacro{\xj}{-5.5}
+\pgfmathsetmacro{\yj}{\yi-3*\dy}
+\foreach \x in {4, ...,6}{
+\node[inv](W) at (\xj+1.5+\dx*\x-\dx, \yj){};
+\ifthenelse{\x<6}{
+\node[] at (\xj+\dx*\x+0.65*\dx, \yj){$+$};}{}
+\node[box](H) at (\xj+1.5+\dx*\x-\dx, \yj){};
+\foreach \k in {1, ..., 6}{
+             \node[inv] (D\k) at (H.corner \k) {};
+             \ifthenelse{\k=\x}
+             {
+             	\draw[white] (W) -- node [pos=0.98, filled] {} (D\k);
+             	}
+             	{
+              \draw[white] (W) -- node [pos=0.98, empty] {} (D\k);
+             	}
+}
+}
+
+
+\foreach \y in {0, ...,3}{
+\pgfmathsetmacro{\yc}{ \yi+\dy*\y}
+\node[proj] at (\xi, \yc){$$};
+\node[] at (\xi+0.5, \yc){=};
+\node[phys] at (\xi+1, \yc){\small $\y$};
+\ifthenelse{\y>1}{\node[] at (\xi+1.5, \yc){\small $\sqrt{\y!}$};}{}
+\ifthenelse{\y=0}{\node[empty] (x) at (\xi-0.1, \yc+0.05){};}{\node[filled] (x) at (\xi-0.1, \yc+0.05){};}
+\ifthenelse{\y<2}{\node[empty] (x) at (\xi+0.1, \yc+0.05){};}{\node[filled] (x) at (\xi+0.1, \yc+0.05){};}
+\ifthenelse{\y<3}{\node[empty] (x) at (\xi, \yc-0.1){};}{\node[filled] (x) at (\xi, \yc-0.1){};}
+}
 
 \end{tikzpicture}

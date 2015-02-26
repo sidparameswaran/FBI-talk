@@ -17,11 +17,22 @@ Does there exist a featureless bosonic insulator with charge 1 per unit cell on 
 \caption{Breaks translationally symmetry, unit cell is 3 times larger}
 \end{figure}}
 \only<3>{
-\begin{figure}
-\scalebox{1}{
-\input{diagrams/honeycomb4.tex}
-}\caption{Breaks point group symmetry $D_6$ to $D_3$}
-\end{figure}}
+\begin{columns}[T]
+	\begin{column}[T]{.5\textwidth}
+		\begin{figure}
+			\scalebox{1}{
+			\input{diagrams/honeycomb4.tex}
+			}\caption{Breaks rotational symmetry}
+		\end{figure}
+	\end{column}
+	\begin{column}[T]{.5\textwidth}
+		\begin{figure}
+			\includegraphics[width=.8\textwidth]{diagrams/hex_center_honeycomb.pdf}
+			\caption{Leaves honeycomb lattice}
+		\end{figure}
+	\end{column}
+\end{columns}
+}
 
 'Classical cartoons and usual tricks' lead to symmetry breaking, as noticed by \cite{parameswaran2013}
 

@@ -4,10 +4,20 @@
 	\begin{column}[T]{.5\textwidth}
 		\begin{block}{Classical Insulators}
 			\vskip0.55cm
+			\only<1, 2>{
 			\begin{figure}
-				\includegraphics[width=\linewidth] {diagrams/haldane_insulator_chain_trivial.pdf}
+				\includegraphics[width=\linewidth] {diagrams/trivial_chain.pdf}
 				\caption{1D Trivial Chain}
 			\end{figure}
+			}
+		 \only<3>{
+			\begin{figure}
+			  \vskip-0.5cm
+				\includegraphics[width=\linewidth] {diagrams/trivial_chain_w_x.pdf}
+				\vskip-0.4cm
+				\caption{1D Trivial Chain}
+			\end{figure}
+			}
 		\only<2>{
 		\bi
 		\item[] Product state with one boson per site
@@ -38,6 +48,14 @@
 	\begin{figure}[]
 		\includegraphics[width=0.4\textheight] {diagrams/haldane_insulator_chain_rules.pdf}
 		\caption{Entangled pairs and projectors used in state construction}
+	\end{figure}
+\end{center}
+}
+\only<3>{
+\begin{center}
+	\begin{figure}[]
+		\includegraphics[width=0.4\textheight] {diagrams/aklt_rules.pdf}
+		\caption{Entangled pairs and projectors for $SU(2)$ symmetric state}
 	\end{figure}
 \end{center}
 }
