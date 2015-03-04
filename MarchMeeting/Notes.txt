@@ -23,10 +23,64 @@ If you try to fill bosons or fermions into non-overlapping orbitals, you break t
 - if you try harder you can restore the rotational symmetry by breaking translational symmetry. Spatially overlapping but orthogonal orbitals do not help, or in other words, there is NO free fermion featureless band insulator on the honeycomb lattice. Dirac points are protected by the full D6 point group symmetry of rotations about the plaquette centers. The famous Haldane Chern insulator here has inversion symmetry but not the full D6.
 
 * 
-The proposed solution by Sid and Itamar is this - a delocalized boson centered at each plaquette. It is a simple wavefuncntion - isotropic exponentially decaying correlations, a shortish correlation length - but it has subtle entanglement properties similar to previously found topological insulator and symmetry protected topological phases.
+The proposed solution by Sid and Itamar is this - a delocalized boson centered at each plaquette. It is a simple wavefuncntion - isotropic exponentially decaying correlations, a shortish correlation length less than 2 hexagon diameters - but it has subtle entanglement properties similar to previously found topological insulator and symmetry protected topological phases.
 
 *
- The rest of this talk will be about entanglement properties gleaned from this wavefunction in this one particular geometry that you can describe as a zig-zag edge geometryr
+ The rest of this talk will be about entanglement properties gleaned from this one wavefunction in this one particular geometry that you can describe as an infinite length zig-zag edge cylinder, and then I will try to put these results in a broader context.
+
+ *
+ Let me give a brief overview of how the calculations are performed. First, we write down a tensor network construction of the wavefunction. Each delocalized plaquette boson is represented as a rank 6 tensor, components as shown here, or in other words, 6 virtual qubits in a W-state. At each honeycomb vertex, we use a projector onto the physical degrees of freedom that counts the number of bosons contributed from the neighboring plaquettes, from 0 up to 3. The weights here come from these standard or soft-core boson creation operators, but can be easily changed to give hard-core boson or spin-raising operator variants of the wavefunction. 
+
+ We want to do this entanglement cut through the plaquette centers, so some factoring of the W-state is necessary to decide what goes on each side of the cut. * This is schematic - a more honest picture is * this, which shows that the representation with the lowest bond dimension - most convenient for calculations - no longer has tensors that are equal upon rotation, only equivalent. This is just a regrouping of terms, it does not change the wavefunction. 
+
+ Finally, we treat each cylinder slice as a single site of a 1D matrix product state and use standard MPS techniques to compute effectively this Schmidt decomposition and the related entanglement spectrum. Translation around the cylinder becomes an on-site symmetry, so we can use a transverse momentum basis to represent the Schmidt states and spectrum. We vary the width L of the cylinder - the picture shows a L = 3 cylinder with a width of 3 unit cells, but our calculations go up to L = 10.
+
+*
+This is the entanglement spectrum, plotted against transverse momentum on the L=10 cylinder. The colors represent the U(1) charge quantum number. Technical note here - these on-site symmetries are represented linearly, not projectively, which could ruin the ability to simultaneously measure charge and momentum. 
+
+Note the linear dispersion cone near momentum zero. The next plot is a close up of this low energy spectrum.
+This plot shows the lowest energy points in that spectrum as a function of cylinder width L. They show a gapless 1/L behavior. 
+*
+
+This is the same for the width L=9 cylinder. The same linear dispersion is there, but now each point throughout the whole spectrum is doubly degenerate. This occurs for 1D symmetry protected topological phases, and suggests that the odd cylinder states are 1D SPTs. This is very convenient, and I'll shortly outline a symmetry argument that shows why this double degeneracy is protected for each fixed, odd width cylinder. 
+
+Its not obvious if the symmetry group that protects this double degeneracy - which is a 1D SPT measure - also protects the gapless edge behavior. A skeptic might say that the even and odd width states are in different phases, since only the odd states are 1D SPTs. The best evidence we have from the information in this edge is that the spectrum of the even and odd states can be described by a single 1D conformal field theory, and so in the 2D limit of large L approach the same spectrum.
+
+The conformal field theory is that of a single compactified free boson, a U(1) symmetric theory. This is actually a set of CFTs with a free parameter called the Luttinger parameter. By appropriately rescaling, we can match conformal primaries of the free boson theory, which are labeled by charge e and winding number m, with the corresponding spectra points. Each primary has a cone of descendants, and we can identify those to, some of which are predicted to be degenerate in the CFT but are split here by finite size effects.  The points shown here all have m=0. although we believe we have nonzero m primaries centered at momentum pi - at least it would properly explain the degeneracies of these points.
+There is precident for this behavior in 1d spin chains at critical points.
+
+Finally, lets reveal the symmetry protection argument for the odd L entanglement spectrum double degeneracy. We use MPS methods outlined by Frank Pollmann, which involve relating the symmetry acted upon MPS tensor back to the original state. In this setup, a reflection symmetry - or symmetry that swaps left and right schmidt states - act antiunitarily on degenerate sets of schmidt states. This antiunitary action on the edge can square to plus or minus one, and these cannot be connected to each other.  The minus one case can only occur if there are degenerate pairs of Schmidt states. By checking symmetries for odd L, we find that the appropriate symmetry is I pi, where I is inversion aka a 180 degree rotation about the plaquette center, and pi is the 180 degree rotation inside the charge U(1). The protecting group is a antiunitary Z2.
+
+Lets summarize:
+- Odd widths are 1d spts.
+- The protecting group is Z2_*, *=antiunitary, with generator pi I
+- The 1d protection only requires charge parity, the z2 subgroup of u1, to be a symmetry. We can add boson pairing terms to make a gapped 1d superfluid.
+
+- The even and odd states together show gapless behavior that fit into a unified cft description.
+
+- Standard PEPS tricks to write down a frustation free parent Hamiltonian fail (injectivity issues), but that doesn't mean there isn't one - we just don't know it yet.
+
+- Future work: find a parent Hamiltonian.
+	    By looking at cylinder geometry ground states for reasonably close Hamiltonians and looking for this 1d SPT signature and even-odd effect.
+
+	    Or by a better understand of how the symmetry is represented in the tensor network virtual level.
+
+Bonus slide:
+	anistropic limit, L=1, reduces to Haldane phase with the same symmetry protection. This symmetry protection can be derived from the inversion protection of the AKLT state and a large unitary transformation, as shown in Frank Pollmann's paper. 
+
+Questions:
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
