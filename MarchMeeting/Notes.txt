@@ -2,14 +2,16 @@ Notes
 
 Hello, I'm Brayden and I'm going to be talking about the entanglement properties of featureless Mott insulators.
 
-This is joint work with Sid from UC Irvine, Itamar from UC Berkeley, and Bela from Station Q.
+This is joint work with Itamar from UC Berkeley, Sid from UC Irvine, and Bela from Station Q.
 
-From the point of view of this talk, 'featureless' refers to the absence of multiple low-energy bulk states of a quantum Hamiltonian, such as the degenerate ground states that occur under spontaneous symmetry breaking, gapless modes, or topologically degenerate states. 'Insulators' of course refers to a U(1) charge symmetry, so in this talk we will be discussing quantum ground states that preserve U(1) charge symmetry and crystalline lattice symmetries.
+A quantum Hamiltonian is 'featureless' if it has exactly one low-energy bulk state, the ground state. 'Features' would include the degenerate ground states that occur under spontaneous symmetry breaking, gapless modes, or topologically degenerate states. Featureless doesn't mean boring - features are still allowed on the edge, or in nonlocal bulk properties like the entanglement spectrum. 'Insulators' of course refers to a U(1) charge symmetry, so in this talk we will be discussing quantum ground states on lattices that preserve charge and lattice symmetries. 
 
-Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to higher dimensions show that featureless insulators are forbidden for systems with a fractional charge per unit cell - a low-energy state can always be constructed. One motivation for this line of work is to discover whether there are additional constraints to making featureless insulators.
+Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to higher dimensions show that featureless insulators are forbidden for systems with a fractional charge per unit cell - a low-energy state can always be constructed. One motivation for this line of work is to discover whether there are additional constraints to making featureless insulators -  is there a featureless insulator at every integer value of charge per unit cell. Indeed, additional contraints were found for nonsymmorphic lattices, for which I'll refer you to Sid's paper. What they also acheived is a construction of featureless insulators in all the other cases, so they completed the business of extended the Lieb Schultz Mattis theorem.
+Today I'm going to be telling you about a featureless insulator on the honeycomb lattice that came from this construction.
 
-Despite having no bulk features, featureless insulators can still have robust edge features. Today I'm going to be telling you about a featureless insulator on the honeycomb lattice with a robust edge. The edge is protected by the U(1) charge and honeycomb lattice symmetries - no additional symmetries such as time reversal are required.
+# An example of an additional constraint on featureless insulators, in the case of free fermions, goes by the name of symmetry protected band touching. On the honeycomb lattice, the D6 # point group forbids a free fermion featureless insulator with filling 1. (is time-reversal needed here??) 
 
-? An example of an additional constraint on featureless insulators, in the case of free fermions, goes by the name of symmetry protected band touching. On the honeycomb lattice, the D6 point group forbids a free fermion featureless insulator with filling 1. (is time-reversal needed here??) 
+
+
 
 
