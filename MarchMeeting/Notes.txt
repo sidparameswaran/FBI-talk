@@ -17,12 +17,13 @@ This definition encompasses both atomic insulators, such as an integer charge si
 Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to higher dimensions show that featureless insulators are forbidden for systems with a fractional charge per unit cell. The initial motivation for this line of work, started by Sid, Itamar and others, is to discover whether there are additional constraints to making featureless insulators -  is there a featureless insulator at every integer value of charge per unit cell. Indeed, additional contraints were found for nonsymmorphic lattices, for which I'll refer you to Sid's paper. For this talk, I will focus on the honeycomb lattice at charge 1 per unit cell. There is no obstuction in this case, and Sid and Itamar proposed a featureless wavefunction.
 
 *
-
 First here are some cartoons meant to illustrate why the construction of a featureless state at this filling is non-trivial.
 *
-If you try to fill bosons or fermions into non-overlapping orbitals, you break the rotational symmetry - 
+If you try to fill bosons or fermions into non-overlapping orbitals, you break the rotational symmetry. 
+
 *
-- if you try harder you can restore the rotational symmetry by breaking translational symmetry. Spatially overlapping but orthogonal orbitals do not help, or in other words, there is NO free fermion featureless band insulator on the honeycomb lattice. Dirac points are protected by the full D6 point group symmetry of rotations about the plaquette centers. The famous Haldane Chern insulator that inspired this picture has inversion symmetry but not the full D6, and so is not featureless.
+
+If you try harder you can restore the rotational symmetry by breaking translational symmetry. Spatially overlapping but orthogonal orbitals do not help, or in other words, there is NO free fermion featureless band insulator on the honeycomb lattice. Dirac points are protected by the full D6 point group symmetry of rotations about the plaquette centers. For those that recognized where I stole this picture from, the famous Haldane model Chern insulator has inversion symmetry but not the full D6, and so is not a featureless honeycomb state.
 
 * 
 

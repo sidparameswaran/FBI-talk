@@ -3,20 +3,6 @@
 Does there exist a featureless bosonic insulator with charge 1 per unit cell on the honeycomb lattice?
 %Is it possible to extend the Lieb Schultz Mattis theorem in this case
 \only<1>{
-\begin{figure}
-\scalebox{1}{
-\input{diagrams/ydimer.tex}
-}
-\caption{Breaks rotational symmetry}
-\end{figure}}
-\only<2>{
-\begin{figure}
-\scalebox{1}{
-\input{diagrams/kekule_dimer.tex}
-}
-\caption{Breaks translationally symmetry, unit cell is 3 times larger}
-\end{figure}}
-\only<3>{
 \begin{columns}[T]
 	\begin{column}[T]{.5\textwidth}
 		\begin{figure}
@@ -33,11 +19,49 @@ Does there exist a featureless bosonic insulator with charge 1 per unit cell on 
 	\end{column}
 \end{columns}
 }
-\only<4>{
+\only<2>{
 \begin{figure}
-\includegraphics[width=.6\textwidth]{fbi3.pdf}
-\caption{Proposed Solution by \cite{kimchi2013}}
-\end{figure}
+\scalebox{1}{
+\input{diagrams/ydimer.tex}
+}
+\caption{Breaks rotational symmetry}
+\end{figure}}
+\only<3>{
+\begin{figure}
+\scalebox{1}{
+\input{diagrams/kekule_dimer.tex}
+}
+\caption{Breaks translationally symmetry, unit cell is 3 times larger}
+\end{figure}}
+\only<4>{
+		\begin{figure}
+			\includegraphics[width=0.5\linewidth]{diagrams/chiral_edge.png}
+			\caption{Band insulator with chiral edge \footnotemark}
+			%Not viewed as some integer number of orbitals filled per unit cell
+		\end{figure}
+		\begin{figure}
+			\vskip-0.7cm
+				\includegraphics[width=0.5\linewidth]{diagrams/honeycomb_breakdown.pdf}
+				\caption{}
+		\end{figure}
+\footnotetext[1]{
+\citep{Hasan2010-fq}}		
+}
+
+\only<5>{
+\begin{columns}[T]
+	\begin{column}[T]{.5\textwidth}
+		\begin{figure}
+		\includegraphics[width=.6\textwidth]{fbi3.pdf}
+		\caption{Proposed Solution by \cite{kimchi2013}}
+		\end{figure}
+	\end{column}
+	\begin{column}[T]{.5\textwidth}
+					$$
+\ket{\psi} = \prod\limits_{\varhexagon} \left(\sum\limits_{i \in \varhexagon} b^{\dagger}_i \right) \ket{\mathbf{0}}
+			$$ 
+	\end{column}
+\end{columns}
 }
 
 'Classical cartoons and usual tricks' lead to symmetry breaking, as noticed by \cite{parameswaran2013}
