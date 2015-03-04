@@ -34,40 +34,29 @@
            	 \item Unique %fixed gap% 
            	 ground state on \hskip4em all
         		 boundary-less systems
-        		 \item<3-> Possibly with 'features' \hskip4em localized 
+        		 \item Possibly with 'features' \hskip4em localized 
         					to edge of system
         					%Features means gapless edge modes, spontaneous symmmetry
         					%breaking, or edge topological order for edges of 3D systems
         		 \ei
             \end{block}
-        \begin{block}<3->{Fundamental Result}
-        		\vskip-1em
-        		\bi
-        		%Featureless insulator !must! have
-        		\item Integer charge per unit cell
-            %Assuming discrete translational symmetry and charge symmetry
-            \bi
-            \item (Lieb, Schultz, Mattis)
-            \ei
-        		\ei
-        \end{block}
         \end{column}
     \begin{column}[T]{.4\textwidth}
     		\begin{block}<2->{}
     		\bi
     		\item Unique ground state:
     		\item[] $E_1 - E_0 \ge const.$
-    		\only<2->{
+    		\only<2>{
     		 \item[] \tikzoverlay[xshift=-0.3cm, yshift=-0.6cm] (head1) {};
     		 \item  Gapless modes:
     		 \item[] $E_1 - E_0 \sim \frac{1}{L^{z}}$
     		 }
-				\only<2->{
+				\only<2>{
 				 \item[] \tikzoverlay[xshift=-0.3cm, yshift=-0.6cm] (head2) {};
     		 \item Spontaneous symmetry breaking:
     		 \item[] $E_1 - E_0 = 0$
     		 }
-				\only<2->{
+				\only<2>{
     		 \item[] \tikzoverlay[xshift=-0.3cm, yshift=-0.6cm] (head3) {};
 				 \item Topological order:
     		 \item[] $E_1 - E_0 \sim e^{-L/\xi}$
@@ -78,9 +67,9 @@
     \end{column}
 \end{columns}
 \begin{tikzpicture}[overlay]
-        \path[->, very thick, orange]<2-> (tail1) edge [out=-10, in=90] (head1);
-        \path[->, very thick, orange]<2-> (tail2) edge [out=-10, in=90] (head2);
-        \path[->, very thick, orange]<2-> (tail3) edge [out=-10, in=90] (head3);
+        \path[->, very thick, orange]<2> (tail1) edge [out=-10, in=90] (head1);
+        \path[->, very thick, orange]<2> (tail2) edge [out=-10, in=90] (head2);
+        \path[->, very thick, orange]<2> (tail3) edge [out=-10, in=90] (head3);
         %\path[->]<2-> (n2) edge [bend right] (t2);
         %\path[->]<3-> (n3) edge [out=0, in=-90] (t3);
 \end{tikzpicture}

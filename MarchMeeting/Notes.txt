@@ -6,11 +6,27 @@ This is joint work with Itamar from UC Berkeley, Sid from UC Irvine, and Bela fr
 
 A quantum Hamiltonian is 'featureless' if it has exactly one low-energy bulk state, the ground state. 'Features' would include the degenerate ground states that occur under spontaneous symmetry breaking, gapless modes, or topologically degenerate states. Featureless doesn't mean boring - features are still allowed on the edge, or in nonlocal bulk properties like the entanglement spectrum. 'Insulators' of course refers to a U(1) charge symmetry, so in this talk we will be discussing quantum ground states on lattices that preserve charge and lattice symmetries. 
 
-Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to higher dimensions show that featureless insulators are forbidden for systems with a fractional charge per unit cell - a low-energy state can always be constructed. One motivation for this line of work is to discover whether there are additional constraints to making featureless insulators -  is there a featureless insulator at every integer value of charge per unit cell. Indeed, additional contraints were found for nonsymmorphic lattices, for which I'll refer you to Sid's paper. What they also acheived is a construction of featureless insulators in all the other cases, so they completed the business of extended the Lieb Schultz Mattis theorem.
-Today I'm going to be telling you about a featureless insulator on the honeycomb lattice that came from this construction.
+*
 
-# An example of an additional constraint on featureless insulators, in the case of free fermions, goes by the name of symmetry protected band touching. On the honeycomb lattice, the D6 # point group forbids a free fermion featureless insulator with filling 1. (is time-reversal needed here??) 
+This definition encompasses both atomic insulators, such as an integer charge sitting on each site and no edge features, and topological insulators, where the atomic picture breaks down and a robust edge exsists. 
 
+*
+
+Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to higher dimensions show that featureless insulators are forbidden for systems with a fractional charge per unit cell - a low-energy state can always be constructed. The initial motivation for this line of work, started by Sid, Itamar and others, is to discover whether there are additional constraints to making featureless insulators -  is there a featureless insulator at every integer value of charge per unit cell. Indeed, additional contraints were found for nonsymmorphic lattices, for which I'll refer you to Sid's paper. For this talk, I will focus on the honeycomb lattice at charge 1 per unit cell.
+
+*
+
+Here are some cartoons meant to illustrate that the construction is non obvious. 
+*
+If you try to fill bosons or fermions into non-overlapping orbitals, you break the rotational symmetry - 
+*
+- if you try harder you can restore the rotational symmetry by breaking translational symmetry. Spatially overlapping but orthogonal orbitals do not help, or in other words, there is NO free fermion featureless band insulator on the honeycomb lattice. Dirac points are protected by the full D6 point group symmetry of rotations about the plaquette centers. The famous Haldane Chern insulator here has inversion symmetry but not the full D6.
+
+* 
+The proposed solution by Sid and Itamar is this - a delocalized boson centered at each plaquette. It is a simple wavefuncntion - isotropic exponentially decaying correlations, a shortish correlation length - but it has subtle entanglement properties similar to previously found topological insulator and symmetry protected topological phases.
+
+*
+ The rest of this talk will be about entanglement properties gleaned from this wavefunction in this one particular geometry that you can describe as a zig-zag edge geometryr
 
 
 
