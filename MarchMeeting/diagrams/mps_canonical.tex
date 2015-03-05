@@ -1,0 +1,46 @@
+\begin{tikzpicture}[node distance=0.4cm]
+\tikzset{gamma/.style={circle=2pt,draw=black!100, very thick, fill=blue!40, inner sep=3pt}}
+\tikzset{lambda/.style={rectangle,rotate=45,draw=black!100,fill=orange!50,inner sep=5pt}}
+
+\begin{scope}[decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ]
+
+    \node[side, minimum width=1.5cm, minimum height=0.8cm] (psi) at (-1.4, 0.05) {$\psi$};
+    \node[above=of psi.north west, anchor=south west] (p1) {};
+    \node[above=of psi](p2) {};
+    \node[above=of psi.north east, anchor=south east] (p3) {};
+    \node at (-0.3, 0) {=};
+    \draw[red, very thick, postaction={decorate}] (psi.north -| p1) -- node[black, left] {...} (p1);
+    \draw[red, very thick, postaction={decorate}] (psi) --  node[left] {} (p2);
+    \draw[red, very thick, postaction={decorate}] (psi.north -| p3) -- node[black, right] {...} (p3);
+
+\foreach \i in {1,...,2} {
+	\node[gamma] (G\i) at (2*\i,0) {$\Gamma$};
+	\node[lambda] (L\i) at (2*\i+1, 0) {};
+	\node[black] (Lt\i) at  (2*\i+1, 0) {$\lambda$};
+	\node (l\i) at ($ (G\i) + (0, 1) $) {$$};
+	\draw[very thick, red!100, postaction={decorate}] (G\i) -- (l\i);
+	%\node[below of=G\i] {$A$};
+}
+\node[lambda] (L0) at (1, 0) {};
+\node[black] (Lt0) at  (1, 0) {$\lambda$};
+\node (G0) at (0, 0) {$...$};
+\node[] (G3) at (3*2,0) {$...$};
+
+\foreach \i / \j in {0/1, 1/2,2/3} {
+	\draw[very thick, postaction={decorate}] (L\i) -- (G\i);
+	\draw[very thick, postaction={decorate}] (G\j) -- (L\i);
+}
+
+\node[] (tpsi) at (-1.4, -1) {$|\psi \rangle$}; 
+\node[] (teq) at (-0.3, -1) {$=$}; 
+\node[] (teq) at (1, -1) {$\Sigma_i$}; 
+\node[] (tGL) at (2, -1) {$|\psi_L^i\rangle$};
+\node[] (tL) at (3, -1) {$\lambda_i$};
+\node[] (tGR) at (4, -1) {$|\psi_R^i\rangle$};
+
+
+\end{scope}
+\end{tikzpicture}
