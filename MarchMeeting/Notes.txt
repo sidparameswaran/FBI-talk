@@ -49,6 +49,7 @@ The proposed solution by Sid and Itamar is this - a delocalized boson centered a
   Translation around the cylinder becomes an on-site symmetry, so we can use a transverse momentum basis to represent the Schmidt states and spectrum. We vary the width L of the cylinder - the picture shows a L = 3 cylinder with a width of 3 unit cells, but our calculations go up to L = 10.
 
 *
+
 This is the entanglement spectrum, plotted against transverse momentum on the L=10 cylinder. The colors represent the U(1) charge quantum number. Technical note here - these on-site symmetries are represented linearly, not projectively, which could ruin the ability to simultaneously measure charge and momentum. 
 
 Note the linear dispersion cone near momentum zero. The next plot is a close up of this low energy spectrum.
