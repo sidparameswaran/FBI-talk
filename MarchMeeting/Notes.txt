@@ -34,11 +34,19 @@ The proposed solution by Sid and Itamar is this - a delocalized boson centered a
  The rest of this talk will be about entanglement properties gleaned from this one wavefunction in this one particular geometry that you can describe as an infinite length zig-zag edge cylinder, and then I will try to put these results in a broader context.
 
  *
- Let me give a brief overview of how the calculations are performed. First, we write down a tensor network construction of the wavefunction. Each delocalized plaquette boson is represented as a rank 6 tensor, components as shown here, or in other words, 6 virtual qubits in a W-state. At each honeycomb vertex, we use a projector onto the physical degrees of freedom that counts the number of bosons contributed from the neighboring plaquettes, from 0 up to 3. The weights here come from these standard or soft-core boson creation operators, but can be easily changed to give hard-core boson or spin-raising operator variants of the wavefunction. 
+ Let me give a brief overview of how the calculations are performed. First, we translate this wavefunction into a tensor network and massage it into this translationally invariant PEPS form.   We place this network on an infinite cylinder geometry.
+
+##### SKIP:
+
+ Each delocalized plaquette boson is represented as a rank 6 tensor, components as shown here, or in other words, 6 virtual qubits in a W-state. At each honeycomb vertex, we use a projector onto the physical degrees of freedom that counts the number of bosons contributed from the neighboring plaquettes, from 0 up to 3. The weights here come from these standard or soft-core boson creation operators, but can be easily changed to give hard-core boson or spin-raising operator variants of the wavefunction. 
 
  We want to do this entanglement cut through the plaquette centers, so some factoring of the W-state is necessary to decide what goes on each side of the cut. * This is schematic - a more honest picture is * this, which shows that the representation with the lowest bond dimension - most convenient for calculations - no longer has tensors that are equal upon rotation, only equivalent. This is just a regrouping of terms, it does not change the wavefunction. 
 
- Finally, we treat each cylinder slice as a single site of a 1D matrix product state and use standard MPS techniques to compute effectively this Schmidt decomposition and the related entanglement spectrum. Translation around the cylinder becomes an on-site symmetry, so we can use a transverse momentum basis to represent the Schmidt states and spectrum. We vary the width L of the cylinder - the picture shows a L = 3 cylinder with a width of 3 unit cells, but our calculations go up to L = 10.
+ ########## END SKIP
+
+ Finally, we treat each cylinder slice as a single site of a 1D matrix product state and use standard MPS techniques to compute the Schmidt decomposition and the related entanglement spectrum. Schmidt states differ only near the boundary, so it is common to refer to these states as edge states and the spectrum as the entanglement edge spectrum.
+
+  Translation around the cylinder becomes an on-site symmetry, so we can use a transverse momentum basis to represent the Schmidt states and spectrum. We vary the width L of the cylinder - the picture shows a L = 3 cylinder with a width of 3 unit cells, but our calculations go up to L = 10.
 
 *
 This is the entanglement spectrum, plotted against transverse momentum on the L=10 cylinder. The colors represent the U(1) charge quantum number. Technical note here - these on-site symmetries are represented linearly, not projectively, which could ruin the ability to simultaneously measure charge and momentum. 

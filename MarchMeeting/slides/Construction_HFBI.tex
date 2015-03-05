@@ -1,21 +1,33 @@
-\begin{frame}{Construction of Honeycomb FBI}
+\begin{frame}{Computations on Honeycomb FBI}
 \vskip-1.5cm
 \begin{columns}[T]
     \begin{column}[T]{.5\textwidth}
+ 	    \only<1>{
  	    \begin{figure}
 			\includegraphics[width=\textwidth]{diagrams/FI_PEPS.pdf}
 			\end{figure}
 			$$
-\ket{\psi} = \prod\limits_{\varhexagon} \left(\sum\limits_{i \in \varhexagon} b^{\dagger}_i \right) \ket{\mathbf{0}}
+			\ket{\psi} = \prod\limits_{\varhexagon} \left(\sum\limits_{i \in \varhexagon} b^{\dagger}_i \right) \ket{\mathbf{0}}
 			$$ 
+		}
+		\only<2>{
+			\begin{figure}
+				\includegraphics[width=\textwidth]{diagrams/Hex_PEPS.pdf}
+				\caption{Generic honeycomb lattice PEPS on zig-zag cylinder with L=3}
+			\end{figure}
+		}	
     \end{column}
     \begin{column}[T]{.5\textwidth}
+     	\only<1>{
      	\begin{figure}
 				\includegraphics[width=\textwidth]{diagrams/SC_HFBI_rules.pdf}
 			\end{figure}
-			\bi
-			\item[] Wavefunction proposed by \cite{kimchi2013}
-			\ei
+		}
+		\bi
+		\item<1->[] The wavefunction can be translated simply into a tensor network with small bond dimension.
+		\item<2->[] Each cylinder slice can be treated as a single site of an effective 1D system.
+		\item<3->[] Schmidt decomposition computed as in 1D matrix product states.
+		\ei	
     \end{column}
 \end{columns}
 \end{frame}
