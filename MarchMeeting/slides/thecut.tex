@@ -3,25 +3,33 @@
 
 \begin{columns}[T]
   \begin{column}[T]{.5\textwidth}
-  \only<1>{
+   	    \only<1>{
+ 	    \begin{figure}
+			\includegraphics[width=\textwidth]{diagrams/FI_PEPS.pdf}
+			\end{figure}
+			$$
+			\ket{\psi} = \prod\limits_{\varhexagon} \left(\sum\limits_{i \in \varhexagon} b^{\dagger}_i \right) \ket{\mathbf{0}}
+			$$ 
+		}
+  \only<2>{
   		\begin{figure}
 			\includegraphics[width=\textwidth]{diagrams/Hex_PEPS.pdf}
 			\caption{Generic honeycomb lattice PEPS on zig-zag cylinder with L=3}
 		\end{figure}
 		}
-			\only<2>{
+			\only<3>{
 	  		\begin{figure}
 			\includegraphics[width=\textwidth]{diagrams/FI_PEPS_wcut.pdf}
-			\caption{Honeycomb lattice PEPS on zig-zag cylinder with L=3, acheived by factoring W-state of plaquette bosons}
+			\caption{Honeycomb lattice tensor network on zig-zag cylinder with L=3}
 		\end{figure}
 	}
-\only<3>{
+\only<4>{
 	  		\begin{figure}
 			\includegraphics[width=\textwidth]{diagrams/FI_PEPS_wcut2.pdf}
 			\caption{Honeycomb lattice PEPS on zig-zag cylinder with L=3, acheived by factoring W-state of plaquette bosons}
 		\end{figure}
 	}
-	\only<4>{
+	\only<5>{
 	  		\begin{figure}
 			\includegraphics[width=\textwidth]{diagrams/FBI_PEPS_3.pdf}
 			\caption{Honeycomb lattice PEPS on zig-zag cylinder with L=3, acheived by factoring W-state of plaquette bosons}
@@ -30,18 +38,25 @@
   \end{column}
   \begin{column}[T]{.5\textwidth}
   \vskip0.5cm
+       	\only<1>{
+     	\begin{figure}
+				\includegraphics[width=\textwidth]{diagrams/SC_HFBI_rules.pdf}
+			\end{figure}
+		}
+		\only<2->{
   \bi
   \item[] In cylindrical geometry:
   \item Treat state as 1D
   \item Use MPS techniques
   \item On-site translational symmetry parallel to cut
   \item Physical site dimension $4^{2L}$
-  \only<3->{
+  \only<4->{
   \item MPS bond dimension = Rank of $\rho_{r}$ =  $2^L$
   \item Entanglement spectrum $\{\epsilon_i\}$ defined from eigenvalues $\{\rho_i\}$ of $\rho_{r}$ via $\epsilon_i = e^{-\rho_i}$
   \item Charge and Translation represented linearly on edge
   }
   \ei
+  }
   \end{column}
 \end{columns}
 \end{frame}
