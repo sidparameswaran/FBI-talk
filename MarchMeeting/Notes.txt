@@ -19,6 +19,7 @@ Arguments by Lieb, Schultz, and Mattis in 1D and later extended by others to hig
 *
 First here are some cartoons meant to illustrate why the construction of a featureless state at this filling is non-trivial.
 *
+
 If you try to fill bosons or fermions into non-overlapping orbitals, you break the rotational symmetry. 
 
 *
