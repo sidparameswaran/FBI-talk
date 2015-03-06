@@ -7,14 +7,14 @@
     mark=at position 0.5 with {\arrow{>}}}
     ]
 
-    \node[side, minimum width=1.5cm, minimum height=0.8cm] (psi) at (-1.4, 0.05) {$\psi$};
-    \node[above=of psi.north west, anchor=south west] (p1) {};
-    \node[above=of psi](p2) {};
-    \node[above=of psi.north east, anchor=south east] (p3) {};
-    \node at (-0.3, 0) {=};
-    \draw[red, very thick, postaction={decorate}] (psi.north -| p1) -- node[black, left] {...} (p1);
-    \draw[red, very thick, postaction={decorate}] (psi) --  node[left] {} (p2);
-    \draw[red, very thick, postaction={decorate}] (psi.north -| p3) -- node[black, right] {...} (p3);
+    %\node[side, minimum width=1.5cm, minimum height=0.8cm] (psi) at (-1.4, 0.05) {$\psi$};
+   % \node[above=of psi.north west, anchor=south west] (p1) {};
+   % \node[above=of psi](p2) {};
+  %  \node[above=of psi.north east, anchor=south east] (p3) {};
+   % \node at (-0.3, 0) {=};
+    %\draw[red, very thick, postaction={decorate}] (psi.north -| p1) -- node[black, left] {...} (p1);
+    %\draw[red, very thick, postaction={decorate}] (psi) --  node[left] {} (p2);
+    %\draw[red, very thick, postaction={decorate}] (psi.north -| p3) -- node[black, right] {...} (p3);
 
 \foreach \i in {1,...,2} {
 	\node[gamma] (G\i) at (2*\i,0) {$\Gamma$};
@@ -34,12 +34,12 @@
 	\draw[very thick, postaction={decorate}] (G\j) -- (L\i);
 }
 
-\node[] (tpsi) at (-1.4, -1) {$|\psi \rangle$}; 
-\node[] (teq) at (-0.3, -1) {$=$}; 
-\node[] (teq) at (1, -1) {$\Sigma_i$}; 
-\node[] (tGL) at (2, -1) {$|\psi_L^i\rangle$};
-\node[] (tL) at (3, -1) {$\lambda_i$};
-\node[] (tGR) at (4, -1) {$|\psi_R^i\rangle$};
+%\node[] (tpsi) at (-1.4, -1) {$|\psi \rangle$}; 
+%\%node[] (teq) at (-0.3, -1) {$=$}; 
+\node[] (teq) at (1, -0.8) {\huge $\Sigma_i$}; 
+\node[] (tGL) at (2, -0.8) {\large $|\psi_L^i\rangle$};
+\node[] (tL) at (3, -0.8) {\large $\lambda_i$};
+\node[] (tGR) at (4, -0.8) {\large $|\psi_R^i\rangle$};
 
 
 \end{scope}
