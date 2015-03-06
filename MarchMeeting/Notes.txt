@@ -63,7 +63,18 @@ Its not obvious if the symmetry group that protects this double degeneracy - whi
 The conformal field theory is that of a single compactified free boson, a U(1) symmetric theory. This is actually a set of CFTs with a free parameter called the Luttinger parameter. By appropriately rescaling, we can match conformal primaries of the free boson theory, which are labeled by charge e and winding number m, with the corresponding spectra points. Each primary has a cone of descendants, and we can identify those to, some of which are predicted to be degenerate in the CFT but are split here by finite size effects.  The points shown here all have m=0. although we believe we have nonzero m primaries centered at momentum pi - at least it would properly explain the degeneracies of these points.
 There is precident for this behavior in 1d spin chains at critical points.
 
-Finally, lets reveal the symmetry protection argument for the odd L entanglement spectrum double degeneracy. We use MPS methods outlined by Frank Pollmann, which involve relating the symmetry acted upon MPS tensor back to the original state. In this setup, a reflection symmetry - or symmetry that swaps left and right schmidt states - act antiunitarily on degenerate sets of schmidt states. This antiunitary action on the edge can square to plus or minus one, and these cannot be connected to each other.  The minus one case can only occur if there are degenerate pairs of Schmidt states. By checking symmetries for odd L, we find that the appropriate symmetry is I pi, where I is inversion aka a 180 degree rotation about the plaquette center, and pi is the 180 degree rotation inside the charge U(1). The protecting group is a antiunitary Z2.
+Finally, let me reveal the entanglement protecting symmetry - which in this case will be the symmetry group that protects the double degeneracy on the odd width cylinders - by analyzing the induced action of the symmetries on the Schmidt decomposition.
+
+Inversion symmetry induces an antiunitary action on degenerate Schmidt states. For example, consider a left Schmidt state with charge e and momentum K. It is mapped to a right Schmidt state with charge e and momentum -K, which can be mapped back to the corresponding left Schmidt state in the decomposition, which must have charge -e and momentum K.
+
+On-site symmetries like U(1) act unitarily. Charge parity, the theta=pi element of U(1), acts on our inversion related states with a relative sign. 
+The combined action of charge parity and inversion on the edge squares to -1, not 1. So as long as combined charge parity and inversion are symmetries, this state cannot be deformed to break the entanglement degeneracy, and therefore cannot be deformed into a trivial state.
+
+These arguments can be backed up with MPS calculations, as outlined for example by Frank Pollmann. Frank's paper also includes a 1D state called a Haldane insulator that features the same symmetry protection, and our wavefunction on a very thin cylinder can be continously tuned to the wavefunction of the Haldane insulator outlined there.
+
+Here are my conclusions. The next step is finding a parent Hamiltonian and answering whether this symmetry is enough to protect the gapless edge behavior.
+
+#SKIP: 
 
 Lets summarize:
 - Odd widths are 1d spts.
