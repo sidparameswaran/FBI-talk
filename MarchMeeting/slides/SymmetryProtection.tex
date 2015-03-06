@@ -3,11 +3,12 @@
   $$
     \ket{\psi} = \sum\limits_i \lambda_i \ket{\psi_L^i} \ket{\psi_R^i}
   $$
-  \only<1>{
   \begin{columns}[T]
     \begin{column}{0.5\textwidth}
+    \vskip-0.5cm
     
-    Inversion symmetry $\mathcal{I}$ induces an antiunitary action $V_{\mathcal{I}} \kappa$ on the edge. 
+    Inversion symmetry $\mathcal{I}$ induces an edge antiunitary action $V_{\mathcal{I}}$ 
+    \vskip0.2cm
 
     This occurs in two steps:
     \bi
@@ -17,40 +18,42 @@
 
     Combined:
     \bi
-    \item[] $ V_{\mathcal{I}} \ket{e, K} \propto \ket{-e, K}$
+    \item[] $ V_{\mathcal{I}} \ket{e, K} 
+    \propto \ket{-e, K}$
     \ei
   
   Phases work out like this:
-  $$ V_{\mathcal{I}} \sim \sigma_x = \begin{matrix}
+  $$ V_{\mathcal{I}} \sim \sigma_x = \begin{pmatrix}
   0 & 1 \\
   1 & 0
- \end{matrix} $$
+ \end{pmatrix} $$
 
  \end{column}
-    
-    \begin{column}{0.5\textwidth}
-     Charge symmetry $\mathcal{\theta}$ induces a unitary action $V_{\mathcal{\theta}}$ on the edge. 
+ \begin{column}{0.5\textwidth}
+    \vskip-0.5cm
+     Charge symmetry $\mathcal{\theta}$ induces an edge unitary action $V_{\mathcal{\theta}}$
 
-     Charge parity $\mathcal{\pi} \in U(1)$ induces the action 
+    \vskip0.2cm
+
+     For charge parity $\mathcal{\pi} \in U(1)$:
 
      \bi
-     \item[] $V_{\mathcal{\pi}}$ \ket{e, K} = (-1)^e \ket{e, K} 
+     \item[] $V_{\mathcal{\pi}} \ket{e, K} = (-1)^e \ket{e, K} $
      \ei
 
-    $$ V_{\mathcal{\pi}} \sim \sigma_z = \begin{matrix}
+    $$ V_{\mathcal{\pi}} \sim \sigma_z = \begin{pmatrix}
   1 & 0 \\
   0 & -1
- \end{matrix} $$
- \end{column}
-\end{columns}
+ \end{pmatrix} $$
 
-\begin{center}
-Combined antiunitary action $V_{\mathcal{I \pi}} \kappa $ satsfies
-
+Combined antiunitary action $V_{\mathcal{I \pi}}$ satsfies
+\vskip-0.3cm
 $$
 V_{\mathcal{I \pi}} V_{\mathcal{I \pi}}^* = -1
 $$
-\end{center}
+
+ \end{column}
+\end{columns}
 
 \end{frame}
 
