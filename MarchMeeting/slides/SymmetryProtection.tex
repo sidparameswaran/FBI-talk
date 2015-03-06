@@ -1,53 +1,57 @@
 \begin{frame}{Symmetry Protection of Degenerate Edge}
-%\vskip-1.5cm
-
-%\begin{columns}[T]
-%    \begin{column}[T]{.5\textwidth}
+\vskip-1.5cm
   $$
     \ket{\psi} = \sum\limits_i \lambda_i \ket{\psi_L^i} \ket{\psi_R^i}
-    $$
-    \only<1>{
-    Inversion symmetriesmap left Schmidt states to  right Schmidt states with the same eigenvalue. Combined with the map that matches each Schmidt state on right to its partner on the left, you get an antiunitary action on sets of degenerate Schmidt states.
-
-    $$
-    \mathcal{I} \rightarrow V_{\mathcal{I}}
-    $$
-
-    $$
-    V_{\mathcal{I}} \ket{e, K} = \ket{-e, K}
-    $$
-    }
-
-  \only<2>{
-    On-site symmetries act unitarily on sets of degenerate Schmidt states.
-     $$
-     \mathcal{\theta} \rightarrow V_{\mathcal{\theta}}
-     $$
-
-    $$
-    V_{\mathcal{\theta}} \ket{e, K}  \rightarrow e^{i \theta} \ket{e, K}
-    $$
-
-    $$
-    V_{\mathcal{\pi}} \ket{e, K} (-1)^{e} \ket{e, K}
-    $$
+  $$
+  \only<1>{
+  \begin{columns}[T]
+    \begin{column}{0.5\textwidth}
     
-    }
+    Inversion symmetry $\mathcal{I}$ induces an antiunitary action $V_{\mathcal{I}} \kappa$ on the edge. 
 
-  \only<3>{
-  Combined inversion and charge parity 
+    This occurs in two steps:
+    \bi
+    \item $\ket{e, K}_L \rightarrow \ket{e, -K}_R$
+    \item $\ket{e, K}_R \rightarrow \ket{-e, -K}_L$
+    \ei
 
-  }
+    Combined:
+    \bi
+    \item[] $ V_{\mathcal{I}} \ket{e, K} \propto \ket{-e, K}$
+    \ei
+  
+  Phases work out like this:
+  $$ V_{\mathcal{I}} \sim \sigma_x = \begin{matrix}
+  0 & 1 \\
+  1 & 0
+ \end{matrix} $$
 
-
+ \end{column}
     
+    \begin{column}{0.5\textwidth}
+     Charge symmetry $\mathcal{\theta}$ induces a unitary action $V_{\mathcal{\theta}}$ on the edge. 
 
+     Charge parity $\mathcal{\pi} \in U(1)$ induces the action 
 
- %   \end{column}
-  %  \begin{column}[T]{.5\textwidth}
-    
-   % \end{column}
-%\end{columns}
+     \bi
+     \item[] $V_{\mathcal{\pi}}$ \ket{e, K} = (-1)^e \ket{e, K} 
+     \ei
+
+    $$ V_{\mathcal{\pi}} \sim \sigma_z = \begin{matrix}
+  1 & 0 \\
+  0 & -1
+ \end{matrix} $$
+ \end{column}
+\end{columns}
+
+\begin{center}
+Combined antiunitary action $V_{\mathcal{I \pi}} \kappa $ satsfies
+
+$$
+V_{\mathcal{I \pi}} V_{\mathcal{I \pi}}^* = -1
+$$
+\end{center}
+
 \end{frame}
 
 % \begin{block}{1D Symmetry Protection}
