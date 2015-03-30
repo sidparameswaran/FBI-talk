@@ -72,13 +72,11 @@ edge mode with linear dispersion near momentum zero.
 
 \begin{figure}[htbc]
 	\centering
-	\includegraphics[width=2.5in]{{EntanglementSpectrum_L10.pdf}}
-	\includegraphics[width=2.5in]{{EntanglementSpectrum_L9.pdf}}
+	\includegraphics[width=\columnwidth]{{EntanglementSpectrum910.pdf}}
+	%\includegraphics[width=2.5in]{{EntanglementSpectrum_L9.pdf}}
 	\caption{
-    \bela{Remove figure titles and try to make them fit more naturally as two panels
-    of one figure.}
     Entanglement spectrum on the zig-zag edge of a cylinder of
-    circumference $W=10$ (top panel) and $W=9$ (bottom panel),
+    circumference $L=10$ (left panel) and $L=9$ (right panel),
     as function of transverse momentum $K_y$. The legend indicates
     the boson number of the Schmidt state.}
 	\label{fig:ESL910}
@@ -95,7 +93,7 @@ with linear dispersion.
 	\includegraphics[width=\columnwidth]{{EntanglementEnergyScaling.pdf}}
   \vskip-3ex
   \caption{
-  Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL10}. The
+  Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL910}. The
   $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size,
   points at non-zero momentum still deviate significantly from $1/L$ scaling.}
   \label{fig:EEScaling}
@@ -153,9 +151,9 @@ $\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$,
 
 \begin{align*}
 	\mathbf{P} =\frac{2\pi}{L}&(\uL-\bL)
-	&=& \frac{2\pi}{L}(em + n - \bar{n}) \\
+	&=& \frac{2\pi}{L}(em + n - \bar{n})+\pi\frac{1-(-1)^m}{2} \\
 	\mathbf{H} = \frac{2\pi}{L}&(\uL+\bL)
-	&=& \frac{2\pi}{L}(\frac{\kappa e^2}{2} + \frac{m^2}{2 \kappa} + \frac{n + \bar{n}}{2}) %\\
+	&=& \frac{2\pi}{L}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) %\\
 \end{align*}
 
 By rescaling the energy and momentum, we find a system size
@@ -163,8 +161,8 @@ independent pattern that can be matched to the low-energy, linearly
 dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 
 \begin{align*}
-\mathbf{P} &\propto (em + n - \bar{n}) \\
-\mathbf{H} &\propto e^2 + \frac{m^2}{\kappa^2} + \frac{1}{\kappa}(n + \bar{n})
+\mathbf{P} &\propto (n - \bar{n}) \\
+\mathbf{H} &\propto e^2 + 4\kappa(n + \bar{n})
 \end{align*}
 
 The label $m$ is 0 for all states in the linearly dispersing cone
