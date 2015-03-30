@@ -134,12 +134,12 @@ if show_fit_details:
 
 # legend
 if show_legend:
-    plt.legend(loc=6, numpoints=1, frameon=False)
+    plt.legend(loc=(0, 0.4), numpoints=1, frameon=False)
 #handles, labels = ax.get_legend_handles_labels()
 plt.xlabel('L')
 plt.ylabel('Entanglement Energy')
 #plt.ylabel('Entanglement Energy $E=-Log(\\rho/\\rho_0)$')
-plt.title('Scaling of low entanglement-energy spectrum')
+#plt.title('Scaling of low entanglement-energy spectrum')
 plt.xlim(2.1, 16.5)
 plt.ylim(0.1, 4.1)
 if not show_legend:

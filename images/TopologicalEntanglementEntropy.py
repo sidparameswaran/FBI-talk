@@ -33,6 +33,8 @@ Ls = np.array(Ls)
 extrap_Ls = np.array([0, 1]+list(Ls))
 
 fit_pts, params, R = analysis.curve_fit_main(entropy, analysis.linear, Ls, extrap_Ls)
+# flip sign of gamma
+params = [params[0], -1*params[1]]
 
 print params
 print fit_pts[0], fit_pts[1]
@@ -49,7 +51,7 @@ plt.ylim(ymin=-1)
 plt.axhline(0, color='k', ls=':')
 plt.axvline(0, color='k', ls=':')
 
-plt.title('Computing Topological Entanglement Entropy')
+#plt.title('Computing Topological Entanglement Entropy')
 plt.xlabel('L')
 plt.ylabel('Entanglement Entropy')
 plt.legend(loc='best', numpoints=1, frameon=False)
