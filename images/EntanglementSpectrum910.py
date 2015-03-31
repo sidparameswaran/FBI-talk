@@ -11,7 +11,12 @@ from PEPS import spectra_analyzer as spec
 from PEPS.CylinderPEPS import run
 from matplotlib.offsetbox import AnchoredOffsetbox, TextArea, DrawingArea, HPacker
 from sfig import ticker, rcParams
-rcParams.update({'figure.figsize':(6.4, 2.5)})
+
+makelegend = False
+if makelegend:
+    rcParams.update({'figure.figsize':(6.25, 2.5)})
+else:
+    rcParams.update({'figure.figsize':(3.75, 2.5)})
 
 def go(L):
     #with PdfPages('L_10_all_mom_10.pdf') as pdf:
@@ -62,11 +67,10 @@ def go(L):
     spec_points.plot_toolbox.color_func = color_func
     ###########################################################
     #make plot
-    if L%2:
-        xlim=[-0.5, L/2+1.1]
+    if makelegend:
+        xlim=[-0.5, np.floor(L/2)+1.1]
     else:
-        xlim=[-0.5, L/2+1.6]
-        
+        xlim=[-0.5, np.floor(L/2)+.5]
 
     fig, spec_ax = spec_points.plot_toolbox.spec_plot(spec_points, data_name,
                                                      shift_func=shift_func, copy_points=True,xlim=xlim, legend=None)
@@ -91,29 +95,30 @@ def go(L):
     #ax.set_xticklabels(['$2\pi'+str(K)+'/'+str(L)+'$' if K in [1for K in Ks])
     ax.yaxis.tick_left()
     ax.xaxis.tick_bottom()
-    handles, labels = ax.get_legend_handles_labels()
-    hl = sorted(zip(handles, labels),
-            key= lambda x: abs(int(x[1])))
-    handles2, labels2 = zip(*hl)
-    def label_helper(string_representing_integer):
-        i = int(string_representing_integer)
-        if not i%2:
-            if i<=0:
-                return str(i//2)
+    if makelegend:
+        handles, labels = ax.get_legend_handles_labels()
+        hl = sorted(zip(handles, labels),
+                key= lambda x: abs(int(x[1])))
+        handles2, labels2 = zip(*hl)
+        def label_helper(string_representing_integer):
+            i = int(string_representing_integer)
+            if not i%2:
+                if i<=0:
+                    return str(i//2)
+                else:
+                    return '+'+str(i//2)
             else:
-                return '+'+str(i//2)
-        else:
-            if i<=0:
-                return str(i)+'/2'
-            else:
-                return '+'+str(i)+'/2'
-            
-    labels3 = [label_helper(l) for l in labels2]
-    if L==9:
-        legendloc = (0.8, 0.15)
-    if L==10:
-        legendloc = (0.825, 0.15)
-    leg=ax.legend(handles2, labels3, loc = legendloc, numpoints=1, frameon=False, labelspacing=0.25)
+                if i<=0:
+                    return str(i)+'/2'
+                else:
+                    return '+'+str(i)+'/2'
+                
+        labels3 = [label_helper(l) for l in labels2]
+        if L==9:
+            legendloc = (0.8, 0.15)
+        if L==10:
+            legendloc = (0.825, 0.15)
+        leg=ax.legend(handles2, labels3, loc = legendloc, numpoints=1, frameon=False, labelspacing=0.25)
     ##leg.get_frame().set_linewidth(0.0)
     
     #plt.tight_layout()

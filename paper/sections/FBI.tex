@@ -89,13 +89,13 @@ D^\mathrm{sc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
 We can also encode a state of hard-core bosons by replacing $D$ by
 \begin{equation}
 D^\mathrm{hc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
-													1  &: i_0+i_1+i_2 > 0  \\
+													1  &: p = i_0+i_1+i_2 \le 1  \\
 													0  &:  \text{else}
 													\end{array}
 											\right.
 \end{equation}
 Further variants of the state are described in
-Appendix~\ref{somewhere}.
+Appendix ~\ref{Appendix:Variants}.
 
 This tensor network wavefunction manifestly respects all the
 translational and point group symmetries of the honeycomb lattice,
@@ -137,17 +137,17 @@ The decomposition is given by
 W^{i_1 i_2 i_3 i_4 i_5 i_6} = \sum\limits_{\alpha_1 \ldots \alpha_5} V^{i_1}_{\alpha_1} W^{i_2}_{\alpha_1 \alpha_2}
 %W^{i_3}_{\alpha_2 \alpha_3} W^{i_4}_{\alpha_3 \alpha_4}
 \ldots
-W^{i_5}_{\alpha_4 \alpha_5} U^{i_6}_{\alpha_5}
+W^{i_5}_{\alpha_4 \alpha_5} X^{i_6}_{\alpha_5}
 \end{equation}
-where $V^{i_1}_{\alpha_1} = \delta_{i_1, \alpha_1}$, $U^{i_6}_{\alpha_5} = \delta_{i_6,\alpha_5}$, and \bela{check whether this is actually correct}
-\begin{equation}
+where $V^{i_1}_{\alpha_1} = \delta_{i_1, \alpha_1}$, $X^{i_6}_{\alpha_5} = \delta_{i_6,\alpha_5+1}+\delta_{i_6,\alpha_5-1}$, and
+\begin{equation*}
 W_{i_0 i_1}^{j}  = \left\{ \begin{array}{ll}
 													1  &:  i_0+j=i_1 \\
 													0  &:  \text{else}
 													\end{array}
 											\right.,
-\end{equation}
-and where each index takes values in $\{0, 1\}$. Applying this to each
+\end{equation*}
+where each index takes values in $\{0, 1\}$. Applying this to each
 $W$-tensor yields the state as shown in panel (c) of
 Fig.~\ref{fig:FBI_PEPS_2}. By contracting the three tensors in each
 shaded region together, we obtain a PEPS in the regular form as shown
