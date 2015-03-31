@@ -78,7 +78,8 @@ edge mode with linear dispersion near momentum zero.
 	\caption{
     Entanglement spectrum on the zig-zag edge of a cylinder of
     circumference $L=10$ (left panel) and $L=9$ (right panel),
-    as function of transverse momentum $K_y$. Color indicates U(1) charge. }
+    as function of transverse momentum $K_y$. 
+    Different colors indicate different U(1) charge sectors. }
 	\label{fig:ESL910}
 \end{figure}
 
@@ -130,58 +131,60 @@ it is unlikely that our state is topologically ordered.
 
 Given the $U(1)$ symmetry of the state, the simplest possible
 conformal field theory we might expect to appear at the edge is that
-of a single free bosonic field.
+of a single free bosonic field. 
+Let's briefly review the relevant properties of this CFT.\cite{diFrancesco}
 
 The free-boson CFT is created from the Lagrangian
-$$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx ( \frac{1}{v^2}(\partial_t \phi)^2 - (\partial_x \phi)^2)$$
-and with the compatified field identification
+$$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx (\partial_t \phi)^2 - (\partial_x \phi)^2$$
+with the compatified field identification
 $$ \phi \equiv \phi + 2\pi R$$
-and placed on the circle of circumference $L$ with periodic boundary conditions
-$$ \phi(x) \equiv \phi(x+L).$$
+and placed on the circle of circumference $L$ with (anti-) periodic boundary conditions
+$$ \phi(x) \equiv \eta \phi(x+L), \, \eta=\pm 1.$$
+
 
 After canonical quantization, it is found that the set of energy
 eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with
 integers $e, m$ labeling the $U(1)$ charge and the winding number of
-the bosonic field respectively, and level $n, \bar{n}$ descendant
-fields for each primary - such as  $\mathbf{\bar{j}}_{-\bar{n}}
-\mathbf{j}_{-n} \ket{e, m}$ - for any nonnegative integers $n,
-\bar{n}$. The number of level $n, \bar{n}$ descendants of a given
-primary, all of which are degenerate, is $Z(n) Z(\bar{n})$, where
-$Z(n)$ is the number of partitions of the integer $n$.
+the bosonic field respectively, and level $n, \bar{n}$ descendants of each primary for
+nonnegative integers $n,\bar{n}$,
+which I will collectively label $\ket{e, m; n, \bar{n}}$.
+% - such as  $\mathbf{\bar{j}}_{-\bar{n}}\mathbf{j}_{-n} \ket{e, m}$ -%
+ 
+The number of level $n, \bar{n}$ descendants of a given
+primary, all of which are degenerate for the unperturbed CFT, is $Z(n) Z(\bar{n})$, where
+$Z(n)$ is the number of partitions of the integer $n$. 
+For more details on these states, see Appendix \ref{Appendix:CFT}.
 
-The properties of the $U(1)$ Kac-Moody algebras constrain the form of
-energy and momentum eigenvalues - for the state
-$\mathbf{\bar{j}}_{-\bar{n}} \mathbf{j}_{-n} \ket{e, m}$,
+The energies and momenta for the states $\ket{e, m; n, \bar{n}}$ are given below
+on a system of circumference $L$, with periodic boundary conditions if $\eta=1$
+or anti-periodic boundary conditions if $\eta=-1$.
+The energies depends only on the combination $\kappa = \pi g R^2$,
+known as the Luttinger parameter of the system. \cite{giamarchi} 
 
 \begin{align*}
-	\mathbf{P} =\frac{2\pi}{L}&(\uL-\bL)
-	&=& \frac{2\pi}{L}(em + n - \bar{n})+\pi\frac{1-(-1)^m}{2} \\
-	\mathbf{H} = \frac{2\pi}{L}&(\uL+\bL)
-	&=& \frac{2\pi}{L}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) %\\
+	\mathbf{P} =\frac{2\pi}{L} s + \pi \frac{1-\eta}{2} 
+	= \frac{2\pi}{L}(em + n - \bar{n})+ \pi \frac{1-\eta}{2}&  \\
+	\mathbf{H} = \frac{2\pi}{L}\Delta
+	= \frac{2\pi}{L}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n})& %\\
 \end{align*}
+
+The momenta and energies of these eigenstates are given are related to the conformal
+spin $s$ and scaling dimension $\Delta$ of operators that can be used to perturb the CFT.
+We will discuss these perturbations to the CFT in Section~\ref{sec:symmetry}.
 
 By rescaling the energy and momentum, we find a system size
 independent pattern that can be matched to the low-energy, linearly
 dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 
 \begin{align*}
-\mathbf{P} &\propto (n - \bar{n}) \\
-\mathbf{H} &\propto e^2 + 4\kappa(n + \bar{n})
+\mathbf{P} &\propto (em + n - \bar{n}) \\
+\mathbf{H} &\propto e^2 + 4\kappa^2 m^2 + 4\kappa(n + \bar{n})
 \end{align*}
 
-The label $m$ is 0 for all states in the linearly dispersing cone
-around $K=0$ - however, the primary states $\ket{e, m=\pm 1}$ can be
-found centered around momentum $K=\pi$, as seen in critical spin
-chains [reference]. The states with nonzero $e$ and zero $m$ are
-degenerate in energy and momentum with the same state with charge
-$-e$, but the $Z(n)Z(\bar{n})$ degeneracies predicted for descendant
-states are split by finite size effects.
-
-The parameter $\kappa$ that appears - related to the coupling constant
-$g$ in the effective Lagrangian - is free. Quantum models that exhibit
-critical points that show the behavior of the free-boson CFT in fact
-have a whole line of critical points with varying values of $\kappa$,
-which can be tuned using a marginal operator in the theory.
+The results of this match are shown in Figure~\ref{fig:EEIdentify}.
+An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent 
+$\ket{0, 0; 1, 0}$, which gives $\kappa \approx 1.6$. The label $e$, which measures the $U(1)$ 
+charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pattern $1, 1, 2, ...$ for the level $n, 0$ descendents along the edge of the cone matches the prediction.
 
 \begin{figure}[htbc]
 	\centering
@@ -190,9 +193,23 @@ which can be tuned using a marginal operator in the theory.
 	descendants in the spectrum of the soft-core boson entanglement Hamiltonian. The states are labeled
 	$e_{n, \bar{n}}$. The zero and scale of the numerical spectrum are set by matching the lowest two
 	states. The energies and charges of the primaries with charges $2, 5/2, ... 4$ appear at the predicted
-	spots.  The best estimate for the Luttinger parameter from this spectrum is $\kappa \approx 1/6.4$,
+	spots.  The best estimate for the Luttinger parameter from this spectrum is $\kappa \approx 1.6$,
 	taken from the energy of the $0_{1, 0}$ state. }
 	\label{fig:EEIdentify}
+\end{figure}
+
+ 
+However, the states with non-zero winding number $m$, such as $\ket{0, \pm 1}$, do not appear at 
+the energy and momentum predicted by the above formula. Instead, the primary states $\ket{e, m=\pm 
+1}$ can be found centered around momentum $K=\pi$. The same effect is seen in the critical 1D XXZ 
+spin chain, where one can derive the relation $\eta = (-1)^m$ - that is, the spectrum consists of a combination of states from the periodic boson CFT with even $m$ and states from the anti-periodic boson CFT and odd $m$. The states are shown identified in the spectrum in Figure~\ref{fig:EEIdentify2}
+  
+
+\begin{figure}[htbc]
+	\centering
+	\includegraphics[width=\columnwidth]{EEIdentify.pdf}
+	\caption{ $K=\pi$ }
+	\label{fig:EEIdentify2}
 \end{figure}
 
 We can also take the lowest-lying Schmidt state, interpret it as the
