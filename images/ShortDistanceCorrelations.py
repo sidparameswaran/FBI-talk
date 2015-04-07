@@ -14,11 +14,11 @@ divider2 = make_axes_locatable(ax2)
 cax2 = divider2.append_axes("right", size="5%", pad=0)
                 
 data = hexplot.test_corr_data(xi=0.3, radius=3.4)
-p = hexplot.hex_circle_plot(data, cmap=hexplot.cmap_seq, ax=ax1, colorbar=False)
+p = hexplot.hex_circle_plot(data, hexlattice_radius=3.4, cmap=hexplot.cmap_seq, ax=ax1, colorbar=False)
 cbar1 = plt.colorbar(p, cax=cax1, ticks=MultipleLocator(0.05), format="%.2f")
 
 data2 = hexplot.test_corr_data(xi=0.5+1.2j, c0=0.25, radius=3.4)
-p2 = hexplot.hex_circle_plot(data2, cmap=hexplot.cmap_div, ax=ax2, scale=2, colorbar=False)
+p2 = hexplot.hex_circle_plot(data2, hexlattice_radius=3.4, cmap=hexplot.cmap_div, ax=ax2, scale=2, colorbar=False)
 cbar2 = plt.colorbar(p2, cax=cax2, ticks=MultipleLocator(0.05), format="%.2f")
 
 plt.tight_layout()
