@@ -6,12 +6,6 @@
 \section{Entanglement spectrum}
 \label{sec:ES}
 
-\bela{I'm not sure we should emphasize that much that we map everything into
-an MPS. I thought that's not actually how everything is implemented anyway, and
-that instead we are using the structure of the transfer operator explicitly --
-or is the transfer operator just contracted down to a dense matrix and then used
-as is?}
-
 The quasi-1D cylinder geometry is convenient for calculating the
 entanglement spectrum for entanglement cuts transverse to the long direction of the
 cylinder. Here, the entanglement spectrum $\epsilon_i$ is defined through the spectrum
@@ -19,56 +13,48 @@ $\rho_i$ of the reduced density matrix $\rho$ obtained for a bipartition of the 
 where we have $\epsilon_i = -\log \rho_i$.
 The eigenvectors of the reduced density matrix are referred to as Schmidt
 states.
-\bela{The following is a subtle statement to make...we need to phrase that more carefully.}
-Due to the finite correlation length of the state, the
-differences between the Schmidt states are exponentially localized to the
-boundary. For this reason, we refer to these states as the `entanglement
-edge'.
 
-While for a general quantum state, the number of non-zero eigenvalues $\rho_i$ of the
-density matrix can be exponentially large in the system size, these eigenvalues generally
-decay very rapidly, justifying the approximation by a tensor product state of finite bond
-dimension.
 In the setup given here, we have an exact representation of the ground state as a PEPS of
 fixed bond dimension, which implies an exact upper bound on the number of non-zero eigenvalues.
-For the cut shown in Fig.~\ref{fig:FBI_PEPS}, the number of non-zero terms is $\chi=2^L$.
-
-A method to extract the entanglement spectrum from the transfer
-operator along the cylinder was described in Ref.~\onlinecite{cirac2011}.
+For the cut shown in Fig.~\ref{fig:FBI_PEPS}, the number of non-zero terms is $\chi=2^W$.
+To extract the entanglement spectrum exactly, we use a method proposed in Ref.~\onlinecite{cirac2011}.
 With each cylinder slice blocked together and considered as an MPS, the procedure for
-computing the entanglement spectrum is identical to those used for MPS. The process also
-results in a change of basis on the virtual legs that allows one to change the tensor
-network in Figure \ref{fig:FBI_PEPS} into a canonical form MPS,
+computing the entanglement spectrum is identical to those used for MPS; it may however be
+computationally advantageous to exploit the additional structure present in the PEPS transfer
+operator. Nevertheless, the numerically exact approach we choose scales exponentially
+in the circumference of the cylinder.
 
-$$
-\ket{\psi} = \sum\limits_{\{p_i\}} \ldots \Lambda \Gamma_{p_0} \Lambda \Gamma_{p_1} \Lambda \Gamma_{p_2} \Lambda \ldots \ket{... p_0 p_1 p_2 ...}.
-$$
+In the geometry chosen, the momentum around the cylinder (transverse momentum) acts
+locally on a cylinder slice. We can thus block-diagonalize the reduced density matrix
+for a half-infinite cylinder in both the particle number (U(1) charge) as well as transverse momentum
+quantum numbers, allowing us to perform more efficient calculations as well as assigning
+the corresponding quantum numbers to both the Schmidt states as well as the entanglement
+spectrum. Here, to define a quantum
+number for each Schmidt state that remains finite in the thermodynamic limit,
+we are subtracting one fiducial background charge per unit cell.
 
-Each physical leg represents all $2L$ physical indices of a cylinder slice,
-and each virtual leg represents all $L$ virtual indices that connect cylinder
-slices. The change of basis generally mixes the Hilbert spaces from these
-virtual legs, so the resulting basis won't be local around the circumference
-of the cylinder.
-For many of the calculations that follow, we'll use this 1D form, and the
-methods will be entirely MPS methods.
-
-As shown in \cite{perezgarcia2008}, a translationally invariant MPS can be
-assigned a projective representation of the on-site symmetry group, acting on
-the virtual legs, that maps Schmidt states to degenerate Schmidt states.
-For the MPS formed by the HFBI, we find that the U(1) boson number symmetry
-and the$\mathbb{Z}_L$ translational symmetry around the cylinder circumference
-are represented linearly. Each Schmidt state can thus be assigned a
-well-defined quantum number of charge and transverse momentum. We'll discuss
-this assignment of charge further in \ref{sec:symmetry}.
+% This seems overly complicated.
+%As shown in \cite{perezgarcia2008}, a translationally invariant MPS can be
+%assigned a projective representation of the on-site symmetry group, acting on
+%the virtual legs, that maps Schmidt states to degenerate Schmidt states.
+%For the MPS formed by the HFBI, we find that the U(1) boson number symmetry
+%and the$\mathbb{Z}_L$ translational symmetry around the cylinder circumference
+%are represented linearly. Each Schmidt state can thus be assigned a
+%well-defined quantum number of charge and transverse momentum. We'll discuss
+%this assignment of charge further in \ref{sec:symmetry}.
 
 The entanglement spectra for the HFBI on cylinders with even and odd width
 circumferences are shown in Fig.~\ref{fig:ESL910}, plotted
 against the transverse momentum eigenvalue and colored by the U(1) charge
-eigenvalue of the corresponding Schmidt states. Here, to define a quantum
-number for each Schmidt state that remains finite in the thermodynamic limit,
-we are subtracting one fiducial background charge per unit cell.
+eigenvalue of the corresponding Schmidt states. All the numerical results in this section
+are obtained for the soft-core boson variant of the state.
 We find that the entanglement spectrum looks like it has a gapless
 edge mode with linear dispersion near momentum zero.
+To further substantiate this, we compare the lowest entanglement energies
+for several cylinder widths and quantum number sectors in Fig.~\ref{fig:EEScaling}.
+The finite-size scaling confirms in all cases that
+the entanglement gap closes as $1/W$, as you would expect for a gapless mode
+with linear dispersion.
 
 \begin{figure}[htbc]
 	\centering
@@ -77,16 +63,11 @@ edge mode with linear dispersion near momentum zero.
 	\vskip-3ex
 	\caption{
     Entanglement spectrum on the zig-zag edge of a cylinder of
-    circumference $L=10$ (left panel) and $L=9$ (right panel),
-    as function of transverse momentum $K_y$. 
+    circumference $W=10$ (left panel) and $W=9$ (right panel),
+    as function of transverse momentum $K_y$.
     Different colors indicate different U(1) charge sectors. }
 	\label{fig:ESL910}
 \end{figure}
-
-In figure \ref{fig:EEScaling}, we compare the lowest points in
-the spectra for several cylinder widths. The finite size scaling confirms that
-the entanglement gap closes as $1/L$, as you would expect for a gapless mode
-with linear dispersion.
 
 
 \begin{figure}[htbc]
@@ -94,9 +75,12 @@ with linear dispersion.
 	\includegraphics[width=\columnwidth]{{EntanglementEnergyScaling.pdf}}
   \vskip-3ex
   \caption{
-  Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL910}. The
-  $1/L$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size,
-  points at non-zero momentum still deviate significantly from $1/L$ scaling.}
+  Power law fits for the lowest five states above the ground state in Figure \ref{fig:ESL910}. Here,
+  $e$ denotes the particle number and $K_y$ the transverse momentum. The
+  $1/W$ scaling is a signature of a gapless (entanglement) Hamiltonian. Due to the small system size,
+  points at non-zero momentum still deviate significantly from $1/L$ scaling.
+  \bela{change $L$ to $W$. change K to $K_y$.}
+  \bela{Instead of plotting this on a log-log scale, it might be more natural to plot EE vs 1/W.}}
   \label{fig:EEScaling}
 \end{figure}
 
@@ -114,15 +98,15 @@ The gapless edge is suggestive of the state having either topological or SPT ord
 While topological order was already ruled out in Ref.~\cite{kimchi2013}, our PEPS
 representation gives us additional tools to substantiate this assertion. In particular
 we can calculate the entanglement between the two parts of the cylinder as a function
-of circumference $S(L)$ and check for a subleading term to the area law by performing
-a fit to $S(L) = aL + S_0$. In a topological phase and in one of the minimally entangled
+of circumference $S(W)$ and check for a subleading term to the area law by performing
+a fit to $S(W) = aW + S_0$. In a topological phase and in one of the minimally entangled
 states, one would expect the subleading term to correspond to the topological entanglement
-entropy, $S_0 = -\gamma$~\cite{kitaev,levin,jiang}. 
-In a non-minimally entangled state, one would instead measure $S_0 = 0$ 
-- but in that case, the topological order can be detected via a degeneracy of
-the largest eigenvalue of the transfer matrix.
+entropy, $S_0 = -\gamma$~\cite{kitaev,levin,jiang}.
+In a non-minimally entangled state, one would instead measure $S_0 = 0$
+-- but in that case, the topological order can be detected via a degeneracy of
+ the largest eigenvalue of the transfer matrix.
 Our results are shown in Fig.~\ref{fig:TopologicalEE}. We find results that are consistent
-with $S_0 = 0$ - and since we also find that the transfer matrix is nondegenerate,
+with $S_0 = 0$ -- and since we also find that the transfer matrix is nondegenerate,
 it is unlikely that our state is topologically ordered.
 
 
@@ -131,12 +115,12 @@ it is unlikely that our state is topologically ordered.
 
 Given the $U(1)$ symmetry of the state, the simplest possible
 conformal field theory we might expect to appear at the edge is that
-of a single free bosonic field. 
+of a single free bosonic field.
 Let's briefly review the relevant properties of this CFT.\cite{diFrancesco}
 
 The free-boson CFT is created from the Lagrangian
 $$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx (\partial_t \phi)^2 - (\partial_x \phi)^2$$
-with the compatified field identification
+with the compactified field identification
 $$ \phi \equiv \phi + 2\pi R$$
 and placed on the circle of circumference $L$ with (anti-) periodic boundary conditions
 $$ \phi(x) \equiv \eta \phi(x+L), \, \eta=\pm 1.$$
@@ -149,20 +133,20 @@ the bosonic field respectively, and level $n, \bar{n}$ descendants of each prima
 nonnegative integers $n,\bar{n}$,
 which I will collectively label $\ket{e, m; n, \bar{n}}$.
 % - such as  $\mathbf{\bar{j}}_{-\bar{n}}\mathbf{j}_{-n} \ket{e, m}$ -%
- 
+
 The number of level $n, \bar{n}$ descendants of a given
 primary, all of which are degenerate for the unperturbed CFT, is $Z(n) Z(\bar{n})$, where
-$Z(n)$ is the number of partitions of the integer $n$. 
+$Z(n)$ is the number of partitions of the integer $n$.
 For more details on these states, see Appendix \ref{Appendix:CFT}.
 
 The energies and momenta for the states $\ket{e, m; n, \bar{n}}$ are given below
 on a system of circumference $L$, with periodic boundary conditions if $\eta=1$
 or anti-periodic boundary conditions if $\eta=-1$.
 The energies depends only on the combination $\kappa = \pi g R^2$,
-known as the Luttinger parameter of the system. \cite{giamarchi} 
+known as the Luttinger parameter of the system. \cite{giamarchi}
 
 \begin{align*}
-	\mathbf{P} =\frac{2\pi}{L} s + \pi \frac{1-\eta}{2} 
+	\mathbf{P} =\frac{2\pi}{L} s + \pi \frac{1-\eta}{2}
 	= \frac{2\pi}{L}(em + n - \bar{n})+ \pi \frac{1-\eta}{2}&  \\
 	\mathbf{H} = \frac{2\pi}{L}\Delta
 	= \frac{2\pi}{L}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n})& %\\
@@ -182,8 +166,8 @@ dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 \end{align*}
 
 The results of this match are shown in Figure~\ref{fig:EEIdentify}.
-An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent 
-$\ket{0, 0; 1, 0}$, which gives $\kappa \approx 1.6$. The label $e$, which measures the $U(1)$ 
+An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent
+$\ket{0, 0; 1, 0}$, which gives $\kappa \approx 1.6$. The label $e$, which measures the $U(1)$
 charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pattern $1, 1, 2, ...$ for the level $n, 0$ descendents along the edge of the cone matches the prediction.
 
 \begin{figure}[htbc]
@@ -199,12 +183,12 @@ charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pat
 	\label{fig:EEIdentify}
 \end{figure}
 
- 
-However, the states with non-zero winding number $m$, such as $\ket{0, \pm 1}$, do not appear at 
-the energy and momentum predicted by the above formula. Instead, the primary states $\ket{e, m=\pm 
-1}$ can be found centered around momentum $K=\pi$. The same effect is seen in the critical 1D XXZ 
+
+However, the states with non-zero winding number $m$, such as $\ket{0, \pm 1}$, do not appear at
+the energy and momentum predicted by the above formula. Instead, the primary states $\ket{e, m=\pm
+1}$ can be found centered around momentum $K=\pi$. The same effect is seen in the critical 1D XXZ
 spin chain, where one can derive the relation $\eta = (-1)^m$ - that is, the spectrum consists of a combination of states from the periodic boson CFT with even $m$ and states from the anti-periodic boson CFT and odd $m$. The states are shown identified in the spectrum in Figure~\ref{fig:EEIdentifyPi}
-  
+
 
 \begin{figure}[htbc]
 	\centering
@@ -227,12 +211,28 @@ shown with $c=\frac{1}{2}, 1,$ and $2$, with the $const.$ fixed by
 matching the maximum of the entanglement entropy data. $c=1$ is a good
 fit.}
 	\label{fig:EdgeGS_EE}
-\end{figure} 
+\end{figure}
 
 \section{Symmetry-protection}
 \label{sec:symmetry}
 
+\bela{Moved from above - the canonical form should be explained where we
+actually use it.}
+The process also
+results in a change of basis on the virtual legs that allows one to change the tensor
+network in Figure \ref{fig:FBI_PEPS} into a canonical form MPS,
 
+$$
+\ket{\psi} = \sum\limits_{\{p_i\}} \ldots \Lambda \Gamma_{p_0} \Lambda \Gamma_{p_1} \Lambda \Gamma_{p_2} \Lambda \ldots \ket{... p_0 p_1 p_2 ...}.
+$$
+
+Each physical leg represents all $2L$ physical indices of a cylinder slice,
+and each virtual leg represents all $L$ virtual indices that connect cylinder
+slices. The change of basis generally mixes the Hilbert spaces from these
+virtual legs, so the resulting basis won't be local around the circumference
+of the cylinder.
+For many of the calculations that follow, we'll use this 1D form, and the
+methods will be entirely MPS methods.
 
 However, the entanglement spectrum of this one wavefunction is not enough to
 determine the SPT nature of the phase. First, it isn't clear what group or
