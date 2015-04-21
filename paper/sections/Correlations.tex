@@ -4,19 +4,39 @@
 
 In Ref.~\onlinecite{kimchi2013}, certain real-space correlation functions
 of the featureless boson insulator state were studied using a mapping to
-a particular classical statistical mechanics system which was sampled using
+a particular classical statistical mechanical system which was sampled using
 Monte Carlo techniques.
-Here, we employ PEPS calculations on an infinite cylinder and first compare
-against the known results from variational Monte Carlo and then go beyond
-these established results by measuring additional off-diagonal correlation
-functions and establishing a strict upper bound on the exponential decay
+Here, we go beyond this by employing PEPS calculations on infinite cylinders
+that allow us to measure a broader class of correlation functions and, in
+particular, allow us establish a strict upper bound on the exponential decay
 of \emph{all} two-point correlation functions for an infinite cylinder of
 given width.
 
+\begin{figure}[hbtc]
+	\centering
+	\includegraphics[width=\columnwidth]{ShortDistanceCorrelations_SCB_L8.pdf}
+	\vskip-5ex
+	\caption{\brayden{Get other half of data!}
+	 Short distance correlation functions $\ev{b_0^{\dagger} b_x}$ (on the left)
+	 and $\ev{(n_0-\frac12)(n_x-\frac12)}$ (on the right).
+	 The magnitude of the correlation function at site $x$ is proportional to
+	 the area of the corresponding circle.
+    \bela{What cylinder size are these extracted for? Soft-core or hard-core?}}
+	\label{fig:ShortCorr}
+\end{figure} 
+
+In Fig.~\ref{fig:ShortCorr}, we show both density-density and off-diagonal
+short-range correlation functions for a cylinder of circumference $W=X$ \bela{?}.
+Comparing these to the Monte Carlo results of Ref.~\onlinecite{kimchi2013},
+which have been computed for a different geometry, we find good qualitative
+agreement. Crucially, while the boundary conditions we choose break the rotational
+symmetry by making the system periodic in one direction and infinite in the other,
+the short-range correlations for distances up to half of the cylinder circumference
+appear unaffected by this.
+
 It is a well-known result that PEPS can, in the thermodynamic limit,
 exhibit power-law correlation functions~\cite{?}, while the correlation
-functions in an MPS of finite bond dimension are necessarily either constant
-(or oscillating with constant amplitude) or exponentially decaying. The
+functions in an MPS of finite bond dimension decay exponentially. The
 long-range correlations of an MPS are encoded in its transfer operator $T$,
 which for an MPS of bond dimension $M$ is a matrix of size $M^2 \times M^2$.
 Denoting the spectrum of $T$ as $\lambda_i$, $|\lambda_0| \geq |\lambda_1| > \ldots$,
@@ -29,34 +49,11 @@ Crucially, the correlation length $\xi_\mathcal{O}$ for any operator $\mathcal{O
 is bounded from above by $-\log(\lambda_1)$~\cite{?}. In the following, we thus
 evaluate the spectrum of the transfer operator of our PEPS along cylinders of varying
 circumference $L$ to establish an upper bound on the correlation length for each
-circumference $\xi(L)$.
+circumference $\xi(W)$.
 Note that the possibility of having power-law correlations in a PEPS can
 be reconciled with the above consideration if the correlation length $\xi(L)$
-diverges as $L \rightarrow \infty$; we will thus need to carefully consider the scaling
-of $\xi(L)$.
-
-\bela{Now a paragraph describing the comparison to Monte Carlo results.}
-
-Our results for the correlation bounds $\xi(L)$ are shown in Fig.~\ref{fig:TMS}.
-Here, we show the upper bound for the case of soft-core and hard-core bosons,
-and in each case consider the spectrum of the full transfer operator as well
-as the transfer operator restricted to the sector that is diagonal in particle
-number and thus encodes correlations of operators $\mathcal{O}_i$ that do not
-change the boson number (such as density-density correlations).
-We find that in each case, the largest eigenvalue of the transfer operator is
-non-degenerate. Furthermore, we find
-that the correlation length approaches a finite constant as we
-increase $L$, as shown in Figure \ref{fig:TMS}.
-
-This 1D correlation length bounds all correlations stretching along
-the cylinder, but it is possible that placing the state on a cylinder
-- which explicitly breaks the rotational symmetry of the honeycomb
-lattice - leads to anisotropic correlations, even in the large $L$
-limit. By looking at explicit short-distance correlation functions
-$\ev{b_i^{\dagger} b_j}$ and $\ev{n_i n_j}$, we see that instead the
-rotational symmetry is restored in the large $L$ limit. Our maximum
-cylinder circumference $L=10$ is several times larger than the
-measured correlation length $\xi \approx 3.2$.
+diverges as $W \rightarrow \infty$; we will thus need to carefully consider the scaling
+of $\xi(W)$.
 
 \begin{figure}[hbtc]
 	\centering
@@ -65,14 +62,12 @@ measured correlation length $\xi \approx 3.2$.
 	\label{fig:TMS}
 \end{figure}
 
-\begin{figure}[hbtc]
-	\centering
-	\includegraphics[width=\columnwidth]{ShortDistanceCorrelations_SCB_L8.pdf}
-	\vskip-5ex 
-	\caption{\brayden{Get other half of data!}
-	 Short distance correlation functions $\ev{b_0^{\dagger} b_x}$ (on the left)
-	 and $\ev{(n_0-\frac12)(n_x-\frac12)}$ (on the right).
-	 The magnitude of the correlation function at site $x$ is proportional to
-	 the area of the corresponding circle.}
-	\label{fig:ShortCorr}
-\end{figure}
+Our results for the correlation bounds $\xi(L)$ are shown in Fig.~\ref{fig:TMS}.
+Here, we show the upper bound for the case of soft-core and hard-core bosons,
+and in each case consider the spectrum of the full transfer operator as well
+as $S^z=0$ sector, which encodes correlations of operators $\mathcal{O}_i$ that do not
+change the boson number (such as density-density correlations).
+We find that in each case, the largest eigenvalue of the transfer operator is
+non-degenerate. Furthermore, we find
+that the correlation length approaches a finite constant as we
+increase $L$, as shown in Figure \ref{fig:TMS}.
