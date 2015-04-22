@@ -3,7 +3,6 @@
 \section{Introduction}
 
 \bela{This is pretty clich\'{e} right now. It's also missing all references.}
-
 Recent years have seen the proliferation of phases that defy a description
 within the well-known framework of local order parameters. These phases are
 not characterized by a local order parameter, but rather by more subtle,
@@ -34,10 +33,10 @@ This construction,
 henceforth dubbed the honeycomb featureless boson insulator (HFBI),
 will be discussed in detail in Section~\ref{sec:fbi}. Ref.~\onlinecite{kimchi2013} gave strong numerical evidence that this wavefunction is indeed featureless by showing that it has isotropic and exponentially decaying correlations.
 
-Beyond showing that the construction gives a featureless state, we also want to argue that it lies in a distinct symmetry protected topological (SPT) phase, separate from other states on the honeycomb lattice that preserve charge and lattice symmetries. 
-Instead of local order parameters, SPT phases are distinguished by features that appear at phase boundaries, such as a gapless edge spectrum, and by entanglement properties of the groundstate wavefunction, such as a gapless entanglement edge spectrum or topological invariants.
-These properties have been previously used to identify SPTs with on-site symmetries, such as free or interacting topological insulators, as well as free fermion topological crystalline insulators (TCIs) which are protected by lattice symmetries. Newer works have also analyzed the effect of weak interactions on free fermion TCIs. \brayden{cite Teo/Hughes}
-The novelty in this state is that it combines lattice symmetries and strong interactions, i.e. it is a topological crystalline insulator with no free-fermion counterpart.
+%Beyond showing that the construction gives a featureless state, we also want to argue that it lies in a distinct symmetry protected topological (SPT) phase, separate from other states on the honeycomb lattice that preserve charge and lattice symmetries. 
+%Instead of local order parameters, SPT phases are distinguished by features that appear at phase boundaries, such as a gapless edge spectrum, and by entanglement properties of the groundstate wavefunction, such as a gapless entanglement edge spectrum or topological invariants.
+%These properties have been previously used to identify SPTs with on-site symmetries, such as free or interacting topological insulators, as well as free fermion topological crystalline insulators (TCIs) which are protected by lattice symmetries. Newer works have also analyzed the effect of weak interactions on free fermion TCIs. \brayden{cite Teo/Hughes}
+%The novelty in this state is that it combines lattice symmetries and strong interactions, i.e. it is a topological crystalline insulator with no free-fermion counterpart.
 
 The main focus of this paper will be on the edge properties of the HFBI.
 In particular, we will find that while the state is featureless in the bulk, it
@@ -51,19 +50,19 @@ degeneracy throughout the entanglement spectrum for certain geometries, and
 give a robust explanation for this degeneracy that survives perturbations that 
 respect the protecting symmetry.
 
-A simpler way to classify an SPT phase beyond edge spectra is by using 
-topological invariants, which are numbers that can be computed from the bulk 
-wavefunction that provably must be constant throughout the phase. These 
-invariants measure how the action of the symmetry is implemented on the 
-physical edge states of open systems or on the Schmidt states of an 
-entanglement decomposition. These invariants feature heavily in the 
-classification of SPT phases with on-site symmetry, and similar invariants 
-that apply to free-fermion states have been used for topological crystaline 
-insulators. By contrast, topological invariants for interacting states 
-protected by lattice symmetries in more than one dimension aren't well 
-understood. We will discuss the action of the symmetry on the edge of the HFBI 
-state and progress towards the goal of finding a topological invariant to 
-identify the corresponding phase.
+%A simpler way to classify an SPT phase beyond edge spectra is by using 
+%topological invariants, which are numbers that can be computed from the bulk 
+%wavefunction that provably must be constant throughout the phase. These 
+%invariants measure how the action of the symmetry is implemented on the 
+%physical edge states of open systems or on the Schmidt states of an 
+%entanglement decomposition. These invariants feature heavily in the 
+%classification of SPT phases with on-site symmetry, and similar invariants 
+%that apply to free-fermion states have been used for topological crystaline 
+%insulators. By contrast, topological invariants for interacting states 
+%protected by lattice symmetries in more than one dimension aren't well 
+%understood. We will discuss the action of the symmetry on the edge of the HFBI 
+%state and progress towards the goal of finding a topological invariant to 
+%identify the corresponding phase.
 
 All of these calculations are performed in a framework of tensor network states.
 The simplest example of a tensor network for a 1D system is a matrix
@@ -77,5 +76,5 @@ PEPS are the generalization of MPS to two and higher dimensions, where
 each site in the system is represented by a rank $z+1$ tensor, where
 $z$ is the coordination number of the lattice, and wavefunction
 coefficients are similarly given by contracting over all virtual
-indices as shown in Figure \ref{fig:PEPS}.\cite{verstraete2004}
-The PEPS representation is helpful for computing the properties of 2D wavefunctions; however, unlike MPS, the lack of a canonical form for PEPS limits the ability to tractably compute Schmidt decompositions for arbitary geometries. This paper will mainly use quasi-1D cylindrical geometries, where  MPS techniques and translational symmetry make computations for large systems tractable.
+indices as shown in Figure~\ref{fig:PEPS}.\cite{verstraete2004}
+The PEPS representation is helpful for computing the properties of 2D wavefunctions; however, unlike MPS, the lack of a canonical form for PEPS limits the ability to tractably compute Schmidt decompositions for arbitary geometries. This paper will mainly use quasi-1D cylindrical geometries, where  MPS techniques combined with translational symmetry make computations for large systems tractable.

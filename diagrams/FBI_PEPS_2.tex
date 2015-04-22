@@ -21,6 +21,28 @@
       black,
       fill=white,
       draw}}
+      
+        \tikzset{tri/.style={
+      regular polygon,
+      regular polygon sides=3,
+      minimum size=15mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=30,
+      fill=green!50,
+      fill opacity = 0.5,
+      draw=none}}
+      
+            \tikzset{tri2/.style={
+      regular polygon,
+      regular polygon sides=3,
+      minimum size=15mm,
+      inner sep=0mm,
+      outer sep=0mm,
+      rotate=90,
+      fill=red!50,
+      fill opacity = 0.5,
+      draw=none}}
  
       \tikzset{
     abox/.style={
@@ -43,7 +65,7 @@
 	minimum size=3mm,
       inner sep=0mm,
       outer sep=0mm,
-      rotate=0,
+      rotate=30,
       % dotted,
       very thick,
       blue,
@@ -58,42 +80,70 @@
 	inner sep=2pt}}
 
 \tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
+\tikzset{smallbdot/.style={circle=1pt,draw=blue!100, thick, fill=blue!30,inner sep=1pt}}
 \tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=blue!30,inner sep=1pt}}
 
-\foreach \i in {-2,...,2}{
+\foreach \i in {-1,...,2}{
 	\foreach \j in {-2, ...,  2} {
 		\pgfmathtruncatemacro{\x}{2*\i+1}
 		\pgfmathtruncatemacro{\y}{2*\j+1}
              \node[box] (H\x\y) at (\x,\y) {};
              \node[abox](Q\x\y) at (\x,\y){};
-           \foreach \k in {1,...,6}{
+             }
+             }
+             
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-2,...,2} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+             \node[box] (H\x\y) at (\x,\y) {};
+             \node[abox](Q\x\y) at (\x,\y){};
+             }
+             }
+
+
+\node[tri] at (H00.corner 3){};
+\node[tri2] at (H00.corner 4){};
+
+
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-2, ...,  2} {
+		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+             \foreach \k in {1,...,6}{
+           		\ifnum \k = 5
+           		\node[smallbdot] (A\x\y\k) at (Q\x\y.corner \k) {};
+           		\else
            		\node[smalldot] (A\x\y\k) at (Q\x\y.corner \k) {};
+           		\fi
            		 \draw[thick, postaction={decorate}] (A\x\y\k) -- (H\x\y.corner \k);
               	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
-              	 \node[black] at (H\x\y.corner \k){\tiny D};
+              	 \node[black] at (H\x\y.corner \k){\tiny $D$};
               	}
             \foreach \k in {1,2,3,5}{
 		\pgfmathtruncatemacro{\z}{\k+1}
             \draw[thick, postaction={decorate}] (A\x\y\k) -- (A\x\y\z);
              }
              \draw[thick, postaction={decorate}] (A\x\y6) -- (A\x\y1);
-              \node[smallwdot] (B\x\y) at (\x,\y-0.1) {\tiny 1};
- 		\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
+             % \node[smallwdot] (B\x\y) at (\x,\y-0.1) {\tiny 1};
+ 		%\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
         }
 }
 
-\foreach \i in {-2,...,2}{
+\foreach \i in {-1,...,2}{
 	\foreach \j in {-2,...,2} {
 		\pgfmathtruncatemacro{\x}{2*\i}
 		\pgfmathtruncatemacro{\y}{2*\j}
-             \node[box] (H\x\y) at (\x,\y) {};
-             \node[abox](Q\x\y) at (\x,\y){};
-
+           
               \foreach \k in {1,...,6}{
-              	\node[smalldot] (A\x\y\k) at (Q\x\y.corner \k) {};
+              	\ifnum \k = 5
+           		\node[smallbdot] (A\x\y\k) at (Q\x\y.corner \k) {};
+           		\else
+           		\node[smalldot] (A\x\y\k) at (Q\x\y.corner \k) {};
+           		\fi
               	 \draw[thick, postaction={decorate}] (A\x\y\k) -- (H\x\y.corner \k);
               	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
-              	\node[black] at (H\x\y.corner \k){\tiny D};
+              	\node[black] at (H\x\y.corner \k){\tiny $D$};
              	}
              	\foreach \k in {1,2,3,5}{
 		\pgfmathtruncatemacro{\z}{\k+1}
@@ -102,12 +152,10 @@
              
              \draw[thick, postaction={decorate}] (A\x\y6) -- (A\x\y1);
               \draw[thick, postaction={decorate}] (A\x\y6) -- (A\x\y1);
-              \node[smallwdot] (B\x\y) at (\x,\y-0.1) {\tiny 1};
- 		\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
+            %  \node[smallwdot] (B\x\y) at (\x,\y-0.1) {\tiny 1};
+ 	      % 	\draw[thick, postaction={decorate}]  (B\x\y)--(A\x\y5);
         }
 }
-
-
  
  \end{scope}
 

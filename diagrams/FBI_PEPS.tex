@@ -14,7 +14,7 @@
       outer sep=0mm,
       rotate=0,
       dotted,
-      thin,
+      thick,
       black,
       fill=white,
       draw}}
@@ -27,7 +27,7 @@
       rotate=0,
       % dotted,
       very thick,
-      blue,
+      blue!30,
       fill=blue!30,
       draw}}
       
@@ -35,12 +35,13 @@
 	circle=1pt,
 	draw=orange!100, 
 	very thick,
-	fill=orange!80,
+	fill=orange,
 	inner sep=2pt}}
 
+\pgfmathsetmacro{\shift}{2}
 
-\foreach \i in {-2,...,2}{
-	\foreach \j in {-2, ...,  2} {
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-1, ...,  1} {
 		\pgfmathtruncatemacro{\x}{2*\i+1}
 		\pgfmathtruncatemacro{\y}{2*\j+1}
              \node[box] (H\x\y) at (\x,\y) {};
@@ -48,23 +49,25 @@
            \foreach \k in {1,...,6}{
               	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
               	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
-              	 \node[black] at (H\x\y.corner \k){\tiny D};
+              	 %\node[black] at (H\x\y.corner \k){\tiny D};
+              	 %\draw[red] ([yshift=\shift] D\x\y\k.north) -- ([yshift=\shift] D\x\y\k.center);
               	}
-             \node[black] at (\x, \y) {\tiny W};
+             \node[black] at (\x, \y) {\tiny $W$};
         }
 }
 
-\foreach \i in {-2,...,2}{
-	\foreach \j in {-2,...,2} {
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-1,...,2} {
 		\pgfmathtruncatemacro{\x}{2*\i}
 		\pgfmathtruncatemacro{\y}{2*\j}
              \node[box] (H\x\y) at (\x,\y) {};
              \node[wb] (W\x\y) at (\x,\y) {};
-             \node[black] at (\x, \y) {\tiny W};
+             \node[black] at (\x, \y) {\tiny $W$};
               \foreach \k in {1,...,6}{
               	\node[operator] (D\x\y\k) at (H\x\y.corner \k) {};
               	\draw[ thick, black] (W\x\y) -- (D\x\y\k);
-              	\node[black] at (H\x\y.corner \k){\tiny D};
+              	\node[black] at (H\x\y.corner \k){\tiny $D$};
+              	 \draw[red] ([yshift=\shift] D\x\y\k.north) -- ([yshift=\shift] D\x\y\k.center);
              	}
         }
 }

@@ -13,7 +13,7 @@
       outer sep=0mm,
       rotate=0,
      dotted,
-     thin,
+     thick,
       black,
       draw
     }
@@ -43,12 +43,13 @@
       outer sep=0mm,
       rotate=0,
      very thick,
-     blue,
+     blue!30,
       draw,
       fill=blue!30
     }
   }
 \tikzset{smalldot/.style={circle=1pt,draw=black!100,fill=black!100,inner sep=1pt}}
+\tikzset{smallbdot/.style={circle=1pt,draw=blue!100, thick, fill=blue!30,inner sep=1pt}}
 \tikzset{smallwdot/.style={circle=1pt, very thick, draw=blue!100,fill=blue!30,inner sep=1pt}}
 
  \node[box] (H) at (0, 0) {};
@@ -66,9 +67,10 @@
  \node[box] (H3) at (3, 0) {};
  \node[abox] (H2) at (3, 0) {};
  %\node[wb] (W) at (3,0) {\tiny W};
-\foreach \k in {1, ..., 6}{
+\foreach \k in {1, 2, 3, 4, 6}{
              \node[smalldot] (A\k) at (H2.corner \k) {};
              }
+             \node[smallbdot] (A5) at (H2.corner 5) {};
 
 \foreach \k in {1,2,3,5}{
 		\pgfmathtruncatemacro{\j}{\k+1}
@@ -80,8 +82,8 @@
             \draw[thick, postaction={decorate}] (A\k) -- (H3.corner \k);
              }
              
- \node[smallwdot](B) at (3, 0) {\tiny 1};
- \draw[thick, postaction={decorate}]  (B)--(A5);
+ %\node[smallwdot](B) at (3, 0) {\tiny 1};
+ %\draw[thick, postaction={decorate}]  (B)--(A5);
 
 \end{scope}
 \end{tikzpicture}

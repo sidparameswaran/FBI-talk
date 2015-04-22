@@ -4,7 +4,7 @@
 %http://tex.stackexchange.com/questions/6019/drawing-hexagons
 \begin{tikzpicture}[x=7.5mm,y=4.33mm]
 
-\clip (-3, -2.4) rectangle (3, 3.6);
+\clip (-2, -2.4) rectangle (4, 3.6);
 
   \tikzset{box/.style={
       regular polygon,
@@ -33,8 +33,8 @@
 	inner sep=2pt}}
 
 
-\foreach \i in {-2,...,2}{
-	\foreach \j in {-2, ...,  2} {
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-1, ...,  1} {
 		\pgfmathtruncatemacro{\x}{2*\i+1}
 		\pgfmathtruncatemacro{\y}{2*\j+1}
 	       \pgfmathtruncatemacro{\z}{2*\i}
@@ -43,23 +43,32 @@
              \node[box] (H\z\w) at (\z,\w) {};
         }
 }
-\foreach \i in {-2,...,2}{
-	\foreach \j in {-2, ...,  2} {
+
+\draw[thick, dotted, green] (0, -2.55) -- (0, 3.6);
+\draw[thick, dotted, green] (1, -2.63) -- (1, 3.6);
+
+
+\pgfmathsetmacro{\shift}{2}
+
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-1, ...,  1} {
 		\pgfmathtruncatemacro{\x}{2*\i+1}
 		\pgfmathtruncatemacro{\y}{2*\j+1}
        	\foreach \k in {1, 3, 5}{
               	\node[operatorA] (D\x\y\k) at (H\x\y.corner \k) {};
-              	 \node[black] at (H\x\y.corner \k){\tiny B};
+              	 \node[black](Q\x\y\k) at (H\x\y.corner \k){\tiny A};
+              	\draw[red] ([yshift=\shift] Q\x\y\k.north) -- ([yshift=\shift] Q\x\y\k.center);
               	}
             \foreach \k in {2,4,6}{
-             	\node[operatorA] (D\x\y\k) at (H\x\y.corner \k) {};
-              	 \node[black] at (H\x\y.corner \k){\tiny A};
+             		\node[operatorA] (D\x\y\k) at (H\x\y.corner \k) {};
+              	 \node[black](Q\x\y\k) at (H\x\y.corner \k){\tiny B};
+              	\draw[red] ([yshift=\shift] Q\x\y\k.north) -- ([yshift=\shift]Q\x\y\k.center);
               	}
  }
  }
 
 
-\draw[very thick, red] (0, -3) -- (0, 4);
+%\draw[very thick, red] (0, -3) -- (0, 4);
 \draw[thick, dotted, black] (-3, -2.4) -- (3, -2.4);
 \draw[thick, dotted, black] (-3, 3.6) -- (3, 3.6);
 
