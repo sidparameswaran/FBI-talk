@@ -16,8 +16,8 @@
       inner sep=0mm,
       outer sep=0mm,
       rotate=0,
-     % dotted,
-      thin,
+      dotted,
+      very thick,
       black,
       fill=white,
       draw}}
@@ -30,7 +30,7 @@
       outer sep=0mm,
       rotate=30,
       fill=green!50,
-      fill opacity = 0.5,
+      fill opacity = 0.6,
       draw=none}}
       
             \tikzset{tri2/.style={
@@ -41,7 +41,7 @@
       outer sep=0mm,
       rotate=90,
       fill=red!50,
-      fill opacity = 0.5,
+      fill opacity = 0.6,
       draw=none}}
  
       \tikzset{
@@ -101,9 +101,18 @@
              }
              }
 
-
-\node[tri] at (H00.corner 3){};
-\node[tri2] at (H00.corner 4){};
+\foreach \i in {-1,...,2}{
+	\foreach \j in {-2,...,2} {
+		\pgfmathtruncatemacro{\x}{2*\i}
+		\pgfmathtruncatemacro{\y}{2*\j}
+		\node[tri] at (H\x\y.corner 3){};
+		\node[tri2] at (H\x\y.corner 4){};
+		\pgfmathtruncatemacro{\x}{2*\i+1}
+		\pgfmathtruncatemacro{\y}{2*\j+1}
+		\node[tri] at (H\x\y.corner 3){};
+		\node[tri2] at (H\x\y.corner 4){};
+	}
+}
 
 
 \foreach \i in {-1,...,2}{
