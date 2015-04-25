@@ -14,15 +14,15 @@ given width.
 
 \begin{figure}[hbtc]
 	\centering
-	\includegraphics[width=\columnwidth]{ShortDistanceCorrelations_SCB_L8.pdf}
+	\includegraphics[width=\columnwidth]{ShortDistanceCorrelations_SCB_L5.pdf}
 	\vskip-5ex
 	\caption{
-	 Short distance correlation functions $\ev{b_0^{\dagger} b_x}$ (on the left)
-	 and $\ev{(n_0-\frac12)(n_x-\frac12)}$ (on the right) for the soft-core HFBI
-	 on the $W=8$ cylinder.
+	 Short distance correlation functions $\ev{b_0^{\dagger} b_x}$ (left panel)
+	 and $\ev{(n_0-\frac12)(n_x-\frac12)}$ (right panel) for the soft-core HFBI
+	 on the $W=5$ cylinder.
 	 The magnitude of the correlation function at site $x$ is proportional to
 	 the area of the corresponding circle.
-	 \brayden{Get other half of data!}
+	 \brayden{Larger system size coming soon}
 	 }
 	\label{fig:ShortCorr}
 \end{figure} 
@@ -37,18 +37,18 @@ the short-range correlations for distances up to half of the cylinder circumfere
 appear unaffected by this.
 
 It is a well-known result that PEPS can, in the thermodynamic limit,
-exhibit power-law correlation functions~\cite{?}, while the correlation
+exhibit power-law correlation functions~\cite{verstraete2006}, while the correlation
 functions in an MPS of finite bond dimension decay exponentially. The
 long-range correlations of an MPS are encoded in its transfer operator $T$,
 which for an MPS of bond dimension $M$ is a matrix of size $M^2 \times M^2$.
-Denoting the spectrum of $T$ as $\lambda_i$, $|\lambda_0| \geq |\lambda_1| > \ldots$,
+Denoting the spectrum of $T$ as $\lambda_i$ with $|\lambda_0| \geq |\lambda_1| \geq \ldots$,
 we can normalize the state such that $\lambda_0 = 1$. If the largest eigenvalue
 is found to be non-degenerate, $\lambda_1 < \lambda_0$, we have that all correlation
 functions of operators $\mathcal{O}_i$ that are supported on a finite number of sites centered
 around a site $i$ decay as
 $\langle \mathcal{O}_i \mathcal{O}_j \rangle - \langle \mathcal{O}_i \rangle \langle \mathcal{O}_j \rangle \sim e^{-|i-j|/\xi_\mathcal{O}}$.
 Crucially, the correlation length $\xi_\mathcal{O}$ for any operator $\mathcal{O}$
-is bounded from above by $-\log(\lambda_1)$~\cite{?}. In the following, we thus
+is bounded from above by $-1/\log |\lambda_1|$~\cite{schollwock2005}. In the following, we thus
 evaluate the spectrum of the transfer operator of our PEPS along cylinders of varying
 circumference $W$ to establish an upper bound on the correlation length for each
 circumference $\xi(W)$.
@@ -60,11 +60,16 @@ of $\xi(W)$.
 \begin{figure}[hbtc]
 	\centering
 	\includegraphics[width=\columnwidth]{CorrelationBounds.pdf}
-	\caption{Placeholder for plots showing correlation bounds.}
+	\vskip-2em
+	\caption{Bound on the correlation length of all operators and $U(1)$ symmetric operators
+	 respectively for the soft-core and hard-core states vs. cylinder circumference $W$.
+	 These bounds can be confirmed to match the correlation lengths of 
+	 $\ev{b^{\dagger}_x b_y}$ and $\ev{n_x n_y}$ in each case.
+	\brayden{More data points and fit coming soon. The symmetric correlation eigenvalue has a phase for both hard-core and soft-core for $W \le 3$, resulting in oscillatory behavior for the density-density correlations.}}
 	\label{fig:TMS}
 \end{figure}
 
-Our results for the correlation bounds $\xi(L)$ are shown in Fig.~\ref{fig:TMS}.
+Our results for the correlation bounds $\xi(W)$ are shown in Fig.~\ref{fig:TMS}.
 Here, we show the upper bound for the case of soft-core and hard-core bosons,
 and in each case consider the spectrum of the full transfer operator as well
 as $S^z=0$ sector, which encodes correlations of operators $\mathcal{O}_i$ that do not
@@ -72,4 +77,4 @@ change the boson number (such as density-density correlations).
 We find that in each case, the largest eigenvalue of the transfer operator is
 non-degenerate. Furthermore, we find
 that the correlation length approaches a finite constant as we
-increase $L$, as shown in Figure \ref{fig:TMS}.
+increase $W$, as shown in Figure \ref{fig:TMS}.

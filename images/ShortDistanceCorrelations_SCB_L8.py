@@ -30,7 +30,7 @@ hexradius1 = 4.2
 hexradius2 = 3.5
 
 
-IO.go_to_data_parent('hardcoreboson', parent='Data//FBI-TM')
+IO.go_to_data_parent('softcoreboson', parent='Data//FBI-TM')
 params = IO.Params.kw('LKN', L=[L], K=[0], N=[0])
 param = next(iter(params))
 corrmap, corrmap_string = plot.load_combined_corrmap(param, ('bdag', 'b'))
@@ -56,5 +56,5 @@ cbar2 = plt.colorbar(p2, cax=cax2, ticks=MultipleLocator(0.05), format="%.2f")
 #plt.xlim(xmax=4)
 plt.tight_layout()
 plt.subplots_adjust(#left=-0.03, bottom=0, right=0.9, top=1.2,
-                    wspace=0.15, hspace=0)
+                    wspace=0.25, hspace=0)
 plt.show()

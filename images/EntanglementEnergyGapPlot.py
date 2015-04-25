@@ -80,7 +80,7 @@ def try_fit(xdata, ydata, func, color, weights, extrap_range, txt_coords, txt_fu
 fig = plt.plot()
 ax = plt.gca()
 colors = ['b', 'g', 'r', 'k', 'c']
-plt.xlabel(r'$\frac{1}{L}$')
+plt.xlabel(r'$\frac{1}{W}$')
 plt.ylabel('Entanglement Energy')
 ax.set_xticks([0]+[1/L for L in xrange(4, 12, 2)])
 ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, pos: r'$\frac{1}{'+str(int(round(1/x)))+'}$' if x>0 else r'$\frac{1}{\infty}$'))
