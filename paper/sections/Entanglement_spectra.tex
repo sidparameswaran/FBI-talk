@@ -8,30 +8,57 @@
 
 The quasi-1D cylinder geometry is convenient for calculating the
 entanglement spectrum for entanglement cuts transverse to the long direction of the
-cylinder. Here, the entanglement spectrum $\epsilon_i$ is defined through the spectrum
-$\rho_i$ of the reduced density matrix $\rho$ obtained for a bipartition of the state,
-where we have $\epsilon_i = -\log \rho_i$.
-The eigenvectors of the reduced density matrix are referred to as Schmidt
-states.
+cylinder. Here, the entanglement spectrum $\varepsilon_i$ is defined through the spectrum
+$\rho_i$ of the reduced density matrices $\rho_{L/R}$ obtained for a bipartition of the state,
+where we have $\varepsilon_i = -\log \rho_i$.
+The corresponding eigenvectors of the reduced density matrices
+are referred to as Schmidt states $\ket{\psi^{(i)}_{L/R}}$. 
+The relation 
+\beq
+\ket{\psi} = \sum\limits_i \sqrt{\rho_i}
+\ket{\psi^{(i)}_{L}}\ket{\psi^{(i)}_{R}},
+\label{eq:schmidt}
+\eeq
+known as the Schmidt decomposition \cite{Schmidt?},
+relates the Schmidt states to the original wavefunction and is useful to keep in mind
+when interpreting the entanglement spectrum.
 
-In the setup given here, we have an exact representation of the ground state as a PEPS of
-fixed bond dimension, which implies an exact upper bound on the number of non-zero eigenvalues.
-For the cut shown in Fig.~\ref{fig:FBI_PEPS}, the number of non-zero terms is $\chi=2^W$.
-To extract the entanglement spectrum exactly, we use a method proposed in Ref.~\onlinecite{cirac2011}.
-With each cylinder slice blocked together and considered as an MPS, the procedure for
-computing the entanglement spectrum is identical to those used for MPS; it may however be
-computationally advantageous to exploit the additional structure present in the PEPS transfer
-operator. Nevertheless, the numerically exact approach we choose scales exponentially
-in the circumference of the cylinder.
+To extract the entanglement spectrum exactly,
+we use a method proposed in Ref.~\onlinecite{cirac2011}.
+In the setup given here, the exact representation of the HFBI state as a PEPS of
+fixed bond dimension implies an upper bound on the number of non-zero $\rho_i$; 
+for the cut shown in Fig.~\ref{fig:FBI_PEPS_2}, this upper bound is $\chi=2^W$.
 
-In the geometry chosen, the momentum around the cylinder (transverse momentum) acts
-locally on a cylinder slice. We can thus block-diagonalize the reduced density matrix
-for a half-infinite cylinder in both the particle number (U(1) charge) as well as transverse momentum
-quantum numbers, allowing us to perform more efficient calculations as well as assigning
-the corresponding quantum numbers to both the Schmidt states as well as the entanglement
-spectrum. Here, to define a quantum
-number for each Schmidt state that remains finite in the thermodynamic limit,
-we are subtracting one fiducial background charge per unit cell.
+Upon computation of the entanglement spectrum, we find that this bound is saturated,
+so that there are precisely $2^W$ contributing terms in Eq.~\ref{eq:schmidt}.
+This fact can be simply understood without reference to the PEPS representation. 
+Each of the $w$ plaquettes on the cut can contribute its one boson either to the left
+or the right of the cut, and this is the complete source of the uncertainty
+of the state on one half of the cut when ignoring the state on the other half.
+
+We can construct a basis of states $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ that 
+correspond to the state on the left half of the cylinder when the $i^{th}$ plaquette
+contributes $\sigma_i \in {0, 1}$ bosons to the left half of the cylinder. 
+These states are not orthogonal, but they are linearly independent and span the same
+space as the Schmidt states $\ket{\psi^{(i)}_{L}}$.
+These states are precisely the states you would get by contracting the PEPS in
+Fig.~\ref{fig:FBI_PEPS_2} on the left half of the cylinder with fixed values
+$\sigma_i$ for the $W$ virtual bonds at the boundary.
+
+Translation around the cylinder acts in the natural way on the states 
+$\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ by permuting the values of 
+$\sigma_i$, $\sigma_i \to \sigma_{i+1}$. 
+Although the boson number on the half-infinite cylinder is infinite,
+each basis element has a well-defined relative $U(1)$ charge (boson number)
+$Q = \sum_i \sigma_i - L/2$ that measures the fluctuation of charge across the cut. 
+By convention, we subtract the $L/2$ so that the average charge fluctuation
+satisfies $\ev{Q} = 0$.
+
+We can thus block-diagonalize the reduced density matrix
+for a half-infinite cylinder in both the U(1) charge and transverse momentum
+quantum numbers, allowing us to perform more efficient calculations
+as well as assign quantum numbers to both the Schmidt states and the entanglement
+spectrum. 
 
 % This seems overly complicated.
 %As shown in \cite{perezgarcia2008}, a translationally invariant MPS can be
@@ -104,14 +131,16 @@ Our results are shown in Fig.~\ref{fig:TopologicalEE}. We find results that are 
 with $S_0 = 0$ -- and since we also find that the transfer matrix is nondegenerate,
 it is unlikely that our state is topologically ordered.
 
-
-\subsection{Identification of edge CFT}
+\subsection{Conformal field theory description of the edge}
 \label{sec:CFT}
 
+In addition to the gapless behavior, we find that low energy entanglement spectrum
+can be completely described by the finite-size spectrum of a CFT. 
 Given the $U(1)$ symmetry of the state, the simplest possible
 conformal field theory we might expect to appear at the edge is that
-of a single free bosonic field.
-Let's briefly review the relevant properties of this CFT.\cite{diFrancesco}
+of a single free bosonic field - and indeed, this is the CFT that matches the 
+entanglement spectrum.
+Let's briefly review the relevant properties of this CFT.\cite{difrancesco}
 
 The free-boson CFT is created from the Lagrangian
 $$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx (\partial_t \phi)^2 - (\partial_x \phi)^2$$
@@ -119,7 +148,11 @@ with the compactified field identification
 $$ \phi \equiv \phi + 2\pi R$$
 and placed on the circle of circumference $L$ with periodic boundary conditions
 $$ \phi(x) \equiv \phi(x+L).$$
-% \, \eta=\pm 1.$$
+
+%The periodic boundary conditions in conjuction with the compactified field
+%result in the condition 
+%$$ \phi(x+L) = \phi(x)+ 2\pi R m$$
+%for the real valued field $\phi$, where the integer $m$ is a winding number for $\phi$.
 
 
 After canonical quantization, it is found that the set of energy
@@ -136,16 +169,15 @@ $Z(n)$ is the number of partitions of the integer $n$.
 For more details on these states, see Appendix \ref{Appendix:CFT}.
 
 The energies and momenta for the states $\ket{e, m; n, \bar{n}}$ are given below
-on a system of circumference $L$, with periodic boundary conditions if $\eta=1$
-or anti-periodic boundary conditions if $\eta=-1$.
+on a finite size system of circumference $W$.
 The energies depends only on the combination $\kappa = \pi g R^2$,
 known as the Luttinger parameter of the system. \cite{giamarchi}
 
 \begin{align*}
-	\mathbf{P} =\frac{2\pi}{L} s + \pi \frac{1-\eta}{2}
-	= \frac{2\pi}{L}(em + n - \bar{n})+ \pi \frac{1-\eta}{2}&  \\
-	\mathbf{H} = \frac{2\pi}{L}\Delta
-	= \frac{2\pi}{L}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n})& %\\
+	\mathbf{P} =\frac{2\pi}{W} s
+	= \frac{2\pi}{W}(em + n - \bar{n})&  \\
+	\mathbf{H} = \frac{2\pi}{W}\Delta
+	= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n})& %\\
 \end{align*}
 
 The momenta and energies of these eigenstates are given are related to the conformal
@@ -182,20 +214,22 @@ charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pat
 
 However, the states with non-zero winding number $m$, such as $\ket{0, \pm 1}$, do not appear at
 the energy and momentum predicted by the above formula. Instead, the primary states $\ket{e, m=\pm
-1}$ can be found centered around momentum $K=\pi$. The same effect is seen in the critical 1D XXZ
-spin chain, where one can derive the relation $\eta = (-1)^m$ - that is, the spectrum consists of a combination of states from the periodic boson CFT with even $m$ and states from the anti-periodic boson CFT and odd $m$. The states are shown identified in the spectrum in Figure~\ref{fig:EEIdentifyPi}
-
+1}$ can be found centered around momentum $K=\pi$. The states are shown identified in the 
+spectrum. in Figure~\ref{fig:EEIdentifyPi}. Although the larger $m$ states are too high in energy 
+to be reliably distinguished at this system size, a natural conjecture is that all primaries with 
+odd $m$ will appear around momentum $\pi$.
 
 \begin{figure}[htbc]
 	\centering
 	\includegraphics[width=\columnwidth]{EEIdentifyPi.pdf}
 		\vskip-3ex
-	\caption{The identification of primary states $\ket{e, m=\pm1}$ and first descendants in the low energy part of the spectrum near momentum $\pi$. Unlike the $m=0$ states shown in Figure~\ref{fig:EEIdentify}, these primary states have shifted momentum $K = \pi + em (2\pi/L)$ and an extra double degeneracy due to the two values of $m=\pm1$. Using the estimate $\kappa \approx 1.6$ from Figure~\ref{fig:EEIdentify}, the predicted value of the entanglement energy for the $\ket{e=0, m=\pm1}$ states is $4\kappa^2$, which has been marked in the plot. The agreement is very good. \brayden{j, jbar switched on arrows}}
+	\caption{The identification of primary states $\ket{e, m=\pm1}$ and first descendants in the low energy part of the spectrum near momentum $\pi$. Unlike the $m=0$ states shown in Figure~\ref{fig:EEIdentify}, these primary states have shifted momentum $K = \pi + em (2\pi/L)$ and an extra double degeneracy due to the two values of $m=\pm1$. Using the estimate $\kappa \approx 1.6$ from Figure~\ref{fig:EEIdentify}, the predicted value of the entanglement energy for the $\ket{e=0, m=\pm1}$ states is $4\kappa^2$, which has been marked in the plot. The agreement is very good. \brayden{j, jbar switched on arrows, also maybe just simplify this}}
 	\label{fig:EEIdentifyPi}
 \end{figure}
 
-We can also take the lowest-lying Schmidt state, interpret it as the
-ground state of a 1d Hamiltonian, and consider its entanglement.
+Since we have the local basis $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ of $2^W$ states with charges matching those of a spin $\frac12$ chain of length $W$, it is tempting to think of the entanglement Hamiltonian as a critical theory on a spin $\frac12$ chain of length $W$. This analogy cannot be exact, because this basis of states is not orthonormal. Still, we find that the coefficients $u^{(0)}_{\{\sigma_i\}}$ of this state in the local basis
+$$\ket{\psi_L^{(0)}} = \sum\limits_{\{\sigma_i\}} u^{(0)}_{(\sigma_1, \ldots, \sigma_W)} \ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$$
+have entanglement properties similar to a critical 1D ground state wavefunction with central charge $c=1$. This result is shown in Fig.~\ref{fig:EdgeGS_EE}.
 
 \begin{figure}[htbc]
 	\centering

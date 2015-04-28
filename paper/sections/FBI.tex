@@ -125,15 +125,21 @@ wavefunction is $U(1)$ invariant with charge $1$ per plaquette.
 	}
 	\subfigure[PEPS tensor network for F.B.I. state]{%
 		\includegraphics[width=0.8\columnwidth]{FBI_PEPS_2.pdf}
-		\label{fig:FBI_PEPS_2A}
+		\label{fig:FBI_PEPS_2}
 	}
-\caption{Tensors used to put the F.B.I. tensor network in PEPS form. }
-\label{fig:FBI_PEPS_2}
+\label{fig:PEPSforFBI}
+\caption{Construction of PEPS for HFBI state. 
+The site tensors (shown in the shaded regions of panel (c)) are constructed
+using the factors of the plaquette tensor $W$ (panel (b))
+combined with the original vertex tensor $D$ (panel (a)).
+The red line in panel (c) shows where the entanglement cut considered in this paper
+crosses the network. \brayden{put in red line}
+}
 \end{figure}
 
 In order to convert the tensor network of Fig.~\ref{fig:FBI_PEPS} into a PEPS representation,
 we first factor the $W$-tensor into a matrix-product state
-of six tensors as shown in panel (b) of Fig.~\ref{fig:FBI_PEPS_2}. We
+of six tensors as shown in panel (b) of Fig.~\ref{fig:PEPSforFBI}. We
 choose a form of the MPS that breaks the rotational symmetry
 of the W-state (which appears as translational symmetry of the MPS).
 This allows us to obtain an MPS description with a small bond dimension
@@ -157,7 +163,7 @@ W_{i_0 i_1}^{j}  = \left\{ \begin{array}{ll}
 \end{equation*}
 where each index takes values in $\{0, 1\}$. Applying this to each
 $W$-tensor yields the state as shown in panel (c) of
-Fig.~\ref{fig:FBI_PEPS_2}. By contracting the four tensors in each
+Fig.~\ref{fig:PEPSforFBI}. By contracting the four tensors in each
 shaded region together, we obtain a PEPS in the regular form as shown
 in Fig.~\ref{fig:PEPS}. The resulting PEPS has a bond dimension of
 $M=2$ on the horizontal bonds, and a bond dimension of $M=4$ on all
@@ -169,15 +175,29 @@ the indices.
 This decomposition respects the physical U(1) charge conservation
 symmetry in that all tensors are separately
 U(1)-invariant~\cite{bauer2011}. To make this manifest, we have
-indicated in Fig.~\ref{fig:FBI_PEPS_2} arrows on each bond that show
+indicated in Fig.~\ref{fig:PEPSforFBI} arrows on each bond that show
 the flow of charge.
 
 \subsection{Representation on infinite cylinders}
 For the calculations presented in this manuscript, we consider the
 state $\ket{\psi}$ on a cylinder of infinite length, but finite
 circumference $W$. In Fig.~\ref{fig:PEPS}, we have indicated the
-choice of boundary conditions for the cylinder. For many practical
-purposes, the PEPS on an infinite cylinder can be represented as an
-infinite, translationally invariant matrix-product state of bond
-dimension $2^W$.
+choice of boundary conditions for the cylinder used in this paper. 
+For many practical purposes, the PEPS on an infinite cylinder can be represented as an infinite, \
+translationally invariant matrix-product state of bond dimension $\chi=2^W$
+and physical dimension $p=4^{2W}$. 
+The MPS is created by blocking all tensors in each slice of the cylinder, as shown in 
+Figure~\ref{fig:PEPS}.
 
+With each cylinder slice blocked together and considered as an MPS,
+the procedures we use for computing both correlation functions and entanglement properties
+are in principal identical to those used previously in MPS \cite{cirac2011,pollmann2010}.
+Due to the exponential increase in the MPS bond dimension, this numerically exact approach
+scales exponentially in the circumference of the cylinder.
+It is however computationally advantageous to exploit the additional 
+structure present in the PEPS transfer operator; 
+by doing so, we can compute correlation functions and
+the entanglement spectrum for the cut shown in Figure \ref{fig:FBI_PEPS_2}
+for the HFBI state on cylinders of circumference up to $W=10$.
+These computations are presented in the following 
+sections~\ref{sec:Correlations} and \ref{sec:ES}.

@@ -18,16 +18,16 @@ cax1 = divider1.append_axes("right", size="5%", pad=0)
 divider2 = make_axes_locatable(ax2)
 cax2 = divider2.append_axes("right", size="5%", pad=0)
 
-L = 5
-#radius1 = 3
-#radius2 = 3
-#hexradius1 = 4
-#hexradius2 = 4
-#L=8
-radius1 = 5.0
-radius2 = 3.61
-hexradius1 = 4.2
-hexradius2 = 3.5
+L = 7
+# radius1 = 5.0
+# radius2 = 3.61
+# hexradius1 = 4.2
+# hexradius2 = 3.5
+radius1 = 14
+radius2 = 14
+hexradius1 = 14
+hexradius2 = 14
+
 
 
 IO.go_to_data_parent('softcoreboson', parent='Data//FBI-TM')
