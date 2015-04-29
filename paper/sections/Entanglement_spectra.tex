@@ -31,32 +31,39 @@ for the cut shown in Fig.~\ref{fig:FBI_PEPS_2}, this upper bound is $\chi=2^W$.
 
 Upon computation of the entanglement spectrum, we find that this bound is saturated,
 so that there are precisely $2^W$ contributing terms in Eq.~\ref{eq:schmidt}.
-This fact can be simply understood without reference to the PEPS representation. 
+This fact can be simply understood without reference to the PEPS representation:
 Each of the $w$ plaquettes on the cut can contribute its one boson either to the left
 or the right of the cut, and this is the complete source of the uncertainty
 of the state on one half of the cut when ignoring the state on the other half.
 
-We can construct a basis of states $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ that 
-correspond to the state on the left half of the cylinder when the $i^{th}$ plaquette
-contributes $\sigma_i \in {0, 1}$ bosons to the left half of the cylinder. 
-These states are not orthogonal, but they are linearly independent and span the same
-space as the Schmidt states $\ket{\psi^{(i)}_{L}}$.
-These states are precisely the states you would get by contracting the PEPS in
-Fig.~\ref{fig:FBI_PEPS_2} on the left half of the cylinder with fixed values
-$\sigma_i$ for the $W$ virtual bonds at the boundary.
+This forms a set of $2^W$ vectors $|\sigma_1,\ldots,\sigma_W)$ that correspond to the
+choices for the auxiliary degrees of freedom of the PEPS across the cut. The PEPS defines
+a map from these boundary vectors to physical states in the bulk of the
+semi-infinite cylinder, which we denote as $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$;
+on the subspace of physical states spanned by Schmidt states with non-vanishing contribution
+to the reduced density matrix, this map is invertible and can be computed explicitly.
+
+%We can construct a set of states $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ that 
+%correspond to the state on the left half of the cylinder when the $i^{th}$ plaquette
+%contributes $\sigma_i \in {0, 1}$ bosons to the left half of the cylinder. 
+%These states are not orthogonal, but they are linearly independent and span the same
+%$2^W$-dimensional space as the Schmidt states $\ket{\psi^{(i)}_{L}}$.
+%These states are precisely the states you would get by contracting the PEPS in
+%Fig.~\ref{fig:FBI_PEPS_2} on the left half of the cylinder with fixed values
+%$\sigma_i$ for the $W$ virtual bonds at the boundary.
 
 Translation around the cylinder acts in the natural way on the states 
 $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ by permuting the values of 
-$\sigma_i$, $\sigma_i \to \sigma_{i+1}$. 
-Although the boson number on the half-infinite cylinder is infinite,
-each basis element has a well-defined relative $U(1)$ charge (boson number)
-$$Q_L = \sum_i (\sigma_i - \frac12)$$ that measures the fluctuations of charge
-to the left of the cut. 
-The constant $1/2$ is subtracted so that the average charge fluctuation
-satisfies $\ev{Q_L} = 0$ - however, only relative charges between states will be 
-important for our conclusions.
-Each state is of course paired with a corresponding state
-on the right half of the cylinder with opposite charge.
+$\sigma_i$, $\sigma_i \to \sigma_{i+1}$.
+Although the boson number on the half-infinite cylinder is infinite, we can define for
+each basis element a $U(1)$ charge corresponding to the number of bosons to the
+left of the cut relative to a uniform background charge,
+\begin{equation}
+Q_L = \sum_i (\sigma_i - \frac12).
+\end{equation}
+Only relative charges between states will be important for our conclusions, and the precise
+way in which background charge is accounted for does not matter.
+Each state is paired with a corresponding state on the right half of the cylinder with opposite charge.
 
 We can thus block-diagonalize the reduced density matrix
 for a half-infinite cylinder in both the U(1) charge and transverse momentum
@@ -89,7 +96,7 @@ The finite-size scaling confirms in all cases that
 the entanglement gap closes as $1/W$, as you would expect for a gapless mode
 with linear dispersion.
 
-\begin{figure}[htbc]
+\begin{figure}
 	\centering
 	\includegraphics[width=\columnwidth]{{EntanglementSpectrum910.pdf}}
 	%\includegraphics[width=2.5in]{{EntanglementSpectrum_L9.pdf}}
@@ -141,19 +148,25 @@ it is unlikely that our state is topologically ordered.
 \label{sec:CFT}
 
 In addition to the gapless behavior, we find that low energy entanglement spectrum
-can be completely described by the finite-size spectrum of a CFT. 
+can be completely described by the finite-size spectrum of a conformal field theory (CFT). 
 Given the $U(1)$ symmetry of the state, the simplest possible
 conformal field theory we might expect to appear at the edge is that
 of a single free bosonic field - and indeed, this is the CFT that matches the 
 entanglement spectrum.
-Let's briefly review the relevant properties of this CFT.\cite{difrancesco}
+Let's briefly review the relevant properties of this CFT~\cite{difrancesco}.
 
 The free-boson CFT is created from the Lagrangian
-$$ \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx (\partial_t \phi)^2 - (\partial_x \phi)^2$$
+\begin{equation}
+\mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx \left[ (\partial_t \phi)^2 - (\partial_x \phi)^2 \right]
+\end{equation}
 with the compactified field identification
-$$ \phi \equiv \phi + 2\pi R$$
+\begin{equation}
+\phi \equiv \phi + 2\pi R
+\end{equation}
 and placed on the circle of circumference $L$ with periodic boundary conditions
-$$ \phi(x) \equiv \phi(x+L).$$
+\begin{equation}
+\phi(x) \equiv \phi(x+L).
+\end{equation}
 
 %The periodic boundary conditions in conjuction with the compactified field
 %result in the condition 
@@ -170,7 +183,7 @@ which I will collectively label $\ket{e, m; n, \bar{n}}$.
 % - such as  $\mathbf{\bar{j}}_{-\bar{n}}\mathbf{j}_{-n} \ket{e, m}$ -%
 
 The number of level $n, \bar{n}$ descendants of a given
-primary, all of which are degenerate for the unperturbed CFT, is $Z(n) Z(\bar{n})$, where
+primary, all of which are degenerate in the thermodynamic limit, is $Z(n) Z(\bar{n})$, where
 $Z(n)$ is the number of partitions of the integer $n$.
 For more details on these states, see Appendix \ref{Appendix:CFT}.
 
@@ -179,13 +192,14 @@ on a finite size system of circumference $W$.
 The energies depends only on the combination $\kappa = \pi g R^2$,
 known as the Luttinger parameter of the system. \cite{giamarchi}
 
-\begin{align*}
+\begin{align}
 	\mathbf{P} =\frac{2\pi}{W} s
-	= \frac{2\pi}{W}(em + n - \bar{n})&  \\
+	&= \frac{2\pi}{W}(em + n - \bar{n}) \\
 	\mathbf{H} = \frac{2\pi}{W}\Delta
-	= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n})& %\\
-\end{align*}
+	&= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) + \ldots %\\
+\end{align}
 
+Here, $\ldots$ denotes further subleading contributions due to coupling to irrelevant operators.
 The momenta and energies of these eigenstates are given are related to the conformal
 spin $s$ and scaling dimension $\Delta$ of operators that can be used to perturb the CFT.
 We will discuss these perturbations to the CFT in Section~\ref{sec:symmetry}.
@@ -194,10 +208,10 @@ By rescaling the energy and momentum, we find a system size
 independent pattern that can be matched to the low-energy, linearly
 dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 
-\begin{align*}
+\begin{align}
 \mathbf{P} &\propto (em + n - \bar{n}) \\
-\mathbf{H} &\propto e^2 + 4\kappa^2 m^2 + 4\kappa(n + \bar{n})
-\end{align*}
+\mathbf{H} &\propto e^2 + 4\kappa^2 m^2 + 4\kappa(n + \bar{n}) + \ldots
+\end{align}
 
 The results of this match are shown in Figure~\ref{fig:EEIdentify}.
 An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent
@@ -220,8 +234,8 @@ charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pat
 
 However, the states with non-zero winding number $m$, such as $\ket{0, \pm 1}$, do not appear at
 the energy and momentum predicted by the above formula. Instead, the primary states $\ket{e, m=\pm
-1}$ can be found centered around momentum $K=\pi$. The states are shown identified in the 
-spectrum. in Figure~\ref{fig:EEIdentifyPi}. Although the larger $m$ states are too high in energy 
+1}$ can be found centered around momentum $K=\pi$. The identification of these states in the spectrum
+is shown in Figure~\ref{fig:EEIdentifyPi}. Although the larger $m$ states are too high in energy 
 to be reliably distinguished at this system size, a natural conjecture is that all primaries with 
 odd $m$ will appear around momentum $\pi$.
 
@@ -233,9 +247,20 @@ odd $m$ will appear around momentum $\pi$.
 	\label{fig:EEIdentifyPi}
 \end{figure}
 
-Since we have the local basis $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ of $2^W$ states with charges matching those of a spin $\frac12$ chain of length $W$, it is tempting to think of the entanglement Hamiltonian as a critical theory on a spin $\frac12$ chain of length $W$. This analogy cannot be exact, because this basis of states is not orthonormal. Still, we find that the coefficients $u^{(0)}_{\{\sigma_i\}}$ of this state in the local basis
-$$\ket{\psi_L^{(0)}} = \sum\limits_{\{\sigma_i\}} u^{(0)}_{(\sigma_1, \ldots, \sigma_W)} \ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$$
-have entanglement properties similar to a critical 1D ground state wavefunction with central charge $c=1$. This result is shown in Fig.~\ref{fig:EdgeGS_EE}.
+Given the PEPS representation, we can express the entanglement Hamiltonian $H_L$ for
+the left semi-infinite cylinder, defined via $\rho_L = \exp(-H_L)$, as a Hamiltonian acting on the auxiliary
+degrees of freedom of the PEPS crossing the cut, which we have denoted as $|\sigma_1,\ldots,\sigma_W)$.
+We expect this Hamiltonian to encode the universal properties of the edge CFT, which should be invariant
+under local gauge choices in the PEPS. Its ground state is (up to normalization) given as
+\begin{equation}
+|\Psi_0) = \sum_{\sigma_1,\ldots,\sigma_W} \langle \Psi^(\sigma_1,\ldots,\sigma_W)|\Psi_L^{(0)}\rangle |\sigma_1,\ldots,\sigma_W).
+\end{equation}
+In Fig.~\ref{fig:EdgeGS_EE}, we show the bipartite von Neumann entanglement entropy of this state for a cut
+into $l$ and $W-l$ sites, which confirms the central charge of the edge CFT.
+
+%Since we have the local basis $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ of $2^W$ states with charges matching those of a spin $\frac12$ chain of length $W$, it is tempting to think of the entanglement Hamiltonian as a critical theory on a spin $\frac12$ chain of length $W$. This analogy cannot be exact, because this basis of states is not orthonormal. Still, we find that the coefficients $u^{(0)}_{\{\sigma_i\}}$ of this state in the local basis
+%$$\ket{\psi_L^{(0)}} = \sum\limits_{\{\sigma_i\}} u^{(0)}_{(\sigma_1, \ldots, \sigma_W)} \ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$$
+%have entanglement properties similar to a critical 1D ground state wavefunction with central charge $c=1$. This result is shown in Fig.~\ref{fig:EdgeGS_EE}.
 
 \begin{figure}[htbc]
 	\centering
