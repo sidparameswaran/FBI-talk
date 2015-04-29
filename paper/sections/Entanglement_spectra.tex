@@ -50,15 +50,21 @@ $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$ by permuting the values of
 $\sigma_i$, $\sigma_i \to \sigma_{i+1}$. 
 Although the boson number on the half-infinite cylinder is infinite,
 each basis element has a well-defined relative $U(1)$ charge (boson number)
-$Q = \sum_i \sigma_i - L/2$ that measures the fluctuation of charge across the cut. 
-By convention, we subtract the $L/2$ so that the average charge fluctuation
-satisfies $\ev{Q} = 0$.
+$$Q_L = \sum_i (\sigma_i - \frac12)$$ that measures the fluctuations of charge
+to the left of the cut. 
+The constant $1/2$ is subtracted so that the average charge fluctuation
+satisfies $\ev{Q_L} = 0$ - however, only relative charges between states will be 
+important for our conclusions.
+Each state is of course paired with a corresponding state
+on the right half of the cylinder with opposite charge.
 
 We can thus block-diagonalize the reduced density matrix
 for a half-infinite cylinder in both the U(1) charge and transverse momentum
-quantum numbers, allowing us to perform more efficient calculations
-as well as assign quantum numbers to both the Schmidt states and the entanglement
-spectrum. 
+quantum numbers, allowing us to perform more efficient calculations. 
+In addition, we can assign quantum numbers to both the Schmidt states and the entanglement
+spectrum. This property is generically true for U(1) symmetric and translationally invariant PEPS
+on a cylinder, although not in general true for arbitrary symmetry groups.
+This point is elaborated on in Appendix~\ref{Appendix:MPS}.
 
 % This seems overly complicated.
 %As shown in \cite{perezgarcia2008}, a translationally invariant MPS can be
@@ -242,157 +248,3 @@ matching the maximum of the entanglement entropy data. $c=1$ is a good
 fit.}
 	\label{fig:EdgeGS_EE}
 \end{figure}
-
-\section{Symmetry-protection}
-\label{sec:symmetry}
-
-\bela{Moved from above - the canonical form should be explained where we
-actually use it.}
-The process also
-results in a change of basis on the virtual legs that allows one to change the tensor
-network in Figure \ref{fig:FBI_PEPS} into a canonical form MPS,
-
-$$
-\ket{\psi} = \sum\limits_{\{p_i\}} \ldots \Lambda \Gamma_{p_0} \Lambda \Gamma_{p_1} \Lambda \Gamma_{p_2} \Lambda \ldots \ket{... p_0 p_1 p_2 ...}.
-$$
-
-Each physical leg represents all $2L$ physical indices of a cylinder slice,
-and each virtual leg represents all $L$ virtual indices that connect cylinder
-slices. The change of basis generally mixes the Hilbert spaces from these
-virtual legs, so the resulting basis won't be local around the circumference
-of the cylinder.
-For many of the calculations that follow, we'll use this 1D form, and the
-methods will be entirely MPS methods.
-
-However, the entanglement spectrum of this one wavefunction is not enough to
-determine the SPT nature of the phase. First, it isn't clear what group or
-groups of symmetries can be used to protect the gapless edge. It could be that
-the entire symmetry group - $U(1)$ boson number conservation, \brayden{time
-reversal symmetry?}, as well as the entire rotational and translational group
-of the lattice - must be preserved to protect the edge. Or, as we will argue
-is the case, a much smaller subgroup could be used to protect the edge. This
-leads to a wider class of perturbations that leave the edge intact - and since
-we will argue that translation is not needed for protection, the gapless edge should additonally be robust to some types of weak disorder and can be seen in
-small systems with symmetry preserving boundary conditions. Second, the
-entanglement spectrum alone fails to distinguish between other SPT phases with
-the same protecting group - for that, we need a topological invariant. Third,
-we would like to confirm the SPT nature of the phase by perturbing a parent
-Hamiltonian with terms that break various combinations of symmetries and
-seeing if they destroy the gapless edge.
-
-%To determine the protecting group, we can proceed in
-%two ways: we could perturb a parent Hamiltonian with terms that break various
-%combinations of symmetries and see which perturbations destroy the gapless
-%edge, or we can look for a topological invariant by analyzing the action of
-%the symmetry of the entanglement edge. We will take up the later question
-%first, then return to the prospect of perturbing a parent Hamiltonian in
-%Section \ref{sec:perturbations}.
-
-Notice that many points in the spectrum are doubly degenerate - those that are
-assigned a non-zero $U(1)$ charge - and on odd circumference cylinders, the
-entire entanglement spectrum is doubly degenerate, a property shared with 1D SPTs. This suggests that the the HFBI state as a 1D state with any
-fixed odd cylinder circumference $L$ is a 1D SPT. We will discuss in
-Section \ref{sec:symmetry} how to explain the degeneracies in these spectra
-using the action of the symmetry on the edge, and how to prove that the odd
-circumference cylinder states are indeed 1D SPTs while the even circumference
-cylinder states are not. This will shed light on what the appropriate symmetry
-group to use.
-
-Given that only odd circumference cylinders are SPTs, one might wonder whether
-odd and even $L$ cylinders approach two differt phases in the thermodynamic
-limit. In Section~\ref{sec:CFT}, we will provide evidence against that
-possibility, by showing that in both cases, the low-energy, linear dispersing
-part of the entanglement spectra can be described by the same conformal field
-theory. Thus, in the thermodynamic limit, the two edge spectra approach the
-same set of points.
-
-When we treat the HFBI wavefunction on a
-cylinder of a fixed circumference $L$ as a matrix product state, we can use
-MPS methods to determine the action of an on-site symmetry on
-the virtual legs of this MPS. This is done using the MPS canonical form, as
-originally detailed in \cite{perezgarcia2008}. This will allow us to determine
-the boson charge and transverse momentum associated with each Schmidt state,
-used in the spectra plots Figures~\ref{fig:ESL10} and \ref{fig:ESL9}.
-
-This symmetry action is determined on the Schmidt basis, but we can also
-change back to the basis determined by the virtual legs of the PEPS in Figure
-\ref{fig:FBI_PEPS_2}, i.e. a basis that is local around the circumference of
-the cylinder. We'll use this basis to describe the edge action of the on-site
-symmetries of the MPS: U(1) charge, translation, and reflection $I_y$.
-
-Each on-site symmetry of the wavefunction $U_g = \otimes_i u^i_g$, with $U_g
-\ket{\psi} = e^{i \Theta_g} \ket{\psi}$ is assigned an operator $V_g$ that
-acts on the virtual leg of the MPS, that satisfies the equation
-\begin{center}
-\includegraphics[width=0.6\columnwidth]{group_sym.pdf}
-\end{center}
-
-For an MPS with a nondegenerate largest
-transfer matrix eigenvalue, this equation is guaranteed have a unique solution
-for $V_g$, and the operators $V_g$ are guaranteed to commute with the diagonal
-matrix $\Lambda$. However, these operators are not guaranteed to form a linear
-representation of the group of on-site symmetries, but in general could make
-up a projective representation, satisfying
-$$V_g V_h = e^{i \omega(g, h)} V_{gh}.$$
-
-
-
-%By combining $N$ such blocks together and connecting them with periodic
-%boundary conditions, we recover the fact that
-%$U_g \ket{\psi} = e^{i \Theta_g} \ket{\psi}$,
-%with $\Theta_g = N \theta_g$, since all of the $V_g$ and $V_g^{\dagger}$s
-%cancel pairwise.
-%$\theta_g$ measures the charge per unit cell
-
-
-%In general, the $V_g$ do not have to form a linear representation of the
-%group, but could instead be a projective representation. This can be explained
-%in the MPS language as follows: if instead the blocks are connected together
-%with different boundary conditions, as in Figure \ref{fig:mps_boundary}, we
-%discover that $U_g$ transforms $\ket{\psi}$ to a similar state with
-%transformed boundary conditions, $B \rightarrow V_g^{\dagger} B V_g$. This
-%action on $B$, one can show, is a group representation.
-
-%For open ends - if $B$ factors into left and right parts, $B =
-%\vket{b}\vbra{b}$ - the action of the symmetry on the boundary can also be
-%factored, $\vket{b} \rightarrow V_g \vket{b}$. This action does not have to be
-%a group representation, but can fail up phases $V_g V_h = e^{i \omega(g, h)}
-%V_{gh}$.
-
-%\begin{figure}[htbc]
-%    \centering
-%    \includegraphics[width=\columnwidth]{mpsbc.png}
-%    \caption{Matrix Product State with arbitrary boundary conditions}
-%    \label{fig:mps_boundary}
-%\end{figure}
-
-An extension of this to treat inversion symmetry is explained in
-\onlinecite{pollmann2010}. It works identically, but instead each matrix
-product state is transposed in the basis \brayden{Add pictures for inversion
-symmetry in MPS}.
-
-
-
-\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{5}{r}@{}}
-\toprule
-$\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
-\midrule
- $U(1) $ & & & & \\
- $\mathcal{\pi} \mathcal{I}_x$ & & & & \\
- $\mathcal{I}_x \mathcal{I}_y$ & & & & \\
- $\mathcal{\pi} \mathcal{I}_x \mathcal{I}_y$ & & & & \\
-\bottomrule
-\end{tabular*}
-
-Since
-$$
-V_{\mathcal{\pi} \mathcal{I}_y} V_{\mathcal{\pi} \mathcal{I}_y}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}_y} = - V_{\mathcal{I}_y} V_{\mathcal{\pi}},
-$$
-
-the representation is in the nontrivial class of
-
-$$
-H^2(\mathbb{Z}_2 \times \mathbb{Z}_2^{\mathcal{I}}; U(1)) = \mathbb{Z}_2.
-$$
-
-
