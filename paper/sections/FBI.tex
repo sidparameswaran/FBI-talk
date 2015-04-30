@@ -145,11 +145,10 @@ of the W-state (which appears as translational symmetry of the MPS).
 This allows us to obtain an MPS description with a small bond dimension
 of $M=2$; a fully symmetric choice would require bond dimension 6.
 Since these states are physically equivalent, we expect all
-gauge-invariant quantities to be unaffected by this choice.
+physical quantities to be unaffected by this choice.
 One possible decomposition is given by
 \begin{equation}
 W^{i_1 i_2 i_3 i_4 i_5 i_6} = \sum\limits_{\alpha_1 \ldots \alpha_5} V^{i_1}_{\alpha_1} W^{i_2}_{\alpha_1 \alpha_2}
-%W^{i_3}_{\alpha_2 \alpha_3} W^{i_4}_{\alpha_3 \alpha_4}
 \ldots
 W^{i_5}_{\alpha_4 \alpha_5} X^{i_6}_{\alpha_5}
 \end{equation}
@@ -185,13 +184,13 @@ circumference $W$. In Fig.~\ref{fig:PEPS}, we have indicated the
 choice of boundary conditions for the cylinder used in this paper. 
 For many practical purposes, the PEPS on an infinite cylinder can be represented as an infinite, \
 translationally invariant matrix-product state of bond dimension $\chi=2^W$
-and physical dimension $p=4^{2W}$. 
+and physical dimension $p=4^{2W}$ ($p=2^{2W}$) for the soft-core (hard-core) case. 
 The MPS is created by blocking all tensors in each slice of the cylinder, as shown in 
 Figure~\ref{fig:PEPS}.
 
 With each cylinder slice blocked together and considered as an MPS,
 the procedures we use for computing both correlation functions and entanglement properties
-are in principal identical to those used previously in MPS \cite{cirac2011,pollmann2010}.
+are in principle identical to those used previously in MPS \cite{cirac2011,pollmann2010}.
 Due to the exponential increase in the MPS bond dimension, this numerically exact approach
 scales exponentially in the circumference of the cylinder.
 It is however computationally advantageous to exploit the additional 
