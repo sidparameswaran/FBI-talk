@@ -11,17 +11,92 @@ for which degeneracy throughout the entire entanglement spectrum is a robust fea
 We will demonstrate that the odd circumference cylinders, considered as one-dimensional states, 
 are indeed SPTs protected by a combination of lattice inversion and charge parity symmetries.
 
-\brayden{Connection between 1D SPT and 2D SPT results: Maybe take this out or put this later?}
+Unlike the entanglement spectrum, the choice of Schmidt states is not unique when the spectrum is 
+degenerate. A change of basis $V^{ji}$ that mixes degenerate Schmidt states for the left half 
+cylinder produces an equally good Schmidt decomposition, as long as the right half cylinder states 
+are transformed using the complex conjugate basis change $V^{ji*}$. It is known that any two
+Schmidt decompositions must be related by such a $V$.
 
-The degenerate entanglement spectra on odd circumference cylinders should be a feature 
-robust to small perturbations of any parent Hamiltonian for this state, as long as the 
-perturbations respect the above symmetry, and as long as perturbations respect the translational
-symmetry of the lattice - so that the notion of 'odd circumference cylinder' is well defined.
-So the 1D SPT result can be extended to a 2D SPT result, as long as we include translational
-symmetry in the protecting group. It may be that translational symmetry isn't actually necessary
-to argue for this protection, but additional evidence is needed to argue for that. 
-
+%If 
 %
+%\beq
+%\label{eq:schmidtredundancy}
+%\ket{\widetilde{\psi^{(i)}_{L}}} = \sum\limits_j \ket{\psi^{(j)}_{L}} V^{ji} \text{ and }
+%\ket{\widetilde{\psi^{(i)}_{R}}} = \sum\limits_j \ket{\psi^{(j)}_{R}} V^{ji*},
+%\eeq
+%
+%then 
+%
+%\begin{equation*}
+%\ket{\psi} = \sum\limits_i \sqrt{\rho_i}
+%\ket{\widetilde{\psi^{(i)}_{L}}}\ket{\widetilde{\psi^{(i)}_{R}}}.
+%\end{equation*}
+
+Since an on-site symmetry $U_g$ (or more generally, any symmetry which acts
+separately on the left and right half of the cylinders) can be used to produce another Schmidt
+decomposition, the action of $U_g$ on the Schmidt states must take the form
+\beq
+\label{eq:symschmidt}
+\begin{split}
+U_g \ket{\psi^{(i)}_{L}} &= \sum\limits_j \ket{\psi^{(j)}_{L}} V_g^{ji} \\
+U_g \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{R}} V_g^{ki*},
+\end{split}
+\eeq
+where the $V_g^{ji}$ are unitary matrices that only act on degenerate blocks of Schmidt states.
+The $V_g$ can be computed numerically for each on-site symmetry $g$.
+
+We can also analyze the effects of symmetry that preserve the entanglement cut line but swap
+the left and right of the cylinders. In general, we will consider 
+any symmetry $h$ that swaps the cylinder halves and square to the identity, which we will call an 
+inverting symmetry. These satisfy a modification of equation~\ref{eq:symschmidt}:
+\beq
+\label{eq:isymschmidt}
+\begin{split}
+U_{h} \ket{\psi^{(i)}_{L}} &= \sum\limits_j \ket{\psi^{(j)}_{R}} V_{h}^{ji} \\
+U_{h} \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{L}} V_{h}^{ki*}.
+\end{split}
+\eeq
+
+As reviewed in Appendix~\ref{Appendix:MPS}, the collection of $V_g$ of on-site symmetries 
+sometimes fail to satisfy the group multiplication laws on the nose, but instead form a 
+projective representation, characterized by phases $\omega(g_1, g_2)$ that measure the failure to 
+satisfy the group laws. 
+Additionally, the $V_h$ for each inverting symmetry forms an anti-unitary projective 
+representation of $\mathbb{Z}_2$ - or in other words, they satisfy
+$$
+(V_h \mathbf{K})^2 = V_h V_h^* =  e^{i \phi_h} I = \pm I,
+$$
+where $\mathbf{K}$ represents complex conjugation in the canonical basis. 
+
+The phases $\omega(g_1, g_2)$ can be assigned to one of a discrete class of projective 
+representations labeled by an element of $H^2(G, U(1))$. 
+If the element is non-trivial, the degeneracy cannot be removed without breaking the symmetry, 
+since the distinct classes of $H^2(G, U(1))$ cannot be connected continuously.
+Similarly, for the inverting symmetries $h$, the phase $\phi_h = -1$ signifies that 
+the degeneracy cannot be removed without breaking the symmetry.
+
+The on-site symmetries of this wavefunction are the $U(1)$ charge symmetry and the 
+anti-unitary symmetry $\tau$, which acts by complex conjugation in the boson number basis.
+Despite the half-filling, a particle-hole transformation does not preserve the hard-core 
+variant of the HFBI, so this is not an additional symmetry of the wavefunction. We find
+that the edge action of this symmetry group does not form a projective representation,
+and so does not protect the odd $W$ cylinder degeneracy.
+
+This suggests we should expand the group of interest to include lattice symmetries.
+In the cylinder geometry chosen, the group of lattice symmetries consist of translations,
+inversion $\I$ about a plaquette center, and the reflections $\I_x$ through a line parallel and 
+$\I_y$ through a line perpendicular to the cylinder axis. 
+
+Our numerical results show that 
+$$
+V_{\mathcal{I}} V_{\mathcal{I}}^* = I, 
+$$
+but
+$$
+V_{\varPi \mathcal{I}} V_{\varPi \mathcal{I}}^* = -I 
+$$
+where $\varPi = e^{i \pi \mathcal{Q}} \in U(1)$ is the charge parity symmetry.
+
 
 %However, the entanglement spectrum of this one wavefunction is not enough to
 %determine the SPT nature of the phase. First, it isn't clear what group or
@@ -58,3 +133,12 @@ to argue for this protection, but additional evidence is needed to argue for tha
 
 
 
+\brayden{1D SPT -> 2D SPT+translation:
+The degenerate entanglement spectra on odd circumference cylinders should be a feature 
+robust to small perturbations of any parent Hamiltonian for this state, as long as the 
+perturbations respect the above symmetry, and as long as perturbations respect the translational
+symmetry of the lattice - so that the notion of 'odd circumference cylinder' is well defined.
+So the 1D SPT result can be extended to a 2D SPT result, as long as we include translational
+symmetry in the protecting group. It may be that translational symmetry isn't actually necessary
+to argue for this protection, but additional evidence is needed to argue for that. 
+}

@@ -160,13 +160,13 @@ The free-boson CFT is created from the Lagrangian
 \mathfrak{L} = \frac{g}{2}\int dt \int\limits_0^L dx \left[ (\partial_t \phi)^2 - (\partial_x \phi)^2 \right]
 \end{equation}
 with the compactified field identification
-\begin{equation}
+\begin{equation*}
 \phi \equiv \phi + 2\pi R
-\end{equation}
+\end{equation*}
 and placed on the circle of circumference $L$ with periodic boundary conditions
-\begin{equation}
+\begin{equation*}
 \phi(x) \equiv \phi(x+L).
-\end{equation}
+\end{equation*}
 
 %The periodic boundary conditions in conjuction with the compactified field
 %result in the condition 
@@ -192,12 +192,15 @@ on a finite size system of circumference $W$.
 The energies depends only on the combination $\kappa = \pi g R^2$,
 known as the Luttinger parameter of the system. \cite{giamarchi}
 
-\begin{align}
+\beq
+\label{eq:finitesizespec}
+\begin{split}
 	\mathbf{P} =\frac{2\pi}{W} s
 	&= \frac{2\pi}{W}(em + n - \bar{n}) \\
 	\mathbf{H} = \frac{2\pi}{W}\Delta
 	&= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) + \ldots %\\
-\end{align}
+\end{split}
+\eeq
 
 Here, $\ldots$ denotes further subleading contributions due to coupling to irrelevant operators.
 The momenta and energies of these eigenstates are given are related to the conformal
@@ -208,10 +211,13 @@ By rescaling the energy and momentum, we find a system size
 independent pattern that can be matched to the low-energy, linearly
 dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 
-\begin{align}
-\mathbf{P} &\propto (em + n - \bar{n}) \\
+\beq
+\label{eq:finitesizespecscaled}
+\begin{split}
+\mathbf{P} &\propto (em + n - \bar{n})  \\
 \mathbf{H} &\propto e^2 + 4\kappa^2 m^2 + 4\kappa(n + \bar{n}) + \ldots
-\end{align}
+\end{split}
+\eeq
 
 The results of this match are shown in Figure~\ref{fig:EEIdentify}.
 An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent
@@ -253,7 +259,7 @@ degrees of freedom of the PEPS crossing the cut, which we have denoted as $|\sig
 We expect this Hamiltonian to encode the universal properties of the edge CFT, which should be invariant
 under local gauge choices in the PEPS. Its ground state is (up to normalization) given as
 \begin{equation}
-|\Psi_0) = \sum_{\sigma_1,\ldots,\sigma_W} \langle \Psi^(\sigma_1,\ldots,\sigma_W)|\Psi_L^{(0)}\rangle |\sigma_1,\ldots,\sigma_W).
+|\Psi_0) = \sum_{\sigma_1,\ldots,\sigma_W} \langle \Psi^{(\sigma_1,\ldots,\sigma_W)}|\Psi_L^{(0)}\rangle |\sigma_1,\ldots,\sigma_W).
 \end{equation}
 In Fig.~\ref{fig:EdgeGS_EE}, we show the bipartite von Neumann entanglement entropy of this state for a cut
 into $l$ and $W-l$ sites, which confirms the central charge of the edge CFT.

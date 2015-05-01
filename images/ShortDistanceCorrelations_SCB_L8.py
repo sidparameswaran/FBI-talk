@@ -25,8 +25,8 @@ L = 7
 # hexradius2 = 3.5
 radius1 = 14
 radius2 = 14
-hexradius1 = 14
-hexradius2 = 14
+hexradius1 = 13.5
+hexradius2 = 13.5
 
 
 
