@@ -1,64 +1,58 @@
+%!TEX root = ../fbi.tex
+
 \section{Symmetry protection}
 \label{sec:symmetry}
 
-Notice that many points in the entanglement spectrum are doubly degenerate - those that are
-assigned a non-zero $U(1)$ charge - and on odd circumference cylinders, the
-entire entanglement spectrum is doubly degenerate. In this section, we will discuss how
-the corresponding degenerate Schmidt states are related by a symmetry of the HFBI wavefunction. 
+While the gapless entanglement spectrum observed above is consistent with a symmetry-protected
+topological phase, it does not by itself guarantee the presence of such a robust phase, and does not
+allow us to interfere which symmetries are protecting the topological properties of the phase.
+A key observation that allows us to make progress on these crucial questions is that many points
+in the entanglement spectrum are degenerate. In particular, we find that for cylinders of odd circumference,
+the entire spectrum is doubly degenerate.
+In this section, we will discuss how
+the corresponding degenerate Schmidt states are related through the action of a symmetry of the HFBI wavefunction. 
 As discussed in Ref.~\onlinecite{pollmann2010} and reviewed in the Appendix~\ref{Appendix:MPS},
-this symmetry action can be used to diagnose one-dimensional symmetry protected topological order.
-for which degeneracy throughout the entire entanglement spectrum is a robust feature.
-We will demonstrate that the odd circumference cylinders, considered as one-dimensional states, 
+this symmetry action can be used to diagnose one-dimensional symmetry protected topological order,
+for which the degeneracy throughout the entire entanglement spectrum is a robust feature.
+We will demonstrate that the odd circumference cylinders, considered as quasi-one-dimensional states, 
 are indeed SPTs protected by a combination of lattice inversion and charge parity symmetries.
 
-Unlike the entanglement spectrum, the choice of Schmidt states is not unique when the spectrum is 
-degenerate. A change of basis $V^{ji}$ that mixes degenerate Schmidt states for the left half 
-cylinder produces an equally good Schmidt decomposition, as long as the right half cylinder states 
-are transformed using the complex conjugate basis change $V^{ji*}$. It is known that any two
-Schmidt decompositions must be related by such a $V$.
+While the Schmidt eigenstates are uniquely defined for non-degenerate eigenvalues of the reduced
+density matrix, they are not unique when the spectrum is degenerate and any choice of orthonormal
+states in the degenerate subspace represents a valid choice of Schmidt states. Applying
+a unitary transformation $V^{ji}$, which respects $\sum_i V^{ji} (V^{ki})^* = \delta_{jk}$, on the
+left Schmidt states must be accompanied by an appropriate transformation $(V^{ji})^*$ applied to
+the right Schmidt states..
 
-%If 
-%
-%\beq
-%\label{eq:schmidtredundancy}
-%\ket{\widetilde{\psi^{(i)}_{L}}} = \sum\limits_j \ket{\psi^{(j)}_{L}} V^{ji} \text{ and }
-%\ket{\widetilde{\psi^{(i)}_{R}}} = \sum\limits_j \ket{\psi^{(j)}_{R}} V^{ji*},
-%\eeq
-%
-%then 
-%
-%\begin{equation*}
-%\ket{\psi} = \sum\limits_i \sqrt{\rho_i}
-%\ket{\widetilde{\psi^{(i)}_{L}}}\ket{\widetilde{\psi^{(i)}_{R}}}.
-%\end{equation*}
-
-Since an on-site symmetry $U_g$ (or more generally, any symmetry which acts
-separately on the left and right half of the cylinders) can be used to produce another Schmidt
-decomposition, the action of $U_g$ on the Schmidt states must take the form
+In particular, this allows the action of an on-site symmetry (or more generally, any symmetry which commutes
+separately with the reduced density matrices for the left and right half) to mix Schmidt states corresponding
+to degenerate eigenvalues. The action of a symmetry operator $U_g$ takes the form
 \beq
 \label{eq:symschmidt}
 \begin{split}
 U_g \ket{\psi^{(i)}_{L}} &= \sum\limits_j \ket{\psi^{(j)}_{L}} V_g^{ji} \\
-U_g \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{R}} V_g^{ki*},
+U_g \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{R}} \left(V_g^{ki} \right)^*,
 \end{split}
 \eeq
 where the $V_g^{ji}$ are unitary matrices that only act on degenerate blocks of Schmidt states.
-The $V_g$ can be computed numerically for each on-site symmetry $g$.
+Crucially, Ref.~\onlinecite{pollmann2010} describes a numerical procedure to calculate $V_g$ for
+an on-site symmetry $g$ within the MPS formalism.
 
-We can also analyze the effects of symmetry that preserve the entanglement cut line but swap
+We can also analyze the effects of symmetry that preserve the entanglement cut but swap
 the left and right of the cylinders. In general, we will consider 
-any symmetry $h$ that swaps the cylinder halves and square to the identity, which we will call an 
-inverting symmetry. These satisfy a modification of equation~\ref{eq:symschmidt}:
+any symmetry $h$ that swaps the cylinder sides and squares to the identity, which we will call an 
+inverting symmetry. These satisfy a modification of~\eqnref{eq:symschmidt}:
 \beq
 \label{eq:isymschmidt}
 \begin{split}
 U_{h} \ket{\psi^{(i)}_{L}} &= \sum\limits_j \ket{\psi^{(j)}_{R}} V_{h}^{ji} \\
-U_{h} \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{L}} V_{h}^{ki*}.
+U_{h} \ket{\psi^{(i)}_{R}} &= \sum\limits_k \ket{\psi^{(k)}_{L}} \left( V_{h}^{ki} \right)^*.
 \end{split}
 \eeq
+Note here that the left and right Schmidt states are exchanged in the transformation.
 
 As reviewed in Appendix~\ref{Appendix:MPS}, the collection of $V_g$ of on-site symmetries 
-sometimes fail to satisfy the group multiplication laws on the nose, but instead form a 
+sometimes fail to satisfy the group multiplication laws, but instead form a 
 projective representation, characterized by phases $\omega(g_1, g_2)$ that measure the failure to 
 satisfy the group laws. 
 Additionally, the $V_h$ for each inverting symmetry forms an anti-unitary projective 
