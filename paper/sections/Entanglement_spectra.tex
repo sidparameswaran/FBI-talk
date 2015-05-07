@@ -13,13 +13,12 @@ $\rho_i$ of the reduced density matrices $\rho_{L/R}$ obtained for a bipartition
 where we have $\varepsilon_i = -\log \rho_i$.
 The corresponding eigenvectors of the reduced density matrices
 are referred to as Schmidt states $\ket{\psi^{(i)}_{L/R}}$. 
-The relation 
+The Schmidt decomposition 
 \beq
 \ket{\psi} = \sum\limits_i \sqrt{\rho_i}
-\ket{\psi^{(i)}_{L}}\ket{\psi^{(i)}_{R}},
+\ket{\psi^{(i)}_{L}}\ket{\psi^{(i)}_{R}}
 \label{eq:schmidt}
 \eeq
-known as the Schmidt decomposition \cite{Schmidt?},
 relates the Schmidt states to the original wavefunction and is useful to keep in mind
 when interpreting the entanglement spectrum.
 
@@ -36,7 +35,7 @@ Each of the $w$ plaquettes on the cut can contribute its one boson either to the
 or the right of the cut, and this is the complete source of the uncertainty
 of the state on one half of the cut when ignoring the state on the other half.
 
-This forms a set of $2^W$ vectors $|\sigma_1,\ldots,\sigma_W)$ that correspond to the
+We can form a set of $2^W$ vectors $|\sigma_1,\ldots,\sigma_W)$ that correspond to the
 choices for the auxiliary degrees of freedom of the PEPS across the cut. The PEPS defines
 a map from these boundary vectors to physical states in the bulk of the
 semi-infinite cylinder, which we denote as $\ket{\psi_L^{(\sigma_1, \ldots, \sigma_W)}}$;
@@ -65,7 +64,7 @@ Only relative charges between states will be important for our conclusions, and 
 way in which background charge is accounted for does not matter.
 Each state is paired with a corresponding state on the right half of the cylinder with opposite charge.
 
-We can thus block-diagonalize the reduced density matrix
+We can block-diagonalize the reduced density matrix
 for a half-infinite cylinder in both the U(1) charge and transverse momentum
 quantum numbers, allowing us to perform more efficient calculations. 
 In addition, we can assign quantum numbers to both the Schmidt states and the entanglement
@@ -115,6 +114,7 @@ with linear dispersion.
 	\includegraphics[width=\columnwidth]{{EntanglementEnergyGap.pdf}}
   \vskip-3ex
   \caption{
+  \bela{The y axis label should read entanglement gap or something like that.}
    The lowest five states above the ground state in Figure~\ref{fig:ESL910} show gapless $1/W$ scaling behavior. In this plot, fits for the entanglement energy versus $1/W$ (of the form $a +  \frac{b}{W} + \frac{c}{W^2}$) to extract the gap are consistent with a gap value of 0.}
   \label{fig:EEScaling}
 \end{figure}
@@ -137,10 +137,10 @@ of circumference $S(W)$ and check for a subleading term to the area law by perfo
 a fit to $S(W) = \alpha W + S_0$. In a topological phase and in one of the minimally entangled
 states, one would expect the subleading term to correspond to the topological entanglement
 entropy, $S_0 = -\gamma$~\cite{kitaev2006, levin2006, jiang2012}.
-In a non-minimally entangled state, one would instead measure $S_0 = 0$
--- but in that case, the topological order can be detected via a degeneracy of
+In a non-minimally entangled state, one would instead measure other values of $S_0 > -\gamma$
+-- but in that case, the state exhibits long-range order of a Wilson loop operator, which can be detected via a degeneracy of
  the largest eigenvalue of the transfer matrix.
-Our results are shown in Fig.~\ref{fig:TopologicalEE}. We find results that are consistent
+Our results for the entropy are shown in Fig.~\ref{fig:TopologicalEE}. We find results that are consistent
 with $S_0 = 0$ -- and since we also find that the transfer matrix is nondegenerate,
 it is unlikely that our state is topologically ordered.
 
@@ -167,50 +167,37 @@ and placed on the circle of circumference $L$ with periodic boundary conditions
 \begin{equation*}
 \phi(x) \equiv \phi(x+L).
 \end{equation*}
-
-%The periodic boundary conditions in conjuction with the compactified field
-%result in the condition 
-%$$ \phi(x+L) = \phi(x)+ 2\pi R m$$
-%for the real valued field $\phi$, where the integer $m$ is a winding number for $\phi$.
-
+The family of free-boson CFTs is parametrized by a single parameter
+$\kappa = \pi g R^2$, also known as the Luttinger liquid parameter~\cite{giamarchi}.
 
 After canonical quantization, it is found that the set of energy
 eigenstates consists of $U(1)$ Kac-Moody primaries $\ket{e, m}$, with
 integers $e, m$ labeling the $U(1)$ charge and the winding number of
 the bosonic field respectively, and level $n, \bar{n}$ descendants of each primary for
 nonnegative integers $n,\bar{n}$,
-which I will collectively label $\ket{e, m; n, \bar{n}}$.
-% - such as  $\mathbf{\bar{j}}_{-\bar{n}}\mathbf{j}_{-n} \ket{e, m}$ -%
-
-The number of level $n, \bar{n}$ descendants of a given
+which we will collectively label $\ket{e, m; n, \bar{n}}$.
+The number of level $(n,\bar{n})$ descendants of a given
 primary, all of which are degenerate in the thermodynamic limit, is $Z(n) Z(\bar{n})$, where
 $Z(n)$ is the number of partitions of the integer $n$.
 For more details on these states, see Appendix \ref{Appendix:CFT}.
 
 The energies and momenta for the states $\ket{e, m; n, \bar{n}}$ are given below
-on a finite size system of circumference $W$.
-The energies depends only on the combination $\kappa = \pi g R^2$,
-known as the Luttinger parameter of the system. \cite{giamarchi}
-
+on a finite size system of circumference $W$:
 \beq
 \label{eq:finitesizespec}
 \begin{split}
-	\mathbf{P} =\frac{2\pi}{W} s
-	&= \frac{2\pi}{W}(em + n - \bar{n}) \\
-	\mathbf{H} = \frac{2\pi}{W}\Delta
-	&= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) + \ldots %\\
+	\mathbf{P} &= \frac{2\pi}{W}(em + n - \bar{n}) \\
+	\mathbf{H} &= \frac{2\pi}{W}(\frac{e^2}{4\kappa} + \kappa m^2 + n + \bar{n}) + \ldots %\\
 \end{split}
 \eeq
-
 Here, $\ldots$ denotes further subleading contributions due to coupling to irrelevant operators.
-The momenta and energies of these eigenstates are given are related to the conformal
-spin $s$ and scaling dimension $\Delta$ of operators that can be used to perturb the CFT.
-We will discuss these perturbations to the CFT in Section~\ref{sec:symmetry}.
+%The momenta and energies of these eigenstates are given are related to the conformal
+%spin $s$ and scaling dimension $\Delta$ of operators that can be used to perturb the CFT.
+%We will discuss these perturbations to the CFT in Section~\ref{sec:symmetry}.
 
-By rescaling the energy and momentum, we find a system size
+By rescaling the energy and momentum, we find a system-size
 independent pattern that can be matched to the low-energy, linearly
-dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
-
+dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}:
 \beq
 \label{eq:finitesizespecscaled}
 \begin{split}
@@ -222,7 +209,7 @@ dispersing part of the entanglement spectrum from Figure~\ref{fig:ESL910}.
 The results of this match are shown in Figure~\ref{fig:EEIdentify}.
 An estimate for $\kappa$ can be obtained by taken from the energy of the first descendent
 $\ket{0, 0; 1, 0}$, which gives $\kappa \approx 1.6$. The label $e$, which measures the $U(1)$
-charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pattern $1, 1, 2, ...$ for the level $n, 0$ descendents along the edge of the cone matches the prediction.
+charge, is integer for even $L$ and half-integer for odd $L$. The degeneracy pattern $1, 1, 2, ...$ for the level-$(n,0)$ descendents along the edge of the cone matches the prediction.
 
 \begin{figure}[htbc]
 	\centering

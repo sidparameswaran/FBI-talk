@@ -2,6 +2,11 @@
 
 \section{Introduction}
 
+\bela{Things that need to be mentioned in here somewhere:
+(i) Edge physics of SPTs, topological invariants.
+(ii) Classification of SPTs, limitations thereof for crystal SPTs.
+}
+
 \bela{This is pretty clich\'{e} right now. It's also missing all references.}
 Recent years have seen the proliferation of phases that defy a description
 within the well-known framework of local order parameters. These phases are
@@ -24,31 +29,33 @@ In this case, where there is one boson per unit cell of two sites, the LSM allow
 At the same time, however, symmetry guarantees that
 a free-fermion spectrum is gapless at certain high-symmetry points and there is
 thus no localized Wannier basis.
-This implies that a featureless state cannot be constructed by filling a permanent of localized Wannier orbitals, and any construction must thus involve interactions in a non-trivial way. One family of constructions that could work are permanent wavefunctions constructed by filling local and symmetric orbitals that are not orthogonal. The simplest example, and that considered in Ref.~\onlinecite{kimchi2013}, is succinctly described by the following wavefunction:
-\begin{equation}
-\ket{\psi} = \prod\limits_{\varhexagon} \sum\limits_{i \in
-\varhexagon} b^{\dagger}_{i} \ket{0}.
-\end{equation}
-This construction,
-henceforth dubbed the honeycomb featureless boson insulator (HFBI),
-will be discussed in detail in Section~\ref{sec:fbi}. Ref.~\onlinecite{kimchi2013} gave strong numerical evidence that this wavefunction is indeed featureless by showing that it has isotropic and exponentially decaying correlations.
+This implies that a featureless state cannot be constructed by filling a permanent of localized Wannier
+orbitals, and any construction must thus involve interactions in a non-trivial way. One family of
+constructions that could work are permanent wavefunctions constructed by filling local and symmetric
+orbitals that are not orthogonal. This approach was taken in Ref.~\onlinecite{kimchi2013}, where
+it was argued that that this wavefunction is indeed featureless.
+In particular, using numerical simulations it was found that the state exhibits
+isotropic and exponentially decaying correlations, and arguments were presented that it is not
+topologically ordered.
 
 %Beyond showing that the construction gives a featureless state, we also want to argue that it lies in a distinct symmetry protected topological (SPT) phase, separate from other states on the honeycomb lattice that preserve charge and lattice symmetries. 
 %Instead of local order parameters, SPT phases are distinguished by features that appear at phase boundaries, such as a gapless edge spectrum, and by entanglement properties of the groundstate wavefunction, such as a gapless entanglement edge spectrum or topological invariants.
 %These properties have been previously used to identify SPTs with on-site symmetries, such as free or interacting topological insulators, as well as free fermion topological crystalline insulators (TCIs) which are protected by lattice symmetries. Newer works have also analyzed the effect of weak interactions on free fermion TCIs. \brayden{cite Teo/Hughes}
 %The novelty in this state is that it combines lattice symmetries and strong interactions, i.e. it is a topological crystalline insulator with no free-fermion counterpart.
 
-The main focus of this paper will be on the edge properties of the HFBI.
+The main focus of this paper will be on the edge properties of the the state
+first presented in Ref.~\onlinecite{kimchi2013}.
 In particular, we will find that while the state is featureless in the bulk, it
 features a gapless edge state which is protected by a combination of lattice 
-inversion
-and spin symmetry. We will argue for this by calculating the entanglement 
-spectrum and showing
-that the low-lying spectrum is to great accuracy described by that of a $c=1$
-conformal field theory; in addition, we will show that there is exact double 
-degeneracy throughout the entanglement spectrum for certain geometries, and 
-give a robust explanation for this degeneracy that survives perturbations that 
-respect the protecting symmetry.
+inversion and spin symmetry. We will argue for this by calculating the entanglement 
+spectrum and showing that the low-lying spectrum is to great accuracy described by that of a $c=1$
+conformal field theory.
+In addition, we will show that there is an exact double 
+degeneracy throughout the entanglement spectrum for certain geometries, which is protected
+by the symmetries of the state and thus serves as a topological invariant identifying the SPT order.
+Crucially, the protecting symmetries include a lattice inversion symmetry; we thus provide
+one of the first examples for an SPT of interacting bosons protected by lattice rather than on-site
+symmetries.
 
 %A simpler way to classify an SPT phase beyond edge spectra is by using 
 %topological invariants, which are numbers that can be computed from the bulk 
@@ -64,17 +71,28 @@ respect the protecting symmetry.
 %state and progress towards the goal of finding a topological invariant to 
 %identify the corresponding phase.
 
-All of these calculations are performed in a framework of tensor network states.
-The simplest example of a tensor network for a 1D system is a matrix
-product state; translationally-invariant matrix product states (MPS)
-are represented by a single rank 3 tensor $A_p^{ij}$ which specifies
-the wavefunction coefficients in a given basis local basis as a
-product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1}
-A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$ with one matrix for each
-site in the one-dimensional system.
-PEPS are the generalization of MPS to two and higher dimensions, where
-each site in the system is represented by a rank $z+1$ tensor, where
-$z$ is the coordination number of the lattice, and wavefunction
-coefficients are similarly given by contracting over all virtual
-indices as shown in Figure~\ref{fig:PEPS}.\cite{verstraete2004}
-The PEPS representation is helpful for computing the properties of 2D wavefunctions; however, unlike MPS, the lack of a canonical form for PEPS limits the ability to tractably compute Schmidt decompositions for arbitary geometries. This paper will mainly use quasi-1D cylindrical geometries, where  MPS techniques combined with translational symmetry make computations for large systems tractable.
+All of these properties of the phase become accessible through a description of the state
+as a projected entangled-pair state (PEPS)~\cite{verstraete2004}. These states form a specific class of tensor
+network states that corresponds to a generalization of the well-known matrix-product state (MPS)
+framework to higher dimensions. PEPS have been shown to be a powerful description of many
+classes of gapped systems, including topologically ordered and SPT phases. Here, we have an
+exact description of the state as a PEPS, allowing us to extract properties such as the entanglement
+spectrum and the topological invariants exactly on certain geometries; we emphasize that these
+properties of the state are not accessible to other numerical methods.
+
+%All of these calculations are performed in a framework of tensor network states.
+%The simplest example of a tensor network for a 1D system is a matrix
+%product state; translationally-invariant matrix product states (MPS)
+%are represented by a single rank 3 tensor $A_p^{ij}$ which specifies
+%the wavefunction coefficients in a given basis local basis as a
+%product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1}
+%A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$ with one matrix for each
+%site in the one-dimensional system.
+%PEPS are the generalization of MPS to two and higher dimensions, where
+%each site in the system is represented by a rank $z+1$ tensor, where
+%$z$ is the coordination number of the lattice, and wavefunction
+%coefficients are similarly given by contracting over all virtual
+%indices as shown in Figure~\ref{fig:PEPS}.\cite{verstraete2004}
+%The PEPS representation is helpful for computing the properties of 2D wavefunctions; however, unlike MPS, the lack of a canonical form for PEPS limits the ability to tractably compute Schmidt decompositions for arbitary geometries. This paper will mainly use quasi-1D cylindrical geometries, where  MPS techniques combined with translational symmetry make computations for large systems tractable.
+
+
