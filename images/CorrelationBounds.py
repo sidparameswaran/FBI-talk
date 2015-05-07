@@ -59,7 +59,7 @@ plt.sca(axs[1][1])
 plt.plot([d[0] for d in data], [d[7] for d in data], color='k', ls='', marker='.')
 
 import PEPS.analysis as a
-fit_func = a.expi
+fit_func = a.expic
 #fit_func2 = lambda x, b, c: b*x**c
 #fit_func3 = lambda x, b, c: np.log(b*x**c)
 extrapolate_pnts = np.arange(0, 11, 0.05)
@@ -70,7 +70,9 @@ xs = [d[0] for d in data]
 ys = [d[1] for d in data]
 (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
 l = plt.plot(extrapolate_pnts, curve_data, color='b', ls='-', linewidth=1)
-fit_info[(0, 0)] = dict(line=l, params=params, fit_func=fit_func)
+text = plt.text(2, 4, r'$\xi_{\infty}\approx '+str(IO.round_sig(params[0], 2))+'$')
+fit_info[(0, 0)] = dict(line=l, params=params, fit_func=fit_func, text=text)
+
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
 # l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3))
@@ -81,7 +83,9 @@ xs = [d[0] for d in data]
 ys = [d[5] for d in data]
 (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
 l = plt.plot(extrapolate_pnts, curve_data, color='b', ls='-', linewidth=1)
-fit_info[(0, 1)] = dict(line=l, params=params, fit_func=fit_func)
+text = plt.text(4, 1, r'$\xi_{\infty}\approx '+str(IO.round_sig(params[0], 2))+'$')
+fit_info[(0, 1)] = dict(line=l, params=params, fit_func=fit_func, text=text)
+
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
 # l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
@@ -92,7 +96,8 @@ xs = [d[0] for d in data][3:]
 ys = [d[7] for d in data][3:]
 (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
 l = plt.plot(extrapolate_pnts, curve_data, color='k', ls='-', linewidth=1)
-fit_info[(1, 1)] = dict(line=l, params=params, fit_func=fit_func)
+text = plt.text(2, 1.25, r'$\xi_{\infty}\approx '+str(IO.round_sig(params[0], 2))+'$')
+fit_info[(1, 1)] = dict(line=l, params=params, fit_func=fit_func, text=text)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
 # l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
@@ -103,7 +108,8 @@ xs = [d[0] for d in data][3:]
 ys = [d[3] for d in data][3:]
 (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
 l = plt.plot(extrapolate_pnts, curve_data, color='k', ls='-', linewidth=1)
-fit_info[(1, 0)] = dict(line=l, params=params, fit_func=fit_func)
+text = plt.text(1, 1.25, r'$\xi_{\infty}\approx '+str(IO.round_sig(params[0], 2))+'$')
+fit_info[(1, 0)] = dict(line=l, params=params, fit_func=fit_func, text=text)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
 # l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
 # (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
@@ -120,6 +126,7 @@ plt.xlim(0, 11)
 plt.ylim(ymin=0)
 plt.sca(axs[0][0])
 plt.ylim(ymin=0)
+
 
 plt.tight_layout()
 plt.show()
