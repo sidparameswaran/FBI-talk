@@ -18,15 +18,15 @@ cax1 = divider1.append_axes("right", size="5%", pad=0)
 divider2 = make_axes_locatable(ax2)
 cax2 = divider2.append_axes("right", size="5%", pad=0)
 
-L = 7
-# radius1 = 5.0
-# radius2 = 3.61
-# hexradius1 = 4.2
-# hexradius2 = 3.5
-radius1 = 14
-radius2 = 14
-hexradius1 = 13.5
-hexradius2 = 13.5
+L = 8
+radius1 = 5.0
+radius2 = 5.0
+hexradius1 = 4.2
+hexradius2 = 4.2
+#radius1 = 14
+#radius2 = 14
+#hexradius1 = 13.5
+#hexradius2 = 13.5
 
 
 
