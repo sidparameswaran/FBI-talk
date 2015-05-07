@@ -28,8 +28,6 @@ def corrbound_data(state, Ls):
             ans[L] = ev_to_corr(ev1), phase(ev1), ev_to_corr(symev), phase(symev)
     return ans
 
-
-
 IO.go_to_data_parent('softcoreboson', parent='Data//FBI-TM')
 IO.add_to_path()
 scb = IO.get_state()
@@ -52,35 +50,64 @@ from SimplePEPS.tools.plot import subplots
 (fig, axs), bigax = subplots(2, 2, sharex='all', sharey='row')
 
 plt.sca(axs[0][0])
-plt.plot([d[0] for d in data], [d[1] for d in data], ls='', marker='.')
+plt.plot([d[0] for d in data], [d[1] for d in data], color='b', ls='', marker='.')
 plt.sca(axs[1][0])
-plt.plot([d[0] for d in data], [d[3] for d in data], ls='', marker='.')
+plt.plot([d[0] for d in data], [d[3] for d in data], color='k', ls='', marker='.')
 plt.sca(axs[0][1])
-plt.plot([d[0] for d in data], [d[5] for d in data], ls='', marker='.')
+plt.plot([d[0] for d in data], [d[5] for d in data], color='b', ls='', marker='.')
 plt.sca(axs[1][1])
-plt.plot([d[0] for d in data], [d[7] for d in data], ls='', marker='.')
+plt.plot([d[0] for d in data], [d[7] for d in data], color='k', ls='', marker='.')
 
-# import PEPS.analysis as a
-# fit_func = a.expic
-# min_indx = 4
-# fit_Ls = ([d[0] for d in data])[min_indx:]
-# extrapolate_pnts = np.arange(1, 11, 0.05)
+import PEPS.analysis as a
+fit_func = a.expi
+#fit_func2 = lambda x, b, c: b*x**c
+#fit_func3 = lambda x, b, c: np.log(b*x**c)
+extrapolate_pnts = np.arange(0, 11, 0.05)
+fit_info = {}
 #
-# fit_data = ([d[1] for d in data])[min_indx:]
-# (curve_data, params, R) = a.curve_fit_main(fit_data, fit_func, fit_Ls, extrapolate_pnts)
-# print params
-#
-# fit_data = ([d[3] for d in data])[min_indx:]
-# (curve_data, params, R) = a.curve_fit_main(fit_data, fit_func, fit_Ls, extrapolate_pnts)
-# print params
-#
-# fit_data = ([d[5] for d in data])[min_indx:]
-# (curve_data, params, R) = a.curve_fit_main(fit_data, fit_func, fit_Ls, extrapolate_pnts)
-# print params
-#
-# fit_data = ([d[7] for d in data])[min_indx:]
-# (curve_data, params, R) = a.curve_fit_main(fit_data, fit_func, fit_Ls, extrapolate_pnts)
-# print params
+plt.sca(axs[0][0])
+xs = [d[0] for d in data]
+ys = [d[1] for d in data]
+(curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
+l = plt.plot(extrapolate_pnts, curve_data, color='b', ls='-', linewidth=1)
+fit_info[(0, 0)] = dict(line=l, params=params, fit_func=fit_func)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
+# l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3))
+# l = plt.plot(extrapolate_pnts, curve_data, color='r', ls='-', linewidth=1)
+
+plt.sca(axs[0][1])
+xs = [d[0] for d in data]
+ys = [d[5] for d in data]
+(curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
+l = plt.plot(extrapolate_pnts, curve_data, color='b', ls='-', linewidth=1)
+fit_info[(0, 1)] = dict(line=l, params=params, fit_func=fit_func)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
+# l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
+# l = plt.plot(extrapolate_pnts, curve_data, color='r', ls='-', linewidth=1)
+
+plt.sca(axs[1][1])
+xs = [d[0] for d in data][3:]
+ys = [d[7] for d in data][3:]
+(curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
+l = plt.plot(extrapolate_pnts, curve_data, color='k', ls='-', linewidth=1)
+fit_info[(1, 1)] = dict(line=l, params=params, fit_func=fit_func)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
+# l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
+# l = plt.plot(extrapolate_pnts, curve_data, color='r', ls='-', linewidth=1)
+
+plt.sca(axs[1][0])
+xs = [d[0] for d in data][3:]
+ys = [d[3] for d in data][3:]
+(curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func, extrapolate_pnts)
+l = plt.plot(extrapolate_pnts, curve_data, color='k', ls='-', linewidth=1)
+fit_info[(1, 0)] = dict(line=l, params=params, fit_func=fit_func)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func2, extrapolate_pnts, init_guess=(1, 0.5))
+# l = plt.plot(extrapolate_pnts, curve_data, color='g', ls='-', linewidth=1)
+# (curve_data, params, R) = a.curve_fit_xy(xs, ys, fit_func3, extrapolate_pnts, init_guess=(1, 3, ))
+# l = plt.plot(extrapolate_pnts, curve_data, color='r', ls='-', linewidth=1)
 
 bigax.set_ylabel('Correlation Length', labelpad=12)
 bigax.set_xlabel('W')
@@ -88,5 +115,11 @@ axs[0][0].set_ylabel('Overall')
 axs[0][0].set_title('Soft-Core')
 axs[0][1].set_title('Hard-Core')
 axs[1][0].set_ylabel('Symmetric')
+
+plt.xlim(0, 11)
+plt.ylim(ymin=0)
+plt.sca(axs[0][0])
+plt.ylim(ymin=0)
+
 plt.tight_layout()
 plt.show()
