@@ -14,18 +14,18 @@
 
 \pgfmathsetmacro{\bond}{0.3}
 
-\node[box] (Ug) at (\left, 0.8) {$U_g$};
+\node[box] (Ug) at (\left, 0.8) {$U_h$};
 \node[gamma] (A1) at (\left, 0) {$\Gamma^T$};
 
 \draw[thick, postaction={decorate}]  (A1.west) --  ($(A1.west)+(-\bond, 0)$);
 \draw[thick, postaction={decorate}] (A1.east)+(\bond, 0) -- (A1.east);
 
 
-\node at (\center, 0.2){\large $ = e^{i \theta_{g\mathcal{I}_x}}$};    
+\node at (\center, 0.2){\large $ = e^{i \theta_{h}}$};    
 
 \node[gamma] (A) at (\right, 0) {$\Gamma$};
-\node[box] (VL) at ($(A) + (-0.8, 0) $) {$V_{g\mathcal{I}_x}$};
-\node[box] (VR) at ($(A) + (0.8, 0) $) {$V_{g\mathcal{I}_x}^{\dagger}$};
+\node[box] (VL) at ($(A) + (-0.8, 0) $) {$V_{h}$};
+\node[box] (VR) at ($(A) + (0.8, 0) $) {$V_{h}^{\dagger}$};
 \draw[thick, postaction={decorate}]  (VL.west) --  ($(VL.west)+(-\bond, 0)$);
 \draw[thick, postaction={decorate}] (VR.east)+(\bond, 0) -- (VR.east);
 \draw[thick, postaction={decorate}] (VL) -- (A);
