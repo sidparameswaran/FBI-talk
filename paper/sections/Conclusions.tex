@@ -56,30 +56,38 @@ representation of the group of on-site symmetries, but in general could make
 up a projective representation, satisfying
 $$V_g V_h = e^{i \omega(g, h)} V_{gh}.$$ 
 It is not always possible to absorb these phases into the definitions of the $V_g$.
-Furthermore, the phases $\omega(g, h)$ can be classified into distinct group cohomology classes
-$H^2(G, U(1))$ which cannot be connected to each other without breaking the symmetry.
+The set of equivalent classes of phases $\omega(g, h)$ 
+under redefinitions $V_g \to \alpha(g)V_g$ is called $H^2(G, U(1))$, the second group 
+cohomology with $U(1)$ coefficients. 
 
-The classification of projective representations for the on-site symmetry group $U(1) \times \mathbb{Z}_W$ representing charge and translation around the cylinder is trivial. Thus, the edge
-symmetry can be taken to act linearly, and all Schmidt states can be simultaneously assigned 
-charge and momentum eigenvalues. 
+For all the groups discussed in this paper, the group cohomology classes are labeled by
+elements of a discrete abelian group - these discrete classes cannot be connected to each other
+continuously. Physically, only a phase transition or breaking the symmetry allows one to connect
+the different projective symmetry actions. 
+Additionally, the classification of projective representations for the on-site symmetry group 
+$U(1) \times \mathbb{Z}_W$ representing charge and translation around the cylinder is trivial. 
+Thus, these edge symmetries can be taken to act linearly, 
+and all Schmidt states can always be simultaneously assigned charge and momentum eigenvalues,
+as in Figure~\ref{fig:ESL910}.
 
 The second property guarantees that the $V_g$ only mixes exactly degenerate Schmidt states.
 The action of $V_g$ must have the same phases $\omega(g, h)$ on each degenerate block of Schmidt 
 states, so the projective representation can be nontrivial on any block only if every Schmidt 
 state throughout the entire spectrum is degenerate. The degeneracy will be protected by the 
-symmetry if and only if the $V_g$ form a nontrivial projective representation. 
-
-Thus, this 1D SPT analysis can only potentially give an interesting answer for the odd $W$ states 
+symmetry if and only if the $V_g$ form a nontrivial projective representation. Therefore
+this 1D SPT analysis can only potentially give a nontrival answer for the odd $W$ states 
 of the HFBI, where this exact degeneracy is seen throughout the spectrum. Nonetheless, we find 
 there are no on-site symmetries of the wavefunction that can be used to explain the degenerate
 entanglement spectrum of the odd $W$ HFBI states. Instead we must use an inversion symmetry. 
 
 The MPS analysis of inversion symmetry works similarly. We will consider in general any symmetry  
-$h$ of the wavefunction that squares to the identity and that can be written as the product of an 
-on-site symmetry $g$ and reflection of the 1D system about the center of a bond $\I_y$.
+$h$ of the wavefunction that squares to the identity and that can be written in the MPS as the 
+product of an on-site symmetry action $U_h$ and a transpose of the site tensor.
 This will include an inversion of the honeycomb lattice - equivalent to a 180 degree rotation 
-about the center of any plaquette, which we label $\I = \I_y \I_x$.
-
+about the center of any plaquette, which we label $\I = \I_y \I_x$, and the combination of
+inversion with on-site symmetries. In addition, by blocking two site-tensors together, we
+can write the reflection symmetry $\I_y$ in this form as well. In this scenario, the 
+edge symmetry action satisfies
 \begin{center}
 \beq
 \label{eq:onsitesym}
@@ -87,56 +95,35 @@ about the center of any plaquette, which we label $\I = \I_y \I_x$.
 \vskip-5em
 \includegraphics[width=0.6\columnwidth]{inv_sym.pdf}.
 \end{center}
+The map $V_{h}$ is also computed as a dominant eigenvector. 
 
-The map $V_{g \I_x}$ is also computed as a dominant eigenvector.
+For the HFBI, the symmetry group respected by the cylinder geometry is
+$U(1) \times (\mathbb{Z}_W \rtimes \mathbb{Z}_2)
+\times \mathbb{Z}_2^P \times \mathbb{Z}_2^T$, where the factors refer to charge
+symmetry, translation around the cylinder, $\I_x$, $\I_y$, and $\tau$ respectively.
+The $P$ and $T$ denote space-reversing and time-reversing symmetries, and signify
+that they should be treated as antiunitary when computing the cohomology class
+$H^2(U(1) \times (\mathbb{Z}_W \rtimes \mathbb{Z}_2)
+\times \mathbb{Z}_2^P \times \mathbb{Z}_2^T ; U(1))$. Many of the non-trivial projective
+representations of such a complicated group will remain projective when the symmetry is
+restricted to a subgroup - in this case, the full symmetry is not needed to protect the 
+entanglement degeneracy. As shown in Table~\ref{table:sym}, the projective representation 
+corresponding to the HFBI state can indeed be protected by any one of a number of subgroups 
+of the full symmetry group, all involving inversions and charge parity.
 
-%In general, the $V_g$ do not have to form a linear representation of the
-%group, but could instead be a projective representation. This can be explained
-%in the MPS language as follows: if instead the blocks are connected together
-%with different boundary conditions, as in Figure \ref{fig:mps_boundary}, we
-%discover that $U_g$ transforms $\ket{\psi}$ to a similar state with
-%transformed boundary conditions, $B \rightarrow V_g^{\dagger} B V_g$. This
-%action on $B$, one can show, is a group representation.
-
-%For open ends - if $B$ factors into left and right parts, $B =
-%\vket{b}\vbra{b}$ - the action of the symmetry on the boundary can also be
-%factored, $\vket{b} \rightarrow V_g \vket{b}$. This action does not have to be
-%a group representation, but can fail up phases $V_g V_h = e^{i \omega(g, h)}
-%V_{gh}$.
-
-%\begin{figure}[htbc]
-%    \centering
-%    \includegraphics[width=\columnwidth]{mpsbc.png}
-%    \caption{Matrix Product State with arbitrary boundary conditions}
-%    \label{fig:mps_boundary}
-%\end{figure}
-
-%This symmetry action is determined on the Schmidt basis, but we can also
-%change back to the basis determined by the virtual legs of the PEPS in Figure
-%\ref{fig:FBI_PEPS_2}, i.e. a basis that is local around the circumference of
-%the cylinder. We'll use this basis to describe the edge action of the on-site
-%symmetries of the MPS: U(1) charge, translation, and reflection $I_y$.
-%
-%\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{5}{r}@{}}
-%\toprule
-%$\mathbf{G}$ & $\mathbf{U_g}$ & $\mathbf{\theta_g}$ & $\mathbf{V_g}$ &$\mathbf{V_g V^*_g}$ \\
-%\midrule
-% $U(1) $ & & & & \\
-% $\mathcal{\pi} \mathcal{I}_x$ & & & & \\
-% $\mathcal{I}_x \mathcal{I}_y$ & & & & \\
-% $\mathcal{\pi} \mathcal{I}_x \mathcal{I}_y$ & & & & \\
-%\bottomrule
-%\end{tabular*}
-
+The symmetry actions - both on-site and inversion symmetries -
+are computed in the Schmidt basis, but can be transformed
+into the basis $\vket{\{\sigma_i\}}$ determined by the virtual legs of the PEPS in
+Figure~\ref{fig:FBI_PEPS_2}. 
 Since
 $$
-V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I \text{\quad or \quad } V_{\mathcal{\pi}} V_{\mathcal{I}_y} = - V_{\mathcal{I}_y} V_{\mathcal{\pi}},
+V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I,
 $$
 
 the representation is in the nontrivial class of
 
 $$
-H^2(\mathbb{Z}_2 \times \mathbb{Z}_2^{\mathcal{I}}; U(1)) = \mathbb{Z}_2.
+H^2(\mathbb{Z}_2^P; U(1)) = \mathbb{Z}_2.
 $$
 
 
