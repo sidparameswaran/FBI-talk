@@ -101,10 +101,12 @@ For the HFBI, the symmetry group respected by the cylinder geometry is
 $U(1) \times (\mathbb{Z}_W \rtimes \mathbb{Z}_2)
 \times \mathbb{Z}_2^P \times \mathbb{Z}_2^T$, where the factors refer to charge
 symmetry, translation around the cylinder, $\I_x$, $\I_y$, and $\tau$ respectively.
-The $P$ and $T$ denote space-reversing and time-reversing symmetries, and signify
-that they should be treated as antiunitary when computing the cohomology class
-$H^2(U(1) \times (\mathbb{Z}_W \rtimes \mathbb{Z}_2)
-\times \mathbb{Z}_2^P \times \mathbb{Z}_2^T ; U(1))$. Many of the non-trivial projective
+The $P$ and $T$ denote space-reversing and time-reversing symmetries, and signify the 
+antiunitary action on the Schmidt states. 
+%Compute the cohomology class of 
+%$H^2(U(1) \times (\mathbb{Z}_W \rtimes \mathbb{Z}_2)
+%\times \mathbb{Z}_2^P \times \mathbb{Z}_2^T ; U(1)) ?$
+Many of the non-trivial projective
 representations of such a complicated group will remain projective when the symmetry is
 restricted to a subgroup - in this case, the full symmetry is not needed to protect the 
 entanglement degeneracy. As shown in Table~\ref{table:sym}, the projective representation 
@@ -115,17 +117,56 @@ The symmetry actions - both on-site and inversion symmetries -
 are computed in the Schmidt basis, but can be transformed
 into the basis $\vket{\{\sigma_i\}}$ determined by the virtual legs of the PEPS in
 Figure~\ref{fig:FBI_PEPS_2}. 
-Since
+In this case, the symmetry action $V_{\I_y}$ is precisely
+a particle-hole symmetry in the local PEPS basis, with coefficients
 $$
-V_{\mathcal{\pi} \mathcal{I}} V_{\mathcal{\pi} \mathcal{I}}^* = -I,
+V_{\I_y}\vket{\sigma_1, \ldots, \sigma_{W}} = \vket{1-\sigma_1, \ldots, 1-\sigma_{W}}, 
 $$
+since a state where the $i^{th}$ hexagon contributes $\sigma_i$ bosons on the right is paired with
+a state where the $i^{th}$ hexagon contributes $1-\sigma_i$ on the left.
+Thus 
+$$
+V_{\I_y} = \prod\limits_i \sigma_i^x K,
+$$
+where K is complex conjugation in the local PEPS basis, and $\sigma_i^x$ is the Pauli
+operator acting on the $i^{th}$ site of the local PEPS basis.
 
-the representation is in the nontrivial class of
-
+Charge symmetry acts locally as well:
 $$
-H^2(\mathbb{Z}_2^P; U(1)) = \mathbb{Z}_2.
+e^{i \theta \mathcal{Q}}\vket{\sigma_1, \ldots, \sigma_{W}} = e^{i \theta \sum(\sigma_i-1/2)}\vket{\sigma_1, \ldots, \sigma_{W}}.
 $$
+In particular, charge parity $V_{\varPi} = e^{i \theta \mathcal{Q}}$ can be written as
+$$V_{\varPi} = e^{i \pi \sum(\sigma_i - 1/2)} = \prod\limits_i \sigma_i^z.$$
 
+The combined action of charge parity and reflection across the cut takes the form 
+$$
+V_{\varPi \I_y} = \prod\limits_i \left(i \sigma_i^y \right) K,
+$$
+which is precisely the form that time-reversal acting on an ordinary spin-$\frac12$ chain takes.
+When the circumference of the cylinder $W$ is odd, we see that
+$$V_{\varPi \I_y}V_{\varPi \I_y}^{*} = -I.$$ 
+The degeneracy of the entanglement spectrum can be seen as an application of Kramer's theorem.
+Formally, this property is said to characterize the nontrivial projective representation
+$$
+H^2(\mathbb{Z}_2^P; U(1)) = \mathbb{Z}_2,
+$$
+and remains true while $\varPi \I_y$ is a symmetry and no phase transitions have occurred.
+
+Time reversal symmetry acts as complex conjugation in the local PEPS basis $V_{\tau}=K$.
+Translation and $\I_x$ act as permutations of the local PEPS basis:
+\begin{equation*}
+\begin{split}
+V_{T}\vket{\sigma_1, \ldots, \sigma_{W}} &= \vket{\sigma_2, \ldots, \sigma_{W}, \sigma_{1}} \\
+V_{\I_x}\vket{\sigma_1, \ldots, \sigma_{W}} &= \vket{\sigma_W, \ldots, \sigma_{1}}.
+\end{split}
+\end{equation*}
+These symmetries can be combined with $V_{\varPi \I_y}$ to create the additional topological 
+invariants shown in Table~\ref{table:sym}. A non-trivial projective 
+representation in $$H^2(\mathbb{Z}_2 \times \mathbb{Z}_2; U(1)) = \mathbb{Z}_2$$
+is created whenever two unitary symmetries that commute in the bulk satisfy 
+$$V_{g_1} V_{g_2} V_{g_1}^{-1} V_{g_2}^{-1} = -I.$$
+Each new invariant is related to a new set of pertubations that can't break the entanglement 
+degeneracy. 
 
 \section{Mode expansion and symmetry action of free-boson CFT}
 \label{Appendix:CFT}
