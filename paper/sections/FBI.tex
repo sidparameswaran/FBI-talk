@@ -56,7 +56,7 @@ representation is most easily obtained in a two-step construction,
 where we first construct the state shown in Fig.~\ref{fig:FBI_PEPS}.
 Here, the tensor labeled $W=W^{n_1 \ldots n_6}$, which is placed in
 the center of each hexagon, is a rank-6 tensor given by
-\begin{equation}
+\begin{equation} \label{eq:W}
 W^{n_1 \ldots n_6}  = \left\{ \begin{array}{lr}
 													1  : & \sum\limits_i n_i = 1 \\
 													0  : & \text{else}
@@ -87,7 +87,7 @@ denoted as $D$, shown in panel (a) of Fig.~\ref{fig:FBI_PEPS_2}, which
 connects the $W$ tensors from three adjacent hexagons, and as fourth
 index has a physical index $p$. For a state of soft-core bosons, where
 $p=0,1,2,3$, this tensor is given by
-\begin{equation} \label{eqn:D}
+\begin{equation} \label{eqn:Dsc}
 D^\mathrm{sc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
 													\sqrt{p!}  &: p =i_0+i_1+i_2  \\
 													0  &:  \text{else}
@@ -95,7 +95,7 @@ D^\mathrm{sc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
 											\right. .
 \end{equation}
 We can also encode a state of hard-core bosons by replacing $D$ by
-\begin{equation}
+\begin{equation} \label{eqn:Dhc}
 D^\mathrm{hc}_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
 													1  &: p = i_0+i_1+i_2 \le 1  \\
 													0  &:  \text{else}

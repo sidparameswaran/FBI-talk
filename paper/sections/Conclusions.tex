@@ -170,6 +170,89 @@ degeneracy.
 
 \section{Mode expansion and symmetry action of free-boson CFT}
 \label{Appendix:CFT}
+\brayden{Maybe take this out?}
 
 \section{Variants on the HFBI wavefunction}
+\subsection{Tuning soft-core bosons to hard-core}
+In Equations~\eqref{eqn:Dsc} and \eqref{eqn:Dhc}, the tensor $D$ can be replaced by a more general form 
+\begin{equation} \label{eqn:Dgen}
+D_{p, i_0 i_1 i_2}  = \left\{ \begin{array}{ll}
+													d_p  &: p =i_0+i_1+i_2  \\
+													0  &:  \text{else}
+													\end{array}
+											\right. ,
+\end{equation}
+which the coefficients $d_p = 1,\, 1,\, \sqrt{2},\,\sqrt{6}$ for $p = 0,\, 1,\, 2,\, 3$ in the soft-core state and $d_p = 1,\, 1,\, 0,\, 0$ for $p = 0,\, 1,\, 2,\, 3$ in the hard-core state. We can continously tune the coefficients $d_2$ and $d_3$ from the soft-core to the hard-core values.
+Upon doing so, we find that the transfer matrix spectrum remains gapped, with the correlation length monotonically increasing from the soft-core state to the hard-core state. 
+Furthermore, the low energy parts of the entanglement spectrum do not change significantly through this tuning.
+Therefore we expect that the hard-core and soft-core phases can be adiabatically connected with a 
+path of local Hamiltonians, and all SPT results that apply to one state apply to the other. By choosing appropriate values of $d_2$ and $d_3$, we can also make replace the vacuum $\ket{0}$ in
+Equation~\eqref{eq:def} with a constant background of $N$ filled bosons $\ket{N}$, or even make
+states of spins $S$ where Equation~\eqref{eq:def} becomes
+\begin{equation} \label{eq:spindef}
+\ket{\psi} = \prod\limits_{\varhexagon} \left( \sum\limits_{i \in \varhexagon} S^{+}_{i} \right) \ket{S_z = m}.
+\end{equation}
+
+\subsection{Inversion Protected Phase}
+Additionally, the tensor $W$ in Equation~\eqref{eq:W} can be replaced by the more general form
+\begin{equation} \label{eq:Wgen}
+W^{n_1 \ldots n_6}  = \left\{ \begin{array}{lr}
+													p_x  : & n_x=1,\, n_y = 0
+													\; \forall \; y \neq x \\
+													0  : & \text{else}
+													\end{array} \right.,
+\end{equation}
+which corresponds to modifying Equation~\eqref{eq:def} to 
+\begin{equation} \label{eq:pdef}
+\ket{\psi_{\ell}} = \prod\limits_{\varhexagon} \left( \sum\limits_{i \in \varhexagon} p_i b^{\dagger}_{i} \right) \ket{0}.
+\end{equation}
+
+This does not in general preserve the rotational symmetry of the state, but it does if the 
+coefficients $p_0, \ldots p_5$ are in an angular momentum mode $$p_x = e^{i x \ell}$$ where
+$\ell \in \{0, 2\pi/6, \ldots 5\pi/6 \}$. These 6 discrete solutions can't be continously tuned to one another while preserving all the lattice symmetries.
+
+The state $\ket{\psi_{\ell=\pi}}$ can be shown to be related to state $\ket{\psi_{\ell=0}}$ discussed in the main text by a on-site unitary operator $U(\pi)$, 
+where 
+\begin{equation} \label{eq:Uphi}
+U(\varphi) = \prod\limits_{j \in B} e^{i \varphi \hat{Q}_j}.
+\end{equation}
+Due to this relation, $\ket{\psi_{\ell=\pi}}$ and $\ket{\psi_{\ell=0}}$ have identical correlation lengths and entanglement spectra. 
+However, the protecting symmetries from Table~\ref{table:sym} are mapped using conjugation
+by $U(\pi)$ into a new set of protecting symmetries, shown in Table~\ref{table:pisym}. 
+
+\begin{table}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\stretch{1}}}*{4}{r}@{}}
+\toprule
+Group & Generators & Invariant & $i$  \\
+\midrule
+$\mathbb{Z}_2^P$ & $\{\I \}$ 
+& $V_{\I} V_{\I}^* = -I$ &$-$ \\
+$\mathbb{Z}_2^P$ & $\{\I_y \}$ 
+&$V_{\I_y} V_{\I_y}^* = -I$ &$-$ \\ \hline
+$\mathbb{Z}_2 \times \mathbb{Z}_2^{PT}$& $\{\varPi, \tau \varPi \I\}$ 
+&$V_{\varPi} V_{\tau \varPi \I} V_{\varPi}^{-1} V_{\tau \varPi \I}^{-1} = -I$ &$+$ \\
+$\mathbb{Z}_2 \times \mathbb{Z}_2^{PT}$& $\{\varPi, \tau \varPi \I_y\}$
+&$V_{\varPi} V_{\tau \varPi \I_y} V_{\varPi}^{-1} V_{\tau \varPi \I_y}^{-1} = -I$ &$+$ \\
+$\mathbb{Z}_2 \times \mathbb{Z}_2^{PT}$& $\{\varPi \I_x, \tau \varPi \I\}$
+&$V_{\varPi \I_x} V_{\tau \varPi \I} V_{\varPi \I_x}^{-1} V_{\tau \varPi \I}^{-1} = -I$&$+$ \\
+$\mathbb{Z}_2 \times \mathbb{Z}_2^{PT}$& $\{\varPi \I_x, \tau \varPi \I_y\}$
+&$V_{\varPi \I_x} V_{\tau \varPi \I_y} V_{\varPi \I_x}^{-1} V_{\tau \varPi \I_y}^{-1} = -I$ &$+$\\
+\bottomrule
+\end{tabular*}
+\caption{Summary of symmetry protecting invariants found for the $\ket{\psi_{\ell=\pi}}$ state. 
+The degenerate entanglement spectrum cannot be split unless all 6 of the  minimal protecting symmetry groups are broken. }
+\label{table:pisym}
+\end{table}
+
+Notably,
+since
+$$
+U(\pi) \varPi \I U(\pi)^{\dagger} = \I, 
+$$
+this state has doubly degenerate entanglement spectra on odd cylinder sizes protected by lattice inversion symmetry alone.
+
+A similar mapping for 1-D inversion protected states is discussed in Appendix A of Ref.~\onlinecite{pollmann2010}. As discussed \brayden{somewhere}, the state $\ket{\psi_{\ell=0}}$
+on the $W=1$ cylinder is adiabatically connected to the 1-D Haldane insulator state discussed in
+Ref.~\onlinecite{pollmann2010}. The new $\ket{\psi_{\ell=\pi}}$ state on the $W=1$ cylinder is instead adiabatically connected to the 1-D AKLT state. 
+
 \label{Appendix:Variants}
