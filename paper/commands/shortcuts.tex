@@ -22,30 +22,30 @@
 
 \newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
 
-\usepackage{empheq}
-
-\newlength\mytemplen
-\newsavebox\mytempbox
-
-\makeatletter
-\newcommand\mybluebox{%
-    \@ifnextchar[%]
-       {\@mybluebox}%
-       {\@mybluebox[0pt]}}
-
-\def\@mybluebox[#1]{%
-    \@ifnextchar[%]
-       {\@@mybluebox[#1]}%
-       {\@@mybluebox[#1][0pt]}}
-
-\def\@@mybluebox[#1][#2]#3{
-    \sbox\mytempbox{#3}%
-    \mytemplen\ht\mytempbox
-    \advance\mytemplen #1\relax
-    \ht\mytempbox\mytemplen
-    \mytemplen\dp\mytempbox
-    \advance\mytemplen #2\relax
-    \dp\mytempbox\mytemplen
-    \fcolorbox{airlightblue}{white}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
+%\usepackage{empheq}
+%
+%\newlength\mytemplen
+%\newsavebox\mytempbox
+%
+%\makeatletter
+%\newcommand\mybluebox{%
+%    \@ifnextchar[%]
+%       {\@mybluebox}%
+%       {\@mybluebox[0pt]}}
+%
+%\def\@mybluebox[#1]{%
+%    \@ifnextchar[%]
+%       {\@@mybluebox[#1]}%
+%       {\@@mybluebox[#1][0pt]}}
+%
+%\def\@@mybluebox[#1][#2]#3{
+%    \sbox\mytempbox{#3}%
+%    \mytemplen\ht\mytempbox
+%    \advance\mytemplen #1\relax
+%    \ht\mytempbox\mytemplen
+%    \mytemplen\dp\mytempbox
+%    \advance\mytemplen #2\relax
+%    \dp\mytempbox\mytemplen
+%    \fcolorbox{airlightblue}{white}{\hspace{1em}\usebox{\mytempbox}\hspace{1em}}}
 
 \makeatother
