@@ -3,59 +3,45 @@
 \section{Introduction}
 
 \bela{Things that need to be mentioned in here somewhere:
-(i) Edge physics of SPTs, topological invariants.
-(ii) Classification of SPTs, limitations thereof for crystal SPTs.
-}
+More on classification of SPTs, limitations thereof for crystal SPTs, and topological invariants.}
 
-\bela{This is pretty clich\'{e} right now. It's also missing all references.}
-Recent years have seen the proliferation of phases that defy a description
-within the well-known framework of local order parameters. These phases are
-not characterized by a local order parameter, but rather by more subtle,
-non-local features. An important class of such phases are topological phases,
-with key characteristics such as exotic, anyonic excitations. Another
-important class are symmetry-protected topological (SPT) phases, which have
-garnered a great deal of attention since their original discovery.
+The discovery of time-reversal invariant band insulators that are not adiabatically connected to the atomic limit in 2007~\cite{...}
+has spurred the discovery of a broad array of phases where symmetries protect subtle, non-local features that distinguish
+them from trivial, unentangled insulators. These phases, coined symmetry-protected topological (SPT) phases~\cite{...}, have
+by now been observed in several experimental realizations both in two and three dimensions~\cite{somereview} and an extensive
+mathematical framework has been developed for their characterization and classification~\cite{wen...}.
+One of the key distinguishing features of these phases is their edge physics, which often exhibits gapless features such as
+the helical edge states of the quantum spin Hall effect~\cite{...} and the protected Dirac cones on the surface of three-dimensional
+$\mathbb{Z}_2$ topological insulators~\cite{...}.
+\bela{Segue into entanglement.}
 
-Famously, the Lieb-Schults-Mattis (LSM) theorem and its extensions gives a set of
-conditions under which such an exotic phase not only can, but indeed \emph{must}
-exist. In particular, they forbid the existence of a featureless state
+Here, we study a bosonic insulator on the honeycomb lattice that was first proposed by Kimchi {\it et al.}~\cite{kimchi2013}.
+This state fills an interesting gap in the Lieb-Schultz-Matthis (LSM) theorem~\cite{...}:
+While the LSM theorem forbids the existence of a featureless state
 -- a state that neither spontaneously breaks a symmetry, nor displays topological
 order, nor has power-law correlations and is thus ''gapless'' -- in systems
-with a fractional filling per unit cell. Extensions to LSM in \onlinecite{parameswaran2013-2} further
-forbid some site fractional site fillings for non-symmorphic lattices.
-
-In Ref.~\onlinecite{kimchi2013}, Kimchi et al considered an interesting special case, namely that of half-filled bosons on the honeycomb lattice.
-In this case, where there is one boson per unit cell of two sites, the LSM allows the existence of a featureless state.
-At the same time, however, symmetry guarantees that
+with a fractional filling per unit cell, such a state is in principle allowed on the honeycomb lattice
+at half filling per site, and thus unit filling per unit cell. However, symmetry guarantees that
 a free-fermion spectrum is gapless at certain high-symmetry points and there is
 thus no localized Wannier basis.
-This implies that a featureless state cannot be constructed by filling a permanent of localized Wannier
-orbitals, and any construction must thus involve interactions in a non-trivial way. One family of
-constructions that could work are permanent wavefunctions constructed by filling local and symmetric
-orbitals that are not orthogonal. This approach was taken in Ref.~\onlinecite{kimchi2013}, where
-it was argued that that this wavefunction is indeed featureless.
+This implies that a featureless state on the honeycomb lattice cannot be constructed by filling a permanent of localized Wannier
+orbitals, and any construction must thus involve interactions in a non-trivial way. Ref.~\onlinecite{kimchi2013} pursued
+an approach of constructing a permanent wavefunction by filling local and symmetric
+orbitals that are not orthogonal and
+it was argued that that the resulting wavefunction is indeed featureless.
 In particular, using numerical simulations it was found that the state exhibits
 isotropic and exponentially decaying correlations, and arguments were presented that it is not
 topologically ordered.
 
-%Beyond showing that the construction gives a featureless state, we also want to argue that it lies in a distinct symmetry protected topological (SPT) phase, separate from other states on the honeycomb lattice that preserve charge and lattice symmetries. 
-%Instead of local order parameters, SPT phases are distinguished by features that appear at phase boundaries, such as a gapless edge spectrum, and by entanglement properties of the groundstate wavefunction, such as a gapless entanglement edge spectrum or topological invariants.
-%These properties have been previously used to identify SPTs with on-site symmetries, such as free or interacting topological insulators, as well as free fermion topological crystalline insulators (TCIs) which are protected by lattice symmetries. Newer works have also analyzed the effect of weak interactions on free fermion TCIs. \brayden{cite Teo/Hughes}
-%The novelty in this state is that it combines lattice symmetries and strong interactions, i.e. it is a topological crystalline insulator with no free-fermion counterpart.
-
-The main focus of this paper will be on the edge properties of the the state
-first presented in Ref.~\onlinecite{kimchi2013}.
-In particular, we will find that while the state is featureless in the bulk, it
-features a gapless edge state which is protected by a combination of lattice 
-inversion and spin symmetry. We will argue for this by calculating the entanglement 
-spectrum and showing that the low-lying spectrum is to great accuracy described by that of a $c=1$
-conformal field theory.
-In addition, we will show that there is an exact double 
+While we confirm the featureless bulk of the state, we show that nevertheless the entanglement of the state cannot be removed while preserving
+all symmetries, i.e. it constitutes a symmetry-protected phase. The relevant symmetry is a combination of charge
+conservation and lattice symmetries, which together protect universal features in the entanglement spectrum. In
+particular, we show that the low-lying entanglement spectrum is to great accuracy described by that of a $c=1$
+conformal field theory, and that there is an exact double 
 degeneracy throughout the entanglement spectrum for certain geometries, which is protected
 by the symmetries of the state and thus serves as a topological invariant identifying the SPT order.
-Crucially, the protecting symmetries include a lattice inversion symmetry; we thus provide
-one of the first examples for an SPT of interacting bosons protected by lattice rather than on-site
-symmetries.
+Since lattice symmetry is involved crucially, this provides one of the first examples for an SPT of interacting bosons
+protected by lattice rather than on-site symmetries.
 
 %A simpler way to classify an SPT phase beyond edge spectra is by using 
 %topological invariants, which are numbers that can be computed from the bulk 
@@ -79,20 +65,4 @@ classes of gapped systems, including topologically ordered and SPT phases. Here,
 exact description of the state as a PEPS, allowing us to extract properties such as the entanglement
 spectrum and the topological invariants exactly on certain geometries; we emphasize that these
 properties of the state are not accessible to other numerical methods.
-
-%All of these calculations are performed in a framework of tensor network states.
-%The simplest example of a tensor network for a 1D system is a matrix
-%product state; translationally-invariant matrix product states (MPS)
-%are represented by a single rank 3 tensor $A_p^{ij}$ which specifies
-%the wavefunction coefficients in a given basis local basis as a
-%product of matrices $$\ket{\psi} = \sum\limits_{\{p_i\}} A_{p_1}
-%A_{p_2} ... A_{p_N} \ket{p_0 p_1 ... p_N},$$ with one matrix for each
-%site in the one-dimensional system.
-%PEPS are the generalization of MPS to two and higher dimensions, where
-%each site in the system is represented by a rank $z+1$ tensor, where
-%$z$ is the coordination number of the lattice, and wavefunction
-%coefficients are similarly given by contracting over all virtual
-%indices as shown in Figure~\ref{fig:PEPS}.\cite{verstraete2004}
-%The PEPS representation is helpful for computing the properties of 2D wavefunctions; however, unlike MPS, the lack of a canonical form for PEPS limits the ability to tractably compute Schmidt decompositions for arbitary geometries. This paper will mainly use quasi-1D cylindrical geometries, where  MPS techniques combined with translational symmetry make computations for large systems tractable.
-
 
