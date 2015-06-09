@@ -2,18 +2,20 @@
 
 \section{Introduction}
 
-\bela{Things that need to be mentioned in here somewhere:
-More on classification of SPTs, limitations thereof for crystal SPTs, and topological invariants.}
-
 The discovery of time-reversal invariant band insulators that are not adiabatically connected to the atomic limit in 2007~\cite{...}
-has spurred the discovery of a broad array of phases where symmetries protect subtle, non-local features that distinguish
+has spurred the exploration of a broad array of phases where symmetries protect subtle, non-local features that distinguish
 them from trivial, unentangled insulators. These phases, coined symmetry-protected topological (SPT) phases~\cite{...}, have
 by now been observed in several experimental realizations both in two and three dimensions~\cite{somereview} and an extensive
 mathematical framework has been developed for their characterization and classification~\cite{wen...}.
-One of the key distinguishing features of these phases is their edge physics, which often exhibits gapless features such as
+
+One of the key distinguishing features of these phases is their edge, which often exhibits gapless features such as the localized
+Majorana zero modes at the ends of one-dimensional topological superconductors~\cite{kitaev2001},
 the helical edge states of the quantum spin Hall effect~\cite{...} and the protected Dirac cones on the surface of three-dimensional
 $\mathbb{Z}_2$ topological insulators~\cite{...}.
-\bela{Segue into entanglement.}
+It has been shown that these features also appear in the entanglement spectrum~\cite{li2008}, where they generally take the form
+of either protected degeneracies or gapless spectra that mirror the gapless modes on a boundary.
+These signify entanglement that cannot be removed while preserving the symmetry, and can thus be used to establish
+that SPT phases are fundamentally distinct from trivial, non-entangled insulators.
 
 Here, we study a bosonic insulator on the honeycomb lattice that was first proposed by Kimchi {\it et al.}~\cite{kimchi2013}.
 This state fills an interesting gap in the Lieb-Schultz-Matthis (LSM) theorem~\cite{...}:
@@ -43,26 +45,29 @@ by the symmetries of the state and thus serves as a topological invariant identi
 Since lattice symmetry is involved crucially, this provides one of the first examples for an SPT of interacting bosons
 protected by lattice rather than on-site symmetries.
 
-%A simpler way to classify an SPT phase beyond edge spectra is by using 
-%topological invariants, which are numbers that can be computed from the bulk 
-%wavefunction that provably must be constant throughout the phase. These 
-%invariants measure how the action of the symmetry is implemented on the 
-%physical edge states of open systems or on the Schmidt states of an 
-%entanglement decomposition. These invariants feature heavily in the 
-%classification of SPT phases with on-site symmetry, and similar invariants 
-%that apply to free-fermion states have been used for topological crystaline 
-%insulators. By contrast, topological invariants for interacting states 
-%protected by lattice symmetries in more than one dimension aren't well 
-%understood. We will discuss the action of the symmetry on the edge of the HFBI 
-%state and progress towards the goal of finding a topological invariant to 
-%identify the corresponding phase.
-
 All of these properties of the phase become accessible through a description of the state
 as a projected entangled-pair state (PEPS)~\cite{verstraete2004}. These states form a specific class of tensor
-network states that corresponds to a generalization of the well-known matrix-product state (MPS)
+network states that corresponds to a generalization of the well-known matrix-product state
+(MPS)~\cite{white1992,ostlund1996,schollwoeck2010}
 framework to higher dimensions. PEPS have been shown to be a powerful description of many
 classes of gapped systems, including topologically ordered and SPT phases. Here, we have an
 exact description of the state as a PEPS, allowing us to extract properties such as the entanglement
 spectrum and the topological invariants exactly on certain geometries; we emphasize that these
 properties of the state are not accessible to other numerical methods.
 
+The topological invariants extracted here form examples of a broad class
+of invariants that provably must be constant throughout the phase. These differ
+from the order parameters that measure local symmetry breaking in that they
+are not related to the expectation values of local operators. Early examples
+of topological invariants for SPT phases are the string order parameter for the one-dimensional
+AKLT phase~\cite{...}, and the spin Chern number for the quantum spin Hall effect~\cite{...}.
+The invariants we consider here measure how the action of the symmetry is implemented on the 
+physical edge states of open systems or on the Schmidt states of an 
+entanglement decomposition~\cite{pollmann,...}. These invariants feature heavily in the 
+classification of SPT phases with on-site symmetry~\cite{...}, and similar invariants 
+that apply to free-fermion states have been used for topological crystalline 
+insulators~\cite{bernevig...}. By contrast, topological invariants for interacting states 
+protected by lattice symmetries in more than one dimension aren't well 
+understood. We will discuss the action of the symmetry on the edge of the HFBI 
+state and progress towards the goal of finding a topological invariant to 
+identify the corresponding phase.
