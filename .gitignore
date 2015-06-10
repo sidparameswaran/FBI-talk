@@ -117,3 +117,4 @@ sympy-plots-for-*.tex/
 
 #IDE Files
 .idea/
+*.pyc
