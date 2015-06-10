@@ -3,16 +3,18 @@
 \section{Construction of the featureless boson insulator}
 \label{sec:fbi}
 
-In Ref.~\onlinecite{kimchi2013}, Kimchi et al gave an explicit
+In the honeycomb lattice, each unit cell is associated with exactly one hexagon plaquette, which respects the lattice point group symmetries. As shown in Ref.~\onlinecite{kimchi2013}, this provides an explicit
 construction of a bosonic insulator
 on the honeycomb lattice that is completely featureless in the bulk,
 henceforth referred to as \emph{honeycomb featureless boson insulator} (HFBI).
-The state is succinctly described by the following wavefunction:
+The state is succinctly described by the following wavefunction expression:
 \begin{equation} \label{eq:def}
 \ket{\psi} = \prod\limits_{\varhexagon} \left( \sum\limits_{i \in \varhexagon} b^{\dagger}_{i} \right) \ket{0}.
 \end{equation}
 Here, $\varhexagon$ denotes the elementary hexagons of the honeycomb
-lattice. We consider two closely related variants of the state, a
+lattice. Despite the compact notation, this many-body bosonic state involves many overlaps of multiple particles and requires concrete computation for its properties to be unveiled.
+
+We focus on two closely related variants of this state: a
 version of soft-core bosons where $b_i^\dagger$ creates a boson on
 site $i$ and obeys the usual bosonic commutation relations, and a
 hard-core version of the same state where $b_i^\dagger$ also creates a
@@ -22,7 +24,7 @@ hexagon; as there is one hexagon per unit cell of two sites of the
 lattice, the state has one boson per unit cell, or half a boson per
 site, thus allowing the existence of a featureless state.
 In the case of soft-core bosons, the maximum number of bosons
-per site is 3.
+per site is three.
 
 \bela{Summarize what was calculated in Ref.~\onlinecite{kimchi2013}.}
 
@@ -37,13 +39,16 @@ all of the relevant symmetries of \eqnref{eq:def}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\columnwidth]{Hex_PEPS.pdf}
-	\caption{A PEPS on the honeycomb lattice in the "zig-zag"' cylinder geometry used
-	througout in this paper. 
-	The cylinder is created by periodically identifying sites $W$ unit cells away 
-	- in the picture, the top and bottom edges are identified and the circumference $W=3$. 	
-	The tensors A and B are rank 4, with one physical leg and 3 virtual legs at each site. 
-	Blocking the tensors on each cylinder slice - marked by the dotted line - effectively 
-	creates a MPS representation for the state.
+	\caption{Honeycomb lattice PEPS and zig-zag entanglement cut.
+	%A PEPS on the honeycomb lattice in the "zig-zag"' cylinder geometry used
+	%througout in this paper. 
+	%The cylinder is created by periodically identifying sites $W$ unit cells away 
+	%- in the picture, the 
+	In this PEPS of rank-4 tensors, the top and bottom edges are identified, forming a cylinder with circumference $W=3$ unit cells. 	
+	%The tensors A and B are rank 4, with one physical leg and 3 virtual legs at each site. 
+	A one-dimensional MPS representation is constructed by blocking the tensors on each cylinder slice (green dotted lines).
+	The entanglement cut shown (bold dotted line) passes through the hexagon mid-point, preventing the tight-binding lattice from gaining additional sites as long as crystalline symmetries are preserved. 
+	%creates a MPS representation for the state.
 	}
 	\label{fig:PEPS}
 \end{figure}
