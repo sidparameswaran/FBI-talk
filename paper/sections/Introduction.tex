@@ -2,13 +2,13 @@
 
 \section{Introduction}
 
-The discovery of time-reversal invariant band insulators that are not adiabatically connected to the atomic limit in 2007~\cite{...}
+The discovery in 2007 of time-reversal invariant band insulators that are not adiabatically connected to the atomic limit~\cite{...}
 has spurred the exploration of a broad array of phases where symmetries protect subtle, non-local features that distinguish
-them from trivial, unentangled insulators. These phases, coined symmetry-protected topological (SPT) phases~\cite{...}, have
-by now been observed in several experimental realizations both in two and three dimensions~\cite{somereview} and an extensive
+them from trivial, unentangled insulators. These phases, colectively known as symmetry-protected topological (SPT) phases~\cite{...}, have
+by now been observed in several (so far, weakly-interacting) experimental realizations both in two and three dimensions~\cite{somereview} and an extensive
 mathematical framework has been developed for their characterization and classification~\cite{wen...}.
 
-One of the key distinguishing features of these phases is their edge, which often exhibits gapless features such as the localized
+While the bulk of the system in such a phase is often only subtly distinguished from a trivial insulator, the non-local or topological properties can be observed by focusing on the boundary of a finite system.  The boundary often exhibits gapless features such as the localized
 Majorana zero modes at the ends of one-dimensional topological superconductors~\cite{kitaev2001},
 the helical edge states of the quantum spin Hall effect~\cite{...} and the protected Dirac cones on the surface of three-dimensional
 $\mathbb{Z}_2$ topological insulators~\cite{...}.
@@ -17,17 +17,26 @@ of either protected degeneracies or gapless spectra that mirror the gapless mode
 These signify entanglement that cannot be removed while preserving the symmetry, and can thus be used to establish
 that SPT phases are fundamentally distinct from trivial, non-entangled insulators.
 
-Here, we study a bosonic insulator on the honeycomb lattice that was first proposed by Kimchi {\it et al.}~\cite{kimchi2013}.
-This state fills an interesting gap in the Lieb-Schultz-Matthis (LSM) theorem~\cite{...}:
-While the LSM theorem forbids the existence of a featureless state
+Symmetries which relate the physical locations of degrees of freedom, such as the spatial symmetries of rotation or reflection, are often observed to be fundamentaly distinct from on-site symmetries (such as charge conservation or time-reversal symmetry) in this context.  In particular, the interplay of on-site and spatial symmetries can protect new kinds of topological phases.  \cite{...}
+% cite: liang fu Topological crystalline insulators, liang fu and exptalists TCI discovery,  turner etc paper on haldane chain prtected also by inversion
+The role of the boundary is also modified when spatial symmetries are considered; when the symmetry may be broken by a physical boundary of a system, as for instance occurs for the case of inversion symmetry on any boundary, the non-trivial features can still be extracted from the entanglement spectrum.  The combination of entanglement and physical gapless modes thus permits topological phases to be theoretically distinguished from trivial insulators in a transparent way, even when a necessary ingredient for the topological protection is a non-local symmetry operation. 
+However, while non-interacting crystalline topological insulators, whose non-trivial topology requires some non-local symmetry operations, have been well explored~\cite{...}, far less is known about their interacting counterparts in two or three dimensions. 
+
+In this work, we compute the entanglement propeties of an insulating state of interacting bosons on the honeycomb lattice, and show that it constitutes a topological phase protected by lattice symmetries.  In particular, we show that the non-trivial entanglement is intimately related to the representation of the lattice symmetries as the honeycomb (or graphene) tight-binding model. We numerically represent the quantum state as a network of tensors, arranged to form the honeycomb lattice tight-binding model. We find that the action of charge conservation and spatial symmetries on certain entanglement cuts combines to enforce entanglement degeneracies, which remain protected as long as the tight-binding lattice is preserved.
+
+The quantum wavefunction in the present study, first proposed in Ref.~\onlinecite{kimchi2013},
+is a type of Mott insulating state which requires a non-Bravais lattice, i.e. a lattice with a non-trivial unit cell. 
+The necessity for a unit cell arises due to the Lieb-Schultz-Matthis (LSM) theorem~\cite{...}.
+The LSM theorem forbids the existence of a featureless state
 -- a state that neither spontaneously breaks a symmetry, nor displays topological
 order, nor has power-law correlations and is thus ''gapless'' -- in systems
-with a fractional filling per unit cell, such a state is in principle allowed on the honeycomb lattice
-at half filling per site, and thus unit filling per unit cell. However, symmetry guarantees that
-a free-fermion spectrum is gapless at certain high-symmetry points and there is
+with a fractional filling per unit cell. In contrast, the classical cartoon of a Mott insulator requires a filling which is not only integer per unit cell but also integer per site. A featureless insulating state is in principle allowed by the LSM theorem on the honeycomb lattice
+at half filling per site, and thus unit filling per unit cell. Such a state is necesarily distinct from the usual integer-per-site Mott insulator. 
+Moreover, despite being a state of particles at half filling on a lattice with an even number of sites per unit cell, this state is in no way related to a non-interacting band insulator.  Indeed, here no band insulator can exist: symmetry guarantees that a free-fermion spectrum is gapless at certain high-symmetry points, and there are
 thus no localized Wannier basis.
 This implies that a featureless state on the honeycomb lattice cannot be constructed by filling a permanent of localized Wannier
-orbitals, and any construction must thus involve interactions in a non-trivial way. Ref.~\onlinecite{kimchi2013} pursued
+orbitals~\cite{parameswaran2013}, and any construction of a quantum state must thus involve interactions in a non-trivial way. 
+Ref.~\onlinecite{kimchi2013} pursued
 an approach of constructing a permanent wavefunction by filling local and symmetric
 orbitals that are not orthogonal and
 it was argued that that the resulting wavefunction is indeed featureless.
@@ -35,7 +44,7 @@ In particular, using numerical simulations it was found that the state exhibits
 isotropic and exponentially decaying correlations, and arguments were presented that it is not
 topologically ordered.
 
-While we confirm the featureless bulk of the state, we show that nevertheless the entanglement of the state cannot be removed while preserving
+While we confirm the featureless bulk of the state, we show that nevertheless the entanglement of the state is non-trivial cannot be removed while preserving
 all symmetries, i.e. it constitutes a symmetry-protected phase. The relevant symmetry is a combination of charge
 conservation and lattice symmetries, which together protect universal features in the entanglement spectrum. In
 particular, we show that the low-lying entanglement spectrum is to great accuracy described by that of a $c=1$
@@ -67,7 +76,7 @@ entanglement decomposition~\cite{pollmann,...}. These invariants feature heavily
 classification of SPT phases with on-site symmetry~\cite{...}, and similar invariants 
 that apply to free-fermion states have been used for topological crystalline 
 insulators~\cite{bernevig...}. By contrast, topological invariants for interacting states 
-protected by lattice symmetries in more than one dimension aren't well 
-understood. We will discuss the action of the symmetry on the edge of the HFBI 
+protected by lattice symmetries in more than one dimension are not well 
+understood. We will discuss the action of the symmetry on the edge of the  
 state and progress towards the goal of finding a topological invariant to 
 identify the corresponding phase.
